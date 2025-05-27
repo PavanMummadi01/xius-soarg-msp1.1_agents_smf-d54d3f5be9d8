@@ -1,0 +1,134 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- hlr_subscriber_trace_info Stored Procedure -->
+	<bean id="pro_ams_balance_notification" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>PRO_AMS_LOWBAL_NOTIFICATION</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="bal_notificaiton_param_1"></ref>
+				<ref bean="bal_notificaiton_param_2"></ref>
+				<ref bean="bal_notificaiton_param_3"></ref>
+				<ref bean="bal_notificaiton_param_4"></ref>
+				<ref bean="bal_notificaiton_param_5"></ref>
+				<ref bean="bal_notificaiton_param_6"></ref>
+				<ref bean="bal_notificaiton_param_7"></ref>
+				<ref bean="bal_notificaiton_param_8"></ref>
+				<ref bean="bal_notificaiton_param_9"></ref>
+				<ref bean="bal_notificaiton_param_10"></ref>
+				<ref bean="bal_notificaiton_param_11"></ref> 
+				<ref bean="bal_notificaiton_param_12"></ref>
+				<ref bean="bal_notificaiton_param_13"></ref>
+			</list>
+		</property>
+	</bean>
+	 
+	<bean id="bal_notificaiton_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="bal_notificaiton_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_source</value></property>
+		<property name="mapTo"><value>pi_source</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	 
+	<bean id="bal_notificaiton_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_consumer_type</value></property>
+		<property name="mapTo"><value>pi_consumer_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>   
+	
+	<bean id="bal_notificaiton_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_record_limit</value></property>
+		<property name="mapTo"><value>pi_record_limit</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<!-- Added to maintain transaction sequence number -->
+	<bean id="bal_notificaiton_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_seq_no</value></property>
+		<property name="mapTo"><value>transactionID</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	               
+	<bean id="bal_notificaiton_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_msisdn</value></property>
+		<property name="mapTo"><value>MSISDN</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="bal_notificaiton_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_balanceamount</value></property>
+		<property name="mapTo"><value>balanceAmount</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="bal_notificaiton_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_balancedatetime</value></property>
+		<property name="mapTo"><value>balanceDatetime</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>8</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="bal_notificaiton_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_balanceexpirydatetime</value></property>
+		<property name="mapTo"><value>balanceExpiryDatetime</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>9</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="bal_notificaiton_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_accounttype</value></property>
+		<property name="mapTo"><value>accountType</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="bal_notificaiton_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_accountnumber</value></property>
+		<property name="mapTo"><value>accountNumber</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="bal_notificaiton_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_accountstatus</value></property>
+		<property name="mapTo"><value>accountStatus</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>12</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="bal_notificaiton_param_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>13</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

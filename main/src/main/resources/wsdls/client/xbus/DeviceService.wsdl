@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msgs="http://xbus.xius.com/messages/provisioning/device"
+	xmlns:err="http://xbus.xius.com/messages/common/errordetails"
+	xmlns:tns="http://xbus.xius.com/services/provisioning/device" xmlns:ns="http://xbus.xius.com/messages/common"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	targetNamespace="http://xbus.xius.com/services/provisioning/device">
+	<wsdl:types>
+		<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified" attributeFormDefault="unqualified">
+			<xs:import namespace="http://xbus.xius.com/messages/provisioning/device"
+				schemaLocation="./DeviceService.xsd" />
+			<xs:import namespace="http://xbus.xius.com/messages/common/errordetails"
+				schemaLocation="../common/ErrorDetails.xsd" />
+		</xs:schema>
+	</wsdl:types>
+	
+	
+	
+	<wsdl:message name="changeDeviceRetryRequest">
+		<wsdl:part name="request" element="msgs:changeDeviceRetryRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeDeviceRetryResponse">
+		<wsdl:part name="response" element="msgs:changeDeviceRetryResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="prepaidActivationRetryRequest">
+		<wsdl:part name="request" element="msgs:prepaidActivationRetryRequest" />
+	</wsdl:message>
+	
+	<wsdl:message name="prepaidActivationRetryResponse">
+		<wsdl:part name="request" element="msgs:prepaidActivationRetryResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="changeDeviceRestRequest">
+		<wsdl:part name="request" element="msgs:changeDeviceRestRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeDeviceRestResponse">
+		<wsdl:part name="response" element="msgs:changeDeviceRestResponse" />
+	</wsdl:message>
+	<wsdl:message name="SimActivateRequest">
+		<wsdl:part name="request" element="msgs:SimActivateRequest" />
+	</wsdl:message>
+	<wsdl:message name="SimActivateResponse">
+		<wsdl:part name="response" element="msgs:SimActivateResponse" />
+	</wsdl:message>
+	<wsdl:message name="changeDeviceRequest">
+		<wsdl:part name="request" element="msgs:changeDeviceRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeDeviceResponse">
+		<wsdl:part name="response" element="msgs:changeDeviceResponse" />
+	</wsdl:message>
+	<wsdl:message name="FaultData">
+		<wsdl:part name="faultData" element="err:errorDetailItem" />
+	</wsdl:message>
+	<wsdl:message name="ActivateMSISDNRequest">
+		<wsdl:part name="request" element="msgs:activateMSISDNRequest" />
+	</wsdl:message>
+	<wsdl:message name="ActivateMSISDNResponse">
+		<wsdl:part name="response" element="msgs:activateMSISDNResponse" />
+	</wsdl:message>
+	<wsdl:message name="UpdateMSISDNStatusRequest">
+		<wsdl:part name="request" element="msgs:updateMSISDNStatusRequest" />
+	</wsdl:message>
+	<wsdl:message name="UpdateMSISDNStatusResponse">
+		<wsdl:part name="response" element="msgs:updateMSISDNStatusResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetChangeMSISDNChargesRequest">
+		<wsdl:part name="request" element="msgs:getChangeMSISDNChargesRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetChangeMSISDNChargesResponse">
+		<wsdl:part name="response" element="msgs:getChangeMSISDNChargesResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetChangeIMSIChargesRequest">
+		<wsdl:part name="request" element="msgs:getChangeIMSIChargesRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetChangeIMSIChargesResponse">
+		<wsdl:part name="response" element="msgs:getChangeIMSIChargesResponse" />
+	</wsdl:message>
+	<wsdl:message name="ActivateDeactivateGsmGprsRequest">
+		<wsdl:part name="request" element="msgs:activateDeactivateGsmGprsRequest" />
+	</wsdl:message>
+	<wsdl:message name="ActivateDeactivateGsmGprsResponse">
+		<wsdl:part name="response" element="msgs:activateDeactivateGsmGprsResponse" />
+	</wsdl:message>
+	<wsdl:message name="faultData" />
+	<wsdl:message name="GetGsmGprsStatusRequest">
+		<wsdl:part name="request" element="msgs:getGsmGprsStatusRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetGsmGprsStatusResponse">
+		<wsdl:part name="response" element="msgs:getGsmGprsStatusResponse" />
+	</wsdl:message>
+	<wsdl:message name="CancelLocationLinkRequest">
+		<wsdl:part name="request" element="msgs:cancelLocationLinkRequest" />
+	</wsdl:message>
+	<wsdl:message name="CancelLocationLinkResponse">
+		<wsdl:part name="response" element="msgs:cancelLocationLinkResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetDeviceDetailsRequest">
+		<wsdl:part name="request" element="msgs:getDeviceDetailsRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetDeviceDetailsResponse">
+		<wsdl:part name="response" element="msgs:getDeviceDetailsResponse" />
+	</wsdl:message>
+	<wsdl:message name="UpdateBillingDetailsRequest">
+		<wsdl:part name="request" element="msgs:updateBillingDetailsRequest" />
+	</wsdl:message>
+	<wsdl:message name="UpdateBillingDetailsResponse">
+		<wsdl:part name="response" element="msgs:updateBillingDetailsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetSimTypeRequest">
+		<wsdl:part name="request" element="msgs:getSimTypeRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetSimTypeResponse">
+		<wsdl:part name="response" element="msgs:getSimTypeResponse" />
+	</wsdl:message>
+	<wsdl:message name="OnActivationRequest">
+		<wsdl:part name="request" element="msgs:OnActivationRequest" />
+	</wsdl:message>
+	<wsdl:message name="OnActivationResponse">
+		<wsdl:part name="response" element="msgs:OnActivationResponse" />
+	</wsdl:message>
+	<wsdl:message name="AfterSaleRequest">
+		<wsdl:part name="request" element="msgs:AfterSaleRequest" />
+	</wsdl:message>
+	<wsdl:message name="AfterSaleResponse">
+		<wsdl:part name="response" element="msgs:AfterSaleResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateChngMsisdnRequest">
+		<wsdl:part name="request" element="msgs:initiateChngMsisdnRequest" />
+	</wsdl:message>
+	<wsdl:message name="InitiateChngMsisdnResponse">
+		<wsdl:part name="response" element="msgs:initiateChngMsisdnResponse" />
+	</wsdl:message>
+	<wsdl:message name="hssSubsStatusChangeRequest">
+		<wsdl:part name="request" element="msgs:hssSubsStatusChangeRequest" />
+	</wsdl:message>
+	<wsdl:message name="hssSubsStatusChangeResponse">
+		<wsdl:part name="response" element="msgs:hssSubsStatusChangeResponse" />
+	</wsdl:message>
+	<wsdl:message name="FirstLUActivationRequest">
+		<wsdl:part name="request" element="msgs:firstLUActivationRequest" />
+	</wsdl:message>
+	<wsdl:message name="FirstLUActivationResponse">
+		<wsdl:part name="response" element="msgs:firstLUActivationResponse" />
+	</wsdl:message>
+	<wsdl:message name="initiateChngSimSwapRequest">
+		<wsdl:part name="request" element="msgs:initiateChngSimSwapRequest" />
+	</wsdl:message>
+	<wsdl:message name="initiateChngSimSwapResponse">
+		<wsdl:part name="response" element="msgs:initiateChngSimSwapResponse" />
+	</wsdl:message>
+	<wsdl:message name="AfterSimSwapRequest">
+		<wsdl:part name="request" element="msgs:afterSimSwapRequest" />
+	</wsdl:message>
+	<wsdl:message name="AfterSimSwapResponse">
+		<wsdl:part name="response" element="msgs:afterSimSwapResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="initiateRoamingRequest">
+		<wsdl:part name="request" element="msgs:initiateRoamingRequest" />
+	</wsdl:message>
+	<wsdl:message name="initiateRoamingResponse">
+		<wsdl:part name="response" element="msgs:initiateRoamingResponse" />
+	</wsdl:message>
+
+
+	<wsdl:message name="afterRoamingRequest">
+		<wsdl:part name="request" element="msgs:afterRoamingRequest" />
+	</wsdl:message>
+	<wsdl:message name="afterRoamingResponse">
+		<wsdl:part name="response" element="msgs:afterRoamingResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="createMobileAccountRequest">
+		<wsdl:part name="request" element="msgs:createMobileAccountRequest" />
+	</wsdl:message>
+	<wsdl:message name="createMobileAccountResponse">
+		<wsdl:part name="response" element="msgs:createMobileAccountResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="retryRequest">
+		<wsdl:part name="request" element="msgs:retryRequest" />
+	</wsdl:message>
+	<wsdl:message name="retryResponse">
+		<wsdl:part name="response" element="msgs:retryResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="teleVerificationRequest">
+		<wsdl:part name="request" element="msgs:teleVerificationRequest" />
+	</wsdl:message>
+	<wsdl:message name="teleVerificationResponse">
+		<wsdl:part name="response" element="msgs:teleVerificationResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="subscriberStateChangeRequest">
+		<wsdl:part name="request" element="msgs:subscriberStateChangeRequest" />
+	</wsdl:message>
+	<wsdl:message name="subscriberStateChangeResponse">
+		<wsdl:part name="response" element="msgs:subscriberStateChangeResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="activateTPtoSubscriberRequest">
+		<wsdl:part name="request" element="msgs:activateTPtoSubscriberRequest" />
+	</wsdl:message>
+	<wsdl:message name="activateTPtoSubscriberResponse">
+		<wsdl:part name="response" element="msgs:activateTPtoSubscriberResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="manageContractRequest">
+		<wsdl:part name="request" element="msgs:manageContractRequest" />
+	</wsdl:message>
+	<wsdl:message name="manageContractResponse">
+		<wsdl:part name="response" element="msgs:manageContractResponse" />
+	</wsdl:message>
+		
+	<wsdl:portType name="DeviceServicePortType">
+		
+	<wsdl:operation name="changeDeviceRetry">
+			<wsdl:documentation>
+				This operation is used to   chnagedevice
+			</wsdl:documentation>
+			<wsdl:input message="tns:changeDeviceRetryRequest" />
+			<wsdl:output message="tns:changeDeviceRetryResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="SimActivate">
+			<wsdl:documentation>
+				This operation is used to   Activate SIM
+			</wsdl:documentation>
+			<wsdl:input message="tns:SimActivateRequest" />
+			<wsdl:output message="tns:SimActivateResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+
+		<wsdl:operation name="prepaidActivationRetry">
+			<wsdl:documentation>
+				this is using for Retry  prepaidActivation process
+			</wsdl:documentation>
+			<wsdl:input message="tns:prepaidActivationRetryRequest" />
+			<wsdl:output message="tns:prepaidActivationRetryResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="changeDeviceRest">
+			<wsdl:documentation>
+				This operation is used to change either SIM or
+				IMSI or MSISDN,
+				any one of three is expected as input
+			</wsdl:documentation>
+			<wsdl:input message="tns:changeDeviceRestRequest" />
+			<wsdl:output message="tns:changeDeviceRestResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<wsdl:operation name="changeDevice">
+
+			<wsdl:documentation>
+				This operation is used to change either SIM or
+				IMSI or MSISDN,
+				any one of three is expected as input
+			</wsdl:documentation>
+			<wsdl:input message="tns:changeDeviceRequest" />
+			<wsdl:output message="tns:changeDeviceResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="activateMSISDN">
+			<wsdl:documentation>This operation is used to activate/reactivate the
+				MSISDN
+			</wsdl:documentation>
+			<wsdl:input message="tns:ActivateMSISDNRequest" />
+			<wsdl:output message="tns:ActivateMSISDNResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<!-- Update MSISDN Status -->
+		<wsdl:operation name="updateMSISDNStatus">
+			<wsdl:documentation>This request is to update the msisdn/account
+				status in billing db
+			</wsdl:documentation>
+			<wsdl:input message="tns:UpdateMSISDNStatusRequest" />
+			<wsdl:output message="tns:UpdateMSISDNStatusResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<!-- End of Update MSISDN Status -->
+		<!-- Get Change MSISDN Charges -->
+		<wsdl:operation name="getChangeMSISDNCharges">
+			<wsdl:documentation>This request is to get the charges for change
+				msisdn
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetChangeMSISDNChargesRequest" />
+			<wsdl:output message="tns:GetChangeMSISDNChargesResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<!-- End of Get Change MSISDN Charges -->
+		<!-- GetChangeIMSICharges Operation START -->
+		<wsdl:operation name="getChangeIMSICharges">
+			<wsdl:documentation>This request is to get the IMSI info
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetChangeIMSIChargesRequest" />
+			<wsdl:output message="tns:GetChangeIMSIChargesResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<!-- GetChangeIMSICharges Operation End -->
+		<wsdl:operation name="activateDeactivateGsmGprs">
+			<wsdl:input message="tns:ActivateDeactivateGsmGprsRequest" />
+			<wsdl:output message="tns:ActivateDeactivateGsmGprsResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<wsdl:operation name="getGsmGprsStatus">
+			<wsdl:input message="tns:GetGsmGprsStatusRequest" />
+			<wsdl:output message="tns:GetGsmGprsStatusResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<wsdl:operation name="cancelLocationLink">
+			<wsdl:input message="tns:CancelLocationLinkRequest" />
+			<wsdl:output message="tns:CancelLocationLinkResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<wsdl:operation name="getDeviceDetails">
+			<wsdl:input message="tns:GetDeviceDetailsRequest" />
+			<wsdl:output message="tns:GetDeviceDetailsResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<wsdl:operation name="updateBillingDetails">
+			<wsdl:input message="tns:UpdateBillingDetailsRequest" />
+			<wsdl:output message="tns:UpdateBillingDetailsResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		<wsdl:operation name="getSimType">
+			<wsdl:documentation>
+				This operation is used to get the Type MSISDN
+				attached to the SIM(Pseudo
+				or Actual)
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetSimTypeRequest" />
+			<wsdl:output message="tns:GetSimTypeResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="hssSubsStatusChange">
+			<wsdl:input message="tns:hssSubsStatusChangeRequest" />
+			<wsdl:output message="tns:hssSubsStatusChangeResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="firstLUActivation">
+			<wsdl:documentation>This operation is used to allocate the MDN based
+				on First LU
+			</wsdl:documentation>
+			<wsdl:input message="tns:FirstLUActivationRequest" />
+			<wsdl:output message="tns:FirstLUActivationResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="OnActivation">
+			<wsdl:input message="tns:OnActivationRequest" />
+			<wsdl:output message="tns:OnActivationResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="AfterSale">
+			<wsdl:input message="tns:AfterSaleRequest" />
+			<wsdl:output message="tns:AfterSaleResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="initiateChngMsisdn">
+			<wsdl:input message="tns:InitiateChngMsisdnRequest" />
+			<wsdl:output message="tns:InitiateChngMsisdnResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+
+
+		<wsdl:operation name="initiateChngSimSwap">
+			<wsdl:documentation>
+				This operation is used to initiate change SimSwap
+			</wsdl:documentation>
+			<wsdl:input message="tns:initiateChngSimSwapRequest" />
+			<wsdl:output message="tns:initiateChngSimSwapResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="AfterSimSwap">
+			<wsdl:input message="tns:AfterSimSwapRequest" />
+			<wsdl:output message="tns:AfterSimSwapResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="initiateRoaming">
+			<wsdl:input message="tns:initiateRoamingRequest" />
+			<wsdl:output message="tns:initiateRoamingResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="afterRoaming">
+			<wsdl:input message="tns:afterRoamingRequest" />
+			<wsdl:output message="tns:afterRoamingResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="createMobileAccount">
+			<wsdl:input message="tns:createMobileAccountRequest" />
+			<wsdl:output message="tns:createMobileAccountResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="retry">
+			<wsdl:documentation>
+				This operation is used to retry the Failure APIs
+			</wsdl:documentation>
+			<wsdl:input message="tns:retryRequest" />
+			<wsdl:output message="tns:retryResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+
+		<wsdl:operation name="teleVerification">
+			<wsdl:documentation>
+				This operation is used to retry the Failure APIs
+			</wsdl:documentation>
+			<wsdl:input message="tns:teleVerificationRequest" />
+			<wsdl:output message="tns:teleVerificationResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="subscriberStateChange">
+			<wsdl:documentation>
+				This operation is used to subscriberStateChange
+			</wsdl:documentation>
+			<wsdl:input message="tns:subscriberStateChangeRequest" />
+			<wsdl:output message="tns:subscriberStateChangeResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="activateTPtoSubscriber">
+			<wsdl:documentation>
+				This operation is used to   activateTPtoSubscriber
+			</wsdl:documentation>
+			<wsdl:input message="tns:activateTPtoSubscriberRequest" />
+			<wsdl:output message="tns:activateTPtoSubscriberResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageContract">
+			<wsdl:documentation>
+				This operation is used to   manageContract
+			</wsdl:documentation>
+			<wsdl:input message="tns:manageContractRequest" />
+			<wsdl:output message="tns:manageContractResponse" />
+			<wsdl:fault name="FaultData" message="tns:FaultData" />
+		</wsdl:operation>
+		
+</wsdl:portType>
+	<wsdl:binding name="DeviceServiceBinding" type="tns:DeviceServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+			
+			
+		<wsdl:operation name="changeDeviceRetry">
+			<soap:operation soapAction="changeDeviceRetry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+			
+	   <wsdl:operation name="prepaidActivationRetry">
+			<soap:operation soapAction="prepaidActivationRetry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			
+			<wsdl:operation name="SimActivate">
+			<soap:operation soapAction="SimActivate" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="changeDeviceRest">
+			<soap:operation soapAction="changeDeviceRest" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="changeDevice">
+			<soap:operation soapAction="changeDevice" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="activateMSISDN">
+			<soap:operation soapAction="activateMSISDN" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- Update MSISDN Status -->
+		<wsdl:operation name="updateMSISDNStatus">
+			<soap:operation soapAction="updateMSISDNStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of Update MSISDN Status -->
+		<!-- GetChangeMSISDNCharges Start -->
+		<wsdl:operation name="getChangeMSISDNCharges">
+			<soap:operation soapAction="getChangeMSISDNCharges" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of GetChangeMSISDNCharges -->
+		<!-- GetChangeIMSICharges Start -->
+		<wsdl:operation name="getChangeIMSICharges">
+			<soap:operation soapAction="getChangeIMSICharges" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of GetChangeIMSICharges -->
+		<wsdl:operation name="activateDeactivateGsmGprs">
+			<soap:operation soapAction="activateDeactivateGsmGprs" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getGsmGprsStatus">
+			<soap:operation soapAction="getGsmGprsStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="cancelLocationLink">
+			<soap:operation soapAction="cancelLocationLink" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getDeviceDetails">
+			<soap:operation soapAction="getDeviceDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="updateBillingDetails">
+			<soap:operation soapAction="updateBillingDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getSimType">
+			<soap:operation soapAction="getSimType" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="hssSubsStatusChange">
+			<soap:operation soapAction="hssSubsStatusChange" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="firstLUActivation">
+			<soap:operation soapAction="firstLUActivation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="OnActivation">
+			<soap:operation soapAction="OnActivation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="AfterSale">
+			<soap:operation soapAction="AfterSale" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="initiateChngMsisdn">
+			<soap:operation soapAction="initiateChngMsisdn" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="initiateChngSimSwap">
+			<soap:operation soapAction="initiateChngSimSwap" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="AfterSimSwap">
+			<soap:operation soapAction="AfterSimSwap" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="initiateRoaming">
+			<soap:operation soapAction="initiateRoaming" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="afterRoaming">
+			<soap:operation soapAction="afterRoaming" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="createMobileAccount">
+			<soap:operation soapAction="createMobileAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="retry">
+			<soap:operation soapAction="retry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="teleVerification">
+			<soap:operation soapAction="teleVerification" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="subscriberStateChange">
+			<soap:operation soapAction="subscriberStateChange" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="activateTPtoSubscriber">
+			<soap:operation soapAction="activateTPtoSubscriber" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageContract">
+			<soap:operation soapAction="manageContract" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+	<wsdl:service name="DeviceService">
+		<wsdl:port name="DeviceServicePort" binding="tns:DeviceServiceBinding">
+			<soap:address location="http://localhost:8080" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by xbus (xbus) -->
+<xs:schema xmlns:tns="http://xbus.xius.com/messages/selfcare/corpcustomerservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:comm="http://xbus.xius.com/messages/common" targetNamespace="http://xbus.xius.com/messages/selfcare/corpcustomerservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://xbus.xius.com/messages/common" schemaLocation="../../common/CommonData.xsd"/>
+	<xs:element name="GetCorpPreDataRequest">
+		<xs:annotation>
+			<xs:documentation>Get Corp Pre Data Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCorpPreDataResponse">
+		<xs:annotation>
+			<xs:documentation>Get Corp Pre Data Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="bankInfo" type="comm:ArrayOfString" minOccurs="0"/>
+						<xs:element name="businessInfo" type="comm:ArrayOfString" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScheduleTopupsRequest">
+		<xs:annotation>
+			<xs:documentation>ScheduleTopupsRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="officeCode" type="xs:integer"/>
+						<xs:element name="flag" type="comm:ManageType"/>
+						<xs:element name="topupDetails" type="tns:ToupDetailsList"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ToupDetailsList">
+		<xs:sequence>
+			<xs:element name="topupDetailsList" type="tns:ToupDetailsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ToupDetailsType">
+		<xs:sequence>
+			<xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="scheduleType" type="tns:ScheduleType" minOccurs="0"/>
+			<xs:element name="lowBalValue" type="xs:string" minOccurs="0"/>
+			<xs:element name="dayOfMonthValue" type="xs:string" minOccurs="0"/>
+			<xs:element name="amout" type="xs:decimal" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ScheduleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LOW_BAL"/>
+			<xs:enumeration value="DAY_OF_MONTH"/>
+			<xs:enumeration value="BOTH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ScheduleTopupsResponse">
+		<xs:annotation>
+			<xs:documentation>ScheduleTopupsRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="failedMsisdns" type="tns:FailureMsisdnsList" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FailureMsisdnsList">
+		<xs:sequence>
+			<xs:element name="failureMsisdnsList" type="tns:FailureMsisdnsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FailureMsisdnsType">
+		<xs:sequence>
+			<xs:element name="Msisdn" type="xs:long" minOccurs="0"/>
+			<xs:element name="errorCode" type="xs:long" minOccurs="0"/>
+			<xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetScheduleTopupsRequest">
+		<xs:annotation>
+			<xs:documentation>Get Schedule Topups Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="officeCode" type="xs:integer"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetScheduleTopupsResponse">
+		<xs:annotation>
+			<xs:documentation>Get Schedule Topups Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="topupDetails" type="tns:ToupDetailsList" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidatePersonalIdRequest">
+		<xs:annotation>
+			<xs:documentation>Validate Personal Id Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="officeCode" type="xs:integer"/>
+						<xs:element name="idNo" type="xs:string"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValidatePersonalIdResponse">
+		<xs:annotation>
+			<xs:documentation>Validate Personal Id Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!--Added for REQ1208  *MNP functionality changes for corporate GUI -->
+	<!-- ManageOffice Code API -->
+	<xs:element name="ManageOfficeCodeRequest">
+		<xs:annotation>
+			<xs:documentation>ManageOfficeCode Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="officeCode" type="xs:integer"/>
+						<xs:element name="sim" type="comm:SimType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ManageOfficeCodeResponse">
+		<xs:annotation>
+			<xs:documentation>ManageOfficeCode Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="successSims" type="comm:SimType" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="failureSims" type="comm:SimType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	
+	<xs:element name="activateCorpRCProdRequest">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="accountType" type="comm:AccountType"/>
+						<xs:element name="voucher" type="comm:voucherDetailsType" minOccurs="0" />
+						<xs:element name="eTopUp" type="comm:eTopUpDetailsType" minOccurs="0" />
+						<xs:element name="mrp" type="xs:string" minOccurs="0" />
+						<xs:element name="transId" type="xs:string" minOccurs="0"/>
+						<xs:element name="channel" type="xs:string" />
+						<xs:element name="reason" type="xs:string" minOccurs="0" />
+						<xs:element name="officeCode" type="xs:string" minOccurs="0" />
+						<!-- amount to debit from officeBalance -->
+						<xs:element name="amtToDebit" type="xs:string" minOccurs="0" />
+						
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="activateCorpRCProdResponse">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="transId" type="xs:string" minOccurs="0" />
+						<xs:element name="transRefNum" type="xs:string" minOccurs="0"/>
+						<xs:element name="balance" type="comm:mainBalanceType" minOccurs="0" />
+						<xs:element name="wallets" type="comm:walletListType" minOccurs="0" />
+						<xs:element name="attachedATPs" type="comm:atpsType" minOccurs="0" maxOccurs="unbounded"/>
+			  		</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	
+</xs:schema>

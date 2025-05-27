@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!--  <bean id="customEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+		<map>
+			<entry key="java.util.Date">
+				<bean class="org.springframework.beans.propertyeditors.CustomDateEditor">
+					<constructor-arg index="0">
+						<bean class="java.text.SimpleDateFormat">
+							<constructor-arg><value>yyyy-MM-dd</value></constructor-arg>
+						</bean>
+					</constructor-arg> 	
+					 <constructor-arg index="1"><value>true</value></constructor-arg>
+				</bean>
+			</entry>
+		</map>
+		</property>
+	</bean>  -->				
+	
+	<!--  define Stored Procedure Parameter type -->
+	<bean id="net.bcgi.util.db.ParamDef.IN"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+	<bean id="net.bcgi.util.db.ParamDef.OUT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+	<bean id="net.bcgi.util.db.ParamDef.IN_OUT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+
+
+	<!-- Start definition of SQL Types -->	
+	<bean id="java.sql.Types.VARCHAR"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+	<bean id="java.sql.Types.ARRAY"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+
+	<bean id="java.sql.Types.INTEGER"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+
+	<bean id="java.sql.Types.DATE"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+
+	<bean id="java.sql.Types.FLOAT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+
+	<bean id="java.sql.Types.DECIMAL"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+
+	<bean id="java.sql.Types.TIMESTAMP"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+
+	<bean id="java.sql.Types.BIGINT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+
+	<bean id="java.sql.Types.BIT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>	
+	<bean id="oracle.jdbc.driver.OracleTypes.CURSOR"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+</beans>

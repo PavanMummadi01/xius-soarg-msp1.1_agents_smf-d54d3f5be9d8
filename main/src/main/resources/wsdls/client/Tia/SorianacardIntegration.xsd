@@ -1,0 +1,129 @@
+<xs:schema xmlns="http://tia.xius.com/SorianacardIntegration.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tia.xius.com/SorianacardIntegration.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- RequestElememts -->
+	<xs:element name="getSorianaPointsRequest" type="GetSorianaPointsRequest" />
+	<xs:element name="getClientIdRequest" type="GetClientIdRequest" />
+	<xs:element name="modifyprincipalMSISDNRequest" type="RequestType" />
+	<xs:element name="addMSISDNRequest" type="RequestType" />
+	<xs:element name="deleteMSISDNRequest" type="RequestType" />
+
+	<!-- ResponseElememts -->
+	<xs:element name="getSorianaPointsResponse" type="GetSorianaPointsResponse" />
+	<xs:element name="getClientIdResponse" type="GetClientIdResponse" />
+	<xs:element name="modifyprincipalMSISDNResponse" type="ResponseType" />
+	<xs:element name="addMSISDNResponse" type="ResponseType" />
+	<xs:element name="deleteMSISDNResponse" type="ResponseType" />
+
+
+	<!-- GetSorianaPoints -->
+	<xs:complexType name="GetSorianaPointsRequest">
+		<xs:sequence>
+			<xs:element name="Account" type="AccountDetailType"
+				minOccurs="0" />
+			<xs:element name="customerId" type="customerIDType"
+				minOccurs="0" />
+			<xs:element name="userdefinedtype" type="UserDefinedType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetClientIdRequest">
+		<xs:sequence>
+			<xs:element name="Account" type="AccountDetailType"/>
+				<xs:element name="userdefinedtype" type="UserDefinedType"
+					minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetClientIdResponse">
+		<xs:sequence>
+			<xs:element name="Account" type="customerIDType" minOccurs="0" />
+			<xs:element name="Error" type="xs:string" minOccurs="0"/>
+			<xs:element name="userdefinedtype" type="UserDefinedType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetSorianaPointsResponse">
+		<xs:sequence>
+			<xs:element name="Account" type="customerIDType" minOccurs="0" />
+			<xs:element name="BalanceSheet" type="BalancesheetType" minOccurs="0" />
+			<xs:element name="Error" type="xs:string" minOccurs="0"/>
+			<xs:element name="userdefinedtype" type="UserDefinedType" minOccurs="0" />
+				
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ChangePrincipalMSISDN -->
+	<xs:complexType name="RequestType">
+		<xs:sequence>
+			<xs:element name="TransactionId" type="xs:string" />
+			<xs:element name="Customerid" type="xs:int" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="IsPrimary" type="xs:boolean" />
+			<xs:element name="Cardnumber" type="xs:decimal" minOccurs="0" />
+			<xs:element name="userdefinedtype" type="UserDefinedType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ResponseType">
+		<xs:sequence>
+			<xs:element name="Success" type="xs:boolean" minOccurs="0"  />
+			<xs:element name="Error" type="xs:string"  minOccurs="0"/>
+			<xs:element name="clientID" type="customerIDType" minOccurs="0" />
+			<xs:element name="userdefinedtype" type="UserDefinedType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="customerIDType">
+		<xs:sequence>
+			<xs:element name="customerid" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BalancesheetType">
+		<xs:sequence>
+			<xs:element name="customerid" type="xs:int" />
+			<xs:element name="Points" type="xs:int" />
+			<xs:element name="Cash" type="xs:decimal" />
+			<xs:element name="ElectronicMoney" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="AccountDetailType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0" />
+			<xs:element name="Parentalsurname" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="Maternalsurname" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="Cardnumber" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="UserDefinedType">
+		<xs:sequence>
+			<xs:element name="userdefinedtype1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefinedtype2" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefinedtype3" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefinedtype4" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefinedtype5" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+
+</xs:schema>

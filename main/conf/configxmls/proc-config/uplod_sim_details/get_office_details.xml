@@ -1,0 +1,316 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="CHANNEL_READ" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>PKG_CORPORATE_SELFCARE.CHANNEL_READ</value></property>
+	<property name="returnsResult"><value>false</value></property>
+	<property name="parameters">
+		<list> <!--  parameter list -->
+			<ref bean="get_office_details_1"></ref>
+			<ref bean="get_office_details_2"></ref>	
+			<ref bean="get_office_details_3"></ref>
+			<ref bean="get_office_details_4"></ref>
+			<ref bean="get_office_details_5"></ref>
+	 		<ref bean="get_office_details_6"></ref>
+	 		<ref bean="get_office_details_7"></ref>
+	 		<ref bean="get_office_details_8"></ref>
+	 		<ref bean="get_office_details_9"></ref>
+	 		<ref bean="get_office_details_10"></ref>
+	 		<ref bean="get_office_details_11"></ref>
+	 		<ref bean="get_office_details_12"></ref>
+	 		<ref bean="get_office_details_13"></ref>
+	 		<ref bean="get_office_details_14"></ref>
+	 		<ref bean="get_office_details_15"></ref>
+	 		<ref bean="get_office_details_16"></ref>
+	 		<ref bean="get_office_details_17"></ref>
+	 		<ref bean="get_office_details_18"></ref>
+	 		<ref bean="get_office_details_19"></ref>
+	 		<ref bean="get_office_details_20"></ref>
+	 		<ref bean="get_office_details_21"></ref>
+	 		<ref bean="get_office_details_22"></ref>
+	 		<ref bean="get_office_details_23"></ref>
+	 		<ref bean="get_office_details_24"></ref>
+	 		<ref bean="get_office_details_25"></ref>
+	 		<ref bean="get_office_details_26"></ref>
+	 		<ref bean="get_office_details_27"></ref>
+	 		<ref bean="get_office_details_28"></ref>
+	 		<ref bean="get_office_details_29"></ref>
+	 		<ref bean="get_office_details_30"></ref>
+	 		<ref bean="get_office_details_31"></ref>
+	 		
+	 		<!--
+   				REQ#1235: corporate UI post paid changes
+   				Modified: Phani.Chavala
+   				Date: 20th Sep, 2012
+   				
+   				Disc: Added post paid details optional element 
+   			 -->
+	 		<ref bean="get_office_details_32"></ref>
+	 		<ref bean="get_office_details_33"></ref>
+	 		<ref bean="get_office_details_34"></ref>
+	 		<ref bean="get_office_details_35"></ref>
+		</list>
+	</property>
+	</bean>
+	<bean id="get_office_details_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>office_code</value></property>
+		<property name="mapTo"><value>office_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="get_office_details_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	<bean id="get_office_details_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>level_no</value></property>
+		<property name="mapTo"><value>level_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>office_name</value></property>
+		<property name="mapTo"><value>office_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>address</value></property>
+		<property name="mapTo"><value>address</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>city</value></property>
+		<property name="mapTo"><value>city</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>state</value></property>
+		<property name="mapTo"><value>state</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>country</value></property>
+		<property name="mapTo"><value>country</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>8</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>postal_code</value></property>
+		<property name="mapTo"><value>postal_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>9</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>emailid</value></property>
+		<property name="mapTo"><value>emailid</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>phone_no</value></property>
+		<property name="mapTo"><value>phone_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>parent_entcode</value></property>
+		<property name="mapTo"><value>parent_entcode</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>12</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>off_manager_name</value></property>
+		<property name="mapTo"><value>off_manager_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>13</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>contact_per_code</value></property>
+		<property name="mapTo"><value>contact_per_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+		<property name="position"><value>14</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>credit_limit</value></property>
+		<property name="mapTo"><value>credit_limit</value></property>
+		<property name="type"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+		<property name="position"><value>15</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_16" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>status_code</value></property>
+		<property name="mapTo"><value>status_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>16</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_17" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>plan_id</value></property>
+		<property name="mapTo"><value>plan_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+		<property name="position"><value>17</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_18" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>deposit_amt</value></property>
+		<property name="mapTo"><value>deposit_amt</value></property>
+		<property name="type"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+		<property name="position"><value>18</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_19" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>plan_name</value></property>
+		<property name="mapTo"><value>plan_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>19</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_20" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>outstand_amt</value></property>
+		<property name="mapTo"><value>outstanding_amt</value></property>
+		<property name="type"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+		<property name="position"><value>20</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_21" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pay_cnt</value></property>
+		<property name="mapTo"><value>pay_cnt</value></property>
+		<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+		<property name="position"><value>21</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_22" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>company_registration_no</value></property>
+		<property name="mapTo"><value>company_registration_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>22</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_23" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>bank_name</value></property>
+		<property name="mapTo"><value>bank_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>23</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	<bean id="get_office_details_24" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>bank_account_holder_name</value></property>
+		<property name="mapTo"><value>bank_account_holder_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>24</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	<bean id="get_office_details_25" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>bank_account_number</value></property>
+		<property name="mapTo"><value>bank_account_number</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>25</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	<bean id="get_office_details_26" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>type_of_business</value></property>
+		<property name="mapTo"><value>type_of_business</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>26</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	<bean id="get_office_details_27" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>contact_person</value></property>
+		<property name="mapTo"><value>contact_person</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>27</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_28" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_state_name</value></property>
+		<property name="mapTo"><value>po_state_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>28</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_29" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_country_name</value></property>
+		<property name="mapTo"><value>po_country_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>29</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_office_details_30" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_fax</value></property>
+		<property name="mapTo"><value>fax</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>30</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<!--
+   		REQ#1235: corporate UI post paid changes
+   		Modified: Phani.Chavala
+   		Date: 20th Sep, 2012
+   		
+   		Disc: Added post paid details optional element 
+   	-->
+   	
+   	<bean id="get_office_details_31" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>postPaidCreditLimit</value></property>
+		<property name="mapTo"><value>postPaidCreditLimit</value></property>
+		<property name="type"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+		<property name="position"><value>31</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_32" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>availableCreditLimit</value></property>
+		<property name="mapTo"><value>availableCreditLimit</value></property>
+		<property name="type"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+		<property name="position"><value>32</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_33" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>billingDate</value></property>
+		<property name="mapTo"><value>billingDate</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>33</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_office_details_34" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>billingFrequency</value></property>
+		<property name="mapTo"><value>billingFrequency</value></property>
+		<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+		<property name="position"><value>34</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+			
+	<bean id="get_office_details_35" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>35</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+</beans>

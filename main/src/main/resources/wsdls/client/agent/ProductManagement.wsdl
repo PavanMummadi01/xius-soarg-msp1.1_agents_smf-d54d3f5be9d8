@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:tns="http://billing.xius.com/ProductManagement.wsdl"
+	xmlns:pro="http://billing.xius.com/ProductManagement.xsd"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wshdr="http://billing.xius.com/common/header/HeaderDetails.xsd"
+	xmlns:err="http://billing.xius.com/common/error/ErrorDetails.xsd"
+	targetNamespace="http://billing.xius.com/ProductManagement.wsdl">
+	<!-- Types definition -->
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://billing.xius.com/ProductManagement.wsdl"
+			targetNamespace="http://billing.xius.com/ProductManagement.wsdl">
+			<xs:import namespace="http://billing.xius.com/ProductManagement.xsd"
+				schemaLocation="ProductManagement.xsd" />
+			<xs:import namespace="http://billing.xius.com/common/header/HeaderDetails.xsd"
+				schemaLocation="HeaderDetails.xsd" />
+			<xs:import namespace="http://billing.xius.com/common/error/ErrorDetails.xsd"
+				schemaLocation="ErrorDetails.xsd" />
+		</xs:schema>
+	</wsdl:types>
+	<!-- End of Types definition -->
+	<!--  Messages definition   -->
+	
+	
+	<wsdl:message name="getProductDetailsRequest">
+		<wsdl:part element="pro:getProductDetailsRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getProductDetailsResponse">
+		<wsdl:part element="pro:getProductDetailsResponse" name="body" />
+	</wsdl:message>
+	
+	
+	<wsdl:message name="getProductDtlsRequest">
+		<wsdl:part element="pro:getProductDtlsRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getProductDtlsResponse">
+		<wsdl:part element="pro:getProductDtlsResponse" name="body" />
+	</wsdl:message>
+	<wsdl:message name="productPurchageRequest">
+		<wsdl:part element="pro:productPurchageRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="productPurchageResponse">
+		<wsdl:part element="pro:productPurchageResponse" name="body" />
+	</wsdl:message>
+	
+	<wsdl:message name="productPurchageEnquiryRequest">
+		<wsdl:part element="pro:productPurchageEnquiryRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="productPurchageEnquiryResponse">
+		<wsdl:part element="pro:productPurchageEnquiryResponse" name="body" />
+	</wsdl:message>
+	
+	<!--added by premalatha for IVR  -->
+	
+	<wsdl:message name="getTpdetailsRequest">
+		<wsdl:part element="pro:getTpdetailsRsequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getTpdetailsResponse">
+		<wsdl:part element="pro:getTpdetailsResponse" name="body" />
+	</wsdl:message>
+	
+	<wsdl:message name="getAvailableTpsRequest">
+		<wsdl:part element="pro:getAvailableTpsRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getAvailableTpsResponse">
+		<wsdl:part element="pro:getAvailableTpsResponse" name="body" />
+	</wsdl:message>
+	
+	
+	<wsdl:message name="getBundleBalancesRequest">
+		<wsdl:part element="pro:getBundleBalancesRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getBundleBalancesResponse">
+		<wsdl:part element="pro:getBundleBalancesResponse" name="body" />
+	</wsdl:message>
+	
+	<wsdl:message name="getTpBundleDtlsRequest">
+		<wsdl:part element="pro:getTpBundleDtlsRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getTpBundleDtlsResponse">
+		<wsdl:part element="pro:getTpBundleDtlsResponse" name="body" />
+	</wsdl:message>
+<wsdl:message name="getBundleDtlsRequest">
+		<wsdl:part element="pro:getBundleDtlsRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getBundleDtlsResponse">
+		<wsdl:part element="pro:getBundleDtlsResponse" name="body" />
+	</wsdl:message>
+	
+	   <wsdl:message name="getATPBenefitsRequest">
+		<wsdl:part element="pro:getATPBenefitsRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getATPBenefitsResponse">
+		<wsdl:part element="pro:getATPBenefitsResponse" name="body" />
+	</wsdl:message>
+	
+	<!--  For IVR - get_tm_remaining_bktbal -->
+	<wsdl:message name="getRemainingBktBalRequest">
+		<wsdl:part element="pro:getRemainingBktBalRequest" name="body" />
+	</wsdl:message>
+	<wsdl:message name="getRemainingBktBalResponse">
+		<wsdl:part element="pro:getRemainingBktBalResponse" name="body" />
+	</wsdl:message>
+	
+	
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader" />
+	</wsdl:message>
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem" />
+	</wsdl:message>
+	<!-- End of Messages definition   -->
+	
+	<!-- Port type definition -->
+	<wsdl:portType name="ProductPortType">
+	<wsdl:operation name="getTpBundleDtls">
+			<wsdl:input message="tns:getTpBundleDtlsRequest" />
+			<wsdl:output message="tns:getTpBundleDtlsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+	
+	<wsdl:operation name="getBundleBalances">
+			<wsdl:input message="tns:getBundleBalancesRequest" />
+			<wsdl:output message="tns:getBundleBalancesResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+	
+	
+	<wsdl:operation name="getTpDetails">
+			<wsdl:input message="tns:getTpdetailsRequest" />
+			<wsdl:output message="tns:getTpdetailsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+	
+	
+	<wsdl:operation name="getAvailableTps">
+			<wsdl:input message="tns:getAvailableTpsRequest" />
+			<wsdl:output message="tns:getAvailableTpsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+	
+	<wsdl:operation name="getBundleDtls">
+			<wsdl:input message="tns:getBundleDtlsRequest" />
+			<wsdl:output message="tns:getBundleDtlsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+	
+	
+	<wsdl:operation name="getProductDetails">
+			<wsdl:input message="tns:getProductDetailsRequest" />
+			<wsdl:output message="tns:getProductDetailsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="getProductDtls">
+			<wsdl:input message="tns:getProductDtlsRequest" />
+			<wsdl:output message="tns:getProductDtlsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="productPurchage">
+			<wsdl:input message="tns:productPurchageRequest" />
+			<wsdl:output message="tns:productPurchageResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="productPurchageEnquiry">
+			<wsdl:input message="tns:productPurchageEnquiryRequest" />
+			<wsdl:output message="tns:productPurchageEnquiryResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getATPBenefits">
+			<wsdl:input message="tns:getATPBenefitsRequest" />
+			<wsdl:output message="tns:getATPBenefitsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getRemainingBktBal">
+			<wsdl:input message="tns:getRemainingBktBalRequest" />
+			<wsdl:output message="tns:getRemainingBktBalResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+	</wsdl:portType>
+	<!-- End of Port type definition -->
+	<wsdl:binding name="ProductBinding" type="tns:ProductPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+			
+				<wsdl:operation name="getTpBundleDtls">
+			<soap:operation soapAction="getTpBundleDtls" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+			
+				<wsdl:operation name="getBundleBalances">
+			<soap:operation soapAction="getBundleBalances" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+			<!-- get Productdetails  status -->
+			<wsdl:operation name="getProductDetails">
+			<soap:operation soapAction="getProductDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of Productdetails status -->	
+<wsdl:operation name="getBundleDtls">
+			<soap:operation soapAction="getBundleDtls" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTpDetails">
+			<soap:operation soapAction="getTpDetails" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getAvailableTps">
+			<soap:operation soapAction="getAvailableTps" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		<!-- productPurchageEnquiry  status -->
+			<wsdl:operation name="productPurchage">
+			<soap:operation soapAction="productPurchage" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of productPurchage status -->	
+		
+		
+<!--   productPurchageEnquiry  status -->
+			<wsdl:operation name="productPurchageEnquiry">
+			<soap:operation soapAction="productPurchageEnquiry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of productPurchageEnquiry status -->	
+
+<wsdl:operation name="getProductDtls">
+			<soap:operation soapAction="getProductDtls" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+     
+     
+     <wsdl:operation name="getATPBenefits">
+			<soap:operation soapAction="getATPBenefits" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+              
+
+     <wsdl:operation name="getRemainingBktBal">
+			<soap:operation soapAction="getRemainingBktBal" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+
+	</wsdl:binding>
+	<wsdl:service name="ProductDetails">
+		<wsdl:port binding="tns:ProductBinding" name="ProductPort">
+			<soap:address
+				location="http://localhost:8080/mspgwservices/services/ProductPort" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

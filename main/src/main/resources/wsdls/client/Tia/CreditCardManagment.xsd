@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://ccard.tia.xius.com/CreditCardManagment.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ccard.tia.xius.com/CreditCardManagment.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="debitFromCardRequest" type="debitFromCardRequest" />
+	<xs:element name="debitFromCardResponse" type="debitFromCardResponse" />
+
+<xs:element name="debitFromWalletRequest" type="debitFromWalletRequest" />
+	<xs:element name="debitFromWalletResponse" type="debitFromWalletResponse" />
+	
+<!-- ============================================== YF Register CC  start==================================-->	 
+	<xs:element name="registerCCRequest" type="registerCCRequest" />
+	<xs:element name="registerCCResponse" type="registerCCResponse"/>
+	
+	<xs:complexType name="registerCCRequest">
+	<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="accountID" type="xs:string" />
+			<xs:element name="DPI" type="xs:string" />
+			<xs:element name="SIMNO" type="xs:string" />
+			<xs:element name="IMSI" type="xs:string" minOccurs="0"/>
+			<xs:element name="sellerCode" type="xs:string" />
+			<xs:element name="transactionId" type="xs:string" minOccurs="0" />
+			<xs:element name="channel" type="xs:string"  minOccurs="0" />
+			<xs:element name="userdefined1" type="xs:string"  minOccurs="0" />
+			<xs:element name="userdefined2" type="xs:string"  minOccurs="0" />
+			<xs:element name="userdefined3" type="xs:string" minOccurs="0" />
+			<xs:element name="userdefined4" type="xs:string" minOccurs="0" />
+			<xs:element name="userdefined5" type="xs:string" minOccurs="0" />
+	</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="registerCCResponse">
+	<xs:sequence>
+	<xs:element name="result" type="ResultDataType" minOccurs="0"/>
+	</xs:sequence>
+	</xs:complexType>
+	
+ <!-- ============================================== YF Register CC  End==================================-->	 
+<!-- ==============================================debitFromCC start==================================-->
+<xs:element name="debitFromCCRequest" type="debitFromCCRequest" />
+	<xs:element name="debitFromCCResponse" type="debitFromCCResponse"/>
+
+	<xs:complexType name="debitFromCardRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="xs:string" />
+			<xs:element name="amount" type="xs:string" />
+			<xs:element name="cardNumber" type="xs:string" />
+			<xs:element name="cvv" type="xs:string" />
+			<xs:element name="nameOnCard" type="xs:string" />
+			<xs:element name="Expirydate" type="xs:string" />
+			<xs:element name="transactionId" type="xs:string" />
+			<xs:element name="userdefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined2" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined3" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined4" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined5" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="debitFromCCRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="xs:string" minOccurs="0"/>
+			<xs:element name="accountID" type="xs:string" minOccurs="0"/>
+			<xs:element name="amount" type="xs:string" />
+			<xs:element name="transactionId" type="xs:string" />
+			<xs:element name="userdefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined2" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined3" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined4" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userdefined5" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="debitFromCCResponse">
+		<xs:sequence>
+		<xs:element name="result" type="ResultDataType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+<!-- ==============================================debitFromCC End==================================-->	
+
+	<xs:complexType name="debitFromCardResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" />
+			<xs:element name="responsecode" type="xs:string" />
+			<xs:element name="respdescription" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="debitFromWalletRequest">
+		<xs:sequence>
+		    <xs:element name="walletType" type="xs:string" />
+			<xs:element name="toAccount" type="MSISDNType" />
+			<xs:element name="fromAccount" type="MSISDNType" />
+			<xs:element name="amount" type="xs:string" />
+			<xs:element name="transactionID" type="xs:string" />
+			<xs:element name="userdefined1" type="xs:string" minOccurs="0" />
+			<xs:element name="userdefined2" type="xs:string" minOccurs="0" />
+			<xs:element name="userdefined3" type="xs:string" minOccurs="0" />
+					</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="debitFromWalletResponse">
+		<xs:sequence>
+		    <xs:element name="responsecode" type="xs:string" minOccurs="0" />
+			<xs:element name="respdescription" type="xs:string" minOccurs="0" />
+			<xs:element name="respData" type="RespDataType" minOccurs="0" />
+		</xs:sequence>
+		
+	</xs:complexType>
+	<xs:complexType name="RespDataType">
+		<xs:sequence>
+		    <xs:element name="statusCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="xs:string" minOccurs="0"/>
+			<xs:element name="statusMsg" type="xs:string" minOccurs="0"/>
+			<xs:element name="amount" type="xs:string" minOccurs="0" />
+			<xs:element name="walletAccNo" type="xs:string"  minOccurs="0" />
+			</xs:sequence>
+	</xs:complexType>
+<xs:complexType name="ResultDataType">
+		<xs:sequence>
+		<xs:element name="respStatus" type="xs:int" minOccurs="0" />
+		    <xs:element name="respcode" type="xs:string" minOccurs="0" />
+			<xs:element name="respdescription" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+		
+	</xs:complexType>
+<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+</xs:schema>

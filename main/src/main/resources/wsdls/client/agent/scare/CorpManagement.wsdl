@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:tns="http://scare.xbus.xiusbcgi.com/CorpManagement.wsdl"
+	xmlns:corp="http://scare.xbus.xiusbcgi.com/CorpManagement.xsd"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wshdr="http://scare.xbus.xiusbcgi.com/common/header/HeaderDetails.xsd"
+	xmlns:err="http://scare.xbus.xiusbcgi.com/common/error/ErrorDetails.xsd"
+	targetNamespace="http://scare.xbus.xiusbcgi.com/CorpManagement.wsdl">
+	
+  <wsdl:types>
+ 	 <xs:schema xmlns:tns="http://scare.xbus.xiusbcgi.com/CorpManagement.wsdl"
+			targetNamespace="http://scare.xbus.xiusbcgi.com/CorpManagement.wsdl">
+			<xs:import namespace="http://scare.xbus.xiusbcgi.com/CorpManagement.xsd"
+				schemaLocation="CorpManagement.xsd" />
+			<xs:import
+				namespace="http://scare.xbus.xiusbcgi.com/common/header/HeaderDetails.xsd"
+				schemaLocation="HeaderDetails.xsd" />
+			<xs:import
+				namespace="http://scare.xbus.xiusbcgi.com/common/error/ErrorDetails.xsd"
+				schemaLocation="ErrorDetails.xsd" />
+		</xs:schema>
+  </wsdl:types>
+ 
+  <!-- GetUsersOfficesRequest -->
+	<wsdl:message name="getUsersOfficesRequest">
+		<wsdl:part name="body" element="corp:getUsersOfficesRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="getUsersOfficesResponse">
+		<wsdl:part name="body" element="corp:getUsersOfficesResponse" />
+	</wsdl:message>
+   <!--  GetUsersOfficesRequest -->
+   
+  <!-- Get TopUp Schedule -->
+	<wsdl:message name="getTopUpScheduleRequest">
+		<wsdl:part name="body" element="corp:getTopUpScheduleRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="getTopUpScheduleResponse">
+		<wsdl:part name="body" element="corp:getTopUpScheduleResponse" />
+	</wsdl:message>
+   <!--  end of GetTopUpSchedule-->
+   
+   
+  <!--  Manage Corp Banner  -->
+  <wsdl:message name="manageBannerRequest">
+		<wsdl:part name="body" element="corp:manageBannerRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="manageBannerResponse">
+		<wsdl:part name="body" element="corp:manageBannerResponse" />
+	</wsdl:message>
+  <!--  End of Manage Corp Banner  -->
+
+  <!--  Manage Corp Banner  -->
+  <wsdl:message name="getBannerRequest">
+		<wsdl:part name="body" element="corp:getBannerRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="getBannerResponse">
+		<wsdl:part name="body" element="corp:getBannerResponse" />
+	</wsdl:message>
+  <!--  End of Manage Corp Banner  -->
+  
+  <!--  get Channel Product  -->
+  <wsdl:message name="getChannelProductRequest">
+		<wsdl:part name="body" element="corp:getChannelProductRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="getChannelProductResponse">
+		<wsdl:part name="body" element="corp:getChannelProductResponse" />
+	</wsdl:message>
+  <!--  End of get Channel Product-->
+ 
+  	<wsdl:message name="uploadTopUpScheduleRequest">
+		<wsdl:part name="body" element="corp:uploadTopUpScheduleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="uploadTopUpScheduleResponse">
+		<wsdl:part name="body" element="corp:uploadTopUpScheduleResponse"/>
+	</wsdl:message>
+
+  	<wsdl:message name="corporateLoginRequest">
+		<wsdl:part name="body" element="corp:corporateLoginRequest"/>
+	</wsdl:message>
+	<wsdl:message name="corporateLoginResponse">
+		<wsdl:part name="body" element="corp:corporateLoginResponse"/>
+	</wsdl:message>
+	
+	<!--  Manage Scheduler Top up Config  -->
+	<wsdl:message name="manageSchdTopupConfigRequest">
+		<wsdl:part name="body" element="corp:manageSchdTopupConfigRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageSchdTopupConfigResponse">
+		<wsdl:part name="body" element="corp:manageSchdTopupConfigResponse"/>
+	</wsdl:message>
+    <!--  End of Manage Scheduler Top up Config  -->
+    
+    <!--  Manage Group  -->
+	<wsdl:message name="manageGroupRequest">
+		<wsdl:part name="body" element="corp:manageGroupRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageGroupResponse">
+		<wsdl:part name="body" element="corp:manageGroupResponse"/>
+	</wsdl:message>
+    <!--  End of Manage Group  -->
+    
+    <!--  manage upload MSISDN Group  -->
+	<wsdl:message name="manageUploadMSISDNGroupRequest">
+		<wsdl:part name="body" element="corp:manageUploadMSISDNGroupRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageUploadMSISDNGroupResponse">
+		<wsdl:part name="body" element="corp:manageUploadMSISDNGroupResponse"/>
+	</wsdl:message>
+    <!--  End of manage upload MSISDN Group  -->
+    
+    <!--  getGroupInfo  -->
+	<wsdl:message name="getGroupInfoRequest">
+		<wsdl:part name="body" element="corp:getGroupInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getGroupInfoResponse">
+		<wsdl:part name="body" element="corp:getGroupInfoResponse"/>
+	</wsdl:message>
+	<!--  End of getGroupInfo  -->  
+	
+	<!--  getCGUGroupInfo  -->
+	<wsdl:message name="getCUGGroupInfoRequest">
+		<wsdl:part name="body" element="corp:getCUGGroupInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCUGGroupInfoResponse">
+		<wsdl:part name="body" element="corp:getCUGGroupInfoResponse"/>
+	</wsdl:message>
+	<!--  End of getCGUGroupInfo  --> 
+	
+	 <!--  manageProduct  -->
+	<wsdl:message name="manageProductRequest">
+		<wsdl:part name="body" element="corp:manageProductRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageProductResponse">
+		<wsdl:part name="body" element="corp:manageProductResponse"/>
+	</wsdl:message>
+	<!--  End of manageProduct  -->  
+	
+    <!--  getProductType  -->
+	<wsdl:message name="getProductTypeRequest">
+		<wsdl:part name="body" element="corp:getProductTypeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getProductTypeResponse">
+		<wsdl:part name="body" element="corp:getProductTypeResponse"/>
+	</wsdl:message>
+	<!--  End of getProductType  -->  
+	
+	<!--  getStateCntryCodes  -->
+	<wsdl:message name="getStateCntryCodesRequest">
+		<wsdl:part name="body" element="corp:getStateCntryCodesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getStateCntryCodesResponse">
+		<wsdl:part name="body" element="corp:getStateCntryCodesResponse"/>
+	</wsdl:message>
+	<!--  End of getStateCntryCodes  -->  
+
+	<!--  validateId  -->
+	<wsdl:message name="validateIdRequest">
+		<wsdl:part name="body" element="corp:validateIdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="validateIdResponse">
+		<wsdl:part name="body" element="corp:validateIdResponse"/>
+	</wsdl:message>
+	<!--  End of validateId  -->  
+  
+    <!-- get Associate Msisdn By Office-->
+   	<wsdl:message name="getAssocMsisdnByOfficeRequest">
+		<wsdl:part name="body" element="corp:getAssocMsisdnByOfficeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAssocMsisdnByOfficeResponse">
+		<wsdl:part name="body" element="corp:getAssocMsisdnByOfficeResponse"/>
+	</wsdl:message>
+    <!-- get Associate Msisdn By Office-->
+      
+    <!-- get Associate Msisdn By Office duplicate version with additional field in response -->
+    <!--
+    	 REQ# : 1276 – SME for TT ; Small and Medium Enterprise functionality in Corporate Selfcare – To be addressed for TuneTalk. 
+		 Entire getAssocMsisdnByOffice API is duplicated by adding account type in response.
+		 	 
+		 This seems ugly, rather than adding new field in existing API designing a new API is not suggestion.
+		 but this is due to lack of xBus release and back ward compatibility of existing UIs. 
+		 we are duplicating this.
+		 		
+		 Note: UI wants a new API to resolve above issue.
+		 		
+		 Date:  21st Nov, 2012
+		 Done By: Phani.Chavala
+	 -->
+   	<wsdl:message name="getAssocMsisdnByOfficeV1Request">
+		<wsdl:part name="body" element="corp:getAssocMsisdnByOfficeV1Request"/>
+	</wsdl:message>
+	<wsdl:message name="getAssocMsisdnByOfficeV1Response">
+		<wsdl:part name="body" element="corp:getAssocMsisdnByOfficeV1Response"/>
+	</wsdl:message>
+    <!-- End get Associate Msisdn By Office duplicate version with additional field in response -->
+
+	<!-- Update Account Status -->
+	<wsdl:message name="updateActStatusRequest">
+		<wsdl:part name="body" element="corp:updateActStatusRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateActStatusResponse">
+		<wsdl:part name="body" element="corp:updateActStatusResponse" />
+	</wsdl:message>
+	<!-- End Update Account Status -->
+
+	<!-- manage Corp SIMs -->
+	<wsdl:message name="updateOfficeCodeRequest">
+		<wsdl:part name="body" element="corp:updateOfficeCodeRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateOfficeCodeResponse">
+		<wsdl:part name="body" element="corp:updateOfficeCodeResponse" />
+	</wsdl:message>
+	<!-- End manage Corp SIMs -->
+	<!-- getAccount  -->
+	<wsdl:message name="getAccountRequest">
+		<wsdl:part name="body" element="corp:getAccountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAccountResponse">
+		<wsdl:part name="body" element="corp:getAccountResponse"/>
+	</wsdl:message>	
+	<!-- end of getAccount  -->
+	
+	<!-- settle payment  -->
+	<wsdl:message name="settlePaymentRequest">
+		<wsdl:part name="body" element="corp:settlePaymentRequest"/>
+	</wsdl:message>
+	<wsdl:message name="settlePaymentResponse">
+		<wsdl:part name="body" element="corp:settlePaymentResponse"/>
+	</wsdl:message>	
+	<!-- end of settlePayment  -->
+	
+
+<!-- Settle Payments data-->
+	<wsdl:message name="getSettlementDataRequest">
+		<wsdl:part name="body" element="corp:getSettlementDataRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getSettlementDataResponse">
+		<wsdl:part name="body" element="corp:getSettlementDataResponse"/>
+	</wsdl:message>
+	<!-- end of Settle Payments data  -->
+
+
+	<!--update Settle Payments -->
+	<wsdl:message name="updateStlmntStatusRequest">
+		<wsdl:part name="body" element="corp:updateStlmntStatusRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="updateStlmntStatusResponse">
+		<wsdl:part name="body" element="corp:updateStlmntStatusResponse"/>
+	</wsdl:message>
+	<!-- end of Settle Payments  -->
+
+	<!--manageCUGTopUpConfig -->
+	<wsdl:message name="manageCUGTopUpConfigRequest">
+		<wsdl:part name="body" element="corp:manageCUGTopUpConfigRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="manageCUGTopUpConfigResponse">
+		<wsdl:part name="body" element="corp:manageCUGTopUpConfigResponse"/>
+	</wsdl:message>
+	<!-- end of manageCUGTopUpConfig  -->
+	
+	
+	<!--getCUGReversalAccounts -->
+	<wsdl:message name="getCUGReversalAccountsRequest">
+		<wsdl:part name="body" element="corp:getCUGReversalAccountsRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getCUGReversalAccountsResponse">
+		<wsdl:part name="body" element="corp:getCUGReversalAccountsResponse"/>
+	</wsdl:message>
+	<!-- end of getCUGReversalAccounts  -->
+	
+	
+	
+	<!--updateAbandonStatus -->
+	<wsdl:message name="updateAbandonStatusRequest">
+		<wsdl:part name="body" element="corp:updateAbandonStatusRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="updateAbandonStatusResponse">
+		<wsdl:part name="body" element="corp:updateAbandonStatusResponse"/>
+	</wsdl:message>
+	<!-- end of updateAbandonStatus  -->
+	
+  <wsdl:message name="WsMessageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader" />
+	</wsdl:message>
+
+	<wsdl:message name="faultmessage">
+		<wsdl:part name="body" element="err:errorDetailItem" />
+	</wsdl:message>
+	<!--  End of All messages -->
+	
+  <wsdl:portType name="CorpManagementPortType">
+  
+  	<!-- getUsersOffices -->
+    <wsdl:operation name="getUsersOffices">
+      <wsdl:input message="tns:getUsersOfficesRequest"/>
+      <wsdl:output message="tns:getUsersOfficesResponse"/>
+      <wsdl:fault name="fault" message="tns:faultmessage" />
+    </wsdl:operation>
+    <!--  End of getUsersOffices  -->
+    
+  	<!-- getTopUpSchedule -->
+    <wsdl:operation name="getTopUpSchedule">
+      <wsdl:input message="tns:getTopUpScheduleRequest"/>
+      <wsdl:output message="tns:getTopUpScheduleResponse"/>
+      <wsdl:fault name="fault" message="tns:faultmessage" />
+    </wsdl:operation>
+    <!--  End of getTopUpSchedule  -->
+   	   	
+   	<!-- Manage Corp banner -->
+    <wsdl:operation name="manageBanner">
+      <wsdl:input message="tns:manageBannerRequest"/>
+      <wsdl:output message="tns:manageBannerResponse"/>
+      <wsdl:fault name="fault" message="tns:faultmessage" />
+    </wsdl:operation>
+    <!--  End of Manage Corp banner  -->
+   	<!-- Manage Corp banner -->
+    <wsdl:operation name="getBanner">
+      <wsdl:input message="tns:getBannerRequest"/>
+      <wsdl:output message="tns:getBannerResponse"/>
+      <wsdl:fault name="fault" message="tns:faultmessage" />
+    </wsdl:operation>
+    <!--  End of Manage Corp banner  -->
+    <!-- Get Channel Product -->
+    <wsdl:operation name="getChannelProduct">
+      <wsdl:input message="tns:getChannelProductRequest"/>
+      <wsdl:output message="tns:getChannelProductResponse"/>
+      <wsdl:fault name="fault" message="tns:faultmessage" />
+    </wsdl:operation>
+    <!-- End of Get Channel Product -->
+    <!-- schedule msisdn top up -->
+    <wsdl:operation name="uploadTopUpSchedule">
+		<wsdl:input message="tns:uploadTopUpScheduleRequest"/>
+		<wsdl:output message="tns:uploadTopUpScheduleResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+    <!-- end of schedule msisdn top up -->
+    <wsdl:operation name="corporateLogin">
+		<wsdl:input message="tns:corporateLoginRequest"/>
+		<wsdl:output message="tns:corporateLoginResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+	<!--  Manage Scheduler Top up Config  -->
+    <wsdl:operation name="manageSchdTopupConfig">
+		<wsdl:input message="tns:manageSchdTopupConfigRequest"/>
+		<wsdl:output message="tns:manageSchdTopupConfigResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+    <!--  End of Manage Scheduler Top up Config  -->
+    
+    <!--  Manage Group  -->
+    <wsdl:operation name="manageGroup">
+		<wsdl:input message="tns:manageGroupRequest"/>
+		<wsdl:output message="tns:manageGroupResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+    <!--  End of Manage Group  -->
+    
+    <!--  upload MSISDN Group  -->
+    <wsdl:operation name="manageUploadMSISDNGroup">
+		<wsdl:input message="tns:manageUploadMSISDNGroupRequest"/>
+		<wsdl:output message="tns:manageUploadMSISDNGroupResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+    <!--  End of upload MSISDN Group  -->
+    
+    <!--  getGroupInfo  -->
+    <wsdl:operation name="getGroupInfo">
+		<wsdl:input message="tns:getGroupInfoRequest"/>
+		<wsdl:output message="tns:getGroupInfoResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+  	</wsdl:operation>
+    <!--  End of getGroupInfo  -->
+    
+     <!--  getCUGGroupInfo  -->
+    <wsdl:operation name="getCUGGroupInfo">
+		<wsdl:input message="tns:getCUGGroupInfoRequest"/>
+		<wsdl:output message="tns:getCUGGroupInfoResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+  	</wsdl:operation>
+    <!--  End of getCUGGroupInfo  -->
+    
+     <!--  manage Product  -->
+    <wsdl:operation name="manageProduct">
+		<wsdl:input message="tns:manageProductRequest"/>
+		<wsdl:output message="tns:manageProductResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+  	</wsdl:operation>
+    <!--  End of manage Product  -->
+    <!--  getProductType  -->
+    <wsdl:operation name="getProductType">
+		<wsdl:input message="tns:getProductTypeRequest"/>
+		<wsdl:output message="tns:getProductTypeResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+  	</wsdl:operation>
+    <!--  End of getProductType  -->
+    
+     <!--  getStateCntryCodes  -->
+    <wsdl:operation name="getStateCntryCodes">
+		<wsdl:input message="tns:getStateCntryCodesRequest"/>
+		<wsdl:output message="tns:getStateCntryCodesResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+  	</wsdl:operation>
+    <!--  End of getStateCntryCodes  -->
+     
+     <!--  validateId  -->
+    <wsdl:operation name="validateId">
+		<wsdl:input message="tns:validateIdRequest"/>
+		<wsdl:output message="tns:validateIdResponse"/>
+		<wsdl:fault name="fault" message="tns:faultmessage"/>
+  	</wsdl:operation>
+    <!--  End of validateId  -->
+
+   	 <!-- get Assoc Msisdn By Office -->
+   	   <wsdl:operation name="getAssocMsisdnByOffice">
+      	  <wsdl:input message="tns:getAssocMsisdnByOfficeRequest"/>
+     	  <wsdl:output message="tns:getAssocMsisdnByOfficeResponse"/>
+    	  <wsdl:fault name="fault" message="tns:faultmessage" />
+   	   </wsdl:operation>
+    <!--  End of get Assoc Msisdn By Office  -->
+    
+     <!-- get Assoc Msisdn By Office duplicate version with additional response field account type -->
+     <!--
+     
+     	 REQ# : 1276 – SME for TT ; Small and Medium Enterprise functionality in Corporate Selfcare – To be addressed for TuneTalk. 
+		 Entire getAssocMsisdnByOffice API is duplicated by adding account type in response.
+		 
+		 This seems ugly, rather than adding new field in existing API designing a new API is not suggestion.
+		 but this is due to lack of xBus release and back ward compatibility of existing UIs. 
+		 we are duplicating this.
+		 		
+		 Note: UI wants a new API to resolve above issue.
+		 		
+		 Date:  21st Nov, 2012
+		 Done By: Phani.Chavala
+	 -->
+   	   <wsdl:operation name="getAssocMsisdnByOfficeV1">
+      	  <wsdl:input message="tns:getAssocMsisdnByOfficeV1Request"/>
+     	  <wsdl:output message="tns:getAssocMsisdnByOfficeV1Response"/>
+    	  <wsdl:fault name="fault" message="tns:faultmessage" />
+   	   </wsdl:operation>
+    <!--  End of get Assoc Msisdn By Office  -->
+    
+   	   <wsdl:operation name="updateActStatus">
+      	  <wsdl:input message="tns:updateActStatusRequest"/>
+     	  <wsdl:output message="tns:updateActStatusResponse"/>
+    	  <wsdl:fault name="fault" message="tns:faultmessage" />
+   	   </wsdl:operation>
+   	   <wsdl:operation name="updateOfficeCode">
+      	  <wsdl:input message="tns:updateOfficeCodeRequest"/>
+     	  <wsdl:output message="tns:updateOfficeCodeResponse"/>
+    	  <wsdl:fault name="fault" message="tns:faultmessage" />
+   	   </wsdl:operation>
+		<!-- getAccount  -->
+	 <wsdl:operation name="getAccount">
+			<wsdl:input message="tns:getAccountRequest"/>
+			<wsdl:output message="tns:getAccountResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+		<!-- End of getAccount  -->
+		
+	<!-- settlePayment  -->
+	 <wsdl:operation name="settlePayment">
+			<wsdl:input message="tns:settlePaymentRequest"/>
+			<wsdl:output message="tns:settlePaymentResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+		
+	<!-- getSettlementDataRequest  -->
+	 <wsdl:operation name="getSettlementData">
+			<wsdl:input message="tns:getSettlementDataRequest"/>
+			<wsdl:output message="tns:getSettlementDataResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+
+	<!-- settlePayment  -->
+	 <wsdl:operation name="updateStlmntStatus">
+			<wsdl:input message="tns:updateStlmntStatusRequest"/>
+			<wsdl:output message="tns:updateStlmntStatusResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>
+
+	<!-- manageCUGTopUpConfig  -->
+	 <wsdl:operation name="manageCUGTopUpConfig">
+			<wsdl:input message="tns:manageCUGTopUpConfigRequest"/>
+			<wsdl:output message="tns:manageCUGTopUpConfigResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>	
+	
+	<!--  getCUGReversalAccounts -->	 
+	<wsdl:operation name="getCUGReversalAccounts">
+			<wsdl:input message="tns:getCUGReversalAccountsRequest"/>
+			<wsdl:output message="tns:getCUGReversalAccountsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>	
+	<!--  End of getCUGReversalAccounts -->	 
+	
+	<!--  updateAbandonStatus -->	 
+	<wsdl:operation name="updateAbandonStatus">
+			<wsdl:input message="tns:updateAbandonStatusRequest"/>
+			<wsdl:output message="tns:updateAbandonStatusResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+	</wsdl:operation>	
+	<!--  End of updateAbandonStatus -->	 
+	
+  </wsdl:portType>
+  
+  <wsdl:binding name="CorpManagementServicesBinding" type="tns:CorpManagementPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTopUpSchedule">
+      <soap:operation soapAction="getTopUpSchedule"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    </wsdl:operation>
+    
+    <wsdl:operation name="getUsersOffices">
+      <soap:operation soapAction="getUsersOffices"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    </wsdl:operation>
+    
+    <wsdl:operation name="manageBanner">
+      <soap:operation soapAction="manageBanner"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="uploadTopUpSchedule">
+			<soap:operation soapAction="uploadTopUpSchedule"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+    <wsdl:operation name="getBanner">
+      <soap:operation soapAction="manageBanner"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getChannelProduct">
+      <soap:operation soapAction="manageBanner"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    </wsdl:operation>
+	<wsdl:operation name="corporateLogin">
+		<soap:operation soapAction="corporateLogin"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+	<!--  Manage Scheduler Top up Config  -->
+	<wsdl:operation name="manageSchdTopupConfig">
+		<soap:operation soapAction="manageSchdTopupConfig"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+    <!--  End of Manage Scheduler Top up Config  -->
+    
+    <!--  Manage Group  -->
+	<wsdl:operation name="manageGroup">
+		<soap:operation soapAction="manageGroup"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+    <!--  End of Manage Group  -->
+    
+    <!--  manageUploadMSISDNGroup  -->
+	<wsdl:operation name="manageUploadMSISDNGroup">
+		<soap:operation soapAction="manageUploadMSISDNGroup"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+    <!--  End of manageUploadMSISDNGroup  -->
+    
+    <!--  getGroupInfo  -->
+	<wsdl:operation name="getGroupInfo">
+		<soap:operation soapAction="getGroupInfo"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+   <!--  End of getGroupInfo  -->
+   
+   <!--  getCUGGroupInfo  -->
+	<wsdl:operation name="getCUGGroupInfo">
+		<soap:operation soapAction="getCUGGroupInfo"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+   <!--  End of getCUGGroupInfo  -->
+   
+    <!--  manage Product  -->
+	<wsdl:operation name="manageProduct">
+		<soap:operation soapAction="manageProduct"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+   <!--  End of manageProduct  -->
+    <!--  getProductType  -->
+	<wsdl:operation name="getProductType">
+		<soap:operation soapAction="getProductType"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+   <!--  End of getProductType  -->
+   
+   <!--  getStateCntryCodes  -->
+	<wsdl:operation name="getStateCntryCodes">
+		<soap:operation soapAction="getStateCntryCodes"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+   <!--  End of getProductType  -->
+   <!--  validateId  -->
+	<wsdl:operation name="validateId">
+		<soap:operation soapAction="validateId"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+			<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="fault">
+			<soap:fault name="fault" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>	
+   <!--  End of validateId  -->
+    <wsdl:operation name="getAssocMsisdnByOffice">
+      		<soap:operation soapAction="getAssocMsisdnByOffice"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    	</wsdl:operation>
+    <!--
+		 
+		 REQ# : 1276 – SME for TT ; Small and Medium Enterprise functionality in Corporate Selfcare – To be addressed for TuneTalk. 
+		 Entire getAssocMsisdnByOffice API is duplicated by adding account type in response.
+		 		 
+		 This seems ugly, rather than adding new field in existing API designing a new API is not suggestion.
+		 but this is due to lack of xBus release and back ward compatibility of existing UIs. 
+		 we are duplicating this.
+		 		
+		 Note: UI wants a new API to resolve above issue.
+		 		
+		 Date:  21st Nov, 2012
+		 Done By: Phani.Chavala
+	 -->	
+     <wsdl:operation name="getAssocMsisdnByOfficeV1">
+      		<soap:operation soapAction="getAssocMsisdnByOfficeV1"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    </wsdl:operation>
+    		
+    <wsdl:operation name="updateActStatus">
+      		<soap:operation soapAction="updateActStatus"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    	</wsdl:operation>
+    <wsdl:operation name="updateOfficeCode">
+      		<soap:operation soapAction="updateOfficeCode"/>
+      		<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:WsMessageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+    	</wsdl:operation>
+		<!--  getAccount -->
+	 <wsdl:operation name="getAccount">
+			<soap:operation soapAction="getAccount"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getAccount -->
+		
+	<!--  settlePayment -->
+	 <wsdl:operation name="settlePayment">
+			<soap:operation soapAction="settlePayment"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of settlePayment -->
+		
+	<!--  getSettlementData -->
+	 <wsdl:operation name="getSettlementData">
+			<soap:operation soapAction="getSettlementData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getSettlementData -->
+		
+	<!--  updateStlmntStatus -->
+	 <wsdl:operation name="updateStlmntStatus">
+			<soap:operation soapAction="updateStlmntStatus"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of updateStlmntStatus -->
+		
+		<!--  manageCUGTopUpConfig -->
+	 <wsdl:operation name="manageCUGTopUpConfig">
+			<soap:operation soapAction="manageCUGTopUpConfig"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of manageCUGTopUpConfig -->
+		
+		<!--  getCUGReversalAccounts -->	
+		 <wsdl:operation name="getCUGReversalAccounts">
+			<soap:operation soapAction="getCUGReversalAccounts"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCUGReversalAccounts --> 
+		
+		<!--  updateAbandonStatus -->	
+		 <wsdl:operation name="updateAbandonStatus">
+			<soap:operation soapAction="updateAbandonStatus"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of updateAbandonStatus --> 
+		
+  </wsdl:binding>
+  
+  <wsdl:service name="CorpManagementServices">
+    <wsdl:port name="CorpManagementServicesPort" binding="tns:CorpManagementServicesBinding" >
+      	<soap:address location="http://192.168.149.187:8210/selfcareservices/services/CorpManagementServicesPort?wsdl"/>
+    </wsdl:port>
+  </wsdl:service>
+  
+</wsdl:definitions>

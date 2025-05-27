@@ -1,0 +1,38 @@
+/**
+ * CorpManagementPortType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.xiusbcgi.xbus.scare.CorpManagement_wsdl;
+
+public interface CorpManagementPortType extends java.rmi.Remote {
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetUsersOfficesResponse getUsersOffices(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetUsersOfficesRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetTopUpScheduleResponse getTopUpSchedule(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetTopUpScheduleRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageBannerResponse manageBanner(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageBannerRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetBannerResponse getBanner(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetBannerRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetChannelProductResponse getChannelProduct(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetChannelProductRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.UploadTopUpScheduleResponse uploadTopUpSchedule(com.xiusbcgi.xbus.scare.CorpManagement_xsd.UploadTopUpScheduleRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.CorporateLoginResponse corporateLogin(com.xiusbcgi.xbus.scare.CorpManagement_xsd.CorporateLoginRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageSchdTopupConfigResponse manageSchdTopupConfig(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageSchdTopupConfigRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageGroupResponse manageGroup(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageGroupRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageUploadMSISDNGroupResponse manageUploadMSISDNGroup(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageUploadMSISDNGroupRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetGroupInfoResponse getGroupInfo(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetGroupInfoRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetCUGGroupInfoResponse getCUGGroupInfo(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetCUGGroupInfoRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageProductResponse manageProduct(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageProductRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetProductTypeResponse getProductType(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetProductTypeRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetStateCntryCodesResponse getStateCntryCodes(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetStateCntryCodesRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ValidateIdResponse validateId(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ValidateIdRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetAssocMsisdnByOfficeResponse getAssocMsisdnByOffice(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetAssocMsisdnByOfficeRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetAssocMsisdnByOfficeV1Response getAssocMsisdnByOfficeV1(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetAssocMsisdnByOfficeV1Request body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateActStatusResponse updateActStatus(com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateActStatusRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateOfficeCodeResponse updateOfficeCode(com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateOfficeCodeRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetAccountResponse getAccount(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetAccountRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.SettlePaymentResponse settlePayment(com.xiusbcgi.xbus.scare.CorpManagement_xsd.SettlePaymentRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetSettlementDataResponse getSettlementData(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetSettlementDataRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateStlmntStatusResponse updateStlmntStatus(com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateStlmntStatusRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageCUGTopUpConfigResponse manageCUGTopUpConfig(com.xiusbcgi.xbus.scare.CorpManagement_xsd.ManageCUGTopUpConfigRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetCUGReversalAccountsResponse getCUGReversalAccounts(com.xiusbcgi.xbus.scare.CorpManagement_xsd.GetCUGReversalAccountsRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+    public com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateAbandonStatusResponse updateAbandonStatus(com.xiusbcgi.xbus.scare.CorpManagement_xsd.UpdateAbandonStatusRequest body) throws java.rmi.RemoteException, com.xiusbcgi.xbus.scare.common.error.ErrorDetails_xsd.ErrorDetailsType;
+}

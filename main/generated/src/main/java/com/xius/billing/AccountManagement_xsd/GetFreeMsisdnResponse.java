@@ -1,0 +1,157 @@
+/**
+ * GetFreeMsisdnResponse.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.xius.billing.AccountManagement_xsd;
+
+public class GetFreeMsisdnResponse  implements java.io.Serializable {
+    private java.lang.String newMSISDN;
+
+    private java.lang.String oldMSISDN;
+
+    public GetFreeMsisdnResponse() {
+    }
+
+    public GetFreeMsisdnResponse(
+           java.lang.String newMSISDN,
+           java.lang.String oldMSISDN) {
+           this.newMSISDN = newMSISDN;
+           this.oldMSISDN = oldMSISDN;
+    }
+
+
+    /**
+     * Gets the newMSISDN value for this GetFreeMsisdnResponse.
+     * 
+     * @return newMSISDN
+     */
+    public java.lang.String getNewMSISDN() {
+        return newMSISDN;
+    }
+
+
+    /**
+     * Sets the newMSISDN value for this GetFreeMsisdnResponse.
+     * 
+     * @param newMSISDN
+     */
+    public void setNewMSISDN(java.lang.String newMSISDN) {
+        this.newMSISDN = newMSISDN;
+    }
+
+
+    /**
+     * Gets the oldMSISDN value for this GetFreeMsisdnResponse.
+     * 
+     * @return oldMSISDN
+     */
+    public java.lang.String getOldMSISDN() {
+        return oldMSISDN;
+    }
+
+
+    /**
+     * Sets the oldMSISDN value for this GetFreeMsisdnResponse.
+     * 
+     * @param oldMSISDN
+     */
+    public void setOldMSISDN(java.lang.String oldMSISDN) {
+        this.oldMSISDN = oldMSISDN;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GetFreeMsisdnResponse)) return false;
+        GetFreeMsisdnResponse other = (GetFreeMsisdnResponse) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.newMSISDN==null && other.getNewMSISDN()==null) || 
+             (this.newMSISDN!=null &&
+              this.newMSISDN.equals(other.getNewMSISDN()))) &&
+            ((this.oldMSISDN==null && other.getOldMSISDN()==null) || 
+             (this.oldMSISDN!=null &&
+              this.oldMSISDN.equals(other.getOldMSISDN())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getNewMSISDN() != null) {
+            _hashCode += getNewMSISDN().hashCode();
+        }
+        if (getOldMSISDN() != null) {
+            _hashCode += getOldMSISDN().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetFreeMsisdnResponse.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://billing.xius.com/AccountManagement.xsd", "GetFreeMsisdnResponse"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("newMSISDN");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://billing.xius.com/AccountManagement.xsd", "newMSISDN"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("oldMSISDN");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://billing.xius.com/AccountManagement.xsd", "oldMSISDN"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}

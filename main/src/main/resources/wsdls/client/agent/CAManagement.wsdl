@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://billing.xius.com/CAManagement.wsdl" xmlns:ca="http://billing.xius.com/CAManagement.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wshdr="http://billing.xius.com/common/header/HeaderDetails.xsd" xmlns:err="http://billing.xius.com/common/error/ErrorDetails.xsd" targetNamespace="http://billing.xius.com/CAManagement.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://billing.xius.com/CAManagement.wsdl" targetNamespace="http://billing.xius.com/CAManagement.wsdl">
+			<xs:import namespace="http://billing.xius.com/CAManagement.xsd" schemaLocation="CAManagement.xsd"/>
+			<xs:import namespace="http://billing.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://billing.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+
+	<!-- manageAddOnFtrsRequest -->
+	<wsdl:message name="manageAddOnFtrsRequest">
+		<wsdl:part name="body" element="ca:manageAddOnFtrsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageAddOnFtrsResponse">
+		<wsdl:part name="body" element="ca:manageAddOnFtrsResponse"/>
+	</wsdl:message>
+   <!-- End of mmanageAddOnFtrs -->
+
+<!-- manageCAAccountExistCount-->
+	<wsdl:message name="cAAccountExistCountRequest">
+		<wsdl:part name="body" element="ca:cAAccountExistCountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="cAAccountExistCountResponse">
+		<wsdl:part name="body" element="ca:cAAccountExistCountResponse"/>
+	</wsdl:message>
+   <!-- End ofCAAccountExistCount-->
+
+		
+	<!-- caRenewal -->
+	<wsdl:message name="caRenewalRequest">
+		<wsdl:part name="body" element="ca:caRenewalRequest"/>
+	</wsdl:message>
+	<wsdl:message name="caRenewalResponse">
+		<wsdl:part name="body" element="ca:caRenewalResponse"/>
+	</wsdl:message>
+   <!-- End of caRenewal -->
+   
+   <!-- getCAPreLoadData -->
+	<wsdl:message name="getCAPreLoadDataRequest">
+		<wsdl:part name="body" element="ca:getCAPreLoadDataRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCAPreLoadDataResponse">
+		<wsdl:part name="body" element="ca:getCAPreLoadDataResponse"/>
+	</wsdl:message>
+   <!-- End of getCAPreLoadData -->
+   
+   <!-- getCAServiceInfo -->
+	<wsdl:message name="getCAServiceInfoRequest">
+		<wsdl:part name="body" element="ca:getCAServiceInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCAServiceInfoResponse">
+		<wsdl:part name="body" element="ca:getCAServiceInfoResponse"/>
+	</wsdl:message>
+   <!-- End of getCAServiceInfo -->
+   
+   <!-- getCalendars -->
+	<wsdl:message name="getCalendarsRequest">
+		<wsdl:part name="body" element="ca:getCalendarsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCalendarsResponse">
+		<wsdl:part name="body" element="ca:getCalendarsResponse"/>
+	</wsdl:message>
+   <!-- End of getCalendars -->
+   
+    <!-- getVistingNetworks -->
+	<wsdl:message name="getVistngNetwrkRequest">
+		<wsdl:part name="body" element="ca:getVistngNetwrkRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getVistngNetwrkResponse">
+		<wsdl:part name="body" element="ca:getVistngNetwrkResponse"/>
+	</wsdl:message>
+   <!-- End of getVistingNetworks -->
+   	
+	<!-- manageCAGroup -->
+	<wsdl:message name="manageCAGroupRequest">
+		<wsdl:part name="body" element="ca:manageCAGroupRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageCAGroupResponse">
+		<wsdl:part name="body" element="ca:manageCAGroupResponse"/>
+	</wsdl:message>
+   <!-- End of manageCAGroup -->
+   
+   <!-- getAdditionalFeatures -->
+	<wsdl:message name="getAdnlFeturRequest">
+		<wsdl:part name="body" element="ca:getAdnlFeturRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAdnlFeturResponse">
+		<wsdl:part name="body" element="ca:getAdnlFeturResponse"/>
+	</wsdl:message>
+   <!-- End of getAdditionalFeatures -->	
+   
+   <!-- getCAGroup -->
+	<wsdl:message name="getCAGroupRequest">
+		<wsdl:part name="body" element="ca:getCAGroupRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCAGroupResponse">
+		<wsdl:part name="body" element="ca:getCAGroupResponse"/>
+	</wsdl:message>
+   <!-- End of getCAGroup -->
+	
+   <!-- managePackage -->
+	<wsdl:message name="managePackageRequest">
+		<wsdl:part name="body" element="ca:managePackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="managePackageResponse">
+		<wsdl:part name="body" element="ca:managePackageResponse"/>
+	</wsdl:message>
+   <!-- End of managePackage -->
+   
+   <!-- deletePackage -->
+	<wsdl:message name="deletePackageRequest">
+		<wsdl:part name="body" element="ca:deletePackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="deletePackageResponse">
+		<wsdl:part name="body" element="ca:deletePackageResponse"/>
+	</wsdl:message>
+   <!-- End of deletePackage -->
+   
+   <!-- getPackage -->
+	<wsdl:message name="getPackageRequest">
+		<wsdl:part name="body" element="ca:getPackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPackageResponse">
+		<wsdl:part name="body" element="ca:getPackageResponse"/>
+	</wsdl:message>
+   <!-- End of getPackage -->
+   
+   <!-- getCAInfo -->
+	<wsdl:message name="getCAInfoRequest">
+		<wsdl:part name="body" element="ca:getCAInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCAInfoResponse">
+		<wsdl:part name="body" element="ca:getCAInfoResponse"/>
+	</wsdl:message>
+   <!-- End of getCAInfo -->  
+   
+	<!-- getCARenewals -->
+	<wsdl:message name="getCARenewalsRequest">
+		<wsdl:part name="body" element="ca:getCARenewalsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCARenewalsResponse">
+		<wsdl:part name="body" element="ca:getCARenewalsResponse"/>
+	</wsdl:message>
+	<!-- End of getCARenewals -->
+
+	<!-- added for CA enhancements -->
+	<!-- updateCAAct -->
+	<wsdl:message name="updateCAActRequest">
+		<wsdl:part name="body" element="ca:updateCAActRequest"/>
+	</wsdl:message>
+	<wsdl:message name="updateCAActResponse">
+		<wsdl:part name="body" element="ca:updateCAActResponse"/>
+	</wsdl:message>
+	<!-- End of updateCAAct -->
+
+	<!-- deactCAGrpImmd -->
+	<wsdl:message name="deactCAGrpImmdRequest">
+		<wsdl:part name="body" element="ca:deactCAGrpImmdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="deactCAGrpImmdResponse">
+		<wsdl:part name="body" element="ca:deactCAGrpImmdResponse"/>
+	</wsdl:message>
+    <!-- End of deactCAGrpImmd -->
+
+	<wsdl:message name="WsMessageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>
+	<wsdl:message name="faultmessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	
+	<!--	Added by sampath-->
+	
+	
+	<wsdl:message name="getCAPackageChargesRequest">
+		<wsdl:part name="body" element="ca:getCAPackageChargesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCAPackageChargesResponse">
+		<wsdl:part name="body" element="ca:getCAPackageChargesResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="manageCaATPRequest">
+		<wsdl:part name="body" element="ca:manageCaATPRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageCaATPResponse">
+		<wsdl:part name="body" element="ca:manageCaATPResponse"/>
+	</wsdl:message>
+	
+	
+	<wsdl:message name="upateCAGrpCreditLimitRequest">
+		<wsdl:part name="body" element="ca:upateCAGrpCreditLimitRequest"/>
+	</wsdl:message>
+	<wsdl:message name="upateCAGrpCreditLimitResponse">
+		<wsdl:part name="body" element="ca:upateCAGrpCreditLimitResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getPostpaidGrpCountDetRequest">
+		<wsdl:part name="body" element="ca:getPostpaidGrpCountDetRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPostpaidGrpCountDetResponse">
+		<wsdl:part name="body" element="ca:getPostpaidGrpCountDetResponse"/>
+	</wsdl:message>
+	
+	
+	
+	<wsdl:message name="manageCaNotifRequest">
+		<wsdl:part name="body" element="ca:manageCaNotifRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageCaNotifResponse">
+		<wsdl:part name="body" element="ca:manageCaNotifResponse"/>
+	</wsdl:message>
+	<!-- End of getCAPackageCharges -->
+
+	<wsdl:portType name="CAManagementPortType">
+	
+	<!-- manageAddOnFtrs -->
+		<wsdl:operation name="manageAddOnFtrs">
+			<wsdl:input message="tns:manageAddOnFtrsRequest"/>
+			<wsdl:output message="tns:manageAddOnFtrsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+	<!-- End of manageAddOnFtrs  -->	
+	
+	<!--cAAccountExistCount -->
+		<wsdl:operation name="cAAccountExistCount">
+			<wsdl:input message="tns:cAAccountExistCountRequest"/>
+			<wsdl:output message="tns:cAAccountExistCountResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+	<!--cAAccountExistCount -->	
+	
+	
+		<!-- caRenewal -->
+		<wsdl:operation name="caRenewal">
+			<wsdl:input message="tns:caRenewalRequest"/>
+			<wsdl:output message="tns:caRenewalResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of caRenewal  -->	
+		
+		<!-- getCAPreLoadData -->
+		<wsdl:operation name="getCAPreLoadData">
+			<wsdl:input message="tns:getCAPreLoadDataRequest"/>
+			<wsdl:output message="tns:getCAPreLoadDataResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCAPreLoadData  -->
+	
+		<!-- getCAServiceInfo -->
+		<wsdl:operation name="getCAServiceInfo">
+			<wsdl:input message="tns:getCAServiceInfoRequest"/>
+			<wsdl:output message="tns:getCAServiceInfoResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCAServiceInfo  -->	
+		
+		<!-- getCalendars -->
+		<wsdl:operation name="getCalendars">
+			<wsdl:input message="tns:getCalendarsRequest"/>
+			<wsdl:output message="tns:getCalendarsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCalendars  -->	
+		
+		<!-- getAdditionalFeatures -->
+		<wsdl:operation name="getAdditionalFeatures">
+			<wsdl:input message="tns:getAdnlFeturRequest"/>
+			<wsdl:output message="tns:getAdnlFeturResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getAdditionalFeatures  -->	
+		
+		<!-- getVistingNetworks -->
+		<wsdl:operation name="getVistingNetworks">
+			<wsdl:input message="tns:getVistngNetwrkRequest"/>
+			<wsdl:output message="tns:getVistngNetwrkResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getVistingNetworks  -->	
+		
+		<!-- manageCAGroup -->
+		<wsdl:operation name="manageCAGroup">
+			<wsdl:input message="tns:manageCAGroupRequest"/>
+			<wsdl:output message="tns:manageCAGroupResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of manageCAGroup  -->	
+		
+		<!-- getCAInfo -->
+		<wsdl:operation name="getCAGroup">
+			<wsdl:input message="tns:getCAGroupRequest"/>
+			<wsdl:output message="tns:getCAGroupResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCAInfo  -->	
+		
+		<!-- managePackage -->
+		<wsdl:operation name="managePackage">
+			<wsdl:input message="tns:managePackageRequest"/>
+			<wsdl:output message="tns:managePackageResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of managePackage  -->	
+		
+		<!-- deletePackage -->
+		<wsdl:operation name="deletePackage">
+			<wsdl:input message="tns:deletePackageRequest"/>
+			<wsdl:output message="tns:deletePackageResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of deletePackage  -->
+		
+		<!-- getPackage -->
+		<wsdl:operation name="getPackage">
+			<wsdl:input message="tns:getPackageRequest"/>
+			<wsdl:output message="tns:getPackageResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getPackage  -->	
+		
+		<!-- getCAInfo -->
+		<wsdl:operation name="getCAInfo">
+			<wsdl:input message="tns:getCAInfoRequest"/>
+			<wsdl:output message="tns:getCAInfoResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCAInfo  -->	
+		
+		<!-- getCARenewals -->
+		<wsdl:operation name="getCARenewals">
+			<wsdl:input message="tns:getCARenewalsRequest"/>
+			<wsdl:output message="tns:getCARenewalsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCARenewals  -->	
+	<!-- added for CA enhancements -->
+		<!-- updateCAAct -->
+		<wsdl:operation name="updateCAAct">
+			<wsdl:input message="tns:updateCAActRequest"/>
+			<wsdl:output message="tns:updateCAActResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of getCARenewals  -->	
+                <!-- deactCAGrpImmd -->
+		<wsdl:operation name="deactCAGrpImmd">
+			<wsdl:input message="tns:deactCAGrpImmdRequest"/>
+			<wsdl:output message="tns:deactCAGrpImmdResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<!--  End of deactCAGrpImmd  -->
+
+		<wsdl:operation name="getCAPackageCharges">
+			<wsdl:input message="tns:getCAPackageChargesRequest"/>
+			<wsdl:output message="tns:getCAPackageChargesResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="manageCaATP">
+			<wsdl:input message="tns:manageCaATPRequest"/>
+			<wsdl:output message="tns:manageCaATPResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageCaNotif">
+			<wsdl:input message="tns:manageCaNotifRequest"/>
+			<wsdl:output message="tns:manageCaNotifResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+		
+			<wsdl:operation name="upateCAGrpCreditLimit">
+			<wsdl:input message="tns:upateCAGrpCreditLimitRequest"/>
+			<wsdl:output message="tns:upateCAGrpCreditLimitResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getPostpaidGrpCountDet">
+			<wsdl:input message="tns:getPostpaidGrpCountDetRequest"/>
+			<wsdl:output message="tns:getPostpaidGrpCountDetResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+	</wsdl:portType>
+	
+	<wsdl:binding name="CAManagementServicesBinding" type="tns:CAManagementPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<!--manageAddOnFeatures  cAAccountExistCount-->		
+		<wsdl:operation name="manageAddOnFtrs">
+			<soap:operation soapAction="manageAddOnFtrs"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of manageAddOnFeatures-->	
+		
+		
+		<!--cAAccountExistCount-->		
+		<wsdl:operation name="cAAccountExistCount">
+			<soap:operation soapAction="cAAccountExistCount"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- cAAccountExistCount-->	
+		
+		
+		
+		<!--  caRenewal  -->		
+		<wsdl:operation name="caRenewal">
+			<soap:operation soapAction="caRenewal"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of caRenewal  -->
+		
+		<!--  getCAPreLoadData  -->		
+		<wsdl:operation name="getCAPreLoadData">
+			<soap:operation soapAction="getCAPreLoadData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCAPreLoadData  -->
+		
+		<!--  getCAServiceInfo  -->		
+		<wsdl:operation name="getCAServiceInfo">
+			<soap:operation soapAction="getCAServiceInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCAServiceInfo  -->
+		
+		<!--  getAdditionalFeatures  -->		
+		<wsdl:operation name="getAdditionalFeatures">
+			<soap:operation soapAction="getAdditionalFeatures"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getAdditionalFeatures  -->
+		
+		<!--  getCalendars  -->		
+		<wsdl:operation name="getCalendars">
+			<soap:operation soapAction="getCalendars"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCalendars  -->
+		
+		<!--  getVistingNetworks  -->		
+		<wsdl:operation name="getVistingNetworks">
+			<soap:operation soapAction="getVistingNetworks"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getVistingNetworks  -->
+		
+		<!--  manageCAGroup  -->		
+		<wsdl:operation name="manageCAGroup">
+			<soap:operation soapAction="manageCAGroup"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of manageCAGroup  -->	
+		
+		<!--  getCAGroup  -->		
+		<wsdl:operation name="getCAGroup">
+			<soap:operation soapAction="getCAGroup"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCAGroup  -->
+		
+		<!--  managePackage  -->		
+		<wsdl:operation name="managePackage">
+			<soap:operation soapAction="managePackage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of managePackage  -->
+		
+		<!--  deletePackage  -->		
+		<wsdl:operation name="deletePackage">
+			<soap:operation soapAction="deletePackage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of deletePackage  -->
+		
+		<!--  getPackage  -->		
+		<wsdl:operation name="getPackage">
+			<soap:operation soapAction="getPackage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getPackage  -->
+		
+		<!--  getCAInfo  -->		
+		<wsdl:operation name="getCAInfo">
+			<soap:operation soapAction="getCAInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCAInfo  -->		
+		
+		<!--  getCARenewals  -->		
+		<wsdl:operation name="getCARenewals">
+			<soap:operation soapAction="getCARenewals"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCATopUpsInfo  -->
+			<!-- added for CA enhancements -->
+		<!--  updateCAAct  -->		
+		<wsdl:operation name="updateCAAct">
+			<soap:operation soapAction="updateCAAct"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of updateCAAct  -->
+		<!-- deactCAGrpImmd -->
+		<wsdl:operation name="deactCAGrpImmd">
+			<soap:operation soapAction="deactCAGrpImmd"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of deactCAGrpImmd  -->
+		
+		<wsdl:operation name="getCAPackageCharges">
+			<soap:operation soapAction="getCAPackageCharges"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			<wsdl:operation name="manageCaATP">
+			<soap:operation soapAction="manageCaATP"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageCaNotif">
+			<soap:operation soapAction="manageCaNotif"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="upateCAGrpCreditLimit">
+			<soap:operation soapAction="upateCAGrpCreditLimit"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			
+		<wsdl:operation name="getPostpaidGrpCountDet">
+			<soap:operation soapAction="getPostpaidGrpCountDet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		
+		
+	</wsdl:binding>
+	<wsdl:service name="CAManagementServices">
+		<wsdl:port name="CAManagementServicesPort" binding="tns:CAManagementServicesBinding">
+			<soap:address location="http://10.10.21.81:8080/infinetbilling/services/CAManagementServicesPort?wsdl"/>
+		</wsdl:port>
+	</wsdl:service>	
+</wsdl:definitions>

@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="storedProcedureDataSources"
+		class="net.bcgi.util.db.DataSourceConfiguration" scope="singleton">
+		<property name="dataSourceConfiguration">
+			<map>
+
+
+				<!--  Added by naveen 18-nov-2024 for TTSA hlr cmd retry start -->
+				<entry key="pro_reini_fail_emaflow_trans">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_reini_fail_ema_cmd_trans">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<!--  Added for TTSA hlr cmd retry start -->
+
+				<entry
+					key="pkg_ttsa_ema_cmd_request.pro_get_ema_cmd_req_dtls_trans">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_get_msisdn_ema_cmd_his">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_msisdn_imsi_stat_chng_aud.pro_get_mdn_retry_trans_id">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_rty_sim_swap_chg_mdn_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="cs_sim_reg_tracker_pkg.pro_get_nw_pend_sim_reg_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_ttsa_ema_flow_mgmt.pro_ema_flwcmds_ins">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="cs_sim_reg_tracker_pkg.pro_get_trans_sim_reg_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_msisdn_tp_cmd_name_ttsa">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_ttsa_ema_cmd_request.pro_get_ema_cmd_request_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_ttsa_check_exttransid">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="cs_sim_reg_tracker_pkg.pro_sim_reg_tracker_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="cs_sim_reg_tracker_pkg.pro_sim_reg_tracker_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ttsa_flow_command_dtls.pro_update_cmd_details">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ttsa_flow_command_dtls.pro_get_cmd_details">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ttsa_ema_flow_mgmt.pro_ema_flow_ins_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ttsa_ema_flow_mgmt.pro_get_ema_flow_cmds">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ttsa_ema_flow_mgmt.pro_update_ema_flow_cmds">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Added for get_ema_cmd by vekatesh.c on 26/04/2024-->
+				<entry
+					key="pkg_ttsa_ema_cmd_request.pro_get_invoke_ema_cmd_status">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Added for ema_cmd_retry_job by vekatesh.c on 25/04/2024-->
+				<entry key="pkg_ttsa_ema_cmd_request.pro_ttsa_ema_cmd_get">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_change_msisdn_info.pro_get_chg_msisdn_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_change_msisdn_info.pro_change_msisdn_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_change_msisdn_info.pro_get_change_msisdn_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_change_msisdn_info.pro_change_msisdn_upload">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ttsa_ema_cmd_request.pro_ttsa_ema_cmd_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_ttsa_ema_cmd_request.proc_ttsa_ema_cmd_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_ki_key_bulk_info.get_upload_kidetails">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_ttsa_cancel_location_info.pro_ttsa_cancel_loc_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_ttsa_cancel_location_info.proc_ttsa_cancel_loc_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_pre_activation_ins_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_get_5gprov_details">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="pro_subs_bulk_flw_trcr_report">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_pre_msisdn_bk">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="pro_prepaid_main_line_check">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="pro_get_sub_info">
+					<value>billing_datasource</value>
+				</entry>
+				<entry key="PRO_GET_MBLSER_ADD_DETCH_DTLS">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_network_based_flows.pro_subs_bulk_flow_track_ins">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_network_based_flows.pro_subs_bulk_flow_track_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_network_based_flows.pro_subs_bulk_flow_tracker_get">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="sub_transdetailsupload_pkg.pro_get_upload_sub_trans_dtls">
+					<value>selfcare_datasource</value>
+				</entry>
+				<entry
+					key="sub_transdetailsupload_pkg.update_sub_trans_details_proc">
+					<value>selfcare_datasource</value>
+				</entry>
+				<entry
+					key="sub_transdetailsupload_pkg.update_upload_sub_trans_dtls">
+					<value>selfcare_datasource</value>
+				</entry>
+				<entry
+					key="sub_transdetailsupload_pkg.insert_sub_trans_dtls_proc_api">
+					<value>selfcare_datasource</value>
+				</entry>
+				<entry key="PKG_PERSISTENCE_MANAGE.pro_persistance_manage">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_notification.get_notification_msisdns">
+					<value>postpaid_datasource</value>
+				</entry>
+				<entry key="pkg_notification.manage_invoice_notifications">
+					<value>postpaid_datasource</value>
+				</entry>
+				<entry key="pro_send_notification_msgs">
+					<value>billing_datasource</value>
+				</entry>
+				<entry
+					key="pkg_subscriber_notif_details.pro_get_notification_data">
+					<value>billing_datasource</value>
+				</entry>
+				<entry key="pro_main_line_sub_line_check">
+					<value>billing_datasource</value>
+				</entry>
+
+
+				<!-- Added By Sambasiva Rao Aakula For Bulk Rc Subscription Corp  -->
+
+				<entry
+					key="pkg_corp_selfcare_bulk_topup_1.pro_get_schdual_topup_dtls.xml">
+					<value>billing_datasource</value>
+				</entry>
+				<entry
+					key="pkg_corp_selfcare_bulk_topup_1.get_topup_msisdns_detls.xml">
+					<value>billing_datasource</value>
+				</entry>
+				<entry
+					key="pkg_corp_selfcare_bulk_topup_1.topup_msisdns_stat_upd.xml">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="PKG_SIM_ACT_STATE_MGMT.pro_sim_act_req_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="PKG_SIM_ACT_STATE_MGMT.pro_sim_act_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="PKG_SIM_SALE_STATE_MGMT.pro_sim_sale_req_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="PKG_SIM_SALE_STATE_MGMT.pro_sim_sale_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="PKG_SIM_ACT_STATE_MGMT.pro_sim_act_req_check">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="PKG_MSISDN_IMSI_STAT_CHNG_AUD.pro_msisdn_imsi_statchng_insrt">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="PKG_MSISDN_IMSI_STAT_CHNG_AUD.pro_msisdn_imsi_statchng_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_msisdn_imsi_stat_chng_aud.pro_msisdn_imsi_statchng_retry">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_msisdn_imsi_stat_chng_aud.pro_mdn_imsi_statchng_rtry_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_bulkatp_subscription_mgmt.pro_bulkatp_subscription_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulkatp_subscription_mgmt.pro_bulkatp_subscription_upld">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulkatp_subscription_mgmt.pro_get_bulkatp_upload_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="CLC_SIM_BULKUPLOAD.pro_get_upload_sim_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Test SMFAgent for Bulk PostPaid REg 
+      <entry key="clc_sim_bulkupload_pre_post.pro_get_upload_sim_dtls">
+      		<value>smf_schema_datasource</value>
+      </entry>  -->
+
+
+				<entry key="CLC_SIM_BULKUPLOAD.update_upload_sim_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<!-- Test SMFAgent for Bulk PostPaid REg 
+	  <entry key="clc_sim_bulkupload_pre_post.update_upload_sim_dtls">
+      		<value>smf_schema_datasource</value>
+      </entry>  -->
+
+				<entry key="CLC_SIM_BULKUPLOAD.sim_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!--   <entry key="clc_sim_bulkupload_pre_post.sim_update">
+      		<value>smf_schema_datasource</value>
+      </entry>  -->
+
+				<entry key="CLC_SIM_BULKUPLOAD.transdetails_duration">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="CLC_SIM_BULKUPLOAD.simdetails_transno">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="PKG_BULKATP_SUBSCRIPTION_MGMT.pro_bulkatp_subs_trans_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_prod_purchage_state_mgmt.pro_prod_purchage_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_prod_purchage_state_mgmt.pro_prod_purchage_req_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_atp_by_slpn_points_mgmt.pro_atp_slpn_subscription_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_atp_by_slpn_points_mgmt.pro_atp_subscription_stus_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_subscriber_balance_mgmt.pro_balance_adjust_req_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_subscriber_balance_mgmt.pro_balance_adjust_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_api_request_tracker">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_api_sim_reg_mgmt.pro_sim_reg_request_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_api_sim_reg_mgmt.pro_sim_reg_request_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_atp_by_slpn_points_mgmt.pro_slpn_points_redem_rpt">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_selfc_debit_susped_req.pro_selfc_debit_susped_req_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_selfc_debit_susped_req.pro_selfc_debit_susped_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_sim_act_state_mgmt.pro_first_lu_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_tarifpack_change_mgmt.pro_bulk_tarifpack_change_upld">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_bulk_tarifpack_change_mgmt.pro_get_bulk_tp_chng_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_bulk_tarifpack_change_mgmt.pro_bulk_tarifpack_change_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_tarifpack_change_mgmt.pro_bulk_tp_change_trans_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_account_act_deact_report">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_bucket_summary_mgmt.pro_bkt_summary_req_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_bucket_summary_mgmt.pro_bkt_summary_req_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pro_user_login_logout_tracking">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_sim_act_state_mgmt.pro_first_lu_retry_job">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_sim_act_state_mgmt.pro_first_lu_rtry_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="clc_sim_bulkupload.pro_bad_file_req_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_bulkatp_subscription_mgmt.pro_atp_subscription_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_tarifpack_change_mgmt.pro_tarifpack_change_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="PKG_POSTPAID_PAYMENT_MGMT.pro_payment_enquiry_request">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="prepaid_postpaid_convert_mgmt.pro_pre_post_convert_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="prepaid_postpaid_convert_mgmt.pro_pre_post_convert_req_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="prepaid_postpaid_convert_mgmt.PREPAID_POSTPAID_CONVERT_MGMT">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_postpaid_payment_mgmt.pro_postpaid_payment_req_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_postpaid_payment_mgmt.pro_postpaid_payment_req_insrt">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry key="PKG_MSP_ACTIVITY_RETRY_MGMT.pro_provision_retry">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="PKG_PASSWORD_UPDATE_MGMT.pro_password_update_request">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="PKG_PASSWORD_UPDATE_MGMT.pro_password_reqst_status_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_otp_generation_mgmt.pro_otp_generation_request">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_otp_generation_mgmt.pro_otp_request_validation">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_payment_management.pro_payment_req_upd">
+					<value>smf_schema_datasource</value>
+				</entry><!--
+        <entry key="pkg_payment_management.pro_get_reconciliation_rpt">
+	       		<value>smf_schema_datasource</value>
+       </entry>
+       
+       -->
+				<entry key="pkg_payment_management.pro_payment_transaction_rpt">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_payment_management.pro_payment_req_insrt">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_subs_spcl_credit_mgmt.pro_bulk_spl_credit_trans_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_subs_spcl_credit_mgmt.pro_bulk_subs_spcl_credit_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_bulk_subs_spcl_credit_mgmt.pro_bulk_subs_spcl_credit_upld">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_subs_spcl_credit_mgmt.pro_get_spcl_credit_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_bulk_subs_debit_mgmt.pro_bulk_debit_trans_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_bulk_subs_debit_mgmt.pro_bulk_subs_debit_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_bulk_subs_debit_mgmt.pro_bulk_subs_debit_upld">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_subs_debit_mgmt.pro_get_subs_debit_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_subs_credit_mgmt.pro_bulk_credit_trans_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_bulk_subs_credit_mgmt.pro_bulk_subs_credit_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_bulk_subs_credit_mgmt.pro_bulk_subs_credit_upld">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_bulk_subs_credit_mgmt.pro_get_subs_credit_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="PKG_PAYMENT_MANAGEMENT.pro_payment_retry">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry key="PKG_PAYMENT_MANAGEMENT.pro_payment_retry_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_subs_personal_details_mng.pro_insert_subs_personal_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_subs_personal_details_mng.pro_update_subs_personal_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry
+					key="pkg_corp_bulk_deact_react_mng.pro_corp_deactive_reactive_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_corp_bulk_rct_mng.pro_corp_bulk_rct_req">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_corp_bulk_deact_react_mng.pro_get_deact_react_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_corp_bulk_deact_react_mng.pro_corp_deact_react_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_corp_bulk_rct_mng.pro_get_rct_upld_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_corp_bulk_rct_mng.pro_corp_rct_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_third_party_notif_tracker">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry key="pro_switch_gprs_manage">
+					<value>billing_datasource</value>
+				</entry>
+				<entry key="PKG_SIM_ACT_STATE_MGMT.pro_bulk_flu_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pro_bulk_flu_validation">
+					<value>billing_datasource</value>
+				</entry>
+				<entry key="pkg_sim_act_state_mgmt.pro_bulk_flu_reject_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_sim_act_state_mgmt.pro_bulk_flu_staus_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_sim_act_state_mgmt.pro_get_bulk_flu">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry key="pkg_subscriber_balance_mgmt.pro_balance_adjust_rpt">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_thiredparty_notification.pro_thiredparty_notification">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_thiredparty_notification.pro_thiredparty_get">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_thiredparty_notification.pro_thiredparty_notific_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+
+				<entry key="pkg_tia_api_retry.pro_sim_activation">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_sms_notify_ne_pro_backup">
+					<value>billing_datasource</value>
+				</entry>
+
+
+				<entry key="pkg_tia_api_retry.pro_tia_notific_update">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="PKG_CA_GROUP_DTLS.pro_bulk_ca_group_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="PKG_CA_GROUP_DTLS.pro_get_ca_group_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="PKG_CA_GROUP_DTLS.pro_ca_group_dtls_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pro_ca_group_transdetails">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Added for GSMA IZZI  -->
+				<entry key="pkg_imei_api.pro_imei_block">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry key="pkg_imei_api.pro_imei_unblock">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry key="pkg_imei_api.pro_imei_enquiry">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry key="pkg_eir_file_upload_process.pro_get_fileinfo">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry key="pkg_eir_file_upload_process.pro_update_fileinfo">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry key="pkg_imei_api.pro_imei_enquiry_insert">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry
+					key="pkg_eir_file_upload_process.pro_gsme_job_fail_imei_dtls">
+					<value>mspeir_datasource</value>
+				</entry>
+				<entry key="pro_get_file_name">
+					<value>mspeir_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_msisdn_bulkupload_for_reg.pro_get_msisdn_action_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry
+					key="pkg_msisdn_bulkupload_for_reg.pro_get_msdn_action_dtls_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="PKG_MSISDN_BULKUPLOAD_FOR_REG.pro_msisdn_bulk_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="PKG_MSISDN_BULKUPLOAD_FOR_REG.pro_get_msdn_report_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_lte_srvc.pro_lte_srvc_req_insrt">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_lte_srvc.pro_lte_srvc_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_lte_statechange_notif_job">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_state_change_track.pro_state_change_track_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_state_change_track.pro_state_change_track_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_state_change_track.pro_state_change_track_report">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- End  -->
+
+				<!-- Added for TT PCRF JOB -->
+				<entry key="pkg_smf_policy_job_tracker.select_policy_tracker">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="pkg_smf_policy_job_tracker.update_policy_tracker">
+					<value>billing_datasource</value>
+				</entry>
+				<entry key="pkg_smf_policy_job_tracker.delete_policy_tracker">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="pkg_msisdn_vs_tariff_id.pro_msisdnvstariffid_view">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_msisdn_vs_tariff_id.pro_msisdnvstpid_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_sim_swap_bulk.pro_sim_swap_bulk_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_sim_swap_bulk.pro_sim_swap_report_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_sim_swap_bulk.pro_get_sim_swap_action_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_sim_swap_bulk.pro_sim_swap_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_force_sim_act_bulk.pro_force_sim_bulk_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_force_sim_act_bulk.pro_force_sim_report_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_corp_bulk_deact_react_mng.pro_deact_react_report_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_corp_bulk_rct_mng.pro_corp_rct_report_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!--  bulkStatus insert/reports -->
+
+				<entry key="pkg_state_change_bulk.pro_state_change_bulk_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_state_change_bulk.pro_state_change_report_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- END -->
+				<!--  bulkStateChange JOB -start-->
+
+				<entry key="pkg_state_change_bulk.pro_state_change_action_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_state_change_bulk.pro_state_change_upd">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_lte_srvc.pro_lte_srvc_volte_report">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<!--  bulkStateChange JOB -end-->
+
+				<entry
+					key="pkg_ttsa_ema_cmd_request.pro_ttsa_ema_cmd_bulk_insert">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<!-- END -->
+				<!--InsertExternalDetails// getExternalDetils start -->
+				<entry
+					key="pkg_sim_act_external_dtls_api.pro_insert_sim_act_ext_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pkg_sim_act_external_dtls_api.pro_get_external_dtls">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!--InsertExternalDetails// getExternalDetils end -->
+				<!-- DELETE/UPDATE API START -->
+				<entry
+					key="pkg_sim_act_external_dtls_api.pro_del_external_dtils">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="pkg_sim_act_external_dtls_api.pro_upd_external_details">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Pp SimRegistration -->
+				<entry key="clc_sim_bulkupload.sim_upload">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- TestSMF for BulkPostPaid Reg TT 
+     	   <entry key="clc_sim_bulkupload_pre_post.sim_upload">
+      		<value>smf_schema_datasource</value>
+     	 </entry> -->
+
+				<!-- Pp RegStatus -->
+				<entry key="clc_sim_bulkupload.pro_sim_reg_status">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- TestSMF for BulkPostPaid Reg TT 
+      	<entry key="clc_sim_bulkupload_pre_post.pro_sim_reg_status">
+      		<value>smf_schema_datasource</value>
+      	</entry> -->
+
+				<entry key="pkg_lte_srvc.pro_lte_srvc_volte_retry">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Added for TTSA -->
+				<entry key="pkg_emaid_vs_emacommand.pro_upd_emaid_vs_emacommand">
+					<value>smf_schema_datasource</value>
+				</entry>
+				<entry key="pkg_emaid_vs_emacommand.pro_get_emaid_vs_emacommand">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<!-- Added for ttsa by vekatesh.c on 29/04/2024-->
+				<entry
+					key="pkg_ttsa_ema_cmd_request.proc_ttsa_ema_cmd_retry_update">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry
+					key="clc_sim_bulkupload_pre_post.pro_sim_reg_status_exttrans">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="clc_sim_bulkupload.pro_sim_reg_status_exttrans">
+					<value>smf_schema_datasource</value>
+				</entry>
+
+				<entry key="pro_TTSA_restapi_user_auth">
+					<value>billing_datasource</value>
+				</entry>
+
+				<entry key="pro_get_simswap_simreg_chngmd">
+					<value>billing_datasource</value>
+				</entry>
+
+			</map>
+		</property>
+	</bean>
+
+	<!-- <bean id="selfcare_datasource"
+	class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName"><value>java:jdbc/SELFCARE_DB</value></property>
+	</bean>
+	<bean id="smf_schema_datasource"
+	class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName"><value>java:jdbc/SMF_SCHEMA</value></property>
+	</bean>
+	<bean id="postpaid_datasource"
+	class="org.springframework.jndi.JndiObjectFactoryBean">
+	   <property name="jndiName"><value>java:jdbc/POST_DB</value></property>
+	</bean> 
+	<bean id="billing_datasource"
+	class="org.springframework.jndi.JndiObjectFactoryBean">
+	   <property name="jndiName"><value>java:jdbc/INFINET_DB</value></property>
+	</bean> 
+	 Added for GSMA IZZI 
+	 <bean id="mspeir_datasource"
+	class="org.springframework.jndi.JndiObjectFactoryBean">
+	   <property name="jndiName"><value>java:jdbc/MSPEIR_DB</value></property>
+	</bean> 
+	 End -->
+
+
+</beans>

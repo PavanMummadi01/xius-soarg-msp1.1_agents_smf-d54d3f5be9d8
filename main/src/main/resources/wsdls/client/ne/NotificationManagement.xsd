@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ne.xius.com/NotificationManagement.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ne.xius.com/NotificationManagement.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<!-- pingService -->	
+	
+	<xs:element name="pingServiceRequest" type="PingServiceRequest" />
+	<xs:element name="pingServiceResponse" type="PingServiceResponse" />
+	
+	<xs:complexType name="PingServiceRequest">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PingServiceResponse">
+		<xs:sequence>
+        </xs:sequence>
+	</xs:complexType>
+	
+	
+	<!-- End pingService -->
+	
+	
+	
+	<!-- notifyMessage -->	
+	
+	<xs:element name="notifyMessageRequest" type="NotifyMessageRequest" />
+	<xs:element name="notifyMessageResponse" type="NotifyMessageResponse" />
+	
+	<xs:complexType name="NotifyMessageRequest">
+		<xs:sequence>
+		<xs:element name="messageType" type="MessageType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="MessageType">
+		<xs:sequence>
+		    <xs:element name="networkId" type="networkIdType" minOccurs="0" />
+			<xs:element name="eventReferenceCode" type="eventType"  />
+			<xs:element name="loginId" type="loginIdType"  />
+			<xs:element name="loginPassword" type="loginPasswordType"  />
+			<xs:element name="syncFlag" type="syncFlagType"/>
+			<xs:element name="languageId" type="languageIdType"/>
+			<xs:element name="username" type="usernameType" minOccurs="0" />
+			<xs:element name="password" type="passwordType" minOccurs="0"/>
+			<xs:element name="idtype" type="idType" minOccurs="0"/>
+			<xs:element name="idvalue" type="idvalueType" minOccurs="0"/>
+			<xs:element name="msisdn1" type="MSISDNType"  minOccurs="0"/>
+			<xs:element name="msisdn2" type="MSISDNType" minOccurs="0"/>
+			
+			<xs:element name="amount1" type="amountType" minOccurs="0"/>
+			<xs:element name="amount2" type="amountType" minOccurs="0"/>
+			<xs:element name="ordernumber" type="ordernumberType" minOccurs="0" />
+			<xs:element name="date1" type="xs:date" minOccurs="0" />
+			<xs:element name="date2" type="xs:date" minOccurs="0" />
+			<xs:element name="sim1" type="simType" minOccurs="0"/>
+			<xs:element name="sim2" type="simType" minOccurs="0" />
+			<xs:element name="portid" type="portidType" minOccurs="0"/>
+			<xs:element name="portrequestformid" type="portidType" minOccurs="0"/>
+			<xs:element name="userDefined1" type="userDefinedType1" minOccurs="0"/>
+			
+			<xs:element name="userDefined2" type="userDefinedType" minOccurs="0" />
+			<xs:element name="userDefined3" type="userDefinedType" minOccurs="0" />
+			<xs:element name="userDefined4" type="userDefinedType" minOccurs="0" />
+			<xs:element name="userDefined5" type="userDefinedType" minOccurs="0" />
+			<xs:element name="userDefined6" type="userDefinedType" minOccurs="0" />
+			<xs:element name="userDefined7" type="userDefinedType" minOccurs="0" />
+			<xs:element name="userDefined8" type="userDefinedType" minOccurs="0" />
+			<xs:element name="emailTo" type="emailType"  minOccurs="0"/>
+			<xs:element name="emailFrom" type="emailType" minOccurs="0"/>
+			<xs:element name="cc" type="emailType"  minOccurs="0"/>
+			<xs:element name="bcc" type="emailType" minOccurs="0" />
+			<xs:element name="subject" type="subjectType" minOccurs="0"/>
+			<xs:element name="destMSISDNs" type="destMSISDNType" minOccurs="0"/>
+			<xs:element name="IMSIs" type="imsiType" minOccurs="0"/>
+			<xs:element name="ClientTransId" type="ClientTransType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NotifyMessageResponse">
+		<xs:sequence>
+		<xs:element name="transID" type="xs:long" minOccurs="0" />
+        </xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="networkIdType">
+		<xs:restriction base="xs:integer">
+     	 	<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="eventType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="languageIdType">
+		<xs:restriction base="xs:integer">
+     	 	<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="syncFlagType">
+		<xs:restriction base="xs:string">
+		<xs:pattern value="[A,S]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="loginIdType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="loginPasswordType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="usernameType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="passwordType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="idType">
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="9" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="idvalueType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+			<xs:pattern value="[A-Za-z0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:long">
+     	<xs:maxInclusive value="999999999999999" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ClientTransType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+			<xs:pattern value="[A-Za-z0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="amountType">
+         <xs:restriction base="xs:decimal">
+              <xs:maxInclusive value="9999999"/>
+             <xs:fractionDigits value="4"/>
+         </xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ordernumberType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+			<xs:pattern value="[A-Za-z0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="simType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="portidType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="userDefinedType1">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="500" />
+		</xs:restriction>
+	</xs:simpleType>
+		
+	<xs:simpleType name="userDefinedType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="emailType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4000" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="subjectType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1000" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="imsiType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2000" />
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="destMSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2000" />
+		</xs:restriction>
+	</xs:simpleType>	
+
+	
+</xs:schema>

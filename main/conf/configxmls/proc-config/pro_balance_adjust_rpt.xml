@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+<bean id="pro_balance_adjust_rpt" class="net.bcgi.util.db.SPDefinition" scope="singleton" >
+<property name="name"><value>pkg_subscriber_balance_mgmt.pro_balance_adjust_rpt</value></property>
+<property name="returnsResult"><value>false</value></property>
+<property name="parameters">
+<list>
+              <ref bean="pro_balance_adjust_rpt_param_1"/>
+              <ref bean="pro_balance_adjust_rpt_param_2"/>
+              <ref bean="pro_balance_adjust_rpt_param_3"/>
+              <ref bean="pro_balance_adjust_rpt_param_4"/>
+              <ref bean="pro_balance_adjust_rpt_param_5"/>
+              <ref bean="pro_balance_adjust_rpt_param_6"/>
+              
+ </list>
+</property>
+
+<property name="refCursors">
+			<map>
+				<entry key="4">
+					<ref bean="po_balance_trans_status"/>
+				</entry>
+			</map>
+		</property>
+</bean>
+
+<bean id="po_balance_trans_status" class="net.bcgi.util.db.ResultSetDef" scope="prototype">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_balance_trans_status_param_1"></ref>
+				<ref bean="po_balance_trans_status_param_2"></ref>
+				<ref bean="po_balance_trans_status_param_3"></ref>
+				<ref bean="po_balance_trans_status_param_4"></ref>
+				<ref bean="po_balance_trans_status_param_5"></ref>
+				<ref bean="po_balance_trans_status_param_6"></ref>
+				<ref bean="po_balance_trans_status_param_7"></ref>
+				<ref bean="po_balance_trans_status_param_8"></ref>
+				<ref bean="po_balance_trans_status_param_9"></ref>
+				<ref bean="po_balance_trans_status_param_10"></ref>
+				<ref bean="po_balance_trans_status_param_11"></ref>
+				<ref bean="po_balance_trans_status_param_12"></ref>
+					
+							
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.BalTransStatusCursorData"/>
+	</bean>
+      
+     <bean id="po_balance_trans_status_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>networkId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+      
+	<bean id="po_balance_trans_status_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdnNo</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_balance_trans_status_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>amount</value></property>
+	  <property name="mapTo"><value>amount</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	
+	<bean id="po_balance_trans_status_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="po_balance_trans_status_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>ext_trans_id</value></property>
+	  <property name="mapTo"><value>extTransId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+
+   <bean id="po_balance_trans_status_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_date</value></property>
+	  <property name="mapTo"><value>transDate</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+
+   <bean id="po_balance_trans_status_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>ext_error_code</value></property>
+	  <property name="mapTo"><value>extErrorCode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+
+    <bean id="po_balance_trans_status_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>Status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+
+    <bean id="po_balance_trans_status_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>remarks</value></property>
+	  <property name="mapTo"><value>remarks</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+
+    <bean id="po_balance_trans_status_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>response_date</value></property>
+	  <property name="mapTo"><value>responseDate</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+
+    <bean id="po_balance_trans_status_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>activity_id</value></property>
+	  <property name="mapTo"><value>activityId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+
+    <bean id="po_balance_trans_status_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>request_type</value></property>
+	  <property name="mapTo"><value>requestType</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	
+	
+<bean id="pro_balance_adjust_rpt_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+<property name="name"><value>pi_network_id</value></property>
+<property name="mapTo"><value>pi_network_id</value></property>
+<property name="type"><ref bean="java.sql.Types.BIGINT"/></property>
+<property name="position"><value>1</value></property>
+<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"/></property>
+</bean>
+
+<bean id="pro_balance_adjust_rpt_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+<property name="name"><value>pi_internal_transaction_id</value></property>
+<property name="mapTo"><value>intTransId</value></property>
+<property name="type"><ref bean="java.sql.Types.VARCHAR"/></property>
+<property name="position"><value>2</value></property>
+<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"/></property>
+</bean>
+
+<bean id="pro_balance_adjust_rpt_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+<property name="name"><value>pi_external_transaction_id</value></property>
+<property name="mapTo"><value>extTransId</value></property>
+<property name="type"><ref bean="java.sql.Types.VARCHAR"/></property>
+<property name="position"><value>3</value></property>
+<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"/></property>
+</bean>
+
+<bean id="pro_balance_adjust_rpt_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+<property name="name"><value>po_balance_adjust_dtls</value></property>
+<property name="mapTo"><value>po_balance_trans_status</value></property>
+<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"/></property>
+<property name="position"><value>4</value></property>
+<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"/></property>
+</bean>
+
+
+<bean id="pro_balance_adjust_rpt_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+<property name="name"><value>po_error_code</value></property>
+<property name="mapTo"><value>po_error_code</value></property>
+<property name="type"><ref bean="java.sql.Types.BIGINT"/></property>
+<property name="position"><value>5</value></property>
+<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"/></property>
+</bean>
+
+<bean id="pro_balance_adjust_rpt_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+<property name="name"><value>po_error_desc</value></property>
+<property name="mapTo"><value>po_error_desc</value></property>
+<property name="type"><ref bean="java.sql.Types.VARCHAR"/></property>
+<property name="position"><value>6</value></property>
+<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"/></property>
+</bean>
+
+
+
+
+</beans>

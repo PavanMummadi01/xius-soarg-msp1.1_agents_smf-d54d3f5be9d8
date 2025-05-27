@@ -1,0 +1,2722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ns1="http://provisioning.mvnoapi.messages.si.bcgi.net" 
+	xmlns:ns2="http://common.mvnoapi.messages.si.bcgi.net"
+	xmlns:ns3="http://subscriber.mvnoapi.messages.si.bcgi.net"
+	xmlns:ns4="http://device.mvnoapi.messages.si.bcgi.net"
+	xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="urn:servicemix:soap-binding"
+	xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:servicemix:soap-binding">
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://provisioning.mvnoapi.messages.si.bcgi.net" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="AccountId">
+				<xsd:sequence>
+	               <xsd:element minOccurs="0" name="accountIdkeyType" type="xsd:string" />
+	               <xsd:element name="id" type="xsd:string" />
+	               <xsd:element minOccurs="0" name="keyType" type="ns1:AccountIdKeyType" />
+	               <xsd:any maxOccurs="unbounded" minOccurs="0" />
+                </xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="AccountIdKeyType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MDN"/>
+					<xsd:enumeration value="ICCID"/>
+					<xsd:enumeration value="IMSI"/>
+					<xsd:enumeration value="ACCOUNT_ID"/>
+					<xsd:enumeration value="ICC_NO"/>
+					<xsd:enumeration value="PASSPORT_NO"/>
+					<xsd:enumeration value="MYKAD_ID"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="BillingMethodType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PREPAID"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="UserDefinedInfo">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="userDefined1" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined10" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined2" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined3" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined4" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined5" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined6" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined7" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined8" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefined9" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="PersonalData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="annualIncome" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="city" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="county" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dob" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="driversLicence" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="driversLicenceState" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="employer" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="employerLength" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="ethnic" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="gender" nillable="true" type="ns2:GenderType"/>
+					<xsd:element minOccurs="0" name="gmpc" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="identityType" nillable="true" type="ns2:PersonalIdentityType"/>
+					<xsd:element minOccurs="0" name="industry" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="msisdn" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="nationality" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="occupation" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="personalIdentificationNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="pleaseSpecify" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="securityAnswer" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="securityQuestion" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="simImageName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="sourceOfInfo" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="ssn" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userId" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="workPhone" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="DialableNumberData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="dialableNumber" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="urn:servicemix:soap-binding" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="getAccountNote">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetAccountNoteRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccountNoteResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetAccountNoteResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getDropdown">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetDropdownRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getDropdownResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetDropdownResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateCallReason">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdateCallReasonRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateCallReasonResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdateCallReasonResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSubscriberInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetSubscriberInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSubscriberInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetSubscriberInfoResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="authenticate">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:AuthenticateRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="authenticateResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:AuthenticateResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccount">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetAccountRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccountResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetAccountResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getRegionDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetRegionDetailsRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getRegionDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetRegionDetailsResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSubscriberProfileInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetSubscriberProfileInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSubscriberProfileInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetSubscriberProfileInfoResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAbbrevatedAccountNotes">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetAbbrevatedAccountNotesRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAbbrevatedAccountNotesResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetAbbrevatedAccountNotesResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateAccountPersonal">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdateAccountPersonalRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateAccountPersonalResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdateAccountPersonalResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="findAccounts">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:FindAccountsRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="findAccountsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:FindAccountsResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateCorpSubscriberInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdateSubscriberInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateCorpSubscriberInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdateSubscriberInfoResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addTroubleTicket">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:AddTroubleTicketRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addTroubleTicketResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:AddTroubleTicketResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="viewTroubleTicket">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:ViewTroubleTicketRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="viewTroubleTicketResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ViewTroubleTicketResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UpdateAccountNote">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdateAccountNoteRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="UpdateAccountNoteResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdateAccountNoteResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSubscriber">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetSubscriberRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getSubscriberResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetSubscriberResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="manageRegionDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:ManageRegionDetailsRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="manageRegionDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ManageRegionDetailsResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccountPersonal">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetAccountPersonalRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccountPersonalResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetAccountPersonalResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ping">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns2:PingRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="pingResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns2:PingResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="forgotPassword">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:ForgotPasswordRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="forgotPasswordResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ForgotPasswordResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="changePassword">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:ChangePasswordRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="changePasswordResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ChangePasswordResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="forgotUserName">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:ForgotUserNameRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="forgotUserNameResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:ForgotUserNameResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPrepaidAccount">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:PrepaidAccountDetailsRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getPrepaidAccountResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:PrepaidAccountDetailsResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addAccountNote">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:AddAccountNoteRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addAccountNoteResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:AddAccountNoteResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updatSubscriberInfo">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdateSubscriberInfoRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updatSubscriberInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdateSubscriberInfoResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addAccountHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:AddAccountHistoryRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="addAccountHistoryResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:AddAccountHistoryResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updatePrepaidAccount">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdatePrepaidAccountDetailsRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updatePrepaidAccountResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdatePrepaidAccountDetailsResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccountHistory">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetAccountHistoryRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getAccountHistoryResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetAccountHistoryResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateAccountDetails">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:UpdateAccountDetailsRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="updateAccountDetailsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:UpdateAccountDetailsResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="ArrayOfString">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="syncUpload">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:SyncUploadRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="syncUploadResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:SyncUploadResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getNetworkID">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="ns3:GetNetworkIDRequest"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getNetworkIDResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns3:GetNetworkIDResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://subscriber.mvnoapi.messages.si.bcgi.net" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="GetAccountNoteRequest">
+				<xsd:sequence>
+					<xsd:element name="accountId" type="ns1:AccountId"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAccountNoteResponse">
+				<xsd:sequence>
+					<xsd:element name="accountNoteData" type="ns3:ArrayOfAccountNoteData"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfAccountNoteData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="AccountNoteData" nillable="true" type="ns3:AccountNoteData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AccountNoteData">
+				<xsd:sequence>
+					<xsd:element name="accountId" nillable="true" type="xsd:int"/>
+					<xsd:element name="CorporateNote" type="xsd:boolean"/>
+					<xsd:element name="criticalNote" type="xsd:int"/>
+					<xsd:element name="noteCompleted" type="xsd:string"/>
+					<xsd:element name="noteDate" type="xsd:dateTime"/>
+					<xsd:element name="noteText" type="xsd:string"/>
+					<xsd:element name="noteType" type="xsd:string"/>
+					<xsd:element name="noteTypeDescription" type="xsd:string"/>
+					<xsd:element name="reviewBy" type="xsd:string"/>
+					<xsd:element name="reviewDate" type="xsd:dateTime"/>
+					<xsd:element name="seqNumber" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="userName" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetDropdownRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="dropdownFilterData" nillable="true" type="ns3:DropdownFilterData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="DropdownFilterData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="activeOnly" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="tableName" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetDropdownResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dropdownData" nillable="true" type="ns3:ArrayOfDropdownData"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfDropdownData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="DropdownData" nillable="true" type="ns3:DropdownData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DropdownData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateCallReasonRequest">
+				<xsd:sequence>
+					<xsd:element name="accountId" type="ns3:AccountId"/>
+					<xsd:element name="callReasonCode" type="xsd:string"/>
+					<xsd:element name="callReasonDate" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="callReasonNote" nillable="true" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="operationType" type="ns3:OperationType"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="OperationType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ADD"/>
+					<xsd:enumeration value="UPDATE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AccountId">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountIdkeyType" type="xsd:string" />
+	               <xsd:element name="id" type="xsd:string" />
+	               <xsd:element minOccurs="0" name="keyType" type="ns1:AccountIdKeyType" />
+	               <xsd:any maxOccurs="unbounded" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="AccountIdKeyType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MDN"/>
+					<xsd:enumeration value="ACCOUNT_ID"/>
+					<xsd:enumeration value="ICC_NO"/>
+					<xsd:enumeration value="PASSPORT_NO"/>
+					<xsd:enumeration value="MYKAD_ID"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="UpdateCallReasonResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="GetSubscriberInfoRequest">
+				<xsd:sequence>
+					<xsd:element name="billingAccountId" type="ns2:BillingAccountIdKey"/>
+					<xsd:element minOccurs="0" name="ivrRequired" nillable="true" type="xsd:boolean"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="requestFrom" nillable="true" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="vmsRequired" nillable="true" type="xsd:boolean"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetSubscriberInfoResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="detailsInfo" nillable="true" type="ns3:DetailsInfo"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="iccid" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="imsi" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="mdn" nillable="true" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="DetailsInfo">
+				<xsd:sequence>
+					<xsd:element name="subscribedFeatures" type="ns2:ArrayOfNameValuePair"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AuthenticateRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="carrierName" nillable="true" type="xsd:string"/>
+					<xsd:element name="loginName" type="xsd:string"/>
+					<xsd:element name="loginPassword" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="userType" nillable="true" type="ns3:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="UserType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="SUBSCRIBER"/>
+					<xsd:enumeration value="DEALER"/>
+					<xsd:enumeration value="CORP"/>
+					<xsd:enumeration value="CCUI"/>
+					<xsd:enumeration value="MGMT_UI"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AuthenticateResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="isBareBoneAccount" nillable="true" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="carrierId" nillable="true" type="xsd:string"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+					<xsd:element name="idNumber" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="idType" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="isAdmin" nillable="true" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="lastLoginTime" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="passwordChangeReq" nillable="true" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="mServiceContext" nillable="true" type="ns2:ServiceContext"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="userAccountName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userAccountPassword" nillable="true" type="xsd:string"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAccountRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="MDN" nillable="true" type="xsd:string"/>
+					<xsd:element name="accountId" type="ns3:AccountId"/>
+					<xsd:element minOccurs="0" name="carrierSpecificTimeZone" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="ivr" nillable="true" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="retrievalType" type="ns3:RetrievalType"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="vms" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="RetrievalType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PERSONAL_DETAILS"/>
+					<xsd:enumeration value="SERVICE_PLAN"/>
+					<xsd:enumeration value="ALL"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="GetAccountResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="MDN" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="accountNumberMap" nillable="true" type="ns3:AccountNumberMap"/>
+					<xsd:element name="accountStatus" type="ns3:AccountStatus"/>
+					<xsd:element minOccurs="0" name="alternateAccountId" nillable="true" type="ns2:AlternateAccountId"/>
+					<xsd:element minOccurs="0" name="balancedetails" nillable="true" type="ns3:BalanceDetails"/>
+					<xsd:element minOccurs="0" name="billingAddressData" nillable="true" type="ns2:BillingAddressData"/>
+					<xsd:element name="billingMethod" type="ns1:BillingMethodType"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="deviceNetworkData" nillable="true" type="ns4:DeviceNetworkData"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="personalData" type="ns1:PersonalData"/>
+					<xsd:element minOccurs="0" name="servicePlan" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="sevicePlanfee" nillable="true" type="xsd:double"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element minOccurs="0" name="subDetailsInfo" nillable="true" type="ns3:SubscriberDetailsInfo"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="userDefined" nillable="true" type="ns1:UserDefinedInfo"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AccountNumberMap">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="altAccountId01" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="altAccountId02" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="altAccountId03" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="altAccountId04" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="altAccountId05" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AccountStatus">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="cancelDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element name="effectiveDate" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="expirationDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="selfcareAccountStatus" nillable="true" type="ns2:SelfcareAccountStatusType"/>
+					<xsd:element minOccurs="0" name="status" nillable="true" type="ns3:AccountStatusType"/>
+					<xsd:element minOccurs="0" name="subscriberStatus" nillable="true" type="ns3:SubscriberStatusType"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="AccountStatusType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ACTIVE"/>
+					<xsd:enumeration value="EXPIRED"/>
+					<xsd:enumeration value="CANCELLED"/>
+					<xsd:enumeration value="SUSPENDED"/>
+					<xsd:enumeration value="PORT_IN_PENDING"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="SubscriberStatusType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ACTIVE"/>
+					<xsd:enumeration value="EXPIRED"/>
+					<xsd:enumeration value="CANCELLED"/>
+					<xsd:enumeration value="SUSPENDED"/>
+					<xsd:enumeration value="TDNP"/>
+					<xsd:enumeration value="DEACTIVATED"/>
+					<xsd:enumeration value="PDNP"/>
+					<xsd:enumeration value="MERGED"/>
+					<xsd:enumeration value="PENDING"/>
+					<xsd:enumeration value="SUSP_NRT"/>
+					<xsd:enumeration value="WRITEOFF"/>
+					<xsd:enumeration value="PORT_IN_PENDING"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="BalanceDetails">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="bucketBalances" nillable="true" type="ns3:BucketBalances"/>
+					<xsd:element minOccurs="0" name="lastRechargeDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="prepaidAccountBalance" nillable="true" type="xsd:double"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="BucketBalances">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="sMSMessages" nillable="true" type="xsd:double"/>
+					<xsd:element minOccurs="0" name="airtimeMinutes" nillable="true" type="xsd:double"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="SubscriberDetailsInfo">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accntBalance" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="accountId" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="activationDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dataExpiryDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="earnedCreditsinLast30Days" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="expiryDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="freeSMSCount" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="freeSMSRuppes" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="gprsServStatus" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="gracePeriod1EndDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="imsiNo" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="language" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastCallCharge" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="lastCallDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastReloadAmount" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="lastReloadTimeStamp" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastTransaction" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastTransactionCharge" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="lastTransactionTimestamp" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="latestTarrifPlanID" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="msisdn" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="pin" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="promoBalance" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="promoDataBytes" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="promoDataExpiryDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="promoValidityDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="simSerialNo" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="status" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="statusDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="subscriberTimeZone" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="tarrifName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="thresholdBalance" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="totalBalance" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="totalEarnedCredits" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="totalUsedCredits" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="usedCreditsinLast30Days" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="validityDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="vmsServiceStatus" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetRegionDetailsRequest">
+				<xsd:sequence>
+					<xsd:element name="fetchType" type="ns2:FetchByType"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="regionDetails" nillable="true" type="ns2:RegionDetails"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element name="userType" type="ns2:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetRegionDetailsResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="regionDetails" nillable="true" type="ns2:ArrayOfRegionDetails"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetSubscriberProfileInfoRequest">
+				<xsd:sequence>
+					<xsd:element name="billingAccountId" type="ns2:BillingAccountIdKey"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetSubscriberProfileInfoResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="mdn" nillable="true" type="xsd:string"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="iccid" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="imsi" nillable="true" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="subscriberProfileInfo" type="ns3:ArrayOfSubscriberProfileInfo"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfSubscriberProfileInfo">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="SubscriberProfileInfo" nillable="true" type="ns3:SubscriberProfileInfo"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="SubscriberProfileInfo">
+				<xsd:sequence>
+					<xsd:element name="accountStatus" type="ns3:AccountStatus"/>
+					<xsd:element minOccurs="0" name="billingAddressData" nillable="true" type="ns2:BillingAddressData"/>
+					<xsd:element minOccurs="0" name="orderDetails" nillable="true" type="ns3:OrderDetails"/>
+					<xsd:element name="personalData" type="ns1:PersonalData"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="OrderDetails">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="iccno" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="oldIC" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="orderBooking" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="orderDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="orderExpiryDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="orderStatus" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAbbrevatedAccountNotesRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountId" nillable="true" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAbbrevatedAccountNotesResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="abbrevatedAccountNoteData" nillable="true" type="ns3:ArrayOfAbbrevatedAccountNoteData"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfAbbrevatedAccountNoteData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="AbbrevatedAccountNoteData" nillable="true" type="ns3:AbbrevatedAccountNoteData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AbbrevatedAccountNoteData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountNumber" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="criticalNote" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="noteText" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateAccountPersonalRequest">
+				<xsd:sequence>
+					<xsd:element name="accountPersonalData" type="ns3:AccountPersonalData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AccountPersonalData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="socialSecurityNumber" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="accountId" nillable="true" type="ns1:AccountId"/>
+					<xsd:element minOccurs="0" name="alternateAddress" nillable="true" type="ns3:AddressData"/>
+					<xsd:element minOccurs="0" name="birthDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="contactName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="creditAgency" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="creditHistory" nillable="true" type="xsd:float"/>
+					<xsd:element minOccurs="0" name="creditRating" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="driverLicenceState" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="driversLicence" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="employer" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="employerLength" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="jointBirthDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="jointSocialSecurityNumber" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="workPhone" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AddressData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="addr1" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="addr2" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="addr3" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="addressType" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="businessName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="city" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="contactPhoneNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="country" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="countryCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="county" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="postalCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="salutation" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="state" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="suffix" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateAccountPersonalResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="responseMsg" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="FindAccountsRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountFilterData" nillable="true" type="ns3:FindAccountFilterData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="FindAccountFilterData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="ICCDid" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="MSID" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="accountNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="deviceId" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dialableNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="emailAddress" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="indexToFetchFrom" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="socialSecurityNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="mSpecificSubscriber" nillable="true" type="ns3:SpecificSubscriber"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="SpecificSubscriber">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="birthDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="FindAccountsResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="findAccountData" type="ns3:ArrayOfFindAccountData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="totalNoOfRecords" nillable="true" type="xsd:long"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfFindAccountData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="FindAccountData" nillable="true" type="ns3:FindAccountData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="FindAccountData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="accountStatus" nillable="true" type="ns3:AccountStatus"/>
+					<xsd:element minOccurs="0" name="businessName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="challengeAnswer" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="challengeQuestion" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="line1" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="marketId" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="score" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="socialSecurityNumber" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="totalDue" nillable="true" type="xsd:int"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateSubscriberInfoRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="billingAddressData" nillable="true" type="ns2:BillingAddressData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="networkName" type="xsd:string"/>
+					<xsd:element name="newAccountId" type="ns3:AccountId"/>
+					<xsd:element name="oldAccountId" type="ns3:AccountId"/>
+					<xsd:element minOccurs="0" name="personalData" nillable="true" type="ns1:PersonalData"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element name="simNumber" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userDefinedInfo" type="ns1:UserDefinedInfo"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateSubscriberInfoResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="ispseudo" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="msisdn" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AddTroubleTicketRequest">
+				<xsd:sequence>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element name="troubleTicketData" type="ns3:TroubleTicketData"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="TroubleTicketData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="createdDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="status" nillable="true" type="ns3:TroubleTicketStatus"/>
+					<xsd:element minOccurs="0" name="type" nillable="true" type="ns3:TroubleTicketType"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="TroubleTicketType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PROBLEM_IN_BATTERY"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="TroubleTicketStatus">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NEW"/>
+					<xsd:enumeration value="WORK_IN_PROGRESS"/>
+					<xsd:enumeration value="REJECT"/>
+					<xsd:enumeration value="WAITING_FOR_MORE_INFO"/>
+					<xsd:enumeration value="ASSIGNED_TO_GTS"/>
+					<xsd:enumeration value="CLOSED"/>
+					<xsd:enumeration value="REOPEN"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AddTroubleTicketResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ViewTroubleTicketRequest">
+				<xsd:sequence>
+					<xsd:element name="MDN" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ViewTroubleTicketResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="troubleTicketData" type="ns3:ArrayOfTroubleTicketData"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfTroubleTicketData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="TroubleTicketData" nillable="true" type="ns3:TroubleTicketData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateAccountNoteRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountNoteData" nillable="true" type="ns3:AccountNoteData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateAccountNoteResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="responseMsg" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetSubscriberRequest">
+				<xsd:sequence>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element name="subscriberId" type="ns3:SubscriberIdKey"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="SubscriberIdKey">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:string"/>
+					<xsd:element name="keyType" type="ns3:SubscriberIdKeyType"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="SubscriberIdKeyType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MDN"/>
+					<xsd:enumeration value="ACCOUNT_ID"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="GetSubscriberResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="MDN" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="accountBalance" nillable="true" type="xsd:double"/>
+					<xsd:element minOccurs="0" name="accountId" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="accountPreferences" nillable="true" type="ns3:AccountPreferences"/>
+					<xsd:element minOccurs="0" name="accountStatus" nillable="true" type="ns3:AccountStatus"/>
+					<xsd:element minOccurs="0" name="addressData" nillable="true" type="ns3:AddressData"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="customerType" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AccountPreferences">
+				<xsd:sequence>
+					<xsd:element name="language" type="ns3:LanguageType"/>
+					<xsd:element name="messageLevel" type="ns3:MessageLevelType"/>
+					<xsd:element name="securityCode" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="LanguageType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ENGLISH"/>
+					<xsd:enumeration value="SPANISH"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="MessageLevelType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MSG_LEVEL0"/>
+					<xsd:enumeration value="MSG_LEVEL1"/>
+					<xsd:enumeration value="MSG_LEVEL2"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ManageRegionDetailsRequest">
+				<xsd:sequence>
+					<xsd:element name="fetchType" type="ns2:FetchByType"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="operationType" type="ns2:OperationType"/>
+					<xsd:element minOccurs="0" name="regionDetails" nillable="true" type="ns2:RegionDetails"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element name="userType" type="ns2:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ManageRegionDetailsResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="regionDetails" nillable="true" type="ns2:RegionDetails"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAccountPersonalRequest">
+				<xsd:sequence>
+					<xsd:element name="accountId" type="ns1:AccountId"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAccountPersonalResponse">
+				<xsd:sequence>
+					<xsd:element name="accountPersonalData" type="ns3:AccountPersonalData"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ForgotPasswordRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="carrierName" nillable="true" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="officeName" nillable="true" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="userId" nillable="true" type="xsd:string"/>
+					<xsd:element name="userIdentificationData" type="ns3:UserIdentificationData"/>
+					<xsd:element name="userType" type="ns3:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UserIdentificationData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="MDN" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dateOfBirth" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="emailID" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="personalIdentificationNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="personalIdentityType" type="ns2:PersonalIdentityType"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ForgotPasswordResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ChangePasswordRequest">
+				<xsd:sequence>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="newPassword" nillable="true" type="xsd:string"/>
+					<xsd:element name="oldPassword" nillable="true" type="xsd:string"/>
+					<xsd:element name="personalIdentityNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="personalIdentityType" type="ns2:PersonalIdentityType"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="updatedUsername" type="xsd:string"/>
+					<xsd:element name="userId" nillable="true" type="xsd:string"/>
+					<xsd:element name="userType" type="ns3:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ChangePasswordResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="mServiceContext" nillable="true" type="ns2:ServiceContext"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="userAccountName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userAccountPassword" nillable="true" type="xsd:string"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ForgotUserNameRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="carrierName" nillable="true" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="userId" nillable="true" type="xsd:string"/>
+					<xsd:element name="userIdentificationData" type="ns3:UserIdentificationData"/>
+					<xsd:element name="userType" type="ns3:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ForgotUserNameResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PrepaidAccountDetailsRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountId" nillable="true" type="ns1:AccountId"/>
+					<xsd:element minOccurs="0" name="mdn" nillable="true" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="PrepaidAccountDetailsResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="cancelDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="expDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="grasePeriod" nillable="true" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="passCode" nillable="true" type="xsd:int"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AddAccountNoteRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountNoteData" nillable="true" type="ns3:AccountNoteData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AddAccountNoteResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element minOccurs="0" name="responseStatus" nillable="true" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AddAccountHistoryRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountHistoryData" nillable="true" type="ns3:AccountHistoryData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AccountHistoryData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="SODate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="SOType" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="accountId" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dialableNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="effectiveDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="marketId" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="serviceOrderDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="serviceOrderNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="serviceOrderSectionNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="userName" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AddAccountHistoryResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="SectionNumber" type="xsd:string"/>
+					<xsd:element name="ServiceOrderNumber" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdatePrepaidAccountDetailsRequest">
+				<xsd:sequence>
+					<xsd:element name="accountId" type="ns1:AccountId"/>
+					<xsd:element name="cancelDate" type="xsd:dateTime"/>
+					<xsd:element name="expDate" type="xsd:dateTime"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="passCode" type="xsd:int"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdatePrepaidAccountDetailsResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="responseMsg" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetAccountHistoryRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="AccountHistoryFilterData" nillable="true" type="ns3:AccountHistoryFilterData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="AccountHistoryFilterData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="accountNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="dialableNumberData" nillable="true" type="ns1:DialableNumberData"/>
+					<xsd:element minOccurs="0" name="endDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="startDate" nillable="true" type="xsd:dateTime"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="GetAccountHistoryResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="AccountHistoryData" nillable="true" type="ns3:ArrayOfAccountHistoryData"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfAccountHistoryData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="AccountHistoryData" nillable="true" type="ns3:AccountHistoryData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateAccountDetailsRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="MDN" nillable="true" type="xsd:string"/>
+					<xsd:element name="accountId" type="ns1:AccountId"/>
+					<xsd:element minOccurs="0" name="accountStatus" nillable="true" type="ns2:SelfcareAccountStatusType"/>
+					<xsd:element minOccurs="0" name="accoutType" nillable="true" type="ns2:AccountType"/>
+					<xsd:element minOccurs="0" name="billingAddressData" nillable="true" type="ns2:BillingAddressData"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="personalData" nillable="true" type="ns1:PersonalData"/>
+					<xsd:element minOccurs="0" name="postpaidAcctId" nillable="true" type="xsd:long"/>
+					<xsd:element minOccurs="0" name="postpaidDetails" nillable="true" type="ns2:PostpaidDetails"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="updateAccountStatus" nillable="true" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="userDefinedInfo" type="ns1:UserDefinedInfo"/>
+					<xsd:element name="userType" type="ns3:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="UpdateAccountDetailsResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="responseMsg" type="xsd:string"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="SyncUploadRequest">
+				<xsd:sequence>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element name="stringInformation" type="tns:ArrayOfString"/>
+					<xsd:element name="syncUploadType" type="ns2:SyncUploadType"/>
+					<xsd:element name="userType" type="ns2:UserType"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="SyncUploadResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element minOccurs="0" name="successDetails" nillable="true" type="tns:ArrayOfString"/>
+					<xsd:element minOccurs="0" name="syncUploadErrors" nillable="true" type="ns3:ArrayOfSyncUploadError"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="transNo" nillable="true" type="xsd:string"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfSyncUploadError">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="SyncUploadError" nillable="true" type="ns3:SyncUploadError"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="SyncUploadError">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="errorCode" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errorMessage" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="regionDetails" type="ns2:RegionDetails"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetNetworkIDRequest">
+				<xsd:sequence>
+					<xsd:element name="MDN" type="xsd:string"/>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="GetNetworkIDResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="carrierId" type="xsd:string"/>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://device.mvnoapi.messages.si.bcgi.net" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="DeviceNetworkData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="ESNDecimal" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="ESNHex" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="IXC" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="LRN" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="MDN" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="MSID" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="activationDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="customerGroup" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="deactSalesPerson" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="deactivateDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="deactivateReason" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="equipmentStatus" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="extension1" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="finalDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="reactDate" nillable="true" type="xsd:dateTime"/>
+					<xsd:element minOccurs="0" name="roamICPT" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.mvnoapi.messages.si.bcgi.net" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="ServiceContext">
+				<xsd:sequence>
+					<xsd:element name="carrierId" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="sessionId" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="timestamp" nillable="true" type="xsd:dateTime"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="SecurityId">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="securityToken" nillable="true" type="xsd:string"/>
+					<xsd:element name="userAccountName" type="xsd:string"/>
+					<xsd:element name="userAccountPassword" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfErrorData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="ErrorData" nillable="true" type="ns2:ErrorData"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ErrorData">
+				<xsd:sequence>
+					<xsd:element name="errorCategory" type="ns2:ErrorCategory"/>
+					<xsd:element name="errorCode" type="xsd:string"/>
+					<xsd:element name="errorMessage" type="xsd:string"/>
+					<xsd:element name="severityCode" type="ns2:SeverityCode"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="SeverityCode">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ERROR"/>
+					<xsd:enumeration value="WARNING"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ErrorCategory">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="FAILED_BUSINESS_LOGIC"/>
+					<xsd:enumeration value="WSFORMAT_ERROR"/>
+					<xsd:enumeration value="DATA_ERROR"/>
+					<xsd:enumeration value="SYSTEM_ERROR"/>
+					<xsd:enumeration value="SYSTEM_OFFLINE"/>
+					<xsd:enumeration value="TIME_LIMIT_ERROR"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="StatusCode">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ERROR"/>
+					<xsd:enumeration value="WARNING"/>
+					<xsd:enumeration value="SUCCESS"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="BillingAccountIdKey">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:string"/>
+					<xsd:element name="keyType" type="ns2:BillingIdKeyType"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="BillingIdKeyType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MDN"/>
+					<xsd:enumeration value="ICCID"/>
+					<xsd:enumeration value="IMSI"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfNameValuePair">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="NameValuePair" nillable="true" type="ns2:NameValuePair"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="NameValuePair">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="value" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="SelfcareAccountStatusType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ACTIVE"/>
+					<xsd:enumeration value="LOCKED"/>
+					<xsd:enumeration value="EXPIRED"/>
+					<xsd:enumeration value="DEACTIVE"/>
+					<xsd:enumeration value="PENDING"/>
+					<xsd:enumeration value="SUBMITTED"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="AlternateAccountId">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="alternateAccountId1" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="alternateAccountId2" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="alternateAccountId3" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="alternateAccountId4" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="BillingAddressData">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="addr1" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="addr2" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="addr3" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="addressType" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="alternateContactNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="businessName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="city" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="mContactPhoneNumber" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="country" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="countryCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="county" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="email" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="lastName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="phone" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="postalCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="salutation" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="state" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="stateCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="suffix" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="workPhone" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="PersonalIdentityType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MYKAD_ID"/>
+					<xsd:enumeration value="PASSPORT_NO"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="GenderType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MALE"/>
+					<xsd:enumeration value="FEMALE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="RegionDetails">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="city" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="countryCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="countryName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="county" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="stateCode" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="stateName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="zipCode" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="FetchByType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="BY_CITY"/>
+					<xsd:enumeration value="BY_STATE"/>
+					<xsd:enumeration value="GET_STATES"/>
+					<xsd:enumeration value="BY_POSTALCODE"/>
+					<xsd:enumeration value="GET_POSTALCODES"/>
+					<xsd:enumeration value="GET_CITIES"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="UserType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="SUBSCRIBER"/>
+					<xsd:enumeration value="DEALER"/>
+					<xsd:enumeration value="USSD"/>
+					<xsd:enumeration value="TTCARE"/>
+					<xsd:enumeration value="CORP"/>
+					<xsd:enumeration value="CCUI"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfRegionDetails">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="RegionDetails" nillable="true" type="ns2:RegionDetails"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="OperationType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="CREATE"/>
+					<xsd:enumeration value="UPDATE"/>
+					<xsd:enumeration value="DELETE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="PingRequest">
+				<xsd:sequence>
+					<xsd:element name="messageID" type="xsd:string"/>
+					<xsd:element name="securityId" type="ns2:SecurityId"/>
+					<xsd:element name="serviceContext" type="ns2:ServiceContext"/>
+					<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:complexType name="PingResponse">
+				<xsd:sequence>
+					<xsd:element name="correlationID" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="errors" nillable="true" type="ns2:ArrayOfErrorData"/>
+					<xsd:element name="statusCode" type="ns2:StatusCode"/>
+					<xsd:element name="timeStamp" type="xsd:dateTime"/>
+					<xsd:element name="version" type="xsd:string"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="AccountType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PREPAID"/>
+					<xsd:enumeration value="POSTPAID"/>
+					<xsd:enumeration value="HYBRID"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="PostpaidDetails">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="availableCreditLimit" nillable="true" type="xsd:decimal"/>
+					<xsd:element minOccurs="0" name="billingDate" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="billingFrequency" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="billingType" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="creditLimit" nillable="true" type="xsd:decimal"/>
+					<xsd:any maxOccurs="unbounded" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:anyAttribute/>
+			</xsd:complexType>
+			<xsd:simpleType name="SyncUploadType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="UPLOAD_REG_DATA"/>
+					<xsd:enumeration value="DIRECT_CREDIT"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getRegionDetailsResponse">
+		<wsdl:part element="tns:getRegionDetailsResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSubscriberInfoResponse">
+		<wsdl:part element="tns:getSubscriberInfoResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updatePrepaidAccountResponse">
+		<wsdl:part element="tns:updatePrepaidAccountResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="pingResponse">
+		<wsdl:part element="tns:pingResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updatePrepaidAccountRequest">
+		<wsdl:part element="tns:updatePrepaidAccount" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="pingRequest">
+		<wsdl:part element="tns:ping" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="manageRegionDetailsRequest">
+		<wsdl:part element="tns:manageRegionDetails" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getRegionDetailsRequest">
+		<wsdl:part element="tns:getRegionDetails" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountNoteRequest">
+		<wsdl:part element="tns:UpdateAccountNote" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="forgotUserNameRequest">
+		<wsdl:part element="tns:forgotUserName" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSubscriberProfileInfoResponse">
+		<wsdl:part element="tns:getSubscriberProfileInfoResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountPersonalRequest">
+		<wsdl:part element="tns:getAccountPersonal" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPrepaidAccountResponse">
+		<wsdl:part element="tns:getPrepaidAccountResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getPrepaidAccountRequest">
+		<wsdl:part element="tns:getPrepaidAccount" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSubscriberResponse">
+		<wsdl:part element="tns:getSubscriberResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="changePasswordResponse">
+		<wsdl:part element="tns:changePasswordResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountResponse">
+		<wsdl:part element="tns:getAccountResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountNoteResponse">
+		<wsdl:part element="tns:UpdateAccountNoteResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountHistoryRequest">
+		<wsdl:part element="tns:getAccountHistory" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addAccountNoteRequest">
+		<wsdl:part element="tns:addAccountNote" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountNoteResponse">
+		<wsdl:part element="tns:getAccountNoteResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findAccountsRequest">
+		<wsdl:part element="tns:findAccounts" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="changePasswordRequest">
+		<wsdl:part element="tns:changePassword" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="syncUploadResponse">
+		<wsdl:part element="tns:syncUploadResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAbbrevatedAccountNotesResponse">
+		<wsdl:part element="tns:getAbbrevatedAccountNotesResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateCallReasonRequest">
+		<wsdl:part element="tns:updateCallReason" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addAccountHistoryResponse">
+		<wsdl:part element="tns:addAccountHistoryResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateAccountPersonalRequest">
+		<wsdl:part element="tns:updateAccountPersonal" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updatSubscriberInfoResponse">
+		<wsdl:part element="tns:updatSubscriberInfoResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getDropdownResponse">
+		<wsdl:part element="tns:getDropdownResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="viewTroubleTicketRequest">
+		<wsdl:part element="tns:viewTroubleTicket" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSubscriberProfileInfoRequest">
+		<wsdl:part element="tns:getSubscriberProfileInfo" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addTroubleTicketRequest">
+		<wsdl:part element="tns:addTroubleTicket" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="manageRegionDetailsResponse">
+		<wsdl:part element="tns:manageRegionDetailsResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="authenticateResponse">
+		<wsdl:part element="tns:authenticateResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="viewTroubleTicketResponse">
+		<wsdl:part element="tns:viewTroubleTicketResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNetworkIDResponse">
+		<wsdl:part element="tns:getNetworkIDResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSubscriberRequest">
+		<wsdl:part element="tns:getSubscriber" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getDropdownRequest">
+		<wsdl:part element="tns:getDropdown" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateAccountPersonalResponse">
+		<wsdl:part element="tns:updateAccountPersonalResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="forgotPasswordResponse">
+		<wsdl:part element="tns:forgotPasswordResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateAccountDetailsResponse">
+		<wsdl:part element="tns:updateAccountDetailsResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="findAccountsResponse">
+		<wsdl:part element="tns:findAccountsResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addAccountNoteResponse">
+		<wsdl:part element="tns:addAccountNoteResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateCorpSubscriberInfoResponse">
+		<wsdl:part element="tns:updateCorpSubscriberInfoResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountRequest">
+		<wsdl:part element="tns:getAccount" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="forgotUserNameResponse">
+		<wsdl:part element="tns:forgotUserNameResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateAccountDetailsRequest">
+		<wsdl:part element="tns:updateAccountDetails" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateCorpSubscriberInfoRequest">
+		<wsdl:part element="tns:updateCorpSubscriberInfo" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAbbrevatedAccountNotesRequest">
+		<wsdl:part element="tns:getAbbrevatedAccountNotes" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountNoteRequest">
+		<wsdl:part element="tns:getAccountNote" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="authenticateRequest">
+		<wsdl:part element="tns:authenticate" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addAccountHistoryRequest">
+		<wsdl:part element="tns:addAccountHistory" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getNetworkIDRequest">
+		<wsdl:part element="tns:getNetworkID" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateCallReasonResponse">
+		<wsdl:part element="tns:updateCallReasonResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountPersonalResponse">
+		<wsdl:part element="tns:getAccountPersonalResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="syncUploadRequest">
+		<wsdl:part element="tns:syncUpload" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updatSubscriberInfoRequest">
+		<wsdl:part element="tns:updatSubscriberInfo" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="addTroubleTicketResponse">
+		<wsdl:part element="tns:addTroubleTicketResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSubscriberInfoRequest">
+		<wsdl:part element="tns:getSubscriberInfo" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAccountHistoryResponse">
+		<wsdl:part element="tns:getAccountHistoryResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="forgotPasswordRequest">
+		<wsdl:part element="tns:forgotPassword" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ISubscriberAppPortType">
+		<wsdl:operation name="getAccountNote">
+			<wsdl:input message="tns:getAccountNoteRequest" name="getAccountNoteRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getAccountNoteResponse" name="getAccountNoteResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDropdown">
+			<wsdl:input message="tns:getDropdownRequest" name="getDropdownRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getDropdownResponse" name="getDropdownResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateCallReason">
+			<wsdl:input message="tns:updateCallReasonRequest" name="updateCallReasonRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:updateCallReasonResponse" name="updateCallReasonResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSubscriberInfo">
+			<wsdl:input message="tns:getSubscriberInfoRequest" name="getSubscriberInfoRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getSubscriberInfoResponse" name="getSubscriberInfoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="authenticate">
+			<wsdl:input message="tns:authenticateRequest" name="authenticateRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:authenticateResponse" name="authenticateResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccount">
+			<wsdl:input message="tns:getAccountRequest" name="getAccountRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getAccountResponse" name="getAccountResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getRegionDetails">
+			<wsdl:input message="tns:getRegionDetailsRequest" name="getRegionDetailsRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getRegionDetailsResponse" name="getRegionDetailsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSubscriberProfileInfo">
+			<wsdl:input message="tns:getSubscriberProfileInfoRequest" name="getSubscriberProfileInfoRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getSubscriberProfileInfoResponse" name="getSubscriberProfileInfoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAbbrevatedAccountNotes">
+			<wsdl:input message="tns:getAbbrevatedAccountNotesRequest" name="getAbbrevatedAccountNotesRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getAbbrevatedAccountNotesResponse" name="getAbbrevatedAccountNotesResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountPersonal">
+			<wsdl:input message="tns:updateAccountPersonalRequest" name="updateAccountPersonalRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:updateAccountPersonalResponse" name="updateAccountPersonalResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findAccounts">
+			<wsdl:input message="tns:findAccountsRequest" name="findAccountsRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:findAccountsResponse" name="findAccountsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateCorpSubscriberInfo">
+			<wsdl:input message="tns:updateCorpSubscriberInfoRequest" name="updateCorpSubscriberInfoRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:updateCorpSubscriberInfoResponse" name="updateCorpSubscriberInfoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addTroubleTicket">
+			<wsdl:input message="tns:addTroubleTicketRequest" name="addTroubleTicketRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:addTroubleTicketResponse" name="addTroubleTicketResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="viewTroubleTicket">
+			<wsdl:input message="tns:viewTroubleTicketRequest" name="viewTroubleTicketRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:viewTroubleTicketResponse" name="viewTroubleTicketResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountNote">
+			<wsdl:input message="tns:UpdateAccountNoteRequest" name="UpdateAccountNoteRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:UpdateAccountNoteResponse" name="UpdateAccountNoteResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSubscriber">
+			<wsdl:input message="tns:getSubscriberRequest" name="getSubscriberRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getSubscriberResponse" name="getSubscriberResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="manageRegionDetails">
+			<wsdl:input message="tns:manageRegionDetailsRequest" name="manageRegionDetailsRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:manageRegionDetailsResponse" name="manageRegionDetailsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountPersonal">
+			<wsdl:input message="tns:getAccountPersonalRequest" name="getAccountPersonalRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getAccountPersonalResponse" name="getAccountPersonalResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ping">
+			<wsdl:input message="tns:pingRequest" name="pingRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:pingResponse" name="pingResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="forgotPassword">
+			<wsdl:input message="tns:forgotPasswordRequest" name="forgotPasswordRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:forgotPasswordResponse" name="forgotPasswordResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="changePassword">
+			<wsdl:input message="tns:changePasswordRequest" name="changePasswordRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:changePasswordResponse" name="changePasswordResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="forgotUserName">
+			<wsdl:input message="tns:forgotUserNameRequest" name="forgotUserNameRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:forgotUserNameResponse" name="forgotUserNameResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPrepaidAccount">
+			<wsdl:input message="tns:getPrepaidAccountRequest" name="getPrepaidAccountRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getPrepaidAccountResponse" name="getPrepaidAccountResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addAccountNote">
+			<wsdl:input message="tns:addAccountNoteRequest" name="addAccountNoteRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:addAccountNoteResponse" name="addAccountNoteResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatSubscriberInfo">
+			<wsdl:input message="tns:updatSubscriberInfoRequest" name="updatSubscriberInfoRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:updatSubscriberInfoResponse" name="updatSubscriberInfoResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addAccountHistory">
+			<wsdl:input message="tns:addAccountHistoryRequest" name="addAccountHistoryRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:addAccountHistoryResponse" name="addAccountHistoryResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatePrepaidAccount">
+			<wsdl:input message="tns:updatePrepaidAccountRequest" name="updatePrepaidAccountRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:updatePrepaidAccountResponse" name="updatePrepaidAccountResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountHistory">
+			<wsdl:input message="tns:getAccountHistoryRequest" name="getAccountHistoryRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getAccountHistoryResponse" name="getAccountHistoryResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountDetails">
+			<wsdl:input message="tns:updateAccountDetailsRequest" name="updateAccountDetailsRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:updateAccountDetailsResponse" name="updateAccountDetailsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="syncUpload">
+			<wsdl:input message="tns:syncUploadRequest" name="syncUploadRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:syncUploadResponse" name="syncUploadResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getNetworkID">
+			<wsdl:input message="tns:getNetworkIDRequest" name="getNetworkIDRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:getNetworkIDResponse" name="getNetworkIDResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SubscriberAppBinding" type="tns:ISubscriberAppPortType">
+		<wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAccountNote">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getAccountNoteRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAccountNoteResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDropdown">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getDropdownRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getDropdownResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateCallReason">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="updateCallReasonRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updateCallReasonResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSubscriberInfo">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getSubscriberInfoRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getSubscriberInfoResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="authenticate">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="authenticateRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="authenticateResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccount">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getAccountRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAccountResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getRegionDetails">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getRegionDetailsRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getRegionDetailsResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSubscriberProfileInfo">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getSubscriberProfileInfoRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getSubscriberProfileInfoResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAbbrevatedAccountNotes">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getAbbrevatedAccountNotesRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAbbrevatedAccountNotesResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountPersonal">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="updateAccountPersonalRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updateAccountPersonalResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="findAccounts">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="findAccountsRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="findAccountsResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateCorpSubscriberInfo">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="updateCorpSubscriberInfoRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updateCorpSubscriberInfoResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addTroubleTicket">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="addTroubleTicketRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="addTroubleTicketResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="viewTroubleTicket">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="viewTroubleTicketRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="viewTroubleTicketResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountNote">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="UpdateAccountNoteRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="UpdateAccountNoteResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getSubscriber">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getSubscriberRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getSubscriberResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="manageRegionDetails">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="manageRegionDetailsRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="manageRegionDetailsResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountPersonal">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getAccountPersonalRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAccountPersonalResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ping">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="pingRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="pingResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="forgotPassword">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="forgotPasswordRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="forgotPasswordResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="changePassword">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="changePasswordRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="changePasswordResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="forgotUserName">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="forgotUserNameRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="forgotUserNameResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPrepaidAccount">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getPrepaidAccountRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPrepaidAccountResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addAccountNote">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="addAccountNoteRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="addAccountNoteResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatSubscriberInfo">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="updatSubscriberInfoRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updatSubscriberInfoResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="addAccountHistory">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="addAccountHistoryRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="addAccountHistoryResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updatePrepaidAccount">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="updatePrepaidAccountRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updatePrepaidAccountResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountHistory">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getAccountHistoryRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getAccountHistoryResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountDetails">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="updateAccountDetailsRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="updateAccountDetailsResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="syncUpload">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="syncUploadRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="syncUploadResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getNetworkID">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input name="getNetworkIDRequest">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getNetworkIDResponse">
+				<wsdlsoap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ISubscriberApp">
+		<wsdl:port binding="tns:SubscriberAppBinding" name="SubscriberApp">
+			<wsdlsoap:address location="http://192.168.149.179:8295/mspapi/subscriber/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,41 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- get_exp_msisdns Stored Procedure -->
+	<bean id="get_exp_msisdns" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>PKG_DATA_PLAN_MANAGEMENT.PRO_GET_EXP_NOTIFY_MSISDNS</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="get_exp_msisdns_param_1"></ref>
+				<ref bean="get_exp_msisdns_param_2"></ref>
+				<ref bean="get_exp_msisdns_param_3"></ref>
+			</list>
+		</property>
+	</bean>
+	 
+	<bean id="get_exp_msisdns_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="get_exp_msisdns_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_expired_msisdns</value></property>
+		<property name="mapTo"><value>po_expired_msisdns</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	 
+	<bean id="get_exp_msisdns_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

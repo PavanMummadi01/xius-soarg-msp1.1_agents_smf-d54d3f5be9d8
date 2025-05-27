@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_sim_reg_tracker_update" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+		<property name="name"><value>cs_sim_reg_tracker_pkg.pro_sim_reg_tracker_update</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_sim_reg_tracker_update_1"></ref>
+				<ref bean="pro_sim_reg_tracker_update_2"></ref>
+				<ref bean="pro_sim_reg_tracker_update_3"></ref>
+				<ref bean="pro_sim_reg_tracker_update_4"></ref>
+				<ref bean="pro_sim_reg_tracker_update_5"></ref>
+				<ref bean="pro_sim_reg_tracker_update_6"></ref>
+				<ref bean="pro_sim_reg_tracker_update_7"></ref>
+				<ref bean="pro_sim_reg_tracker_update_8"></ref>
+				<ref bean="pro_sim_reg_tracker_update_9"></ref>
+				<ref bean="pro_sim_reg_tracker_update_10"></ref>
+				<ref bean="pro_sim_reg_tracker_update_11"></ref>
+				<ref bean="pro_sim_reg_tracker_update_12"></ref>
+				<ref bean="pro_sim_reg_tracker_update_13"></ref>
+				<ref bean="pro_sim_reg_tracker_update_14"></ref>
+				<ref bean="pro_sim_reg_tracker_update_15"></ref>
+				<ref bean="pro_sim_reg_tracker_update_16"></ref>
+				<ref bean="pro_sim_reg_tracker_update_17"></ref>
+				<ref bean="pro_sim_reg_tracker_update_18"></ref>
+				<ref bean="pro_sim_reg_tracker_update_19"></ref>
+				<ref bean="pro_sim_reg_tracker_update_20"></ref>
+				<ref bean="pro_sim_reg_tracker_update_21"></ref>
+				<ref bean="pro_sim_reg_tracker_update_22"></ref>
+				<ref bean="pro_sim_reg_tracker_update_23"></ref>
+				<ref bean="pro_sim_reg_tracker_update_24"></ref>
+				<ref bean="pro_sim_reg_tracker_update_25"></ref>
+				<ref bean="pro_sim_reg_tracker_update_26"></ref>
+				<ref bean="pro_sim_reg_tracker_update_27"></ref>
+				<ref bean="pro_sim_reg_tracker_update_28"></ref>
+				<ref bean="pro_sim_reg_tracker_update_29"></ref>
+				<ref bean="pro_sim_reg_tracker_update_30"></ref>
+				<ref bean="pro_sim_reg_tracker_update_31"></ref>
+				<ref bean="pro_sim_reg_tracker_update_32"></ref>
+				<ref bean="pro_sim_reg_tracker_update_33"></ref>
+				<ref bean="pro_sim_reg_tracker_update_34"></ref>
+				<ref bean="pro_sim_reg_tracker_update_35"></ref>
+				<ref bean="pro_sim_reg_tracker_update_36"></ref>
+				<ref bean="pro_sim_reg_tracker_update_37"></ref>
+				<ref bean="pro_sim_reg_tracker_update_38"></ref>
+				<ref bean="pro_sim_reg_tracker_update_39"></ref>
+				<ref bean="pro_sim_reg_tracker_update_40"></ref>
+				<ref bean="pro_sim_reg_tracker_update_41"></ref>
+				<ref bean="pro_sim_reg_tracker_update_42"></ref>
+				<ref bean="pro_sim_reg_tracker_update_43"></ref>
+				<ref bean="pro_sim_reg_tracker_update_44"></ref>
+				<ref bean="pro_sim_reg_tracker_update_45"></ref>
+				<ref bean="pro_sim_reg_tracker_update_46"></ref>
+				<ref bean="pro_sim_reg_tracker_update_47"></ref>
+				<ref bean="pro_sim_reg_tracker_update_48"></ref>
+				<ref bean="pro_sim_reg_tracker_update_49"></ref>
+				<ref bean="pro_sim_reg_tracker_update_50"></ref>
+				<ref bean="pro_sim_reg_tracker_update_51"></ref>
+				<ref bean="pro_sim_reg_tracker_update_52"></ref>
+				<ref bean="pro_sim_reg_tracker_update_53"></ref>
+				<ref bean="pro_sim_reg_tracker_update_54"></ref>
+				<ref bean="pro_sim_reg_tracker_update_55"></ref>
+				<ref bean="pro_sim_reg_tracker_update_56"></ref>
+				<ref bean="pro_sim_reg_tracker_update_57"></ref>
+				<ref bean="pro_sim_reg_tracker_update_58"></ref>
+				<ref bean="pro_sim_reg_tracker_update_59"></ref>
+				<ref bean="pro_sim_reg_tracker_update_60"></ref>
+				<ref bean="pro_sim_reg_tracker_update_61"></ref>
+				<ref bean="pro_sim_reg_tracker_update_62"></ref>
+				<ref bean="pro_sim_reg_tracker_update_63"></ref>
+				<ref bean="pro_sim_reg_tracker_update_64"></ref>
+				<ref bean="pro_sim_reg_tracker_update_65"></ref>
+				<ref bean="pro_sim_reg_tracker_update_66"></ref>
+				<ref bean="pro_sim_reg_tracker_update_67"></ref>
+				<ref bean="pro_sim_reg_tracker_update_68"></ref>
+				<ref bean="pro_sim_reg_tracker_update_69"></ref>
+				<ref bean="pro_sim_reg_tracker_update_70"></ref>
+				<ref bean="pro_sim_reg_tracker_update_71"></ref>
+				<ref bean="pro_sim_reg_tracker_update_72"></ref>
+				<ref bean="pro_sim_reg_tracker_update_73"></ref>
+				<ref bean="pro_sim_reg_tracker_update_74"></ref>
+				<ref bean="pro_sim_reg_tracker_update_75"></ref>
+				<ref bean="pro_sim_reg_tracker_update_76"></ref>
+				<ref bean="pro_sim_reg_tracker_update_77"></ref>
+				<ref bean="pro_sim_reg_tracker_update_78"></ref>
+				<ref bean="pro_sim_reg_tracker_update_79"></ref>
+				<ref bean="pro_sim_reg_tracker_update_80"></ref>
+				<ref bean="pro_sim_reg_tracker_update_81"></ref>
+				<ref bean="pro_sim_reg_tracker_update_82"></ref>
+				<ref bean="pro_sim_reg_tracker_update_83"></ref>
+				<ref bean="pro_sim_reg_tracker_update_84"></ref>
+				<ref bean="pro_sim_reg_tracker_update_85"></ref>
+				<ref bean="pro_sim_reg_tracker_update_86"></ref>
+				<ref bean="pro_sim_reg_tracker_update_87"></ref>
+				<ref bean="pro_sim_reg_tracker_update_88"></ref>
+				<ref bean="pro_sim_reg_tracker_update_89"></ref>
+				<ref bean="pro_sim_reg_tracker_update_90"></ref>
+				<ref bean="pro_sim_reg_tracker_update_91"></ref>
+				<ref bean="pro_sim_reg_tracker_update_92"></ref>
+				<ref bean="pro_sim_reg_tracker_update_93"></ref>
+				<ref bean="pro_sim_reg_tracker_update_94"></ref>
+				<ref bean="pro_sim_reg_tracker_update_95"></ref>
+				<ref bean="pro_sim_reg_tracker_update_96"></ref>
+				<ref bean="pro_sim_reg_tracker_update_97"></ref>
+				<ref bean="pro_sim_reg_tracker_update_98"></ref>
+				<ref bean="pro_sim_reg_tracker_update_99"></ref>
+				<ref bean="pro_sim_reg_tracker_update_100"></ref>
+				<ref bean="pro_sim_reg_tracker_update_101"></ref>
+				<ref bean="pro_sim_reg_tracker_update_102"></ref>
+				<ref bean="pro_sim_reg_tracker_update_103"></ref>
+				<ref bean="pro_sim_reg_tracker_update_104"></ref>
+				<ref bean="pro_sim_reg_tracker_update_105"></ref>
+				<ref bean="pro_sim_reg_tracker_update_106"></ref>
+				<ref bean="pro_sim_reg_tracker_update_107"></ref>
+				<ref bean="pro_sim_reg_tracker_update_108"></ref>
+				<ref bean="pro_sim_reg_tracker_update_109"></ref>
+				<ref bean="pro_sim_reg_tracker_update_110"></ref>
+				<ref bean="pro_sim_reg_tracker_update_111"></ref>
+				<ref bean="pro_sim_reg_tracker_update_112"></ref>
+				<ref bean="pro_sim_reg_tracker_update_113"></ref>
+				<ref bean="pro_sim_reg_tracker_update_114"></ref>
+				<ref bean="pro_sim_reg_tracker_update_115"></ref>
+				<ref bean="pro_sim_reg_tracker_update_116"></ref>
+				<ref bean="pro_sim_reg_tracker_update_117"></ref>
+				<ref bean="pro_sim_reg_tracker_update_118"></ref>
+				<ref bean="pro_sim_reg_tracker_update_119"></ref>
+				<ref bean="pro_sim_reg_tracker_update_120"></ref>		
+			</list>
+		</property>
+	</bean>
+	
+ 	<bean id="pro_sim_reg_tracker_update_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_networkid</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	
+	 <bean id="pro_sim_reg_tracker_update_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_trans_ref_number</value></property>
+		<property name="mapTo"><value>pi_trans_ref_number</value></property>
+	    <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	
+	<bean id="pro_sim_reg_tracker_update_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_status</value></property>
+		<property name="mapTo"><value>pi_status</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_sim_reg_tracker_update_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_remarks</value></property>
+		<property name="mapTo"><value>pi_remarks</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+
+	<bean id="pro_sim_reg_tracker_update_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_failednode</value></property>
+		<property name="mapTo"><value>pi_failednode</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_initiated_from</value></property>
+		<property name="mapTo"><value>pi_initiated_from</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_account_mdn</value></property>
+		<property name="mapTo"><value>pi_account_mdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_number</value></property>
+		<property name="mapTo"><value>pi_sim_number</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>8</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_event_flag</value></property>
+		<property name="mapTo"><value>pi_event_flag</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>9</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_new_password</value></property>
+		<property name="mapTo"><value>pi_new_password</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_sim_reg_tracker_update_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_registration_required</value></property>
+		<property name="mapTo"><value>pi_registration_required</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_icc_no</value></property>
+		<property name="mapTo"><value>pi_icc_no</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>12</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_registration_type</value></property>
+		<property name="mapTo"><value>pi_registration_type</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>13</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_account_status</value></property>
+		<property name="mapTo"><value>pi_account_status</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>14</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sc_iccno</value></property>
+		<property name="mapTo"><value>pi_sc_iccno</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>15</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_16" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_golden_icc_no</value></property>
+		<property name="mapTo"><value>pi_golden_icc_no</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>16</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_17" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_normal_order_id</value></property>
+		<property name="mapTo"><value>pi_normal_order_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>17</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_18" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sub_account_status</value></property>
+		<property name="mapTo"><value>pi_sub_account_status</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>18</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_19" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_hlr_fr_connection</value></property>
+		<property name="mapTo"><value>pi_hlr_fr_connection</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>19</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_20" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_hlrfr_connection_on</value></property>
+		<property name="mapTo"><value>pi_hlrfr_connection_on</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>20</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_21" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_is_corp</value></property>
+		<property name="mapTo"><value>pi_is_corp</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>21</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_22" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_order_list</value></property>
+		<property name="mapTo"><value>pi_order_list</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>22</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_23" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_msisdn_list_long</value></property>
+		<property name="mapTo"><value>pi_msisdn_list_long</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>23</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_sim_reg_tracker_update_24" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_util_list</value></property>
+		<property name="mapTo"><value>pi_util_list</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>24</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_25" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_charges</value></property>
+		<property name="mapTo"><value>pi_charges</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>25</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_26" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_msisdn_list</value></property>
+		<property name="mapTo"><value>pi_msisdn_list</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>26</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_27" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_device_id_key</value></property>
+		<property name="mapTo"><value>pi_device_id_key</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>27</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_28" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_new_value</value></property>
+		<property name="mapTo"><value>pi_new_value</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>28</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_29" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_authenticate_carrierid</value></property>
+		<property name="mapTo"><value>pi_authenticate_carrierid</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>29</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_30" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_dt_failure_error_code</value></property>
+		<property name="mapTo"><value>pi_dt_failure_error_code</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>30</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_31" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_denominations</value></property>
+		<property name="mapTo"><value>pi_denominations</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>31</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_sim_reg_tracker_update_32" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_tax_id</value></property>
+		<property name="mapTo"><value>pi_tax_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>32</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_33" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_email_id</value></property>
+		<property name="mapTo"><value>pi_email_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>33</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+
+	<bean id="pro_sim_reg_tracker_update_34" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_balance_amount</value></property>
+		<property name="mapTo"><value>pi_balance_amount</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>34</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_35" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_order_date</value></property>
+		<property name="mapTo"><value>pi_order_date</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>35</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_36" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_new_validity_date</value></property>
+		<property name="mapTo"><value>pi_new_validity_date</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>36</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_37" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_port_req_form_id</value></property>
+		<property name="mapTo"><value>pi_port_req_form_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>37</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_38" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_port_id</value></property>
+		<property name="mapTo"><value>pi_port_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>38</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_39" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_rejected_data</value></property>
+		<property name="mapTo"><value>pi_rejected_data</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>39</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_40" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_npr_subm_time</value></property>
+		<property name="mapTo"><value>pi_npr_subm_time</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>40</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_41" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_threshold_time</value></property>
+		<property name="mapTo"><value>pi_threshold_time</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>41</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_42" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_comp_email_id</value></property>
+		<property name="mapTo"><value>pi_comp_email_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>42</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_43" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_notification_data_email</value></property>
+		<property name="mapTo"><value>pi_notification_data_email</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>43</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_44" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_mdn</value></property>
+		<property name="mapTo"><value>pi_mdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>44</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_45" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_new_mdn</value></property>
+		<property name="mapTo"><value>pi_new_mdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>45</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_46" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_fr_trn_no</value></property>
+		<property name="mapTo"><value>pi_fr_trn_no</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>46</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_47" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_new_cc_msisdn</value></property>
+		<property name="mapTo"><value>pi_new_cc_msisdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>47</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_48" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_old_cc_msisdn</value></property>
+		<property name="mapTo"><value>pi_old_cc_msisdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>48</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_49" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_old_imsi</value></property>
+		<property name="mapTo"><value>pi_old_imsi</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>49</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_50" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_service_type</value></property>
+		<property name="mapTo"><value>pi_service_type</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>50</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_51" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_imsi_sim_registration</value></property>
+		<property name="mapTo"><value>pi_imsi_sim_registration</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>51</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_52" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_old_imsi_sim_registration</value></property>
+		<property name="mapTo"><value>pi_old_imsi_sim_registration</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>52</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_53" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_actual_msisdn</value></property>
+		<property name="mapTo"><value>pi_actual_msisdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>53</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_54" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_account_id</value></property>
+		<property name="mapTo"><value>pi_account_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>54</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_55" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_blocked_msisdn</value></property>
+		<property name="mapTo"><value>pi_blocked_msisdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>55</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_sim_reg_tracker_update_56" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_credit_limti</value></property>
+		<property name="mapTo"><value>pi_credit_limti</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>56</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_sim_reg_tracker_update_57" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_old_cc_mdn_list</value></property>
+		<property name="mapTo"><value>pi_old_cc_mdn_list</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>57</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_58" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_new_cc_mdn_list</value></property>
+		<property name="mapTo"><value>pi_new_cc_mdn_list</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>58</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_59" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_promo_code</value></property>
+		<property name="mapTo"><value>pi_promo_code</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>59</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_sim_reg_tracker_update_60" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_ussd_mdn</value></property>
+		<property name="mapTo"><value>pi_ussd_mdn</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>60</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_sim_reg_tracker_update_61" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_dealer_user_id</value></property>
+		<property name="mapTo"><value>pi_dealer_user_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>61</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_62" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_input_icc_no</value></property>
+		<property name="mapTo"><value>pi_input_icc_no</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>62</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_63" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_account_type</value></property>
+		<property name="mapTo"><value>pi_account_type</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>63</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_64" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_location_code</value></property>
+		<property name="mapTo"><value>pi_location_code</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>64</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_65" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_tariff_id</value></property>
+		<property name="mapTo"><value>pi_tariff_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>65</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_66" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_workgroup_id</value></property>
+		<property name="mapTo"><value>pi_workgroup_id</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>66</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_67" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_imei</value></property>
+		<property name="mapTo"><value>pi_imei</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>67</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_68" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sale_type</value></property>
+		<property name="mapTo"><value>pi_sale_type</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>68</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_sim_reg_tracker_update_69" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_price</value></property>
+		<property name="mapTo"><value>pi_price</value></property>
+		 <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>69</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+
+    <bean id="pro_sim_reg_tracker_update_70" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_sim_is_actual</value></property>
+        <property name="mapTo"><value>pi_sim_is_actual</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>70</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_71" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_sim_psuedo</value></property>
+        <property name="mapTo"><value>pi_sim_psuedo</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>71</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_72" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_invalid_account_state</value></property>
+        <property name="mapTo"><value>pi_invalid_account_state</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>72</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_73" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_reason</value></property>
+        <property name="mapTo"><value>pi_reason</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>73</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_74" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_update_product_status</value></property>
+        <property name="mapTo"><value>pi_update_product_status</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>74</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_75" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_no_kad_id_code</value></property>
+        <property name="mapTo"><value>pi_no_kad_id_code</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>75</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_76" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_get_order_details</value></property>
+        <property name="mapTo"><value>pi_get_order_details</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>76</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_77" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_errorcode</value></property>
+        <property name="mapTo"><value>pi_errorcode</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>77</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_78" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_input_personal_data</value></property>
+        <property name="mapTo"><value>pi_input_personal_data</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>78</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_79" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_get_account_details</value></property>
+        <property name="mapTo"><value>pi_get_account_details</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>79</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_80" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_request_type</value></property>
+        <property name="mapTo"><value>pi_request_type</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>80</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_81" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_user_name</value></property>
+        <property name="mapTo"><value>pi_user_name</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>81</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_82" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_network_name</value></property>
+        <property name="mapTo"><value>pi_network_name</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>82</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_83" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_middle_name</value></property>
+        <property name="mapTo"><value>pi_middle_name</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>83</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+
+    <bean id="pro_sim_reg_tracker_update_84" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_post_paid</value></property>
+        <property name="mapTo"><value>pi_post_paid</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>84</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_85" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_old_mdn</value></property>
+        <property name="mapTo"><value>pi_old_mdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>85</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_86" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_zipcode</value></property>
+        <property name="mapTo"><value>pi_zipcode</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>86</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_87" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_old_value</value></property>
+        <property name="mapTo"><value>pi_old_value</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>87</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_88" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_new_imsi</value></property>
+        <property name="mapTo"><value>pi_new_imsi</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>88</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_89" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_transaction_id</value></property>
+        <property name="mapTo"><value>pi_transaction_id</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>89</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_90" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_sub_transaction_id</value></property>
+        <property name="mapTo"><value>pi_sub_transaction_id</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>90</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_91" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_icc_id</value></property>
+        <property name="mapTo"><value>pi_icc_id</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>91</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_92" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_old_sim</value></property>
+        <property name="mapTo"><value>pi_audit_old_sim</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>92</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_93" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_imsi</value></property>
+        <property name="mapTo"><value>pi_imsi</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>93</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_94" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_msisdn</value></property>
+        <property name="mapTo"><value>pi_msisdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>94</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_95" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_office_code</value></property>
+        <property name="mapTo"><value>pi_office_code</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>95</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_96" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_old_msisdn</value></property>
+        <property name="mapTo"><value>pi_audit_old_msisdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>96</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_97" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_new_msisdn</value></property>
+        <property name="mapTo"><value>pi_audit_new_msisdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>97</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_98" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_imsi</value></property>
+        <property name="mapTo"><value>pi_audit_imsi</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>98</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_99" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_action</value></property>
+        <property name="mapTo"><value>pi_audit_action</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>99</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+	
+    <bean id="pro_sim_reg_tracker_update_100" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_icc_id</value></property>
+        <property name="mapTo"><value>pi_audit_icc_id</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>100</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_101" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_data</value></property>
+        <property name="mapTo"><value>pi_data</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>101</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_102" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_new_sim</value></property>
+        <property name="mapTo"><value>pi_audit_new_sim</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>102</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_103" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_audit_msisdn</value></property>
+        <property name="mapTo"><value>pi_audit_msisdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>103</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_104" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_old_msisdn</value></property>
+        <property name="mapTo"><value>pi_old_msisdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>104</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_105" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_new_msisdn</value></property>
+        <property name="mapTo"><value>pi_new_msisdn</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>105</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_106" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_failed_msisdns_list_old</value></property>
+        <property name="mapTo"><value>pi_failed_msisdns_list_old</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>106</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_107" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_failed_msisdns_list_new</value></property>
+        <property name="mapTo"><value>pi_failed_msisdns_list_new</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>107</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_108" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_is_subscribed</value></property>
+        <property name="mapTo"><value>pi_is_subscribed</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>108</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_109" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_flag_5g</value></property>
+        <property name="mapTo"><value>pi_flag_5g</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>109</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_110" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_return_code</value></property>
+        <property name="mapTo"><value>pi_return_code</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>110</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_111" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_response_code</value></property>
+        <property name="mapTo"><value>pi_response_code</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>111</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_112" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_new_sim</value></property>
+        <property name="mapTo"><value>pi_new_sim</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>112</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_113" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_old_sim</value></property>
+        <property name="mapTo"><value>pi_old_sim</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>113</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_114" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_external_trans_id_2</value></property>
+        <property name="mapTo"><value>pi_external_trans_id_2</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>114</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+	
+	
+    <bean id="pro_sim_reg_tracker_update_115" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_login_id</value></property>
+        <property name="mapTo"><value>pi_login_id</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>115</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_116" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_active</value></property>
+        <property name="mapTo"><value>pi_active</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>116</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_117" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_user_id</value></property>
+        <property name="mapTo"><value>pi_user_id</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>117</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+
+    <bean id="pro_sim_reg_tracker_update_118" class="net.bcgi.util.db.ParamDef" scope="singleton">
+        <property name="name"><value>pi_content</value></property>
+        <property name="mapTo"><value>pi_content</value></property>
+        <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>118</value></property>
+        <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+    </bean>
+      
+
+	<bean id="pro_sim_reg_tracker_update_119" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>119</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	<bean id="pro_sim_reg_tracker_update_120" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>120</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	
+	
+</beans>
+
+

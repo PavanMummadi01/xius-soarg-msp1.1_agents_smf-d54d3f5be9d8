@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_get_change_msisdn_dtls"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_change_msisdn_info.pro_get_change_msisdn_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_get_change_msisdn_dtls_param_1"></ref>
+				<ref bean="pro_get_change_msisdn_dtls_param_2"></ref>
+				<ref bean="pro_get_change_msisdn_dtls_param_3"></ref>
+				<ref bean="pro_get_change_msisdn_dtls_param_4"></ref>
+				<ref bean="pro_get_change_msisdn_dtls_param_5"></ref>
+				<ref bean="pro_get_change_msisdn_dtls_param_6"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_get_change_msisdn_dtls_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_get_change_msisdn_dtls_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_trans_id</value></property>
+			<property name="mapTo"><value>pi_trans_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_change_msisdn_dtls_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_ext_trans_id</value></property>
+			<property name="mapTo"><value>pi_ext_trans_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_change_msisdn_dtls_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_status</value></property>
+			<property name="mapTo"><value>po_status</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_change_msisdn_dtls_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_change_msisdn_dtls_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_msg</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+ </beans>

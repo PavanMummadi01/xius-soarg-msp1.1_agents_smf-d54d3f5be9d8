@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xbus.xius.com/messages/common" targetNamespace="http://xbus.xius.com/messages/common" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="WSRequest">
+		<xs:sequence>
+			<xs:element name="userType" type="UserType" nillable="true"/>
+			<xs:element name="messageID" type="MessageIDType" nillable="false"/>
+			<xs:element name="securityId" type="SecurityId" nillable="false"/>
+			<xs:element name="serviceContext" type="ServiceContext" nillable="false"/>
+			<xs:element name="version" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="MessageIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SecurityId">
+		<xs:sequence>
+			<xs:element name="securityToken" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="userAccountName" type="UserAccountNameType" nillable="false"/>
+			<xs:element name="userAccountPassword" type="UserAccountPasswordType" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="UserAccountNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UserAccountPasswordType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LoginIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PasswordType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UpdatedByUserType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ServiceContext">
+		<xs:sequence>
+			<xs:element name="carrierId" type="CarrierIdType" nillable="false"/>
+			<xs:element name="sessionId" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="timestamp" type="xs:dateTime" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="CarrierIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NetworkNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WSResponse">
+		<xs:sequence>
+			<xs:element name="statusCode" type="StatusCode" default="SUCCESS" nillable="false"/>
+			<xs:element name="timeStamp" type="xs:dateTime" nillable="false"/>
+			<xs:element name="correlationID" type="xs:string" nillable="false"/>
+			<xs:element name="errors" type="ErrorData" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="version" type="xs:string" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="StatusCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="WARNING"/>
+			<xs:enumeration value="SUCCESS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ErrorData">
+		<xs:sequence>
+			<xs:element name="errorCategory" type="ErrorCategory" nillable="false"/>
+			<xs:element name="errorCode" type="xs:string" nillable="false"/>
+			<xs:element name="errorMessage" type="xs:string" nillable="false"/>
+			<xs:element name="severityCode" type="SeverityCode" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ErrorCategory">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FAILED_BUSINESS_LOGIC"/>
+			<xs:enumeration value="WSFORMAT_ERROR"/>
+			<xs:enumeration value="DATA_ERROR"/>
+			<xs:enumeration value="SYSTEM_ERROR"/>
+			<xs:enumeration value="SYSTEM_OFFLINE"/>
+			<xs:enumeration value="TIME_LIMIT_ERROR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UserType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CCUSER"/>
+			<xs:enumeration value="BSSADMIN"/>
+			<xs:enumeration value="BSSUSER"/>
+			<xs:enumeration value="CORPUSER"/>
+			<xs:enumeration value="DEALER"/>
+			<xs:enumeration value="SUBSCRIBER"/>
+			<xs:enumeration value="LBSUSER"/>
+			<xs:enumeration value="IVR"/>
+			<xs:enumeration value="PCRF"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SeverityCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="WARNING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UpdateType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="MODIFY"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ManageType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="MODIFY"/>
+			<xs:enumeration value="DELETE"/>
+			<xs:enumeration value="BULK"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UpdateResetType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="MODIFY"/>
+			<xs:enumeration value="RESET"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GetType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="GET"/>
+			<xs:enumeration value="GETALL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NetworkIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MsisdnType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SimType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AccountIdType">
+		<xs:restriction base="xs:long"/>
+	</xs:simpleType>
+	<xs:simpleType name="ActivationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="REACTIVATE"/>
+			<xs:enumeration value="DEACTIVATE"/>
+			<xs:enumeration value="EXPIRE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AmountType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="KeyValueType">
+		<xs:sequence>
+			<xs:element name="key" type="xs:string" nillable="true"/>
+			<xs:element name="value" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubscriberIdType">
+		<xs:sequence>
+			<xs:element name="idType" type="IdType" nillable="false" minOccurs="1"/>
+			<xs:element name="idValue" type="IdValueType" nillable="false" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="IdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IdValueType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SubscriberIdTypeRes">
+		<xs:sequence>
+			<xs:element name="idType" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="idValue" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SubscriberIdKeyType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NRIC"/>
+			<xs:enumeration value="PASSPORT_NO"/>
+			<xs:enumeration value="PASSPORT"/>
+			<xs:enumeration value="ARMY_IC"/>
+			<xs:enumeration value="POLICE_IC"/>
+			<xs:enumeration value="MYKAD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GenderType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MALE"/>
+			<xs:enumeration value="FEMALE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AccountStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTIVE"/>
+			<xs:enumeration value="LOCKED"/>
+			<xs:enumeration value="EXPIRED"/>
+			<xs:enumeration value="DEACTIVE"/>
+			<xs:enumeration value="PENDING"/>
+			<xs:enumeration value="SUBMITTED"/>
+			<xs:enumeration value="TRANSIT"/>
+			<xs:enumeration value="GRACE_PERIOD_ONE"/>
+			<xs:enumeration value="GRACE_PERIOD_TWO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImsiType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TypeOfServiceType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocationIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BillingAccountIdKey">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="msisdn" type="MsisdnType" nillable="false" minOccurs="1"/>
+				<xs:element name="imsi" type="ImsiType" nillable="false" minOccurs="1"/>
+				<xs:element name="sim" type="SimType" nillable="false" minOccurs="1"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AccountIdKeyType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MSISDN"/>
+			<xs:enumeration value="SIM"/>
+			<xs:enumeration value="IMSI"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AlternateAccountId">
+		<xs:sequence>
+			<xs:element name="alternateAccountId1" nillable="true" minOccurs="0"/>
+			<xs:element name="alternateAccountId2" nillable="true" minOccurs="0"/>
+			<xs:element name="alternateAccountId3" nillable="true" minOccurs="0"/>
+			<xs:element name="alternateAccountId4" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UserDefinedInfo">
+		<xs:sequence>
+			<xs:element name="userDefined1" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined2" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined3" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined4" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined5" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined6" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined7" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined8" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined9" nillable="true" minOccurs="0"/>
+			<xs:element name="userDefined10" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContactDetailsType">
+		<xs:sequence>
+			<xs:element name="email" type="xs:string" minOccurs="0"/>
+			<xs:element name="homePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="officePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="mContactPhoneNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="alternateContactNo" type="xs:string" minOccurs="0"/>
+			<xs:element name="address" type="AddressType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressType">
+		<xs:sequence>
+			<xs:element name="addr1" type="xs:string" minOccurs="0"/>
+			<xs:element name="addr2" type="xs:string" minOccurs="0"/>
+			<xs:element name="addr3" type="xs:string" minOccurs="0"/>
+			<xs:element name="addressType" type="xs:string" minOccurs="0"/>
+			<xs:element name="county" type="xs:string" minOccurs="0"/>
+			<xs:element name="city" type="xs:string" minOccurs="0"/>
+			<xs:element name="state" type="xs:string" minOccurs="0"/>
+			<xs:element name="stateCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+			<xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BillingAddressData">
+		<xs:sequence>
+			<xs:element name="businessName" type="xs:string" minOccurs="0"/>
+			<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+			<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+			<xs:element name="salutation" type="xs:string" minOccurs="0"/>
+			<xs:element name="suffix" type="xs:string" minOccurs="0"/>
+			<xs:element name="addr1" type="xs:string" minOccurs="0"/>
+			<xs:element name="addr2" type="xs:string" minOccurs="0"/>
+			<xs:element name="addr3" type="xs:string" minOccurs="0"/>
+			<xs:element name="addressType" type="xs:string" minOccurs="0"/>
+			<xs:element name="county" type="xs:string" minOccurs="0"/>
+			<xs:element name="city" type="xs:string" minOccurs="0"/>
+			<xs:element name="state" type="xs:string" minOccurs="0"/>
+			<xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+			<xs:element name="email" type="xs:string" minOccurs="0"/>
+			<xs:element name="phone" type="xs:string" minOccurs="0"/>
+			<xs:element name="workPhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="mContactPhoneNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="alternateContactNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="stateCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AccountUsageType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LAST_X_CALLS"/>
+			<xs:enumeration value="DURATION"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CurrencyKeyType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="USD"/>
+			<xs:enumeration value="CND"/>
+			<xs:enumeration value="INR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AmountDetails">
+		<xs:sequence>
+			<xs:element ref="amount"/>
+			<xs:element name="currencyTypeKey" type="CurrencyKeyType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AccountType">
+		<xs:choice>
+			<xs:element name="accountId" type="AccountIdType" nillable="false"/>
+			<xs:element name="msisdn" type="MsisdnType" nillable="false"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:simpleType name="ProvisionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="S"/>
+			<!-- FnF -->
+			<!-- SMS -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="MODIFY"/>
+			<xs:enumeration value="DELETE"/>
+			<xs:enumeration value="VIEW"/>
+			<!-- Add -->
+			<!-- Modify -->
+			<!-- Delete -->
+			<!-- View -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImeiType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ZipCodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ArrayOfString">
+		<xs:sequence>
+			<xs:element name="string" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AccountRentalDetailType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TARIFF_PLAN"/>
+			<xs:enumeration value="SERVICE"/>
+			<xs:enumeration value="PROMOTIONAL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActivationCodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NPANXXType">
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReplenishmentType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CREDITCARD"/>
+			<xs:enumeration value="DEBITCARD"/>
+			<xs:enumeration value="VOUCHERCARD"/>
+			<xs:enumeration value="CASH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RequestIdType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReasonType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DurationType">
+		<xs:sequence>
+			<xs:element name="fromDate" type="xs:dateTime" nillable="false"/>
+			<xs:element name="toDate" type="xs:dateTime" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AccountDetailType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TRANSACTION"/>
+			<xs:enumeration value="CALL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StateListType">
+		<xs:sequence>
+			<xs:element name="stateCode" type="xs:string" nillable="false"/>
+			<xs:element name="stateName" type="xs:string" nillable="false"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="accountId" type="AccountIdType" nillable="false"/>
+	<xs:element name="sim" type="SimType" nillable="false"/>
+	<xs:element name="msisdn" type="MsisdnType" nillable="false"/>
+	<xs:element name="networkId" type="NetworkIdType" nillable="false"/>
+	<xs:element name="activationType" type="ActivationType" nillable="false"/>
+	<xs:element name="amount" type="AmountType" nillable="false"/>
+	<xs:simpleType name="RetrievalType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LATEST_THREE"/>
+			<xs:enumeration value="ALL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ViewlType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VIEW"/>
+			<xs:enumeration value="VIEW_ALL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpecificTimeZoneType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PLMNInfoType">
+		<xs:sequence>
+			<xs:element name="PLMNId" type="PLMNIDType" minOccurs="0"/>
+			<xs:element name="PLMNName" type="PLMNNameType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="PLMNIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PLMNNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LSAConfFlagType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CELL"/>
+			<xs:enumeration value="LSA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataFlagType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ALL"/>
+			<xs:enumeration value="CONFIGURED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OptionFlagType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INSERT"/>
+			<xs:enumeration value="UPDATE"/>
+			<xs:enumeration value="DELETE"/>
+			<xs:enumeration value="ACTIVATE"/>
+			<xs:enumeration value="DEACTIVATE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AcctRetrievalType">
+		<xs:annotation>
+			<xs:documentation>This will hold account summary retrieval type
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MIN_ACCTINFO"/>
+			<xs:enumeration value="ACCTINFO_WITH_VMS"/>
+			<xs:enumeration value="ACCTINFO_WITH_IVR"/>
+			<xs:enumeration value="ACCTINFO_WITH_VMS_N_IVR"/>
+			<xs:enumeration value="ACCTINFO_WITH_PROFILE"/>
+			<xs:enumeration value="ALL"/>
+			<!--
+				MIN_ACCTINFO includes Account info required to display account
+				summary screen
+			-->
+			<!--
+				ACCTINFO_WITH_PROFILE includes Account info as well as profile info
+			-->
+			<!--
+				ALL includes Account info with VMS and IVR as well as profile info
+			-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BalanceInfoType">
+		<xs:annotation>
+			<xs:documentation>This will hold customer's device balance and
+				currency information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="prepaidAccountBalance" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="currency" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="bucketAccountBalance" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="thresholdBalance" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="promoBalance" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="totalBalance" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="airtimeMinutes" type="xs:integer" nillable="true" minOccurs="0"/>
+			<xs:element name="freeSMSMessages" type="xs:integer" nillable="true" minOccurs="0"/>
+			<xs:element name="freeSMSRuppes" type="xs:double" nillable="true" minOccurs="0"/>
+			<xs:element name="freeMMSMessages" type="xs:integer" nillable="true" minOccurs="0"/>
+			<xs:element name="data" type="xs:string" nillable="true" minOccurs="0"/>
+			<!-- Added calls element for REQ#1197: buckets & bundles -->
+			<xs:element name="calls" type="xs:string" nillable="true" minOccurs="0"/>
+			<!-- Added postpaidbalance element for REQ#1234: corporate with postpaid -->
+			<xs:element name="postPaidBalace" type="xs:double" nillable="true" minOccurs="0"/>
+			<!-- Added for IBA on 11/02/2016 -->
+			<xs:element name="airTimeUnlimitedYN" type="xs:string" minOccurs="0"/>
+			<xs:element name="smsUnlimitedYN" type="xs:string" minOccurs="0"/>
+			<xs:element name="mmsUnlimitedYN" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataUnlimitedYN" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KeyValueListType">
+		<xs:annotation>
+			<xs:documentation>valueListType</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="keyValueList" type="KeyValueType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubscriberType">
+		<xs:sequence>
+			<xs:element name="idType" type="SubscriberIdType" nillable="false" minOccurs="1"/>
+			<xs:element name="idValue" type="IdValueType" nillable="false" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AttDetType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ATTACH"/>
+			<xs:enumeration value="DETACH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DeviceIdKey">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="accountId" type="AccountIdType" nillable="false" minOccurs="1"/>
+				<xs:element name="msisdn" type="MsisdnType" nillable="false" minOccurs="1"/>
+				<xs:element name="imsi" type="ImsiType" nillable="false" minOccurs="1"/>
+				<xs:element name="sim" type="SimType" nillable="false" minOccurs="1"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostpaidInfoType">
+		<xs:sequence>
+			<xs:element name="creditLimit" type="xs:string" minOccurs="0"/>
+			<xs:element name="availableCreditLimit" type="xs:string" minOccurs="0"/>
+			<xs:element name="billingType" type="xs:string" minOccurs="0"/>
+			<xs:element name="billingFrequency" type="xs:string" minOccurs="0"/>
+			<xs:element name="billingDate" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ApprovalType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="APPROVE"/>
+			<xs:enumeration value="REJECT"/>
+			<xs:enumeration value="SUBMIT"/>
+			<xs:enumeration value="PENDING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--Start  added for tunetalk mobile selfcare app -->
+	<xs:simpleType name="AccountRetrievalIdType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PASSPORT"/>
+			<xs:enumeration value="MYKAD"/>
+			<xs:enumeration value="ICC_NO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonalIdentityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PASSPORT"/>
+			<xs:enumeration value="MYKAD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AccountRetrievalType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PERSONAL_DETAILS"/>
+			<xs:enumeration value="SERVICE_PLAN"/>
+			<xs:enumeration value="ALL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SelfcareAccountStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTIVE"/>
+			<xs:enumeration value="LOCKED"/>
+			<xs:enumeration value="EXPIRED"/>
+			<xs:enumeration value="DEACTIVE"/>
+			<xs:enumeration value="PENDING"/>
+			<xs:enumeration value="SUBMITTED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BillingAccountType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PREPAID"/>
+			<xs:enumeration value="POSTPAID"/>
+			<xs:enumeration value="HYBRID"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PostPaidDetails">
+		<xs:annotation>
+			<xs:documentation>PostPaidDetails</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="accountId" type="xs:long" nillable="true" minOccurs="0"/>
+			<xs:element name="firstName" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="lastName" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="address1" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="address2" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="postalCode" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="city" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="state" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="email" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="createdDate" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="msisdn" type="xs:long" nillable="true" minOccurs="0"/>
+			<xs:element name="creditLimit" type="xs:decimal" nillable="true" minOccurs="0"/>
+			<xs:element name="billType" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="billFrequency" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="billDate" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="status" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="modifiedDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="oldCreditBal" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="availCreditLimit" type="xs:decimal" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="RegistrationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="REG_BLOCK_MDN"/>
+			<xs:enumeration value="REG_SUB_ONLY"/>
+			<xs:enumeration value="REG_WITHOUT_MDN"/>
+			<xs:enumeration value="REG_NEW_MDN"/>
+			<xs:enumeration value="REG_BARE_BONE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GroupActionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"/>
+			<xs:enumeration value="UPDATE"/>			
+			<xs:enumeration value="DEACTIVATE"/>			
+			<xs:enumeration value="DELETE_CHILD"/>		
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AccountSharingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PARENT"/>
+			<xs:enumeration value="CHILD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DATA"/>
+			<xs:enumeration value="SMS"/>	
+			<xs:enumeration value="CALL"/>			
+		</xs:restriction>
+	</xs:simpleType>
+	<!--End  added for tunetalk mobile selfcare app -->
+	
+	<xs:simpleType name="ActionFlagType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD" /><!-- for Add -->
+			<xs:enumeration value="UPDATE" /><!-- for update/modify -->
+			<xs:enumeration value="DELETE" /><!-- for delete -->
+ 		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="voucherDetailsType">
+		<xs:sequence>
+			<xs:element name="pin" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="eTopUpDetailsType">
+		<xs:sequence>
+			<xs:element name="reChargeId" type="xs:string" />
+			<xs:element name="category" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="mainBalanceType">
+		<xs:sequence>
+			<xs:element name="accountBalance" type="xs:string" minOccurs="0"/>
+			<xs:element name="validityDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="gracePeriod1" type="xs:string" minOccurs="0"/>
+			<xs:element name="gracePeriod2" type="xs:string" minOccurs="0"/>
+			<xs:element name="gracePeriod3" type="xs:string" minOccurs="0"/>
+			<xs:element name="expiryData" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="walletListType">
+		<xs:sequence>
+			<xs:element name="wallets" type="walletType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="walletType">
+		<xs:sequence>
+			<xs:element name="walletId" type="xs:string" minOccurs="0"/>
+			<xs:element name="walletName" type="xs:string" minOccurs="0"/>
+			<xs:element name="walletAmount" type="xs:string" minOccurs="0"/>
+			<xs:element name="walletValidity" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="atpsType">
+		<xs:sequence>
+			<xs:element name="atpId" type="xs:string" minOccurs="0" />
+			<xs:element name="flag" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

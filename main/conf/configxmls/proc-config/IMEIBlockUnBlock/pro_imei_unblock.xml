@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!-- XIUS-bcgi SMF Agent            -->
+<!--                                                                       -->
+<!-- $Id: //depot/xb/MSP1.0/MSP-AWS/agents/smf/main/config/configxmls/proc-config/IMEIBlockUnBlock/pro_imei_unblock.xml#2 $     -->
+<!-- This file  will maps the SP input parameters to java fields. -->
+<!-- $Author: kiranmai.kode $  $DateTime: 2020/06/16 12:40:16       -->
+<!-- ====================================================================== -->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_imei_unblock -->
+	<bean id="pro_imei_unblock" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_imei_api.pro_imei_unblock</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+					<ref bean="pro_imei_unblock_1"></ref>
+					<ref bean="pro_imei_unblock_2"></ref>
+					<ref bean="pro_imei_unblock_3"></ref>
+					<ref bean="pro_imei_unblock_4"></ref>
+					<ref bean="pro_imei_unblock_5"></ref>
+					<ref bean="pro_imei_unblock_6"></ref>
+					<ref bean="pro_imei_unblock_7"></ref>
+					<ref bean="pro_imei_unblock_8"></ref>
+					<ref bean="pro_imei_unblock_9"></ref>
+					<ref bean="pro_imei_unblock_10"></ref>
+					<ref bean="pro_imei_unblock_11"></ref>
+					<ref bean="pro_imei_unblock_12"></ref>
+					<ref bean="pro_imei_unblock_13"></ref>
+					
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_network_id</value></property>
+	  <property name="mapTo"><value>pi_network_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_user_id</value></property>
+	  <property name="mapTo"><value>pi_username</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pio_imei</value></property>
+	  <property name="mapTo"><value>pio_imei</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN_OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_transreferencenumb</value></property>
+	  <property name="mapTo"><value>pi_transreferencenumb</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>4</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_reason</value></property>
+	  <property name="mapTo"><value>pi_reason</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+		<bean id="pro_imei_unblock_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_comments</value></property>
+	  <property name="mapTo"><value>pi_comments</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+		<bean id="pro_imei_unblock_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_clarify_reason</value></property>
+	  <property name="mapTo"><value>pi_clarify_reason</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+		<bean id="pro_imei_unblock_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_source_of_request</value></property>
+	  <property name="mapTo"><value>pi_source_of_request</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_resp_description</value></property>
+	  <property name="mapTo"><value>po_resp_description</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_transce_id</value></property>
+	  <property name="mapTo"><value>po_transce_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>10</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_effective_date</value></property>
+	  <property name="mapTo"><value>po_effective_date</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	 
+	
+	<bean id="pro_imei_unblock_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>12</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_unblock_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>13</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

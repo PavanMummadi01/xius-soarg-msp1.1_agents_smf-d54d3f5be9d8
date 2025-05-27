@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tia.xius.com/TTprovisioning.wsdl"
+	xmlns:tia="http://tia.xius.com/TTprovisioning.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wshdr="http://tia.xius.com/common/header/HeaderDetails.xsd"
+	xmlns:err="http://tia.xius.com/common/error/ErrorDetails.xsd"
+	targetNamespace="http://tia.xius.com/TTprovisioning.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://tia.xius.com/TTprovisioning.wsdl"
+			targetNamespace="http://tia.xius.com/TTprovisioning.wsdl">
+			<xs:import namespace="http://tia.xius.com/TTprovisioning.xsd"
+				schemaLocation="TTprovisioning.xsd" />
+			<xs:import namespace="http://tia.xius.com/common/header/HeaderDetails.xsd"
+				schemaLocation="HeaderDetails.xsd" />
+			<xs:import namespace="http://tia.xius.com/common/error/ErrorDetails.xsd"
+				schemaLocation="ErrorDetails.xsd" />
+		</xs:schema>
+	</wsdl:types>
+
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem" />
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader" />
+	</wsdl:message>
+	
+	<wsdl:message name="ttRegNotificationRequest">
+		<wsdl:part name="ttRegNotificationRequest" element="tia:ttRegNotificationRequest" />
+	</wsdl:message>
+	<wsdl:message name="ttRegNotificationResponse">
+		<wsdl:part name="ttRegNotificationResponse" element="tia:ttRegNotificationResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="provisionPCRFRequest">
+		<wsdl:part name="provisionPCRFRequest" element="tia:provisionPCRFRequest" />
+	</wsdl:message>
+	<wsdl:message name="provisionPCRFResponse">
+		<wsdl:part name="provisionPCRFResponse" element="tia:provisionPCRFResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="unAssignPCRFRequest">
+		<wsdl:part name="unAssignPCRFRequest" element="tia:deletePCRFRequest" />
+	</wsdl:message>
+	<wsdl:message name="unAssignPCRFResponse">
+		<wsdl:part name="unAssignPCRFResponse" element="tia:deletePCRFResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="queryPCRFRequest">
+		<wsdl:part name="queryPCRFRequest" element="tia:queryPCRFRequest" />
+	</wsdl:message>
+	<wsdl:message name="queryPCRFResponse">
+		<wsdl:part name="queryPCRFResponse" element="tia:queryPCRFResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="volteProvisionRequest">
+		<wsdl:part name="volteProvisionRequest" element="tia:volteProvisionRequest" />
+	</wsdl:message>
+	<wsdl:message name="volteProvisionResponse">
+		<wsdl:part name="volteProvisionResponse" element="tia:volteProvisionResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="volteDeProvisionRequest">
+		<wsdl:part name="volteDeProvisionRequest" element="tia:volteDeProvisionRequest" />
+	</wsdl:message>
+	<wsdl:message name="volteDeProvisionResponse">
+		<wsdl:part name="volteDeProvisionResponse" element="tia:volteDeProvisionResponse" />
+	</wsdl:message>
+
+
+	<wsdl:message name="volteServiceStatusRequest">
+		<wsdl:part name="volteServiceStatusRequest" element="tia:volteServiceStatusRequest" />
+	</wsdl:message>
+	<wsdl:message name="volteServiceStatusResponse">
+		<wsdl:part name="volteServiceStatusResponse" element="tia:volteServiceStatusResponse" />
+	</wsdl:message>
+
+
+  <wsdl:message name="fiveGProvisionRequest">
+		<wsdl:part name="fiveGProvisionRequest" element="tia:fiveGProvisionRequest" />
+	</wsdl:message>
+	<wsdl:message name="fiveGProvisionResponse">
+		<wsdl:part name="fiveGProvisionResponse" element="tia:fiveGProvisionResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="fiveGDeProvisionRequest">
+		<wsdl:part name="fiveGDeProvisionRequest" element="tia:fiveGDeProvisionRequest" />
+	</wsdl:message>
+	<wsdl:message name="fiveGDeProvisionResponse">
+		<wsdl:part name="fiveGDeProvisionResponse" element="tia:fiveGDeProvisionResponse" />
+	</wsdl:message>
+	
+	
+	<wsdl:message name="getLicenseInfoRequest">
+		<wsdl:part name="getLicenseInfoRequest" element="tia:getLicenseInfoRequest" />
+	</wsdl:message>
+	<wsdl:message name="getLicenseInfoResponse">
+		<wsdl:part name="getLicenseInfoResponse" element="tia:getLicenseInfoResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="deviceCheckRequest">
+		<wsdl:part name="deviceCheckRequest" element="tia:deviceCheckRequest" />
+	</wsdl:message>
+	<wsdl:message name="deviceCheckResponse">
+		<wsdl:part name="deviceCheckResponse" element="tia:deviceCheckResponse" />
+	</wsdl:message>
+
+
+	<wsdl:portType name="TTprovisioningBindingPortType">
+		<wsdl:operation name="assignPolicy">
+			<wsdl:input message="tns:provisionPCRFRequest" />
+			<wsdl:output message="tns:provisionPCRFResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+	<wsdl:operation name="ttRegNotification">
+			<wsdl:input message="tns:ttRegNotificationRequest" />
+			<wsdl:output message="tns:ttRegNotificationResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="unAssignPolicy">
+			<wsdl:input message="tns:unAssignPCRFRequest" />
+			<wsdl:output message="tns:unAssignPCRFResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="queryPCRF">
+			<wsdl:input message="tns:queryPCRFRequest" />
+			<wsdl:output message="tns:queryPCRFResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="volteProvision">
+			<wsdl:input message="tns:volteProvisionRequest" />
+			<wsdl:output message="tns:volteProvisionResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="volteDeProvision">
+			<wsdl:input message="tns:volteDeProvisionRequest" />
+			<wsdl:output message="tns:volteDeProvisionResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="volteServiceStatus">
+			<wsdl:input message="tns:volteServiceStatusRequest" />
+			<wsdl:output message="tns:volteServiceStatusResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="fiveGProvision">
+			<wsdl:input message="tns:fiveGProvisionRequest" />
+			<wsdl:output message="tns:fiveGProvisionResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="fiveGDeProvision">
+			<wsdl:input message="tns:fiveGDeProvisionRequest" />
+			<wsdl:output message="tns:fiveGDeProvisionResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getLicenseInfo">
+			<wsdl:input message="tns:getLicenseInfoRequest" />
+			<wsdl:output message="tns:getLicenseInfoResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="deviceCheck">
+			<wsdl:input message="tns:deviceCheckRequest" />
+			<wsdl:output message="tns:deviceCheckResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+
+	</wsdl:portType>
+
+	<wsdl:binding name="TTprovisioningBinding" type="tns:TTprovisioningBindingPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<!-- Start of Assign PCRF policy in -->
+		<wsdl:operation name="assignPolicy">
+			<soap:operation soapAction="assignPolicy" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<!-- End of Assign PCRF policy -->
+		
+		<wsdl:operation name="ttRegNotification">
+			<soap:operation soapAction="ttRegNotification" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+				
+		<wsdl:operation name="unAssignPolicy">
+			<soap:operation soapAction="unAssignPolicy" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="queryPCRF">
+			<soap:operation soapAction="queryPCRF" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="volteProvision">
+			<soap:operation soapAction="volteProvision" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="volteDeProvision">
+			<soap:operation soapAction="volteDeProvision" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="volteServiceStatus">
+			<soap:operation soapAction="volteServiceStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="fiveGProvision">
+			<soap:operation soapAction="fiveGProvision" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="fiveGDeProvision">
+			<soap:operation soapAction="fiveGDeProvision" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getLicenseInfo">
+			<soap:operation soapAction="getLicenseInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="deviceCheck">
+			<soap:operation soapAction="deviceCheck" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+	</wsdl:binding>
+	<wsdl:service name="TTprovisioningManagement">
+		<wsdl:port name="TTprovisioningPort" binding="tns:TTprovisioningBinding">
+			<soap:address location="http://localhost:8080/axis/TTprovisioning/v1" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ne.xius.com/common/error/ErrorDetails.xsd" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://ne.xius.com/common/error/ErrorDetails.xsd" 
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="errorDetailItem" type="ErrorDetailsType"/>
+	
+	<xs:complexType name="ErrorDetailsType">
+		<xs:annotation>
+			<xs:documentation>Defines the customization of the SOAP 1.1 Fault details element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="errorCode" type="ErrorCodeType">
+				<xs:annotation>
+					<xs:documentation>Error code </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="errorMessage" type="ErrorMessageType">
+				<xs:annotation>
+					<xs:documentation>Error Message</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ErrorCodeType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ErrorMessageType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="450"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

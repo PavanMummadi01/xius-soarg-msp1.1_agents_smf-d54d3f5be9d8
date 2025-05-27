@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://topup.tunetalk.com/notification"
+             xmlns:tns="http://topup.tunetalk.com/notification"
+             xmlns:common="http://topup.tunetalk.com/schema/common"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <types>
+        <schema elementFormDefault="qualified"
+                targetNamespace="http://topup.tunetalk.com/notification"
+                xmlns="http://www.w3.org/2001/XMLSchema">
+
+            <xsd:import namespace="http://topup.tunetalk.com/schema/common" schemaLocation="Common.xsd"/>
+
+            <xsd:simpleType name="AccountType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="PREPAID"/>
+                    <xsd:enumeration value="POSTPAID"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+
+            <xsd:simpleType name="AccountStatus">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Activated"/>
+                    <xsd:enumeration value="Transit"/>
+                    <xsd:enumeration value="Grace Period One"/>
+                    <xsd:enumeration value="Deactivated"/>
+                    <xsd:enumeration value="Expired"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+
+            <xsd:simpleType name="AccountNumber">
+                <xsd:restriction base="xsd:string">
+                    <xsd:minLength value='1'/>
+                    <xsd:maxLength value='20'/>
+                </xsd:restriction>
+            </xsd:simpleType>
+
+            <element name="BalanceNotification" type="tns:BalanceNotification"/>
+            <complexType name="BalanceNotification">
+                <sequence>
+                    <element name="MSISDN" type="common:MSISDN"/>
+                    <element name="BalanceAmount" type="common:DecimalType"/>
+                    <element name="BalanceDatetime" type="common:Datetime"/>
+                    <element name="BalanceExpiryDatetime" type="common:Datetime"/>
+                    <element name="AccountType" type="tns:AccountType"/>
+                    <element name="AccountNumber" type="tns:AccountNumber"/>
+                    <element name="AccountStatus" type="tns:AccountStatus"/>
+                </sequence>
+            </complexType>
+            <element name="BalanceNotificationResponse" type="common:Response"/>
+        </schema>
+    </types>
+
+    <message name="BalanceNotification">
+        <part element="tns:BalanceNotification" name="body"/>
+    </message>
+
+    <message name="BalanceNotificationResponse">
+        <part element="tns:BalanceNotificationResponse" name="body"/>
+    </message>
+
+    <message name="NotificationError">
+        <part element="common:ServiceError" name="fault"/>
+    </message>
+
+    <message name="AuthHeader">
+        <part element="common:AuthHeader" name="head"/>
+    </message>
+
+    <portType name="Notification">
+        <operation name="notifyBalance">
+            <input message="tns:BalanceNotification"/>
+            <output message="tns:BalanceNotificationResponse"/>
+            <fault message="tns:NotificationError" name="fault"/>
+        </operation>
+    </portType>
+
+    <binding name="NotificationBinding" type="tns:Notification">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="notifyBalance">
+            <soap:operation soapAction="notifyBalance"/>
+            <input>
+                <soap:header message="tns:AuthHeader" part="head" use="literal"/>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="fault">
+                <soap:fault name="fault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+
+    <service name="NotificationService">
+        <port binding="tns:NotificationBinding" name="NotificationPort">
+            <soap:address location="https://topups.tunetalk.net/topup-ws/NotificationService?wsdl"/>
+        </port>
+    </service>
+
+</definitions>

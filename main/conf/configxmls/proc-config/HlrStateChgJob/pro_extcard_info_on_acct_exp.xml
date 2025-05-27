@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="pro_extcard_info_on_acct_exp" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>pkg_hlr_integration_api.pro_extcard_info_on_acct_exp</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_hlr_statechange_expiry_job_param_1"/>
+				<ref bean="pro_hlr_statechange_expiry_job_param_2"/>
+				<ref bean="pro_hlr_statechange_expiry_job_param_3"/>		
+				<ref bean="pro_hlr_statechange_expiry_job_param_4"/>
+				<ref bean="pro_hlr_statechange_expiry_job_param_5"/>
+				<ref bean="pro_hlr_statechange_expiry_job_param_6"/>
+				
+			
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="4">
+					<ref bean="po_prim_msisdn_details"/>
+				</entry>
+				
+			</map>
+		</property>
+	</bean>
+	<bean id="po_prim_msisdn_details" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_prim_msisdn_details_param_1"/>
+				<ref bean="po_prim_msisdn_details_param_2"/>
+				<ref bean="po_prim_msisdn_details_param_3"/>
+				<ref bean="po_prim_msisdn_details_param_4"/>
+				<ref bean="po_prim_msisdn_details_param_5"/>
+				<ref bean="po_prim_msisdn_details_param_6"/>
+				<ref bean="po_prim_msisdn_details_param_7"/>
+				<ref bean="po_prim_msisdn_details_param_8"/>
+				<ref bean="po_prim_msisdn_details_param_9"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.StateChangeExpiryPrimCursorData"/>
+	</bean>
+	
+	<bean id="po_prim_msisdn_details_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+	<bean id="po_prim_msisdn_details_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>exp_msisdn</value></property>
+	  <property name="mapTo"><value>Exp_MSISDN</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_prim_msisdn_details_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>slpn_no</value></property>
+	  <property name="mapTo"><value>cardnumber</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_prim_msisdn_details_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>is_principle_contact_yn</value></property>
+	  <property name="mapTo"><value>isPrimary</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_prim_msisdn_details_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>primary_msisdn</value></property>
+	  <property name="mapTo"><value>primaryMSISDN</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="po_prim_msisdn_details_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transactionId_Mod</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+   
+   <bean id="po_prim_msisdn_details_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>client_id</value></property>
+	  <property name="mapTo"><value>customerid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="po_prim_msisdn_details_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>ext_operation</value></property>
+	  <property name="mapTo"><value>ext_operation</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+   
+	<bean id="po_prim_msisdn_details_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id_delete</value></property>
+	  <property name="mapTo"><value>transactionId_del</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	
+	
+	
+	
+	
+	<!-- End of cursor mapping -->
+	
+	<bean id="pro_hlr_statechange_expiry_job_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_hlr_statechange_expiry_job_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_max_rows</value></property>
+		<property name="mapTo"><value>pi_max_rows</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_hlr_statechange_expiry_job_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_instance_id</value></property>
+		<property name="mapTo"><value>pi_instance_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_hlr_statechange_expiry_job_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_prim_msisdn_details</value></property>  		
+  		<property name="mapTo"><value>po_prim_msisdn_details</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>4</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+	<bean id="pro_hlr_statechange_expiry_job_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_hlr_statechange_expiry_job_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

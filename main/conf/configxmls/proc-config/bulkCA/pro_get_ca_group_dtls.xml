@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_ca_group_dtls" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>PKG_CA_GROUP_DTLS.pro_get_ca_group_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_get_ca_group_dtls_param_1"/>
+				<ref bean="pro_get_ca_group_dtls_param_2"/>
+				<ref bean="pro_get_ca_group_dtls_param_3"/>		
+				<ref bean="pro_get_ca_group_dtls_param_4"/>
+				<ref bean="pro_get_ca_group_dtls_param_5"/>
+				
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="po_ca_group_dtls_cursor"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_ca_group_dtls_cursor_param_1"/>
+				<ref bean="po_ca_group_dtls_cursor_param_2"/>
+				<ref bean="po_ca_group_dtls_cursor_param_3"/>
+				<ref bean="po_ca_group_dtls_cursor_param_4"/>
+				<ref bean="po_ca_group_dtls_cursor_param_5"/>
+				<ref bean="po_ca_group_dtls_cursor_param_6"/>
+				<ref bean="po_ca_group_dtls_cursor_param_7"/>
+				<ref bean="po_ca_group_dtls_cursor_param_8"/>
+				<ref bean="po_ca_group_dtls_cursor_param_9"/>
+				<ref bean="po_ca_group_dtls_cursor_param_10"/>
+				<ref bean="po_ca_group_dtls_cursor_param_11"/>
+				<ref bean="po_ca_group_dtls_cursor_param_12"/>
+				<ref bean="po_ca_group_dtls_cursor_param_13"/>
+				<ref bean="po_ca_group_dtls_cursor_param_14"/>
+				<ref bean="po_ca_group_dtls_cursor_param_15"/>
+				<ref bean="po_ca_group_dtls_cursor_param_16"/>
+				<ref bean="po_ca_group_dtls_cursor_param_17"/>
+				<ref bean="po_ca_group_dtls_cursor_param_18"/>	
+				<ref bean="po_ca_group_dtls_cursor_param_19"/>	
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.CAGroupCursorDtlsData"/>
+	</bean>
+	
+	<bean id="po_ca_group_dtls_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>action_flag</value></property>
+	  <property name="mapTo"><value>action_flag</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>grp_id</value></property>
+	  <property name="mapTo"><value>grp_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>grp_name</value></property>
+	  <property name="mapTo"><value>grp_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>pkg_id</value></property>
+	  <property name="mapTo"><value>pkg_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>parntacct_id</value></property>
+	  <property name="mapTo"><value>parntacct_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>grp_parent_msisdn_no</value></property>
+	  <property name="mapTo"><value>grp_parent_msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>useparntsrvce</value></property>
+	  <property name="mapTo"><value>useparntsrvce</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>iterflag</value></property>
+	  <property name="mapTo"><value>iterflag</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>parnt_exp_status</value></property>
+	  <property name="mapTo"><value>parnt_exp_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>use_parnt_ca_bal</value></property>
+	  <property name="mapTo"><value>use_parnt_ca_bal</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>use_parnt_core_bal</value></property>
+	  <property name="mapTo"><value>use_parnt_core_bal</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>allowed_bal_type</value></property>
+	  <property name="mapTo"><value>allowed_bal_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>child_deflt_limt</value></property>
+	  <property name="mapTo"><value>child_deflt_limt</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>office_code</value></property>
+	  <property name="mapTo"><value>office_code</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>child_msisdns</value></property>
+	  <property name="mapTo"><value>child_msisdns</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>username</value></property>
+	  <property name="mapTo"><value>username</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>
+	<bean id="po_ca_group_dtls_cursor_param_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>inernal_transaction_id</value></property>
+	  <property name="mapTo"><value>inernal_transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>18</value></property>
+	</bean>
+	
+	<bean id="po_ca_group_dtls_cursor_param_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>channel</value></property>
+	  <property name="mapTo"><value>channel</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>19</value></property>
+	</bean>
+	
+	<!-- End of cursor mapping -->
+	
+	<bean id="pro_get_ca_group_dtls_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_ca_group_dtls_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_max_records</value></property>
+		<property name="mapTo"><value>pi_max_records</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_ca_group_dtls_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_ca_group_dtls_cursor</value></property>  		
+  		<property name="mapTo"><value>po_ca_group_dtls_cursor</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>3</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_ca_group_dtls_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_ca_group_dtls_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_msg</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

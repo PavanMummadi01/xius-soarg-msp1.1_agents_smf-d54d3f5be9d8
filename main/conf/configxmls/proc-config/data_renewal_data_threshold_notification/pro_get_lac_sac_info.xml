@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!-- XIUS-bcgi SMF Agent            -->
+<!--                                                                       -->
+<!-- $Id: //depot/xb/MSP1.0/MSP-AWS/agents/smf/main/config/configxmls/proc-config/data_renewal_data_threshold_notification/pro_get_lac_sac_info.xml#2 $     -->
+<!-- This file  will maps the SP input parameters to java fields. -->
+<!-- $Author: kiranmai.kode $  $DateTime: 2023/12/08 12:29:41 $ $Change: 226227 $      -->
+<!-- ====================================================================== -->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_get_schedule_cug_child_dtls -->
+	
+	<bean id="pro_get_lac_sac_info" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_third_party_notification.pro_get_lac_sac_info</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_data_renewal_data_threshold_sac_lac_param_1"></ref>
+				<ref bean="pro_data_renewal_data_threshold_sac_lac_param_2"></ref>
+				<ref bean="pro_data_renewal_data_threshold_sac_lac_param_3"></ref>
+				<ref bean="pro_data_renewal_data_threshold_sac_lac_param_4"></ref>
+				<ref bean="pro_data_renewal_data_threshold_sac_lac_param_5"></ref>
+				<ref bean="pro_data_renewal_data_threshold_sac_lac_param_6"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_data_renewal_data_threshold_sac_lac_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_account_id</value></property>
+			<property name="mapTo"><value>account_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_data_renewal_data_threshold_sac_lac_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_imsi</value></property>
+			<property name="mapTo"><value>imsi</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_data_renewal_data_threshold_sac_lac_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_lac_sac_info</value></property>
+			<property name="mapTo"><value>lac_sac</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_data_renewal_data_threshold_sac_lac_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value> po_sim_no</value></property>
+			<property name="mapTo"><value>sim</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_data_renewal_data_threshold_sac_lac_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_data_renewal_data_threshold_sac_lac_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

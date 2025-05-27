@@ -1,0 +1,2514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://billing.xius.com/AccountManagement.xsd"	 
+	targetNamespace="http://billing.xius.com/AccountManagement.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+
+	<xs:element name="changeMSISDNsRequest" type="ChangeMSISDNsRequest"/>
+	<xs:element name="changeMSISDNsResponse" type="ChangeMSISDNsResponse"/>
+	<xs:element name="updateBillingTypeRequest" type="UpdateBillingTypeRequest"/>
+	<xs:element name="updateBillingTypeResponse" type="UpdateBillingTypeResponse"/>
+
+	<!-- SIM Registration-->	
+	<xs:element name="SIMRegistrationRequest" type="SIMRegistrationRequest" />
+	<xs:element name="SIMRegistrationResponse" type="SIMRegistrationResponse" />
+	<!-- SIM Registration-->	
+
+	<!-- Update Account Status-->
+	<xs:element name="updateActDataRequest" type="UpdateActDataRequest" />
+	<xs:element name="updateActDataResponse" type="UpdateActDataResponse" />
+	<!-- end of Account Status -->
+
+	<!-- Update Account Status-->
+	<xs:element name="updateActStatusRequest" type="UpdateActStatusRequest" />
+	<xs:element name="updateActStatusResponse" type="UpdateActStatusResponse" />
+	<!-- end of activate MSISDN -->
+	
+	<!-- activate MSISDN -->
+	<xs:element name="activateMSISDNRequest" type="ActivateMSISDNRequest" />
+	<xs:element name="activateMSISDNResponse" type="ActivateMSISDNResponse" />
+	<!-- end of activate MSISDN -->
+	
+	<!-- change MSISDN -->
+	<xs:element name="changeMSISDNRequest" type="ChangeMSISDNRequest" />
+	<xs:element name="changeMSISDNResponse" type="ChangeMSISDNResponse" />
+	<!-- End of change MSISDN -->
+	
+	<!-- re activate MSISDN -->
+	<xs:element name="reActivateMSISDNRequest" type="ReActivateMSISDNRequest" />
+	<xs:element name="reActivateMSISDNResponse" type="ReActivateMSISDNResponse" />
+	<!-- End re activate MSISDN -->
+
+	<!-- SIMSwap Request-->
+	<xs:element name="SIMSwapRequest" type="SIMSwapRequest" />
+	<xs:element name="SIMSwapResponse" type="SIMSwapResponse" />
+	<!-- End of SIMSwap Request -->
+
+	<!-- change IMSI -->
+	<xs:element name="changeIMSIRequest" type="ChangeIMSIRequest" />
+	<xs:element name="changeIMSIResponse" type="ChangeIMSIResponse" />
+	<!-- End of change IMSI -->
+	
+	<!-- change IMSIPreInfo -->
+	<xs:element name="changeIMSIPreInfoRequest" type="ChangeIMSIPreInfoRequest" />
+	<xs:element name="changeIMSIPreInfoResponse" type="ChangeIMSIPreInfoResponse" />
+	<!-- End of change IMSIPreInfo -->
+	
+	
+	<!-- De Activate Account  -->
+	<xs:element name="deActivateAccountRequest" type="DeActivateAccountRequest" />
+	<xs:element name="deActivateAccountResponse" type="DeActivateAccountResponse" />
+	<!-- End of De Activate Account  -->
+	
+	<!-- change MSISDN Pre Info  -->
+	<xs:element name="chngMSISDNPreInfoRequest" type="ChngMSISDNPreInfoRequest" />
+	<xs:element name="chngMSISDNPreInfoResponse" type="ChngMSISDNPreInfoResponse" />
+	<!-- End of change MSISDN Pre Info  -->
+	
+	<!-- get MSISDN Info  -->
+	<xs:element name="getMSISDNInfoRequest" type="GetMSISDNInfoRequest" />
+	<xs:element name="getMSISDNInfoResponse" type="GetMSISDNInfoResponse" />
+	<!-- End of get MSISDN Info  -->
+	
+	<!-- getTroubleTktsPreInfo  -->
+	<xs:element name="trblTktsPreInfoRequest" type="TrblTktsPreInfoRequest" />
+	<xs:element name="trblTktsPreInfoResponse" type="TrblTktsPreInfoResponse" />
+	<!-- End of getTroubleTktsPreInfo  -->
+	
+	<!-- manageTroubleTkts  -->
+	<xs:element name="manageTroubleTktsRequest" type="ManageTroubleTktsRequest" />
+	<xs:element name="manageTroubleTktsResponse" type="ManageTroubleTktsResponse" />
+	<!-- End of manageTroubleTkts  -->
+	
+	<!-- viewTroubleTkts  -->
+	<xs:element name="viewTroubleTktsRequest" type="ViewTroubleTktsRequest" />
+	<xs:element name="viewTroubleTktsResponse" type="ViewTroubleTktsResponse" />
+	<!-- End of viewTroubleTkts  -->
+
+	<!-- subGroupChangePreInfo  -->
+	<xs:element name="subGroupChangePreInfoRequest" type="SubGroupChangePreInfoRequest" />
+	<xs:element name="subGroupChangePreInfoResponse" type="SubGroupChangePreInfoResponse" />
+	<!-- End of subGroupChangePreInfo  -->
+
+	<!-- subGroupChangePreInfo  -->
+	<xs:element name="subGroupChangeRequest" type="SubGroupChangeRequest" />
+	<xs:element name="subGroupChangeResponse" type="SubGroupChangeResponse" />
+	<!-- End of subGroupChangePreInfo  -->
+	
+	<!-- validateMSISDN  -->
+	<xs:element name="validateMSISDNRequest" type="ValidateMSISDNRequest" />
+	<xs:element name="validateMSISDNResponse" type="ValidateMSISDNResponse" />
+	<!-- End of validateMSISDN  -->
+	
+	
+	<xs:element name="getLocationAssoMsisdnRequest" type="GetLocationAssoMsisdnRequest" />
+	<xs:element name="getLocationAssoMsisdnResponse" type="GetLocationAssoMsisdnResponse" />
+	
+	<xs:element name="getFreeMsisdnRequest" type="GetFreeMsisdnRequest" />
+	<xs:element name="getFreeMsisdnResponse" type="GetFreeMsisdnResponse" />
+	
+	<xs:element name="activateSubscriberRequest" type="ActivateSubscriberRequest" />
+	<xs:element name="activateSubscriberResponse" type="ActivateSubscriberResponse" />
+
+<xs:element name="forceRenewalRequest" type="ForceRenewalRequest" />
+	<xs:element name="forceRenewalResponse" type="ForceRenewalResponse" />
+	
+		<!-- HLRIntegration -->
+ 	<xs:element name="HLRIntegrationRequest" type="HLRIntegrationRequest" />
+ 	<xs:element name="HLRIntegrationResponse" type="HLRIntegrationResponse" />
+ 	<!-- End of HLRIntegration  --> 	
+ 	
+ 	<!-- HLRIntegrationUpdate -->
+ 	<xs:element name="HLRIntegrationUpdateRequest" type="HLRIntegrationUpdateRequest" />
+ 	<xs:element name="HLRIntegrationUpdateResponse" type="HLRIntegrationUpdateResponse" />
+ 	<!-- End of HLRIntegration  --> 
+ 	<xs:element name="MDNbasedGetNwIdRequest" type="MDNBasedGetNwIdRequest" />
+ 	<xs:element name="MDNbasedGetNwIdResponse" type="MDNBasedGetNwIdResponse" />
+ 	
+ 	<xs:element name="regSimSwapRequest" type="RegSimSwapRequest" />
+	<xs:element name="regSimSwapResponse" type="RegSimSwapResponse" />
+ <!-- added by premalatha for req 1835,on Activation flow -->
+ 	<xs:element name="getTechnologyRequest" type="GetTechnologyRequest" />
+	<xs:element name="getTechnologyResponse" type="GetTechnologyResponse" />
+			
+ 	<xs:element name="updateTroubleTktRequest" type="UpdateTroubleTktRequest" />
+	<xs:element name="updateTroubleTktResponse" type="UpdateTroubleTktResponse" />
+	
+	<xs:element name="getTroubleTktStatusRequest" type="GetTroubleTktStatusRequest" />
+	<xs:element name="getTroubleTktStatusResponse" type="GetTroubleTktStatusResponse" />
+	
+	
+	<xs:element name="getTroubleTktHistoryRequest" type="GetTroubleTktHistoryRequest" />
+	<xs:element name="getTroubleTktHistoryResponse" type="GetTroubleTktHistoryResponse" />
+	
+	<xs:element name="roamingServiceStatusUpdateRequest" type="roamingServiceStatusUpdateRequest" />
+	<xs:element name="roamingServiceStatusUpdateResponse" type="roamingServiceStatusUpdateResponse" />
+		
+		
+	<xs:element name="getAccountDatesRequest" type="getAccountDatesRequest" />
+	<xs:element name="getAccountDatesResponse" type="getAccountDatesResponse" />
+	
+	<xs:element name="getAccountAllDatesRequest" type="getAccountAllDatesRequest" />
+	<xs:element name="getAccountAllDatesResponse" type="getAccountAllDatesResponse" />
+	
+	<xs:element name="getcategoryIDRequest" type="getcategoryIDRequest" />
+	<xs:element name="getcategoryIDResponse" type="getcategoryIDResponse" />
+	
+	<!-- GetForceRenewal Details -->
+	<xs:element name="getForceRenDetailsRequest" type="getForceRenDetailsRequest" />
+	<xs:element name="getForceRenDetailsResponse" type="getForceRenDetailsResponse" />
+	
+	<!-- ValidateId  -->
+	<xs:element name="validateIDRequest" type="ValidateIDRequest" />
+	<xs:element name="validateIDResponse" type="ValidateIDResponse" />
+	
+	<xs:element name="getPathInfoRequest" type="GetPathInfoRequest" />
+	<xs:element name="getPathInfoResponse" type="GetPathInfoResponse" />
+
+	<xs:element name="managePathInfoRequest" type="ManagePathInfoRequest" />
+	<xs:element name="managePathInfoResponse" type="ManagePathInfoResponse" />
+	
+	
+	<xs:element name="updateSubscriberCategoryRequest" type="updateSubscriberCategoryRequest" />
+	<xs:element name="updateSubscriberCategoryResponse" type="updateSubscriberCategoryResponse" />
+	
+	<xs:element name="validateCorpMSISDNVoucherRequest" type="validateCorpMSISDNVoucherRequest" />
+	<xs:element name="validateCorpMSISDNVoucherResponse" type="validateCorpMSISDNVoucherResponse"/>
+	
+	<xs:element name="accountVsBANMappingRequest" type="accountVsBANMappingRequest" />
+	<xs:element name="accountVsBANMappingResponse" type="accountVsBANMappingResponse"/>
+	
+	
+	<xs:element name="publicityIdHLRcodeGetRequest" type="publicityIdHLRcodeGetRequest" />
+	<xs:element name="publicityIdHLRcodeGetResponse" type="publicityIdHLRcodeGetResponse"/>
+	
+	<xs:element name="ttsaUpdateRequest" type="ttsaUpdateRequest" />
+	<xs:element name="ttsaUpdateResponse" type="ttsaUpdateResponse"/>
+	
+	<xs:element name="bascDrvdIdHLRcodeGetRequest" type="bascDrvdIdHLRcodeGetRequest" />
+	<xs:element name="bascDrvdIdHLRcodeGetResponse" type="bascDrvdIdHLRcodeGetResponse"/>
+	
+	
+	<xs:element name="bascDrvdIdHLRUpdateRequest" type="bascDrvdIdHLRUpdateRequest" />
+	<xs:element name="bascDrvdIdHLRUpdateResponse" type="bascDrvdIdHLRUpdateResponse"/>
+	
+	
+	<xs:element name="getTTPCRFintimateDtlsRequest" type="getTTPCRFintimateDtlsRequest" />
+	<xs:element name="getTTPCRFintimateDtlsResponse" type="getTTPCRFintimateDtlsResponse"/>
+	
+	
+	<xs:element name="TTPCRFUpdateRequest" type="TTPCRFUpdateRequest" />
+	<xs:element name="TTPCRFUpdateResponse" type="TTPCRFUpdateResponse"/>
+	
+	
+	<xs:element name="corpTpProdGetUpdateRequest" type="corpTpProdGetUpdateRequest" />
+	<xs:element name="corpTpProdGetUpdateResponse" type="corpTpProdGetUpdateResponse"/>
+	
+	
+	<xs:element name="accountProductIdMapRequest" type="accountProductIdMapRequest" />
+	<xs:element name="accountProductIdMapResponse" type="accountProductIdMapResponse"/>
+	
+	
+	<xs:element name="validateSimRequest" type="validateSimRequest" />
+	<xs:element name="validateSimResponse" type="validateSimResponse"/>
+	
+	<xs:element name="SIMActivateRequest" type="simActivateRequest" />
+	<xs:element name="SIMActivateResponse" type="simActivateResponse" />
+	
+	<xs:element name="getDtlsForRegistrationRequest" type="getDtlsForRegistrationRequest" />
+	<xs:element name="getDtlsForRegistrationResponse" type="getDtlsForRegistrationResponse" />
+	
+	<xs:element name="getTripletDtlsForRegRequest" type="getTripletDtlsForRegRequest" />
+	<xs:element name="getTripletDtlsForRegResponse" type="getTripletDtlsForRegResponse" />
+	
+		<!-- manageAccount -->
+	<xs:element name="managePostPaidGrpRequest" type="ManagePostPaidGrpRequest" />
+	<xs:element name="managePostPaidGrpResponse" type="ManagePostPaidGrpResponse" />
+	<!-- End of manageAccountInfo -->
+	
+
+	<xs:complexType name="ManagePostPaidGrpRequest">
+ 		<xs:sequence>
+			<xs:element name="idValue" type="xs:string" minOccurs="0"/>
+			<xs:element name="flag" type="xs:string" minOccurs="0"/>
+				<xs:element name="grpListDtls" type="GrpListDtlsType" minOccurs="0"/>
+			<xs:element name="undefined1" type="xs:string" minOccurs="0"/>
+			<xs:element name="undefined2" type="xs:string" minOccurs="0"/>
+	</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="GrpListDtlsType">
+		<xs:sequence>
+			<xs:element name="GrpInfo" type="GrpDtlsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+    
+	<xs:complexType name="GrpDtlsType">
+		<xs:sequence>
+			<xs:element name="mainAccID" type="xs:long" minOccurs="0" />
+			<xs:element name="accountId" type="xs:long" minOccurs="0" />
+			<xs:element name="mainSubFlag" type="xs:string" minOccurs="0" />
+             <xs:element name="createdBy" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+		<xs:complexType name="ManagePostPaidGrpResponse">
+			<xs:sequence>
+			   <xs:element name="message" type="xs:string" minOccurs="0" />
+				<xs:element name="userDefined1" type="xs:string" minOccurs="0" />
+				<xs:element name="userDefined2" type="xs:string" minOccurs="0" />
+				<xs:element name="userDefined3"   type="xs:string"  minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+	<xs:complexType name="getTripletDtlsForRegRequest">
+		<xs:sequence>
+			<xs:element name="SIM"  type="SIMType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getTripletDtlsForRegResponse">
+		<xs:sequence>
+			<xs:element name="SIM" type="SIMType" minOccurs="0" />
+			<xs:element name="isSudo"  type="xs:integer" minOccurs="0"/>
+			<xs:element name="oldMSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="newMSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="oldCCMSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="newCCMSISDN" type="MSISDNType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="validateSimRequest">
+		<xs:sequence>
+			<xs:element name="SIMs"  type="SIMType" minOccurs="0" maxOccurs="unbounded"/>
+		   <xs:element name="idValues" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="validateSimResponse">
+		<xs:sequence>
+			<xs:element name="failedSIMs"  type="SIMType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="successSIMs"  type="SIMType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="respCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="respmsg" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- YOKKO related API- SIM activation -->
+	 
+	<xs:complexType name="simActivateRequest">
+		<xs:sequence>
+			<xs:element name="SIM" type="SIMType" minOccurs="0"/>
+			<xs:element name="psudeoMSISDN" type="MSISDNType" minOccurs="0"/>			
+			<xs:element name="sellerID" type="xs:string"/>
+		   <xs:element name="idValue" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="simActivateResponse">
+		<xs:sequence>
+			<xs:element name="oldMSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="newMSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="oldIDValue" type="xs:string" minOccurs="0"/>	
+			<xs:element name="SIM" type="SIMType" minOccurs="0"/>	
+			<xs:element name="publicityIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>	
+			<xs:element name="walletUnits" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>	
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- YOKKO related API- SIM activation -->
+	
+	
+	
+	<xs:complexType name="accountProductIdMapRequest">
+		<xs:sequence>
+			
+			<xs:element name="accountId"  type="xs:string" minOccurs="0"/>
+			<xs:element name="officeCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="TPId" type="xs:string" minOccurs="0"/>
+			<xs:element name="actionFlag" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="accountProductIdMapResponse">
+		<xs:sequence>
+			
+			<xs:element name="prodId" type="xs:string" minOccurs="0"/>
+			<xs:element name="message" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="corpTpProdGetUpdateRequest">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="accountId"  type="xs:string" minOccurs="0"/>
+			<xs:element name="officeCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="oldTPName" type="xs:string" minOccurs="0"/>
+			<xs:element name="newTPId" type="xs:string" minOccurs="0"/>
+			<xs:element name="actionFlag" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="xs:string" minOccurs="0"/>
+			<xs:element name="remarks" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="corpTpProdGetUpdateResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="oldProdId" type="xs:string" minOccurs="0"/>
+			<xs:element name="newProdId" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="TTPCRFUpdateRequest">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="status"  type="xs:string" minOccurs="0"/>
+			<xs:element name="remarks" type="xs:string" minOccurs="0"/>
+			<xs:element name="extErrCode" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TTPCRFUpdateResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="getTTPCRFintimateDtlsRequest">
+		<xs:sequence>
+			<xs:element name="msisdn" type="xs:string" minOccurs="1"/>
+			<xs:element name="publicityId"  type="xs:string" minOccurs="0"/>
+			<xs:element name="atpId" type="xs:string" minOccurs="0"/>
+			<xs:element name="subUnsubFlag" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getTTPCRFintimateDtlsResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+			<xs:element name="atpDetails"  type="atpDetailsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="atpDetailsType">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="startDate"  type="xs:string" minOccurs="0"/>
+			<xs:element name="endDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="tpId" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="bascDrvdIdHLRUpdateRequest">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"/>
+			<xs:element name="status"  type="xs:string"/>
+			<xs:element name="remarks" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="bascDrvdIdHLRUpdateResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bascDrvdIdHLRcodeGetRequest">
+		<xs:sequence>
+			<xs:element name="channel"  type="xs:string" minOccurs="0" />
+			<xs:element name="msisdn"  type="xs:long" minOccurs="0" />
+			<xs:element name="basicSrvsId"  type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="drvdSrvsId" type="xs:long" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="subUnsubFlag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="reason"  type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bascDrvdIdHLRcodeGetResponse">
+		<xs:sequence>
+			<xs:element name="TransactionId" type="xs:string" minOccurs="0" />
+			<xs:element name="subUnsubFlag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="hlrcodes" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="publicityIdHLRcodeGetRequest">
+		<xs:sequence>
+			<xs:element name="channel"  type="xs:string" minOccurs="0" />
+			<xs:element name="msisdn"  type="xs:long" minOccurs="0" />
+			<xs:element name="atpId"  type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="publicityId" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="subUnsubFlag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="reason"  type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="publicityIdHLRcodeGetResponse">
+		<xs:sequence>
+			<xs:element name="TransactionId" type="xs:string" minOccurs="0" />
+			<xs:element name="HLRCodeDetails" type="HLRCodeDetailsType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="HLRCodeDetailsType">
+		<xs:sequence>
+		<xs:element name="atpId" type="xs:string" minOccurs="0"/>
+			<xs:element name="publicityId" type="xs:string" minOccurs="0"/>
+			<xs:element name="HLRCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="subUnsubFlag" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ttsaUpdateRequest">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"/>
+			<xs:element name="status"  type="xs:string"/>
+			<xs:element name="remarks" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ttsaUpdateResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="updateSubscriberCategoryRequest">
+		<xs:sequence>
+			<xs:element name="networkId" type="xs:integer"/>
+			<xs:element name="accountType"  type="AccountType"/>
+			<xs:element name="categoryId" type="xs:integer" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="updateSubscriberCategoryResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ManagePathInfoRequest">
+		<xs:sequence>
+			<xs:element name="actionFlag" type="ActionFlagType" />
+			<xs:element name="accountType" type="AllAccountType" />
+			<xs:element name="purpose" type="xs:string" minOccurs="0"/>
+			<xs:element name="filePath" type="xs:string" minOccurs="0" />
+			<xs:element name="fileType" type="xs:string" minOccurs="0" />
+			<xs:element name="validationFlag" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ManagePathInfoResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+			<xs:element name="pathDetails" type="PathDetailsType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetPathInfoRequest">
+		<xs:sequence>
+			<xs:element name="accountType" type="AllAccountType" />
+			<xs:element name="purpose" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetPathInfoResponse">
+		<xs:sequence>
+			<xs:element name="pathDetails" type="PathDetailsType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PathDetailsType">
+		<xs:sequence>
+			<xs:element name="pathInfo" type="PathInfoType" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PathInfoType">
+		<xs:sequence>
+			<xs:element name="range" type="RangeType" minOccurs="0" />
+			<xs:element name="location" type="xs:string" minOccurs="0" />
+			<xs:element name="userName" type="xs:string" minOccurs="0" />
+			<xs:element name="password" type="xs:string" minOccurs="0" />
+			<xs:element name="networkId" type="xs:string" minOccurs="0" />
+			<xs:element name="fileType" type="xs:string" minOccurs="0" />
+			<xs:element name="createdDate" type="xs:string" minOccurs="0" />
+			<xs:element name="updatedBy" type="xs:string" minOccurs="0" />
+			<xs:element name="updatedDate" type="xs:string" minOccurs="0" />			
+			<xs:element name="purpose" type="xs:string" minOccurs="0" />
+			<xs:element name="validation1_user" type="xs:string" minOccurs="0" />
+			<xs:element name="validation1_date" type="xs:string" minOccurs="0" />
+			<xs:element name="validation2_user" type="xs:string" minOccurs="0" />
+			<xs:element name="validation2_date" type="xs:string" minOccurs="0" />			
+			<xs:element name="validationStatus" type="xs:string" minOccurs="0" />			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RangeType">
+		<xs:sequence>
+			<xs:element name="start" type="xs:long" minOccurs="0" />
+			<xs:element name="end" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="ValidateIDRequest">
+		<xs:sequence>
+			<xs:element name="accountType" type="AllAccountType" />
+			<xs:element name="idNumber" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ValidateIDResponse">
+		<xs:sequence>
+			<xs:element name="isValid" type="xs:boolean" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="getForceRenDetailsRequest">
+		<xs:sequence>
+			<xs:element name="accountId" type="accountIdType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getForceRenDetailsResponse">
+		<xs:sequence>
+			<xs:element name="oldTp" type="xs:string" minOccurs="0" />
+			<xs:element name="newTp" type="xs:string" minOccurs="0" />
+			<xs:element name="oldTpName" type="xs:string" minOccurs="0" />
+			<xs:element name="newTpName" type="xs:string" minOccurs="0" />
+			<xs:element name="oldTpCharge" type="CreditType" minOccurs="0" />
+			<xs:element name="newTpCharge" type="CreditType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- GetForceRenewal Details -->
+	
+	
+ 	<xs:complexType name="UpdateTroubleTktRequest">
+		<xs:sequence>
+			<xs:element name="tktNumber" type="xs:long" />
+			<xs:element name="status" type="xs:int" />
+			<xs:element name="assignedTo" type="xs:string" />
+			<xs:element name="statusReason" type="xs:int"  />
+			<xs:element name="severityId" type="xs:int"  />
+			<xs:element name="userText" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="UpdateTroubleTktResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="GetTroubleTktStatusRequest">
+		<xs:sequence>
+		<xs:element name="CurrentStatusId" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="GetTroubleTktStatusResponse">
+		<xs:sequence>
+		<xs:element name="message" type="xs:string" minOccurs="0" />
+		<xs:element name="extCount" type="xs:int" minOccurs="0" />
+		<xs:element name="TktStatusList" type="TktStatusListType" minOccurs="0"/>
+		
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="TktStatusListType">
+		<xs:sequence>
+		<xs:element name="TktStatusTypeData" type="TktStatusTypeData" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	 <xs:complexType name="TktStatusTypeData">
+		<xs:sequence>
+		
+		<xs:element name="StatusID" type="xs:int"/>
+		<xs:element name="StatusDesc" type="xs:string"/>
+		
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="GetTroubleTktHistoryRequest">
+		<xs:sequence>
+		<xs:element name="tktNumber" type="xs:long" />
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="GetTroubleTktHistoryResponse">
+		<xs:sequence>
+		<xs:element name="tktHistoryList" type="tktHistoryListType" minOccurs="0"/>
+		<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="tktHistoryListType">
+		<xs:sequence>
+		<xs:element name="TktHistoryData" type="TktHistoryTypeData" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="TktHistoryTypeData">
+		<xs:sequence>
+			<xs:element name="tktNo" type="xs:long" minOccurs="0" />
+			<xs:element name="CreationDate" type="xs:string"  minOccurs="0"  />
+			<xs:element name="heading" type="xs:string"  minOccurs="0" />
+			<xs:element name="assignedTo" type="xs:string" minOccurs="0"  />
+			<xs:element name="status" type="xs:string" minOccurs="0"  />
+			<xs:element name="statusChangeDate" type="xs:string"  minOccurs="0"  />
+			<xs:element name="severity" type="xs:string" minOccurs="0"  />
+			<xs:element name="tktCreatedBy" type="xs:string" minOccurs="0"  />
+			<xs:element name="tktUpdatedBy" type="xs:string"  minOccurs="0" />
+			<xs:element name="problemDesc" type="xs:string"  minOccurs="0"  />
+		
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="GetTechnologyRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" />
+		</xs:sequence>
+	</xs:complexType>
+ 	
+ 	<xs:complexType name="GetTechnologyResponse">
+		<xs:sequence>
+			<xs:element name="Technology" type="xs:string" minOccurs="0"/>
+			<xs:element name="NetworkName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+ 	<!--End GetTechnology API -->
+ 	
+ 	
+ 	<xs:complexType name="RegSimSwapRequest">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" />
+			<xs:element name="SIM" type="SIMType" />
+			<xs:element name="IDNo" type="IDNoType" />
+			<xs:element name="loginID" type="xs:string" minOccurs="0" />
+			<xs:element name="userType" type="UserType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RegSimSwapResponse">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="accountId" type="AccountIdType" minOccurs="0" />
+			<xs:element name="oldCCMsisdn" type="MSISDNType" minOccurs="0" />
+			<xs:element name="newCCMsisdn" type="MSISDNType" minOccurs="0" />
+			<xs:element name="oldIMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="newIMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="msisdnType" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+ 	
+ 	
+ 	
+ 	
+ 	<xs:complexType name="MDNBasedGetNwIdRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="SIM" type="SIMType" minOccurs="0" />
+			<xs:element name="IdValue" type="xs:string" minOccurs="0" />
+			<xs:element name="AccountId" type="AccountIdType"
+				minOccurs="0" />
+			<xs:element name="channel" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	        
+	        
+		
+	
+		<xs:complexType name="MDNBasedGetNwIdResponse">
+		<xs:sequence>
+		<xs:element name="MSISDN"  type="MSISDNType"/>	
+		<xs:element name="IMSI"  type="IMSIType"/>
+		<xs:element name="SIM"  type="SIMType"/>	
+		<xs:element name="NetworkId"   type="xs:integer" minOccurs="0"/>
+	    <xs:element name="AccountId"  type="AccountIdType"/>	
+		<xs:element name="IdValue" type="xs:string" minOccurs="0"/>
+		<xs:element name="NetworkName" type="xs:string" minOccurs="0"/>			
+		</xs:sequence>
+		</xs:complexType>
+	
+	
+	
+	
+
+	<xs:complexType name="ActivateSubscriberRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+				<xs:element name="accountId" type="accountIdType" minOccurs="0"/>
+			</xs:choice>
+				<xs:element name="RequestFrom" type="xs:string" minOccurs="0" />
+				<xs:element name="ActiveSubscriber" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+		
+	<xs:complexType name="ActivateSubscriberResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<!-- getAccount --><!-- Commented for TT-OCS by sampath to use the same request at selfcareagent
+	<xs:element name="getAccountRequest" type="GetAccountRequest" />
+	<xs:element name="getAccountResponse" type="GetAccountResponse" />
+	--><!-- End of getAccount -->
+
+
+<!-- getCreditProfiles  -->
+	<xs:element name="getCreditProfilesRequest" type="GetCreditProfilesRequest" />
+	<xs:element name="getCreditProfilesResponse" type="GetCreditProfilesResponse" />
+<!-- End of getCreditProfiles  -->
+	<xs:element name="manageAdditionalServicesRequest" type="ManageAdditionalServicesRequest" />
+	<xs:element name="manageAdditionalServicesResponse" type="ManageAdditionalServicesResponse" />
+	
+	<xs:element name="getAdditionalServicesRequest" type="GetAdditionalServicesRequest" />
+	<xs:element name="getAdditionalServicesResponse" type="GetAdditionalServicesResponse" />
+	<xs:element name="convertAccountTypeRequest" type="ConvertAccountTypeRequest" />
+	<xs:element name="convertAccountTypeResponse" type="ConvertAccountTypeResponse" />
+	<xs:element name="getPostpaidAcctDetRequest" type="GetPostpaidAcctDetRequest" />
+	<xs:element name="getPostpaidAcctDetResponse" type="GetPostpaidAcctDetResponse" />
+	
+	<xs:element name="updateCreditLimitRequest" type="UpdateCreditLimitRequest" />
+	<xs:element name="updateCreditLimitResponse" type="UpdateCreditLimitResponse" />
+	
+	<xs:element name="validateUserAPIRequest" type="ValidateUserAPIRequest" />
+	<xs:element name="validateUserAPIResponse" type="ValidateUserAPIResponse" />
+	
+	<xs:element name="getAndBlockMSISDNRequest" type="GetAndBlockMSISDNRequest" />
+	<xs:element name="getAndBlockMSISDNResponse" type="GetAndBlockMSISDNResponse" />
+	
+	<!-- changeSimMdnAudit -->
+	<xs:element name="changeSimMdnAuditRequest" type="changeSimMdnAuditRequest" />
+	<xs:element name="changeSimMdnAuditResponse" type="changeSimMdnAuditResponse" />
+	<!-- changeSimMdnAudit  -->
+	
+	<!-- SimDealerValidation added by sampath for REQ#1630 for TT 1.0.20.0 -->
+	<xs:element name="simDealerValidationRequest" type="SimDealerValidationRequest" />
+	<xs:element name="simDealerValidationResponse" type="SimDealerValidationResponse" />
+	<!-- SimDealerValidation  -->
+	
+	<!-- Chnages merging from OCS,ADR and Service Management -->
+	<xs:element name="getChargeInfoRequest" type="GetChargeInfoRequest" />
+	<xs:element name="getChargeInfoResponse" type="GetChargeInfoResponse" />	
+
+	<xs:element name="simSwapCrdtRptUpdtRequest" type="SimSwapCrdtRptUpdtRequest" />
+	<xs:element name="simSwapCrdtRptUpdtResponse" type="SimSwapCrdtRptUpdtResponse" />	
+
+    <xs:element name="manageProvsngRetryRequest" type="ManageProvsngRetryRequest" />
+	<xs:element name="manageProvsngRetryResponse" type="ManageProvsngRetryResponse" />
+	
+	<xs:element name="updatePostpaidAcctDetRequest" type="UpdatePostpaidAcctDetRequest" />
+	<xs:element name="updatePostpaidAcctDetResponse" type="UpdatePostpaidAcctDetResponse" />
+	<!-- End of Merging -->
+	
+	<xs:complexType name="GetAndBlockMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="idNumber"  type="xs:string"/>			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="GetAndBlockMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ValidateUserAPIRequest">
+		<xs:sequence>
+			<xs:element name="userId"  type="xs:string"/>
+			<xs:element name="password"  type="xs:string"/>
+			<xs:element name="roleID"  type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ValidateUserAPIResponse">
+		<xs:sequence>
+			<xs:element name="networkName" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="UpdateCreditLimitResponse">
+		<xs:sequence>
+			<xs:element name="message"  type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="UpdateCreditLimitRequest">
+		<xs:sequence>
+			<xs:element name="accountType"  type="AccountType"/>
+			<xs:element name="creditLimit" type="CreditLimitType"/>			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="UpdateBillingTypeRequest">
+			<!--
+			
+				REQ#1235: corporate UI post paid changes
+				Done By: Phani.Chavala
+				Date : 28 sept 2012 
+			 -->
+		<xs:sequence>
+		 <xs:choice>
+			<xs:element name="billingTypeList" type="BillingListType" />
+			<xs:element name="officeData"  type="OfficeDataType" />
+		 </xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OfficeDataType">
+		<xs:sequence>
+			<xs:element name="officeCode"  type="xs:long"/>
+			<xs:element name="billingType"  type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdateBillingTypeResponse">
+		<xs:sequence>
+			<xs:element name="message"  type="xs:string" minOccurs="0"/>
+			<xs:element name="successList"  type="AccountType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="failedList"  type="AccountType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="successCurentStatusList" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="successnewStatusList" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="failedStatusList" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="BillingListType">
+		<xs:sequence>
+			<xs:element name="BillingTypeData" type="BillingTypeData" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="BillingTypeData">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" />
+			<xs:element name="billingType" type="Str1Type" />
+			<xs:element name="currentStatus" type="xs:string" />
+			<xs:element name="newStatus" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	
+	<xs:complexType name="GetCreditProfilesRequest">
+		<xs:sequence>
+			<xs:element name="acctId" type="AccountIdType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="GetCreditProfilesResponse">
+		<xs:sequence>
+			<xs:element name="creditProfiles" type="CreditProfilesType"  minOccurs="0"/>
+			<xs:element name="cardProfiles" type="CardProfilesType"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CreditProfilesType">
+		<xs:sequence>
+			<xs:element name="available" type="CreditProfilesListType" maxOccurs="unbounded"/>
+			<xs:element name="assigned" type="CreditProfilesListType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="CardProfilesType">
+		<xs:sequence>
+			<xs:element name="available" type="CardProfilesListType" maxOccurs="unbounded"/>
+			<xs:element name="assigned" type="CardProfilesListType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="CardProfilesListType">
+		<xs:sequence>
+			<xs:element name="ProfileData" type="ProfileDataType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="CreditProfilesListType">
+		<xs:sequence>
+			<xs:element name="ProfileData" type="ProfileDataType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ProfilesDataListType">
+		<xs:sequence>
+			<xs:element name="ProfileData" type="ProfileDataType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ProfileDataType">
+		<xs:sequence>
+			<xs:element name="ProfileId" type="xs:long" minOccurs="0"/>
+			<xs:element name="ProfileName" type="xs:string" minOccurs="0"/>
+			<xs:element name="CreditLimit" type="xs:decimal" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ValidateMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="msisdn" type="MSISDNType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ValidateMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="imsi" type="xs:long"/>
+			<xs:element name="status" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ViewTroubleTktsRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="acctId" type="xs:long"/>
+				<xs:element name="msisdn" type="xs:long"/>
+				<xs:element name="tktNum" type="xs:long"/>
+			</xs:choice>
+			<xs:element name="maxTkts" type="xs:int"/>
+ 			<xs:element name="rowCount" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ViewTroubleTktsResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+			<xs:element name="tktList" type="TktListType" minOccurs="0"/>
+			<xs:element name="totalTkts"  type="xs:long" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TktListType">
+		<xs:sequence>
+			<xs:element name="tkts" type="TrblTktsType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TrblTktsType">
+		<xs:sequence>
+			<xs:element name="tktNum" type="xs:long" minOccurs="0"/>
+			<xs:element name="acctId" type="xs:long" minOccurs="0"/>
+			<xs:element name="msisdn" type="xs:long" minOccurs="0"/>
+			<xs:element name="creatDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+			<xs:element name="headingDesc" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="xs:string" minOccurs="0"/>
+			<xs:element name="statusId" type="xs:int" minOccurs="0"/>
+			<xs:element name="statChngDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="reason" type="xs:string" minOccurs="0"/>
+			<xs:element name="severity" type="xs:string" minOccurs="0"/>
+			<xs:element name="dueDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="closeDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="assignedDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="assignedTo" type="xs:string" minOccurs="0"/>
+			<xs:element name="userTxt" type="xs:string" minOccurs="0"/>
+			<xs:element name="networkId" type="xs:long" minOccurs="0"/>
+			<xs:element name="updatedBy" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ManageTroubleTktsRequest">
+		<xs:sequence>
+			<xs:element name="actionFlag" type="ActionFlagType" />
+			<xs:element name="acctId" type="TenDigitsType"/>
+			<xs:element name="msisdn" type="MSISDNType"/>
+			<xs:element name="heading" type="Str2Type"/>
+			<xs:element name="status" type="TwoDigitsType"/>
+			<xs:element name="severity" type="TwoDigitsType"/>
+			<xs:element name="userTxt" type="Str2000Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ManageTroubleTktsResponse">
+		<xs:sequence>
+			<xs:element name="tktNumber" type="xs:long" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TrblTktsPreInfoRequest"/>
+	<xs:complexType name="TrblTktsPreInfoResponse">
+		<xs:sequence>
+			<xs:element name="infoList" type="TktsPreInfoListType" minOccurs="0"/>
+			<xs:element name="severityList" type="TktsPreInfoListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TktsPreInfoListType">
+		<xs:sequence>
+			<xs:element name="info" type="TktsPreInfoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TktsPreInfoType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" minOccurs="0"/>
+			<xs:element name="desc" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ChangeMSISDNsRequest">
+		<xs:sequence>
+			<xs:element name="hlrFlag" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SIMSerialNos" type="SIMSerialNosType"/>
+			<xs:element name="portInMSISDNs" type="MSISDNsType"/>
+			<xs:element name="newRoutes" type="NewRoutesType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ChangeMSISDNsResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" />
+			<xs:element name="countryCode" type="CountryCodeType" minOccurs="0" />
+			
+			<!--
+				Change Description: Following 4 out fields are added as part of req#905 MSP 4.0 CCUI 
+				Added By		  : Phani.Chavala
+				Date			  : 14 Mar, 2012 
+	 		-->
+	 		<!-- <xs:element name="oldIMSI" type="xs:string" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+			<xs:element name="oldCCNDC" type="xs:string" minOccurs="0" />
+			<xs:element name="newCCNDC" type="xs:string" minOccurs="0" /> -->
+			
+			<xs:element name="transNo" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MSISDNIMSIType" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="oldIMSI" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="subscriberState" type="xs:string" minOccurs="0"/>
+			<xs:element name="oldCCNDCMsisdn" type="MSISDNsType" minOccurs="0"/>
+			<xs:element name="newCCNDCMsisdn" type="MSISDNsType" minOccurs="0"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="NewRoutesType">
+		<xs:sequence>
+			<xs:element name="newRoute" type="NewRouteType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SIMSerialNosType">
+		<xs:sequence>
+			<xs:element name="SIMSerialNo" type="SIMSerialNoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	 <xs:complexType name="SuccessMSISDNsType">
+		<xs:sequence>
+			<xs:element name="successMSISDNDetails" type="SuccessMSISDNDetailsType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SuccessMSISDNDetailsType">
+		<xs:sequence>
+			<xs:element name="transactionNo" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="oldMSISDN" type="xs:decimal"  minOccurs="0"/>
+			<xs:element name="portInMSISDN" type="xs:decimal" minOccurs="0" />
+			<xs:element name="oldMSISDNType" type="MSISDNEnumType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FailureMSISDNsType">
+		<xs:sequence>
+			<xs:element name="failureMSISDNDetails" type="FailureMSISDNDetailsType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FailureMSISDNDetailsType">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="xs:decimal" />
+			<xs:element name="errorCode" type="xs:decimal" />
+			<xs:element name="errorMessage" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="MSISDNsType">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SIMRegistrationRequest">
+		<xs:sequence>
+			<xs:element name="hlrFlag" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SIM" type="SIMType" />
+			<xs:element name="IDNo" type="IDNoType" />
+			<xs:element name="IDType" type="IDType"  minOccurs="0"/>
+			<xs:element name="PromoCode" type="PromoCodeType" minOccurs="0"/>
+			<xs:element name="DealerMSISDN" type="xs:string" minOccurs="0"/>	 
+			<xs:element name="UserType" type="UserType" minOccurs="0"/>	
+			<xs:element name="OrderId" type="OrderIdType" minOccurs="0"/>
+			<xs:element name="accountType" type="BillingType" minOccurs="0"/>
+			<xs:element name="billType" type="BillType" minOccurs="0"/>
+			<xs:element name="billFreq" type="BillFreqType" minOccurs="0"/>
+			<!--
+				Added for REQ#1235: corporate post paid changes. 
+			 -->
+			<xs:element name="isCorpAcct" type="IsCorpType" minOccurs="0"/>
+			<xs:element name="creditLimit" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="billingDate" type="xs:string" minOccurs="0"/>
+			
+			<xs:element name="locationCode" type="xs:string" minOccurs="0"/>
+			
+			<xs:element name="tariffPackageId" type="xs:long" minOccurs="0"/>
+			
+		</xs:sequence>                                   
+	</xs:complexType>
+	
+	 
+	<xs:complexType name="SIMRegistrationResponse">       
+		<xs:sequence>
+	 		<xs:element name="isSudo"  type="xs:integer" minOccurs="0"/>
+	 		<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+	 		<xs:element name="FRTransNo" type="xs:long" minOccurs="0"/>
+	 		
+	 		<!--
+				Change Description: Following 4 out fields are added as part of req#905 MSP 4.0 CCUI 
+				Added By		  : Phani.Chavala
+				Date			  : 14 Mar, 2012 
+	 		-->
+	 		<xs:element name="oldIMSI" type="xs:string" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+			<xs:element name="oldCCNDC" type="xs:string" minOccurs="0" />
+			<xs:element name="newCCNDC" type="xs:string" minOccurs="0" />
+			
+			<xs:element name="actualMsisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="blockedMsisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="IMSI" type="xs:string" minOccurs="0" />
+			<xs:element name="accountId" type="AccountIdType"  minOccurs="0" />		
+			<xs:element name="creditLimit" type="CreditType"  minOccurs="0"/>
+			<xs:element name="tariffPackageId" type="xs:long" minOccurs="0"/>	
+		</xs:sequence>		 
+	</xs:complexType>
+	
+	<!-- Update Account Status -->
+	<xs:complexType name="UpdateActStatusRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+			<xs:element name="channel"  type="xs:string"  minOccurs="0"/>
+			<xs:element name="operationType"  type="OperationType" />
+			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="UpdateActStatusResponse">
+		<xs:sequence>
+			<xs:element name="Message"  minOccurs="0" type="xs:string" />
+			<xs:element name="refTransId"  minOccurs="0" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- Update Account Data -->
+	<xs:complexType name="UpdateActDataRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+			<xs:element name="validityDate"  type="DateType" minOccurs="0"/>
+			<xs:element name="expiryDate"  type="DateType" minOccurs="0"/>
+			<xs:element name="gracePeriod1"  type="DateType" minOccurs="0"/>
+			<xs:element name="passCode"  type="xs:string" minOccurs="0"/>
+			<xs:element name="VRULanguage"  type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="UpdateActDataResponse">
+		<xs:sequence>
+			<xs:element name="Message"  minOccurs="0" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- activate MSISDN -->
+	<xs:complexType name="ActivateMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="activateMSISDN" type="activateMSISDNType" />
+			<xs:element name="parentMSISDN"  type="MSISDNType" />
+			<xs:element name="IMSI"   minOccurs="0" type="IMSIType" />
+			<xs:element name="IMEI" minOccurs="0" type="IMEIType" />
+			<xs:element name="cardProfile"  type="CardProfileType" />
+			<xs:element name="zipCode" type="ZipCodeType" />
+			<xs:element name="MSISDN"  type="MSISDNType" />
+			<xs:element name="postPaid" minOccurs="0" default="N" type="PostPaidType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ActivateMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="MSISDN"  minOccurs="0" type="MSISDNType" />
+			<xs:element name="IMSI"   minOccurs="0" type="IMSIType" />
+			<xs:element name="isPostPaid"   minOccurs="0" type="xs:string" />
+			<xs:element name="AccountID" type="AccountIdType"  minOccurs="0" />
+			<xs:element name="isReactivate" type="xs:string"  minOccurs="0" />
+			<xs:element name="isMOMTSrvcXst" type="xs:string"  minOccurs="0" />
+			<xs:element name="isDataSrvcXst" type="xs:string"  minOccurs="0" />
+			<xs:element name="optActivSrvcFlag" type="xs:string"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="activateMSISDNType">
+		<xs:choice>
+			<xs:element name="SIM" type="SIMType" />
+			<xs:element name="activationCode" type="ActivationCodeType" />
+	    </xs:choice>
+	 </xs:complexType>
+	<!-- end of activate MSISDN  -->
+	
+	<!-- change MSISDN  -->
+	<xs:complexType name="ChangeMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="userType" type="xs:string" minOccurs="0"/>
+			<xs:element name="account"  type="AccountType" />
+			<xs:element name="zipCode" type="ZipCodeType" />
+			<xs:element name="operator" minOccurs="0" type="OperatorType" />
+			<xs:element ref="General" maxOccurs="1" />
+			<!-- added for xBus -->   
+			<xs:element name="HLRFlag" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ChangeMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="oldMSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="newMSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="oldIMSI" type="IMSIType" minOccurs="0"/>
+			<xs:element name="NAMType" type="NAMType" minOccurs="0"/>
+			<xs:element name="oldmsisdnCCNDC" type="xs:string" minOccurs="0"/>
+			<xs:element name="newMSISDNCCNDC" type="xs:string" minOccurs="0"/>
+			<xs:element name="accountId" type="xs:long" minOccurs="0" />
+			<xs:element name="accountType" type="xs:string"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="General">
+		<xs:complexType>
+			<xs:sequence>
+			<!-- as per UI making optional -->
+				<xs:element name="charges"  type="ChargesType" minOccurs="0"/>
+				<xs:element name="newMSISDN"  type="MSISDNType" />
+			</xs:sequence>
+	   </xs:complexType>
+	</xs:element>
+	<!-- End change MSISDN  -->
+	
+	<!-- ReActivate MSISDN  -->
+	<!-- ReActivate MSISDN  -->
+	<xs:complexType name="ReActivateMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="sim" type="xs:string"/>
+			<xs:element name="expiredMSISDN" type="xs:string"/>
+			<xs:element name="msisdnType" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ReActivateMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="message"  minOccurs="0" type="xs:string" />
+			<xs:element name="oldIMSI"  minOccurs="0" type="xs:string" />
+			<xs:element name="oldMSISDN"  minOccurs="0" type="xs:string" />
+			<xs:element name="oldMSISDNWithCCNDC"  minOccurs="0" type="xs:string" />
+			<xs:element name="newMSISDNWithCCNDC"  minOccurs="0" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of ReActivate MSISDN  -->
+
+	<!-- SIM Swap -->
+	<xs:complexType name="SIMSwapRequest">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" />
+			 <xs:element name="NewIMSI" type="IMSIType" />
+			 <!-- added for xBus -->   
+			<xs:element name="HLRFlag" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SIMSwapResponse">
+		<xs:sequence>
+			<xs:element name="oldIMSI" type="IMSIType"  minOccurs="0"/>
+			<xs:element name="NewIMSI" type="IMSIType"  minOccurs="0"/>
+			<!-- Chnages merging from OCS,ADR and Service Management -->
+			<xs:element name="oldAccountId" type="xs:string" minOccurs="0" />
+			<xs:element name="oldMsisdn" type="xs:string" minOccurs="0" />
+			<xs:element name="newSIM" type="xs:string" minOccurs="0" />
+			<xs:element name="accountBal" type="xs:string" minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string" minOccurs="0" />
+			<xs:element name="gracePeriodDate" type="xs:string" minOccurs="0" />
+			<xs:element name="splCreditFlag" type="xs:string" minOccurs="0" />
+			<!-- End of Merging -->
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of SIM Swap  -->
+	
+	<!-- change IMSI  -->
+	<xs:complexType name="ChangeIMSIRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+			<xs:element name="newSerialNo" type="SerialNoType" minOccurs="0"/>
+	 		<xs:element name="NewIMSI" type="IMSIType" />
+			 <xs:element name="locationId" type="LocationIdType" minOccurs="0"/>
+			  <xs:element name="operator" minOccurs="0" type="OperatorType" />
+			  <!-- As per DB folks making charge is mandatory ..as per UI made optional-->
+			 <xs:element name="charges" type="ChargesType" minOccurs="0"/>
+ 			<!-- added for xBus -->   
+			<xs:element name="HLRFlag" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ChangeIMSIResponse">
+		<xs:sequence>
+			<xs:element name="oldIMSI"  type="IMSIType" minOccurs="0"/>
+			<xs:element name="newIMSI"  type="IMSIType"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of change IMSI  -->
+	
+	<!-- change IMSIPreInfo  -->
+	<xs:complexType name="ChangeIMSIPreInfoRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ChangeIMSIPreInfoResponse">
+		<xs:sequence>
+			<xs:element name="currentIMSI"  type="IMSIType" minOccurs="0" />
+			<xs:element name="currSerialNo"  type="IMSIType" minOccurs="0" />
+			<xs:element name="currentBalance"  type="xs:decimal" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of change IMSIPreInfo  -->
+	
+	<!-- De Activate Account  -->
+	<xs:complexType name="DeActivateAccountRequest">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" />
+			<xs:element name="reason" type="ReasonType" />
+			<xs:element name="IPAddress" type="IPAddressType" />
+			<xs:element name="requestID" type="RequestIdType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="DeActivateAccountResponse">
+		<xs:sequence>
+			<xs:element name="message"  minOccurs="0" type="MessageType" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of De Activate Account  -->
+	
+	<!-- change msisdn pre info -->
+	<xs:complexType name="ChngMSISDNPreInfoRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ChngMSISDNPreInfoResponse">
+		<xs:sequence>
+ 			<xs:element name="oldMSISDN"  minOccurs="0" type="MSISDNType" />
+ 			<xs:element name="currentBalance"  minOccurs="0" type="xs:decimal" />
+ 			<xs:element name="generalAmt"  minOccurs="0" type="xs:decimal" />
+ 			<xs:element name="reservedAmt"  minOccurs="0" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- change msisdn pre info -->
+	
+	<!-- GetMSISDNInfo -->
+	<xs:complexType name="IDInfoType">
+ 		<xs:sequence>
+ 			<xs:element name="IDNo" type="IDNoType" minOccurs="0"/>
+ 			<xs:element name="IDType" type="IDType"  minOccurs="0"/>
+ 		</xs:sequence>
+ 	</xs:complexType>
+	<xs:complexType name="MSISDNInfoType">
+ 		<xs:sequence>
+ 			<xs:element name="MSISDN" type="MSISDNType" />
+ 			<xs:element name="status" type="StatusType"/>
+ 		</xs:sequence>
+ 	</xs:complexType>
+ 	<xs:complexType name="GetMSISDNInfoRequest">
+ 		<xs:sequence>
+ 			<xs:element name="subscriberList" type="SubscriberListType" minOccurs="0" />
+ 		</xs:sequence>
+ 	</xs:complexType>
+ 	
+ 	<xs:complexType name="SubscriberListType">
+ 		<xs:sequence>
+ 			<xs:element name="subscriberInfo" type="SubscriberInfoType" maxOccurs="unbounded" />
+ 		</xs:sequence>
+ 	</xs:complexType>
+ 	
+	<xs:complexType name="GetMSISDNInfoResponse">
+		<xs:sequence>
+			<xs:element name="subscribersList" type="SubscriberListType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubscriberInfoType">
+ 		<xs:sequence>
+ 			<xs:element name="IDInfo" type="IDInfoType"  minOccurs="0"/>
+			<xs:element name="firstName" type="FirstNameType"  minOccurs="0"/>
+			<xs:element name="lastName" type="LastNameType"  minOccurs="0"/>
+			<xs:element name="msisdnList" type="MSISDNListType" minOccurs="0" />
+ 		</xs:sequence>
+ 	</xs:complexType>
+	<xs:complexType name="MSISDNListType">
+ 		<xs:sequence>
+ 			<xs:element name="msisdnInfo" type="MSISDNInfoType" maxOccurs="unbounded"/>
+ 		</xs:sequence>
+ 	</xs:complexType>
+	
+	<!-- GetMSISDNInfo -->
+	
+	<xs:complexType name="AccountType">
+		<xs:choice>
+			<xs:element name="accountId" type="AccountIdType" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+	    </xs:choice>
+	 </xs:complexType>
+
+	<!-- subGroupChangePreInfo  -->
+	<xs:complexType name="SubGroupChangePreInfoRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SubGroupChangePreInfoResponse">
+		<xs:sequence>
+			<xs:element name="assignedGroup" type="GroupType" minOccurs="0"/>
+			<xs:element name="availableGroup" type="GroupListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- subGroupChangePreInfo  -->
+
+	<!-- subGroupChange  -->
+	<xs:complexType name="SubGroupChangeRequest">
+		<xs:sequence>
+			<xs:element name="account"  type="AccountType" />
+			<xs:element name="newGroup" type="GroupType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SubGroupChangeResponse">
+		<xs:sequence>
+			<xs:element name="message" type="MessageType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GroupListType">
+		<xs:sequence>
+			<xs:element name="group" type="GroupType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GroupType">
+		<xs:sequence>
+			<xs:element name="Id"  type="xs:string" minOccurs="0"/>
+			<xs:element name="name" type="NameType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- subGroupChange  -->
+	<xs:complexType name="ManageAdditionalServicesRequest">
+		<xs:sequence>
+			<xs:element name="actionFlag" type="ActionFlagType"/>
+			<xs:element name="serviceId" type="ServiceIdType" minOccurs="0"/>
+			<xs:element name="serviceName" type="ServiceNameType" minOccurs="0"/>
+			<xs:element name="airtimeCalId" type="CalendarIdType" minOccurs="0"/>
+			<xs:element name="pstnCalId" type="CalendarIdType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ManageAdditionalServicesResponse">
+		<xs:sequence>
+			<xs:element name="message" type="MessageType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetAdditionalServicesRequest">
+		<xs:sequence>
+			<xs:element name="serviceId" type="ServiceIdType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="GetAdditionalServicesResponse">
+		<xs:sequence>
+			<xs:element name="services" type="AddtnalServcListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="AddtnalServcListType">
+		<xs:sequence>
+			<xs:element name="service" type="AddtionalServiceType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="AddtionalServiceType">
+		<xs:sequence>
+			<xs:element name="serviceId" type="xs:long" minOccurs="0"/>
+			<xs:element name="serviceName" type="xs:string" minOccurs="0"/>
+			<xs:element name="airTimeCalId" type="xs:long" minOccurs="0"/>
+			<xs:element name="airTimeCalName" type="xs:string" minOccurs="0"/>
+			<xs:element name="pstnCalId" type="xs:long" minOccurs="0"/>
+			<xs:element name="pstnCalName" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ConvertAccountTypeRequest">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType"/>
+			<xs:element name="accountType" type="BillingType"/>
+			<xs:element name="billingType" type="BillType" minOccurs="0"/>
+			<xs:element name="billingFreq" type="BillFreqType" minOccurs="0"/>
+			<xs:element name="creditLimit" type="CreditType"  minOccurs="0"/>
+			<!--
+			
+				REQ#1235: corporate UI post paid changes
+				Done By: Phani.Chavala
+				Date : 28 sept 2012 
+			 -->
+			<xs:element name="billCycleDate" type="xs:string"  minOccurs="0"/>
+			<xs:element name="tariffPackageId" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConvertAccountTypeResponse">
+		<xs:sequence>
+			<xs:element name="message" type="MessageType"/>
+			<xs:element name="accountId" type="AccountIdType" minOccurs="0"/>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetPostpaidAcctDetRequest">
+		<xs:choice>
+			<xs:element name="accountId" type="AccountIdType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="GetPostpaidAcctDetResponse">
+		<xs:sequence>
+			<xs:element name="postpaidAcctDetList" type="PostpaidAcctDetListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostpaidAcctDetListType">
+		<xs:sequence>
+			<xs:element name="postpaidAcctDetails" type="PostpaidAcctDetType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostpaidAcctDetType">
+		<xs:sequence>
+			<xs:element name="accountId" type="xs:long"  minOccurs="0"/>
+			<xs:element name="creditLimit" type="CreditType"  minOccurs="0"/>
+			<xs:element name="availabletLimit" type="CreditType"  minOccurs="0"/>
+			<xs:element name="billingType" type="BillType"  minOccurs="0"/>
+			<xs:element name="billingFreq" type="BillFreqType"  minOccurs="0"/>
+			<xs:element name="billingDate" type="xs:string"  minOccurs="0"/>
+			<xs:element name="modifiedDate" type="xs:string"  minOccurs="0"/>
+			<xs:element name="oldCreditBal" type="CreditType"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+		
+
+	<!--changeSimMdnAudit-->	
+	<xs:complexType name="changeSimMdnAuditRequest">
+		<xs:sequence>
+		<xs:element name="action" type="xs:string"/>       <!-- SIMSWAP/CHANGEMDN-->	
+		<xs:element name="status" type="xs:string" minOccurs="0"/>  
+		<xs:element name="status_code" type="xs:string" minOccurs="0"/>     
+		<xs:element name="status_messages" type="xs:string" minOccurs="0"/> 
+		<xs:element name="msisdn" type="xs:string" minOccurs="0"/>          
+		<xs:element name="new_msisdn" type="xs:string" minOccurs="0"/>      
+		<xs:element name="imsi" type="xs:string" minOccurs="0"/>            
+		<xs:element name="iccid" type="xs:string" minOccurs="0"/>           
+		<xs:element name="newiccid" type="xs:string" minOccurs="0"/>        
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="changeSimMdnAuditResponse">
+		<xs:sequence>
+		<xs:element name="message" type="xs:string" minOccurs="0"/>  
+	</xs:sequence>
+	</xs:complexType>
+	
+	<!-- SimDealerValidation added by sampath for REQ#1630 for TT 1.0.20.0 -->
+	<xs:complexType name="SimDealerValidationRequest">
+		<xs:sequence>
+			<xs:element name="sim"  type="xs:string"/>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SimDealerValidationResponse">
+		<xs:sequence>
+			<xs:element name="officeCode" type="xs:long" minOccurs="0"/>
+			<xs:element name="status" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- SimDealerValidation  -->
+	<!-- Chnages merging from OCS,ADR and Service Management -->			
+	<xs:complexType name="GetChargeInfoRequest">
+		<xs:sequence>
+			<xs:element name="oldAccountId" type="xs:long" minOccurs="0" />
+			<xs:element name="oldMSISDN" type="xs:long" minOccurs="0" />
+			<xs:element name="newMSISDN" type="xs:long" minOccurs="0" />
+			<xs:element name="operationType" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="GetChargeInfoResponse">
+		<xs:sequence>
+			<xs:element name="currentBalance" type="xs:string" minOccurs="0" />
+			<xs:element name="charge" type="xs:string" minOccurs="0" />
+			<xs:element name="debitActivityId" type="xs:long" minOccurs="0" />
+			<xs:element name="creditActivityId" type="xs:long" minOccurs="0" />
+			<xs:element name="debitActivityReason" type="xs:string" minOccurs="0" />
+			<xs:element name="creditActivityReason" type="xs:string" minOccurs="0" />
+			<xs:element name="transactionId" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SimSwapCrdtRptUpdtRequest">
+		<xs:sequence>
+			<xs:element name="oldAccountId" type="xs:long" minOccurs="0" />
+			<xs:element name="oldMSISDN" type="xs:long" minOccurs="0" />
+			<xs:element name="newSIM" type="xs:string" minOccurs="0" />
+			<xs:element name="accountBal" type="xs:string" minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string" minOccurs="0" />
+			<xs:element name="gracePeriodDate" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="remarks" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SimSwapCrdtRptUpdtResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />			
+		</xs:sequence>
+	</xs:complexType>	
+				<!--	 Commented for TT-OCS by sampath to use the same request at selfcareagent
+        <xs:complexType name="GetAccountRequest">
+		<xs:choice>
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="IMSI" type="IMSIType" />
+			<xs:element name="accountId" type="AccountIdType" />
+			<xs:element name="SIM" type="SIMType" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="GetAccountResponse">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="accountId" type="AccountIdType"
+				minOccurs="0" />
+			<xs:element name="SIM" type="SIMType" minOccurs="0" />
+			<xs:element name="AccountStatus" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="AccountType" type="xs:string" minOccurs="0" />
+			 element "idNumber" is added for REQ 1380- IDvalue validation during 
+				topup (voucher) 
+			<xs:element name="idNumber" type="xs:string" minOccurs="0" />
+			
+			<xs:element name="isCorp" type="xs:boolean"  minOccurs="0"/>
+			<xs:element name="officeCode" type="xs:integer"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+        --><!-- Added by sampath for IBA 2.0.16.0.Started for ManageProvsngRetry -->
+		<xs:complexType name="ManageProvsngRetryRequest">
+			<xs:sequence>
+				<xs:element name="manageProvsngRetryType" type="ManageProvsngRetry"	minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	
+		<xs:complexType name="ManageProvsngRetryResponse">
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" minOccurs="0"/>
+				<xs:element name="transID" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+		<xs:complexType name="ManageProvsngRetry">
+			<xs:sequence>
+			<xs:element name="networkName" type="xs:string" minOccurs="0"/>
+			<xs:element name="networkId" type="xs:long" minOccurs="0"/>
+			<xs:element name="registrationType" type="xs:string" minOccurs="0"/>
+			<xs:element name="selfcareActStatusType" type="xs:string" minOccurs="0"/>
+  			<xs:element name="transId" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="xs:string" minOccurs="0"/>
+			<xs:element name="actionFlag" type="xs:string" minOccurs="0"/>
+			<xs:element name="operationName" type="xs:string" minOccurs="0"/>
+			<xs:element name="node" type="xs:string" minOccurs="0"/>
+			<xs:element name="channel" type="xs:string" minOccurs="0"/>
+			<xs:element name="retryUserName" type="xs:string" minOccurs="0"/>   			
+			<xs:element name="mtiRemarks" type="xs:string" minOccurs="0"/>
+			<xs:element name="mtiActionFlag" type="xs:string" minOccurs="0"/>
+			<xs:element name="mtiStatus" type="xs:string" minOccurs="0"/>
+			<xs:element name="dealerMsisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="dealerUserId" type="xs:string" minOccurs="0"/>
+			<xs:element name="orderID" type="xs:string" minOccurs="0"/>
+			<xs:element name="initiatedFrom" type="xs:string" minOccurs="0"/>
+			<xs:element name="promoCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="registrationRequ" type="xs:string" minOccurs="0"/>
+			<xs:element name="chargeCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="message" type="xs:string" minOccurs="0"/>
+			<xs:element name="logId" type="xs:string" minOccurs="0"/>
+			<xs:element name="address1" type="xs:string" minOccurs="0"/>
+			<xs:element name="address2" type="xs:string" minOccurs="0"/>
+			<xs:element name="address3" type="xs:string" minOccurs="0"/>
+			<xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="state" type="xs:string" minOccurs="0"/>
+			<xs:element name="city" type="xs:string" minOccurs="0"/>
+			<xs:element name="homePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="officePhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+			<xs:element name="emailId" type="xs:string" minOccurs="0"/>
+			<xs:element name="emailLangPref" type="xs:string" minOccurs="0"/>
+			<xs:element name="orderInfo" type="xs:string" minOccurs="0"/>
+			<xs:element name="orderBooking" type="xs:string" minOccurs="0"/>
+			<xs:element name="ethic" type="xs:string" minOccurs="0"/>
+			<xs:element name="pleaseSpecify" type="xs:string" minOccurs="0"/>
+			<xs:element name="sourceofInfo" type="xs:string" minOccurs="0"/>
+			<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+			<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+			<xs:element name="userName" type="xs:string" minOccurs="0"/>
+			<xs:element name="dateOfBirth" type="xs:string" minOccurs="0"/>
+			<xs:element name="gender" type="xs:string" minOccurs="0"/>
+			<xs:element name="idType" type="xs:string" minOccurs="0"/>
+			<xs:element name="idValue" type="xs:string" minOccurs="0"/>
+			<xs:element name="occupation" type="xs:string" minOccurs="0"/>
+			<xs:element name="industry" type="xs:string" minOccurs="0"/>
+			<xs:element name="annualIncome" type="xs:string" minOccurs="0"/>
+			<xs:element name="oldIC" type="xs:string" minOccurs="0"/>
+			<xs:element name="gmpc" type="xs:string" minOccurs="0"/>
+			<xs:element name="userId" type="xs:string" minOccurs="0"/>
+			<xs:element name="issueDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="idDoB" type="xs:string" minOccurs="0"/>
+			<xs:element name="nationalityCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="familyName" type="xs:string" minOccurs="0"/>
+			<xs:element name="fatherName" type="xs:string" minOccurs="0"/>
+			<xs:element name="grandFatherName" type="xs:string" minOccurs="0"/>
+			<xs:element name="idExpiryDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="subtribeName" type="xs:string" minOccurs="0"/>
+			<xs:element name="englishFirstName" type="xs:string" minOccurs="0"/>
+			<xs:element name="englishLastName" type="xs:string" minOccurs="0"/>
+			<xs:element name="englishSecondName" type="xs:string" minOccurs="0"/>
+			<xs:element name="englishThirdName" type="xs:string" minOccurs="0"/>
+			<xs:element name="secondName" type="xs:string" minOccurs="0"/>
+			<xs:element name="thirdName" type="xs:string" minOccurs="0"/>
+			<xs:element name="workPhone" type="xs:string" minOccurs="0"/>
+			<xs:element name="simNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="imsi" type="xs:string" minOccurs="0"/>
+			<xs:element name="blockedMSISDN" type="xs:string" minOccurs="0"/>
+			<xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="billType" type="xs:string" minOccurs="0"/>
+			<xs:element name="billFreq" type="xs:string" minOccurs="0"/>
+			<xs:element name="creditLimit" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="billingDate" type="xs:string" minOccurs="0"/>
+		    <xs:element name="tariffPlanID" type="xs:long" minOccurs="0"/>
+			<xs:element name="isSudo" type="xs:long" minOccurs="0"/>
+			<xs:element name="FRTransNo" type="xs:long" minOccurs="0"/>
+			<xs:element name="oldIMSI" type="xs:string" minOccurs="0"/>
+			<xs:element name="serviceType" type="xs:string" minOccurs="0"/>
+			<xs:element name="oldCCNDC" type="xs:string" minOccurs="0"/>
+			<xs:element name="newCCNDC" type="xs:string" minOccurs="0"/>
+			<xs:element name="actualMsisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="accountId" type="xs:long" minOccurs="0"/>
+			<xs:element name="pseudoMSISDN" type="xs:string" minOccurs="0"/>
+		    <xs:element name="gsmImsiTransNo" type="xs:string" minOccurs="0"/>
+		    <xs:element name="gprsImsiTransNo" type="xs:string" minOccurs="0"/>
+		    <xs:element name="transactionNo" type="xs:string" minOccurs="0"/>
+		    <xs:element name="simType" type="xs:string" minOccurs="0"/>
+		    <xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+		    <xs:element name="iccStatus" type="xs:string" minOccurs="0"/>
+		    <xs:element name="errorCode" type="xs:long" minOccurs="0"/>
+		    <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+		    <xs:element name="userType" type="xs:string" minOccurs="0"/>
+		    <xs:element name="idExistsFlag" type="xs:string" minOccurs="0"/>
+		    <xs:element name="messageId" type="xs:string" minOccurs="0"/>
+     		<xs:element name="accountType" type="xs:string" minOccurs="0"/>
+		    <xs:element name="newMsisdnCCNDC" type="xs:string" minOccurs="0"/>
+		    <xs:element name="oldMsisdnCCNDC" type="xs:string" minOccurs="0"/>
+		    <xs:element name="password" type="xs:string" minOccurs="0"/>
+		    <xs:element name="newMDN" type="xs:string" minOccurs="0"/>
+		    <xs:element name="oldMDN" type="xs:string" minOccurs="0"/>
+		    <xs:element name="requestType" type="xs:string" minOccurs="0"/>
+		    <xs:element name="newPassword" type="xs:string" minOccurs="0"/>
+		    <xs:element name="orderDate" type="xs:string" minOccurs="0"/>
+		    <xs:element name="smsLanguageId" type="xs:int" minOccurs="0"/>
+		    <xs:element name="sendNotificationFlag" type="xs:boolean" minOccurs="0"/>
+		    <xs:element name="isSendNotification" type="xs:string" minOccurs="0"/>
+		    <xs:element name="messageConnFlag" type="xs:string" minOccurs="0"/>
+		    <xs:element name="goldenOrderId" type="xs:string" minOccurs="0"/>
+		    <xs:element name="failedNode" type="xs:string" minOccurs="0"/>
+		    <xs:element name="simCategory" type="xs:string" minOccurs="0"/>
+		    
+		    <!-- Added for get account summary (sampath) -->
+		     <xs:element name="acctRetrievalType" type="xs:string" minOccurs="0"/>
+		    <xs:element name="retrievalType" type="xs:string" minOccurs="0"/>
+		    <xs:element name="transactionData" type="xs:string" minOccurs="0"/>
+
+		     <!-- Added for get account summary (shaik) -->
+		    <xs:element name="newValidityDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="newGracePeroidIEndDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="reason" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:double" minOccurs="0"/>
+            
+            
+             <!--  Added below parameters (Rubin) -->
+            <xs:element name="errorCategory" type="xs:string" minOccurs="0"/>
+            <xs:element name="preferFourDigits" type="xs:string" minOccurs="0"/>
+            <xs:element name="correlationID" type="xs:string" minOccurs="0"/>
+            <xs:element name="voucherPIN" type="xs:string" minOccurs="0"/>
+            <xs:element name="provisionType" type="xs:string" minOccurs="0"/>
+            
+            <xs:element name="transferorMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="transfereeMSISDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="ivrData" type="xs:string" minOccurs="0"/>
+            <xs:element name="vmsData" type="xs:string" minOccurs="0"/>
+            
+            <xs:element name="indexNo" type="xs:long" minOccurs="0"/>
+            <xs:element name="maxRecords" type="xs:long" minOccurs="0"/>
+            <xs:element name="isCorp" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="ussdMDN" type="xs:string" minOccurs="0"/>
+            <xs:element name="hlrFrConnection" type="xs:string" minOccurs="0"/>
+            <xs:element name="creditAmount" type="xs:double" minOccurs="0"/>
+  			<xs:element name="newExpDate" type="xs:string" minOccurs="0"/>
+            
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdatePostpaidAcctDetRequest">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" />
+			<xs:element name="creditLimit" type="CreditType" minOccurs="0" />
+			<xs:element name="billingType" type="BillType" minOccurs="0" />
+			<xs:element name="billingDate" type="xs:string" minOccurs="0" />
+			<xs:element name="billingFreq" type="BillFreqType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdatePostpaidAcctDetResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+		
+		<xs:complexType name="GetLocationAssoMsisdnRequest">
+		<xs:sequence>
+		<xs:element name="locationcode" type="xs:string" minOccurs="0" />
+		<xs:element name="IMSI" type="IMSIType" minOccurs="1" />
+		</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="GetLocationAssoMsisdnResponse">
+		<xs:sequence>
+		<xs:element name="availableMSISDN" type="MSISDNType" minOccurs="0" />
+		<xs:element name="promotions" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="oldMSISDN" type="MSISDNType" minOccurs="0"/>
+		<xs:element name="locationCode" type="xs:string" minOccurs="0"/>
+        <xs:element name="oldSIM" type="SIMType" minOccurs="0"/>		
+		</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="GetFreeMsisdnRequest">
+			<xs:sequence>
+				<xs:element name="msisdn" type="MSISDNType" />
+				<xs:element name="charge" type="xs:decimal" minOccurs="0" />
+				<xs:element name="transReferenceNumb" type="xs:string" minOccurs="0" />
+				<xs:element name="category" type="xs:string" minOccurs="0" />
+				<xs:element name="zipCode" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="GetFreeMsisdnResponse">
+			<xs:sequence>
+				<xs:element name="newMSISDN" type="MSISDNType" minOccurs="0" />
+				<xs:element name="oldMSISDN" type="MSISDNType" minOccurs="0" />	
+			</xs:sequence>
+		</xs:complexType>
+		
+	<!-- End for  ManageProvsngRetry --> 
+	<!-- End of Merging -->
+	<xs:complexType name="ForceRenewalRequest">
+		<xs:sequence>
+		<xs:element name="networkId" type="xs:integer"/>
+		<xs:element name="accountId" type="accountIdType" />
+		<xs:element name="actionFlag" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:complexType name="ForceRenewalResponse">
+		<xs:sequence>
+	
+		<xs:element name="status" type="xs:string" minOccurs="0"/>
+		
+		</xs:sequence>
+		</xs:complexType>
+		
+			 <!-- HLRIntegration -->
+   <xs:complexType name="HLRIntegrationRequest">
+		<xs:sequence>
+			<xs:element name="eventId" type="eventIdType"/>
+			<xs:element name="OldAccountId" type="AccountIdType" minOccurs="0" />
+			<xs:element name="NewAccountId" type="AccountIdType" minOccurs="0" />
+			<xs:element name="NewMSISDNNo" type="MSISDNType" minOccurs="0" />
+			<xs:element name="OldMSISDNNo" type="MSISDNType" minOccurs="0" />
+			<xs:element name="OldIMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="NewIMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="OldSIM" type="SIMType" minOccurs="0" />
+			<xs:element name="NewSIM" type="SIMType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="HLRIntegrationResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0" />
+			<xs:element name="technology" type="xs:string" minOccurs="0" />
+			<xs:element name="sim" type="SIMType" minOccurs="0" />
+			<xs:element name="networkName" type="xs:string" minOccurs="0" />
+			<xs:element name="accountDetailsList" type="accountDetailsListType" minOccurs="0"/>
+			<xs:element name="errorCode" type="xs:long" minOccurs="0"/>
+		    <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="accountDetailsListType">
+		<xs:sequence>
+		<xs:element name="accountDetails" type="accountDetailsInfoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="accountDetailsInfoType">
+			<xs:sequence>
+			<xs:element name="oldAccountId" type="xs:long" minOccurs="0"/>
+				<xs:element name="newAccountId" type="xs:long" minOccurs="0"/>
+				<xs:element name="oldMSISDN" type="xs:long" minOccurs="0"/>
+				<xs:element name="newMSISDN" type="xs:long" minOccurs="0"/>
+				<xs:element name="oldIMSI" type="xs:long" minOccurs="0"/>
+				<xs:element name="newIMSI" type="xs:long" minOccurs="0"/>
+				<xs:element name="oldSIM" type="xs:string" minOccurs="0"/>
+				<xs:element name="newSIM" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+	<!--  End of HLRIntegration -->
+   
+   <!-- HLRIntegrationUpdate  -->
+   <xs:complexType name="HLRIntegrationUpdateRequest">
+		<xs:sequence>
+			<xs:element name="eventId" type="eventIdType"/>
+			<xs:element name="transactionId" type="xs:string" />
+			<xs:element name="status" type="xs:string" minOccurs="0"/>
+		    <xs:element name="remarks" type="xs:string" minOccurs="0"/>
+		    <xs:element name="externalErrorCode" type="xs:string" minOccurs="0"/>
+		    
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HLRIntegrationUpdateResponse">
+		<xs:sequence>
+			<xs:element name="errorCode" type="xs:long" minOccurs="0"/>
+		    <xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+  <!-- End of HLRIntegrationUpdate  -->
+	
+	
+	
+	<xs:complexType name="roamingServiceStatusUpdateRequest">
+		<xs:sequence>
+			<xs:element name="msisdn" type="MSISDNType" />
+			<xs:element name="userid" type="xs:string" />
+			<xs:element name="activityid" type="xs:string"  />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="roamingServiceStatusUpdateResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getAccountDatesRequest">
+		<xs:sequence>
+			<xs:element name="accountId" type="AccountIdType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getAccountDatesResponse">
+		<xs:sequence>
+			<xs:element name="validityDate" type="DDMONYYYYFormat" minOccurs="0" />			
+			<xs:element name="gracePeriod1EndDate" type="DDMONYYYYFormat" minOccurs="0" />
+			<xs:element name="gracePeriod2EndDate" type="DDMONYYYYFormat" minOccurs="0" />
+			<xs:element name="expiryDate" type="DDMONYYYYFormat" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+		<xs:complexType name="getAccountAllDatesRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getAccountAllDatesResponse">
+		<xs:sequence>
+		  
+			<xs:element name="accountstatus" type="xs:string" minOccurs="0" />
+			<xs:element name="registrationdate" type="xs:string" minOccurs="0" />
+			<xs:element name="activationdate" type="xs:string" minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string" minOccurs="0" />			
+			<xs:element name="gracePeriod1EndDate" type="xs:string" minOccurs="0" />
+			<xs:element name="gracePeriod2EndDate" type="xs:string" minOccurs="0" />
+			<xs:element name="gracePeriod3EndDate" type="xs:string" minOccurs="0" />
+			<xs:element name="gracePeriod4EndDate" type="xs:string" minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="getcategoryIDRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="SIM" type="SIMType" minOccurs="0"/>
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getcategoryIDResponse">
+		<xs:sequence>
+			<xs:element name="categoryID" type="xs:string" minOccurs="0" />			
+		</xs:sequence>
+	</xs:complexType>
+	<!--  End of Complex Types -->
+	
+	
+	<!-- TeleVerification -->	
+	<xs:element name="TeleVerificationRequest" type="TeleVerificationRequest" />
+	<xs:element name="TeleVerificationResponse" type="TeleVerificationResponse"/>
+	<!--TeleRegistration-->	
+	
+	
+	
+	<xs:complexType name="TeleVerificationRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="idValue" type="xs:string" minOccurs="0"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TeleVerificationResponse">
+		<xs:sequence>
+			<xs:element name="isVerified" type="xs:string" minOccurs="0" />			
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="validateCorpMSISDNVoucherRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="accountId" type="AccountIdType" minOccurs="0"/>
+			<xs:element name="voucher" type="xs:string" minOccurs="0"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="validateCorpMSISDNVoucherResponse">
+		<xs:sequence>
+			<xs:element name="iscorp" type="xs:boolean" minOccurs="0" />			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="accountVsBANMappingRequest">
+		<xs:sequence>
+			<xs:element name="IMSI"  type="IMSIType"/>
+			<xs:element name="bussinesAccountId"  type="accountIdType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="accountVsBANMappingResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getDtlsForRegistrationRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN"  type="MSISDNType"/>
+			<xs:element name="tpID"  type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getDtlsForRegistrationResponse">
+		<xs:sequence>
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="accountType" type="AccountIdType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!--  Simple Types  -->
+	<xs:simpleType name="ActivationCodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CardProfileType">
+		<xs:restriction base="xs:long">
+			<xs:maxInclusive value="99999" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="LocationIdType">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="9999999999" />  
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SerialNoType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15" />												 
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="PostPaidType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="IMSIType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10"/>
+			<xs:maxLength value="20"/>
+			<xs:pattern value="[0-9]{10,20}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="IMEIType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+			<xs:pattern value="([0-9])*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ZipCodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9" />
+			<xs:pattern value="([0-9])*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="MessageType">	
+		<xs:restriction base="xs:string">
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MSISDNType">	
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7"/>
+			<xs:maxLength value="20"/>
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OperatorType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SIMType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AccountIdType">
+		<xs:restriction base="xs:long">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	 <xs:simpleType name="ChargesType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4" />
+			<xs:totalDigits value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ReasonType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="IPAddressType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15" />
+			<xs:pattern value="(^[2][5][0-5].|^[2][0-4][0-9].|^[1][0-9][0-9].|^[0-9][0-9].|^[0-9].)([2][0-5][0-5].|[2][0-4][0-9].|[1][0-9][0-9].|[0-9][0-9].|[0-9].)([2][0-5][0-5].|[2][0-4][0-9].|[1][0-9][0-9].|[0-9][0-9].|[0-9].)([2][0-5][0-5]|[2][0-4][0-9]|[1][0-9][0-9]|[0-9][0-9]|[0-9])$"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="RequestIdType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="IDType">
+	<xs:restriction base="xs:string">
+		<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IDNoType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="64" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StatusType">
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="10"/>
+			</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="FirstNameType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="LastNameType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OperationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DEACTIVATE" />
+			<xs:enumeration value="REACTIVATE" />												 
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="accountStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTIVE" />
+			<xs:enumeration value="G2" />												 
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NAMType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateType">
+		<xs:restriction base="xs:string">
+			<!-- DD/MM/YYYY format -->
+			<xs:pattern value="([0][1-9]|[1-2][0-9]|[3][0-1])/([0][1-9]|[1][0-2])/([1-9][0-9][0-9][0-9])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="PromoCodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="64" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UserType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OrderIdType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+		
+	<xs:simpleType name="MSISDNEnumType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTUAL" />			
+			<xs:enumeration value="PSEUDO" />
+			<xs:enumeration value="ERROR" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CountryCodeType">
+		<xs:restriction base="xs:string">			
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="NewRouteType">
+		<xs:restriction base="xs:string">			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SIMSerialNoType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+			<xs:pattern value="[0-9]{3,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BillingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="POSTPAID" />			
+			<xs:enumeration value="PREPAID" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="TenDigitsType">
+		<xs:restriction base="xs:long">
+			<xs:maxInclusive value="9999999999" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Str2000Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2000"/>			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Str1Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Str2Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+			<xs:pattern value="([0-9])*" />			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TwoDigitsType">
+		<xs:restriction base="xs:int">
+			<xs:maxInclusive value="99" />		
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ActionFlagType">	
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INSERT"></xs:enumeration>
+			<xs:enumeration value="UPDATE"></xs:enumeration>
+			<xs:enumeration value="DELETE"></xs:enumeration>
+			<xs:enumeration value="VIEW"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>	
+			<xs:pattern value="([0-9])*" />		
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="40"/>			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CalendarIdType">
+		<xs:restriction base="xs:long">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceIdType">
+		<xs:restriction base="xs:long">
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BillType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1"/>			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IsCorpType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1"/>			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BillFreqType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="4"/>			
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	 <xs:simpleType name="CreditType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4" />
+			<xs:totalDigits value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	 <xs:simpleType name="CreditLimitType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4" />
+			<xs:totalDigits value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--  End of Simple Types -->
+	<xs:simpleType name="accountIdType">
+	<xs:restriction base="xs:string" >
+	<xs:minLength value="1"/>
+	<xs:maxLength value="20"/>
+		<xs:pattern value="[0-9]{1,20}" />
+	</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eventIdType">	
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SIMSWAP"></xs:enumeration>
+			<xs:enumeration value="CHNGMSISDN"></xs:enumeration>
+			<xs:enumeration value="CREATE_ACCOUNT"></xs:enumeration>
+			<xs:enumeration value="CREATE_SUBSCRIBER"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+		<xs:simpleType name="DDMONYYYYFormat">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="(([0-3]{1}[0-9]{1})+([\-])+((Jan)|(Feb)|(Mar)|(Apr)|(May)|(Jun)|(Jul)|(Aug)|(Sep)|(Oct)|(Nov)|(Dec))+([\-])+([1-2]{1}[0-9]{3}))" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- <xs:simpleType name="oldMSISDNType">
+	<xs:restriction base="xs:string" >
+	<xs:minLength value="1"/>
+	<xs:maxLength value="20"/>
+		<xs:pattern value="[0-9]{1,20}" />
+	</xs:restriction>
+	</xs:simpleType> -->
+	
+	<xs:complexType name="AllAccountType">
+		<xs:choice>
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="IMSI" type="IMSIType" />
+			<xs:element name="accountId" type="AccountIdType" />
+			<xs:element name="SIM" type="SIMType" />
+		</xs:choice>
+	</xs:complexType>
+	
+	
+	
+	
+</xs:schema>

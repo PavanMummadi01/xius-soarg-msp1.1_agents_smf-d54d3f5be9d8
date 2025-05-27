@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean id="pro_bulk_debit_trans_dtls" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_bulk_subs_debit_mgmt.pro_bulk_debit_trans_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_bulk_debit_trans_dtls_param_1"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_2"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_3"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_4"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_5"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_6"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_7"></ref>
+				<ref bean="pro_bulk_debit_trans_dtls_param_8"></ref>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="5">
+					<ref bean="po_debit_trans_dtls"/>
+				</entry>
+				<entry key="6">
+					<ref bean="po_debit_batch_ids"/>
+				</entry>
+			</map>
+		</property>
+		
+	</bean>
+		<bean id="po_debit_trans_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_debit_trans_dtls_param_1"/>
+				<ref bean="po_debit_trans_dtls_param_2"/>
+				<ref bean="po_debit_trans_dtls_param_3"/>
+				<ref bean="po_debit_trans_dtls_param_4"/>
+				<ref bean="po_debit_trans_dtls_param_5"/>
+				<ref bean="po_debit_trans_dtls_param_6"/>
+			
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.GetBulkDebitTransCursorData"/>
+	</bean>
+	
+		<bean id="po_debit_batch_ids" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_debit_batch_ids_param_1"/>
+				<ref bean="po_debit_batch_ids_param_2"/>
+				
+			</list>
+		</property>
+	
+		<property name="className" value="com.xius.smf.domaindata.GetBulkDebitTransCursorData"/>
+	</bean>
+	
+	<bean id="po_debit_batch_ids_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>batch_id</value></property>
+	  <property name="mapTo"><value>batchId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+		
+	<bean id="po_debit_batch_ids_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_date</value></property>
+	  <property name="mapTo"><value>transactionDate</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	
+	<bean id="po_debit_trans_dtls_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_debit_trans_dtls_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>debit_amount</value></property>
+	  <property name="mapTo"><value>debit_amount</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_debit_trans_dtls_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>reason</value></property>
+	  <property name="mapTo"><value>reason</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	
+	
+	<bean id="po_debit_trans_dtls_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="po_debit_trans_dtls_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transactionDate</value></property>
+	  <property name="mapTo"><value>transactionDate</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_debit_trans_dtls_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_batch_id</value></property>
+			<property name="mapTo"><value>pi_batch_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_startdate</value></property>
+			<property name="mapTo"><value>pi_startdate</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_bulk_debit_trans_dtls_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_enddate</value></property>
+			<property name="mapTo"><value>pi_enddate</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_debit_trans_dtls</value></property>  		
+  		<property name="mapTo"><value>po_debit_trans_dtls</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>5</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_debit_batch_ids</value></property>  		
+  		<property name="mapTo"><value>po_debit_batch_ids</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>6</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_bulk_debit_trans_dtls_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

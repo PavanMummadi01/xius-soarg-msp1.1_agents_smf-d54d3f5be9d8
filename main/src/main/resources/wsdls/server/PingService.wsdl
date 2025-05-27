@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+ xmlns:tns="http://smf.agent.xius.com/PingService.wsdl" 
+ xmlns:envelope="http://smf.agent.xius.com/PingService.xsd" 
+ xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+ xmlns:wshdr="http://smf.agent.xius.com/common/header/HeaderDetails.xsd" 
+ xmlns:err="http://smf.agent.xius.com/common/error/ErrorDetails.xsd" 
+ targetNamespace="http://smf.agent.xius.com/PingService.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://smf.agent.xius.com/PingService.wsdl" targetNamespace="http://smf.agent.xius.com/PingService.wsdl">
+			<xs:import namespace="http://smf.agent.xius.com/PingService.xsd" schemaLocation="PingService.xsd"/>
+			<xs:import namespace="http://smf.agent.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://smf.agent.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="pingRequest">
+		<wsdl:part name="body" element="envelope:pingService"/>
+	</wsdl:message>
+	<wsdl:message name="pingResponse">
+		<wsdl:part name="body" element="envelope:pingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="WsMessageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>
+	<wsdl:message name="faultmessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:portType name="PingServicePortType">
+		<wsdl:operation name="PingService">
+			<wsdl:input message="tns:pingRequest"/>
+			<wsdl:output message="tns:pingResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PingServiceBinding" type="tns:PingServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="PingService">
+			<soap:operation soapAction="pingServices"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PingService">
+		<wsdl:port name="PingServicePort" binding="tns:PingServiceBinding">
+			<soap:address location="http://10.10.21.81:8227/SMFAgent/PingService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

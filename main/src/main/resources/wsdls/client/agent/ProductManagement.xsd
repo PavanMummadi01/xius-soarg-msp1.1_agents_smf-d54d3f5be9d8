@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://billing.xius.com/ProductManagement.xsd" targetNamespace="http://billing.xius.com/ProductManagement.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<!--get Product Details -->
+
+	<xs:element name="getProductDetailsRequest" type="getProductDetailsRequest" />
+	<xs:element name="getProductDetailsResponse" type="getProductDetailsResponse" />
+	<!-- End of get Product Details -->
+
+	<!--Product purchage -->
+
+	<xs:element name="productPurchageRequest" type="productPurchageRequest" />
+	<xs:element name="productPurchageResponse" type="productPurchageResponse" />
+	<!-- End of Product purchage -->
+
+	<!--Product purchage -->
+
+	<xs:element name="productPurchageEnquiryRequest" type="productPurchageEnquiryRequest" />
+	<xs:element name="productPurchageEnquiryResponse" type="productPurchageEnquiryResponse" />
+	<!-- End of Product purchage -->
+    <!--This api  is uesd for getting trarrifplans for given MSISDN,and to get plan details for given plan name . this API  for IVR  -->
+	<xs:element name="getTpdetailsRsequest" type="getTpdetailsRequest" />
+	<xs:element name="getTpdetailsResponse" type="getTpdetailsResponse" />
+    <!--This api  is uesd for getting Available trarrifplans for given NetworkId. this API  for IVR  -->
+    <xs:element name="getAvailableTpsRequest" type="getAvailableTpsRequest" />
+	<xs:element name="getAvailableTpsResponse" type="getAvailableTpsResponse" />
+
+
+    <xs:element name="getBundleDtlsRequest" type="getBundleDtlsRequest" />
+	<xs:element name="getBundleDtlsResponse" type="getBundleDtlsResponse" />
+	 <!--This api  is uesd for getting ATP balances .this is for ivr  -->
+	<xs:element name="getBundleBalancesRequest" type="getBundleBalancesRequest" />
+	<xs:element name="getBundleBalancesResponse" type="getBundleBalancesResponse" />
+	 <!--This api  is uesd for getting ATP balances .this is for ivr  -->
+	<xs:element name="getTpBundleDtlsRequest" type="getTpBundleDtlsRequest" />
+	<xs:element name="getTpBundleDtlsResponse" type="getTpBundleDtlsResponse" />
+	
+	<xs:element name="getATPBenefitsRequest" type="getATPBenefitsRequest" />
+	<xs:element name="getATPBenefitsResponse" type="getATPBenefitsResponse" />
+	
+	<xs:element name="getRemainingBktBalRequest" type="getRemainingBktBalRequest" />
+	<xs:element name="getRemainingBktBalResponse" type="getRemainingBktBalResponse" />
+	
+	<xs:complexType name="getRemainingBktBalRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType"/>
+		</xs:sequence>	
+	</xs:complexType>
+	
+	<xs:complexType name="getRemainingBktBalResponse">
+		<xs:sequence>
+			<xs:element name="voiceDetails" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SMSDetails" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="dataDetails" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="globalDetails" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	 
+	<xs:complexType name="getATPBenefitsRequest">
+		<xs:sequence>
+		<xs:element name="publicityId" type="xs:string"  minOccurs="0"/>
+		<xs:element name="atpId" type="xs:long"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getATPBenefitsResponse">
+	<xs:sequence>
+	<xs:element name="BenefitDtls" type="BenefitDtlsType"  minOccurs="0" />
+	</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BenefitDtlsType">
+		<xs:sequence>
+		<xs:element name="voiceDetails" type="voiceDetailsType"  minOccurs="0"/>
+		<xs:element name="smsDetails" type="smsDetailsType"  minOccurs="0"/>
+		<xs:element name="dataDetails" type="dataDetailsType"  minOccurs="0" maxOccurs="unbounded"/>
+	    <xs:element name="globalDetails" type="globalDetailsType"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="voiceDetailsType">
+		<xs:sequence>
+		<xs:element name="voiceAmt" type="xs:string"  minOccurs="0" />
+		<xs:element name="voiceMin" type="xs:string"  minOccurs="0" />
+		<xs:element name="numOfCalls" type="xs:string"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="smsDetailsType">
+       <xs:sequence>
+		<xs:element name="smsAmt" type="xs:string"  minOccurs="0" />
+		<xs:element name="numOfSms" type="xs:string"  minOccurs="0" />
+		</xs:sequence>		
+
+	</xs:complexType>
+	
+	<xs:complexType name="dataDetailsType">
+		<xs:sequence>
+		<xs:element name="dataMB" type="xs:string"  minOccurs="0" />
+		<xs:element name="dataAmt" type="xs:string"  minOccurs="0" />
+		<xs:element name="ratingGrp" type="xs:string"  minOccurs="0" />		
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="globalDetailsType">
+		<xs:sequence>
+		<xs:element name="globalAmt" type="xs:string"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getBundleDtlsRequest">
+		<xs:sequence>
+		<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+		<xs:element name="BalanceCategory" type="xs:string"  minOccurs="0"/>
+		<xs:element name="atpCategory" type="xs:string"  minOccurs="0"/>
+	
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getBundleDtlsResponse">
+		<xs:sequence>
+		    <xs:element name="BundlesDtls" type="BundlesDtlsType"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="BundlesDtlsType">
+		<xs:sequence>
+		    <xs:element name="BundleDtls" type="BundleDtlsType"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BundleDtlsType">
+		<xs:sequence>
+		 
+				<xs:element name="Volume" type="xs:string"  minOccurs="0"/>
+				<xs:element name="Validity" type="xs:string" minOccurs="0" />
+		        <xs:element name="Charge" type="xs:decimal" minOccurs="0" />
+		         <xs:element name="PlanId" type="xs:long" minOccurs="0" />
+		         <xs:element name="ChargeId" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+<xs:complexType name="getTpdetailsRequest">
+		<xs:sequence>
+		 
+				<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+				<xs:element name="planName" type="xs:string" minOccurs="0" />
+				<xs:element name="atpCategory" type="xs:string"  minOccurs="0"/>
+		
+		</xs:sequence>
+	</xs:complexType>
+
+
+<xs:complexType name="getTpdetailsResponse">
+		<xs:sequence>
+		         <xs:element name="CurrentplanName" type="xs:string" minOccurs="0" />
+		         <xs:element name="Voice" type="valueType" minOccurs="0" maxOccurs="unbounded"/>
+				 <xs:element name="SMS" type="valueType"  minOccurs="0" maxOccurs="unbounded"/>
+				 <xs:element name="DATA" type="valueType" minOccurs="0" maxOccurs="unbounded" />
+				 <xs:element name="planCharge" type="xs:decimal" minOccurs="0" />
+				 <xs:element name="planID" type="xs:string" minOccurs="0" />
+				 <xs:element name="Validity" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getAvailableTpsRequest">
+		<xs:sequence>
+		      
+				<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="getAvailableTpsResponse">
+		<xs:sequence>
+		       
+				<xs:element name="Avilableplans" type="planslistType"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="planslistType">
+		<xs:sequence>
+		       <xs:element name="planlistName" type="plansType"  maxOccurs="unbounded"   minOccurs="0" />
+		</xs:sequence>
+  </xs:complexType>
+	
+	
+	<xs:complexType name="plansType">
+		<xs:sequence>
+		       <xs:element name="planName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+  </xs:complexType>
+	
+	
+	<xs:complexType name="valueType">
+		<xs:sequence>
+		       <xs:element name="Rate" type="xs:decimal" minOccurs="0" />
+			   <xs:element name="Pulse" type="xs:string"  minOccurs="0"/>
+			   <xs:element name="Rategroup" type="xs:string" minOccurs="0" />
+			   <xs:element name="BucketUnitType" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--get Product Details Data -->
+
+	<xs:complexType name="getProductDetailsRequest">
+		<xs:sequence>
+		
+				<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+				<xs:element name="accountId" type="xs:string" minOccurs="0" />
+				<xs:element name="atpCategory" type="xs:string"  minOccurs="0"/>
+		
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getProductDetailsResponse">
+		<xs:sequence>
+			<xs:element name="ProductDetailsData" type="ProductDetailsTypeData" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductDetailsTypeData">
+		<xs:sequence>
+			<xs:element name="ProductDetailsTypeData" type="ProductDetailsDataType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductDetailsDataType">
+		<xs:sequence>
+			<xs:element name="productId" type="xs:string" minOccurs="0" />
+			<xs:element name="productDesc" type="xs:string" minOccurs="0" />
+			<xs:element name="charge" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- End of get Product Details Data -->
+
+	<!-- ProductPurchage Data -->
+
+	<xs:complexType name="productPurchageRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MSISDN" type="MSISDNType" />
+				<xs:element name="accountId" type="xs:string" />
+			</xs:choice>
+			<xs:element name="productId" type="xs:string" minOccurs="1" />
+			<xs:element name="externalTransId" type="xs:string"  />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="productPurchageResponse">
+		<xs:sequence>
+			<xs:element name="ProductPurchageData" type="ProductPurchageTypeData" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductPurchageTypeData">
+		<xs:sequence>
+			<xs:element name="internalTtransId" type="xs:string"	minOccurs="0" />
+			<xs:element name="responseCode" type="xs:string"	minOccurs="0" />
+			<xs:element name="responseDescription" type="xs:string"	minOccurs="0" />
+			<xs:element name="responseStatus" type="xs:string"	minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- End of get ProductPurchage Data -->
+
+	<!-- productPurchageEnquiry Data -->
+
+	<xs:complexType name="productPurchageEnquiryRequest">
+		<xs:sequence>
+			<xs:element name="externalTransId" type="xs:string"
+				minOccurs="1" />
+				<xs:element name="internalTtransId" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="productPurchageEnquiryResponse">
+		<xs:sequence>
+			<xs:element name="productPurchageEnquiryData" type="productPurchageEnquiryTypeData" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="productPurchageEnquiryTypeData">
+		<xs:sequence>
+			
+			<xs:element name="ProductTransData" type="ProductTransTypeData"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="ProductTransTypeData">
+		<xs:sequence>
+			<xs:element name="prodctId" type="xs:string" minOccurs="0" />
+			<xs:element name="prodctDesc" type="xs:string" minOccurs="0" />
+			<xs:element name="TransactionDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- End of get productPurchageEnquiry Data -->
+	<!-- getBundleBalances-->
+	<xs:complexType name="getBundleBalancesRequest">
+		<xs:sequence>
+		<xs:element name="MSISDN" type="MSISDNType"  />
+		<xs:element name="PublicityId" type="xs:string"  minOccurs="0"/>
+		<xs:element name="ATPid" type="xs:string"  minOccurs="0"/>
+	
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getBundleBalancesResponse">
+		
+		 	<xs:sequence>
+		        <xs:element name="Voice" type="Types" minOccurs="0" maxOccurs="unbounded"/>
+				 <xs:element name="SMS" type="Types"  minOccurs="0" maxOccurs="unbounded"/>
+				 <xs:element name="DATA" type="Types" minOccurs="0" maxOccurs="unbounded" />
+				 <xs:element name="Global" type="Types" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	<xs:complexType name="Types">
+			<xs:sequence>
+		     <xs:element name="volume" type="xs:string" minOccurs="0" />
+		     <xs:element name="unitTpye" type="xs:string" minOccurs="0" />
+		     <xs:element name="Rategroup" type="xs:string" minOccurs="0" />
+		   
+		 		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getTpBundleDtlsRequest">
+		<xs:sequence>
+		<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+		<xs:element name="ATPcategory" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+	
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getTpBundleDtlsResponse">
+		<xs:sequence>
+		    <xs:element name="SubscribedTPs" type="SubscribedTPType"  minOccurs="0" />
+		     <xs:element name="AttachedATPs" type="AttachedATPType" maxOccurs="unbounded"  minOccurs="0" />
+		      <xs:element name="AvailableATPs" type="AvailableATPType" maxOccurs="unbounded"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+<xs:complexType name="SubscribedTPType">
+		<xs:sequence>
+		     <xs:element name="TPid" type="xs:string" minOccurs="0" />
+		     <xs:element name="TPdesc" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+        <xs:complexType name="AvailableATPType">
+		<xs:sequence>
+		     <xs:element name="bucketunitvalue" type="xs:string" minOccurs="0" />
+		     <xs:element name="balancecategory" type="xs:string" minOccurs="0" />
+		     <xs:element name="zonegroupId" type="xs:string" minOccurs="0" />
+		     <xs:element name="bucketUnitType" type="xs:string" minOccurs="0" />
+		     <xs:element name="ATPid" type="xs:string" minOccurs="0" />
+     
+		</xs:sequence>
+	</xs:complexType>
+	 <xs:complexType name="AttachedATPType">
+		<xs:sequence>
+		     <xs:element name="bucketunitvalue" type="xs:string" minOccurs="0" />
+		     <xs:element name="balancetype" type="xs:string" minOccurs="0" />
+		     <xs:element name="zonegroupId" type="xs:string" minOccurs="0" />
+		     <xs:element name="bucketUnitType" type="xs:string" minOccurs="0" />
+		     <xs:element name="publicityID" type="xs:string" minOccurs="0" />
+     
+		</xs:sequence>
+		</xs:complexType>
+	 <xs:element name="getProductDtlsRequest" type="getProductDtlsRequest" />
+	<xs:element name="getProductDtlsResponse" type="getProductDtlsResponse" />
+	<xs:complexType name="getProductDtlsRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getProductDtlsResponse">
+		<xs:sequence>
+			<xs:element name="ProductDtlsData" type="ProductDtlsTypeData" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductDtlsTypeData">
+		<xs:sequence>
+			<xs:element name="ProductDtlsTypeData" type="ProductDtlsDataType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProductDtlsDataType">
+		<xs:sequence>
+			<xs:element name="publicityId" type="xs:string" minOccurs="0" />
+			<xs:element name="charge" type="xs:decimal" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

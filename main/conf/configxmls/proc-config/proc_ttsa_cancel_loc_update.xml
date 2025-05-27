@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="proc_ttsa_cancel_loc_update"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_ttsa_cancel_location_info.proc_ttsa_cancel_loc_update</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="proc_ttsa_cancel_loc_update_1"></ref>
+				<ref bean="proc_ttsa_cancel_loc_update_2"></ref>
+				<ref bean="proc_ttsa_cancel_loc_update_3"></ref>
+				<ref bean="proc_ttsa_cancel_loc_update_4"></ref>
+				<ref bean="proc_ttsa_cancel_loc_update_5"></ref>		
+				<ref bean="proc_ttsa_cancel_loc_update_6"></ref>															
+			</list>
+		</property>
+	</bean>
+
+	<bean id="proc_ttsa_cancel_loc_update_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="proc_ttsa_cancel_loc_update_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_transaction_id</value></property>
+			<property name="mapTo"><value>pi_transaction_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="proc_ttsa_cancel_loc_update_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_status</value></property>
+			<property name="mapTo"><value>pi_status</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="proc_ttsa_cancel_loc_update_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_remarks</value></property>
+			<property name="mapTo"><value>pi_remarks</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+
+	<bean id="proc_ttsa_cancel_loc_update_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="proc_ttsa_cancel_loc_update_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_msg</value></property>
+			<property name="mapTo"><value>po_error_msg</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+ </beans>

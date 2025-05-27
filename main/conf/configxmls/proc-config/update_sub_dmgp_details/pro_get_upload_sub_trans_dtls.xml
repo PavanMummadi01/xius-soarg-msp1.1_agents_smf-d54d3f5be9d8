@@ -1,0 +1,221 @@
+<!--
+	Requirement: REQ#(get sub demographic details transaction for TTMgmt) 
+	Usage	   : get the transaction for subscriber demographic details
+	Author	   : 
+	Date	   : 29-08-2013
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_upload_sub_trans_dtls" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+		<property name="name"><value>sub_transdetailsupload_pkg.pro_get_upload_sub_trans_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_get_sub_trans_det_proc_param_1"></ref>
+				<ref bean="pro_get_sub_trans_det_proc_param_2"></ref>
+				<ref bean="pro_get_sub_trans_det_proc_param_3"></ref>
+				<ref bean="pro_get_sub_trans_det_proc_param_4"></ref>
+				<ref bean="pro_get_sub_trans_det_proc_param_5"></ref>
+				<ref bean="pro_get_sub_trans_det_proc_param_6"></ref>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="po_sub_trans_det_ref_cursor"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Begin of Ref Cursor Properties -->
+	<bean id="po_sub_trans_det_ref_cursor"
+		class="net.bcgi.util.db.ResultSetDef" scope="prototype">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_sub_trans_det_ref_cursor_param_1"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_2"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_3"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_4"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_5"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_6"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_7"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_8"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_9"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_10"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_11"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_12"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_13"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_14"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_15"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_16"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_17"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_18"></ref>
+				<ref bean="po_sub_trans_det_ref_cursor_param_19"></ref>
+				
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.DemographicCursorData"/>
+	</bean>
+
+	<bean id="po_sub_trans_det_ref_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sim</value></property>
+	  <property name="mapTo"><value>sim</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>simstatus</value></property>
+	  <property name="mapTo"><value>simstatus</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn</value></property>
+	  <property name="mapTo"><value>msisdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>first_name</value></property>
+	  <property name="mapTo"><value>first_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>last_name</value></property>
+	  <property name="mapTo"><value>last_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>first_address</value></property>
+	  <property name="mapTo"><value>first_address</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>second_address</value></property>
+	  <property name="mapTo"><value>second_address</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_type</value></property>
+	  <property name="mapTo"><value>id_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_no</value></property>
+	  <property name="mapTo"><value>id_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>postcode</value></property>
+	  <property name="mapTo"><value>postcode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>city</value></property>
+	  <property name="mapTo"><value>city</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>state</value></property>
+	  <property name="mapTo"><value>state</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>country</value></property>
+	  <property name="mapTo"><value>country</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>gender</value></property>
+	  <property name="mapTo"><value>gender</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>date_of_birth</value></property>
+	  <property name="mapTo"><value>date_of_birth</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_id</value></property>
+	  <property name="mapTo"><value>user_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_type</value></property>
+	  <property name="mapTo"><value>user_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>18</value></property>
+	</bean>
+	<bean id="po_sub_trans_det_ref_cursor_param_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_name</value></property>
+	  <property name="mapTo"><value>network_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>19</value></property>
+	</bean>
+
+	<!-- End of Ref Cursor Properties -->
+	
+	<bean id="pro_get_sub_trans_det_proc_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pio_transaction_no</value></property>
+		<property name="mapTo"><value>pio_transaction_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN_OUT"></ref></property>
+	</bean>	
+	<bean id="pro_get_sub_trans_det_proc_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_no</value></property>
+		<property name="mapTo"><value>pi_sim_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_get_sub_trans_det_proc_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_sub_trans_det_ref_cursor</value></property>
+		<property name="mapTo"><value>po_sub_trans_det_ref_cursor</value></property>
+		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_sub_trans_det_proc_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_retry_cnt</value></property>
+		<property name="mapTo"><value>po_retry_cnt</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_sub_trans_det_proc_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_sub_trans_det_proc_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,34 @@
+package com.xius.smf.job;
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.quartz.StatefulJob;
+
+import com.xius.smf.job.task.SubscriberBulkUploadTask;
+import com.xius.smf.job.task.UploadSIMSTask;
+import com.xius.smf.utils.Utilities;
+
+public class UploadSIMSJob implements Job , StatefulJob {
+	private static final Logger logger = LogManager.getLogger(UploadSIMSJob.class.getSimpleName());
+
+	public void execute(JobExecutionContext executionContext) throws JobExecutionException {
+		
+		long start = System.currentTimeMillis();
+		logger.info("=========== UploadSIMSJob Started ===========");
+		try {
+			
+			UploadSIMSTask task = new UploadSIMSTask();
+			task.doJob();
+		} catch (Exception e) {
+
+			logger.error("Exception in UploadSIMSJob execute() :"+Utilities.getStackTrace(e));
+		} 
+		
+		logger.info("=========== UploadSIMSJob Ended ===========");
+		logger.info("### ### ### Total Time taken to execute UploadSIMSJob in (milli secons): " + (System.currentTimeMillis() - start)  );
+	}
+}

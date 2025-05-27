@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	   <bean id="sp.connection.pool" class="net.bcgi.util.db.ContainerDataSource" scope="singleton">
+	</bean>
+	
+	
+
+	 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>  
+            
+                   <value>file:./conf/application.properties</value>
+                  <!--  <value>file:D:/smf_5g_springboot/SMF_Springboot/main/config/application.properties</value> -->
+            </list>
+        </property>
+    </bean>
+    <bean id="sp.datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" scope="singleton">
+        <property name="driverClass" value="${billing_datasource.driver-class-name}" />
+        <property name="jdbcUrl" value="${billing_datasource.url}" />
+		<property name="user" value="${billing_datasource.username}" />
+		<property name="password" value="${billing_datasource.password}" />
+		<property name="minPoolSize" value="${billing_datasource.properties.minPoolSize}" />
+		<property name="maxPoolSize" value="${billing_datasource.properties.maxPoolSize}" />
+		<property name="maxIdleTime" value="${billing_datasource.properties.maxIdleTime}" />
+		<property name="initialPoolSize" value="${billing_datasource.properties.minPoolSize}" />
+    </bean>
+    
+  	<bean id="selfcare_datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" scope="singleton">
+        <property name="driverClass" value="${selfcare_datasource.driver-class-name}" />
+        <property name="jdbcUrl" value="${selfcare_datasource.url}" />
+        <property name="user" value="${selfcare_datasource.username}" />
+		<property name="password" value="${selfcare_datasource.password}" />
+		<property name="minPoolSize" value="${selfcare_datasource.hikari.minimum-idle}" />
+		<property name="maxPoolSize" value="${selfcare_datasource.hikari.maximum-pool-size}" />
+		<property name="initialPoolSize" value="${selfcare_datasource.hikari.minimum-idle}" />
+    </bean>   
+    
+    
+  	<bean id="smf_schema_datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" scope="singleton">
+        <property name="driverClass" value="${smf_schema_datasource.driver-class-name}" />
+        <property name="jdbcUrl" value="${smf_schema_datasource.url}" />
+        <property name="user" value="${smf_schema_datasource.username}" />
+		<property name="password" value="${smf_schema_datasource.password}" />
+		<property name="minPoolSize" value="${smf_schema_datasource.hikari.minimum-idle}" />
+		<property name="maxPoolSize" value="${smf_schema_datasource.hikari.maximum-pool-size}" />
+		<property name="maxIdleTime" value="${smf_schema_datasource.hikari.blocking-timeout}" />
+		<property name="initialPoolSize" value="${smf_schema_datasource.hikari.minimum-idle}" />
+    </bean>   
+    
+     <bean id="billing_datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" scope="singleton">
+        <property name="driverClass" value="${billing_datasource.driver-class-name}" />
+        <property name="jdbcUrl" value="${billing_datasource.url}" />
+        <property name="user" value="${billing_datasource.username}" />
+		<property name="password" value="${billing_datasource.password}" />
+		<property name="minPoolSize" value="${billing_datasource.properties.minPoolSize}" />
+		<property name="maxPoolSize" value="${billing_datasource.properties.maxPoolSize}" />
+		<property name="maxIdleTime" value="${billing_datasource.properties.maxIdleTime}" />
+		<property name="initialPoolSize" value="${billing_datasource.properties.minPoolSize}" />
+    </bean>  
+
+	<bean id="mspeir_datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" scope="singleton">
+        <property name="driverClass" value="${mspeir_datasource.driver-class-name}" />
+        <property name="jdbcUrl" value="${mspeir_datasource.url}" />
+        <property name="user" value="${mspeir_datasource.username}" />
+		<property name="password" value="${mspeir_datasource.password}" />
+    </bean>  
+
+	<bean id="postpaid_datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" scope="singleton">
+        <property name="driverClass" value="${postpaid_datasource.driver-class-name}" />
+        <property name="jdbcUrl" value="${postpaid_datasource.url}" />
+        <property name="user" value="${postpaid_datasource.username}" />
+		<property name="password" value="${postpaid_datasource.password}" />
+    </bean>  
+
+
+	<!-- <bean id="selfcare_datasource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	   <property name="jndiName"><value>java:jdbc/INFINET_DB</value></property>
+	</bean> 
+ -->
+    
+      
+</beans>

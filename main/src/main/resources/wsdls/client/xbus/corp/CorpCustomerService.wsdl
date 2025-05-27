@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by xbus (xbus) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xbus.xius.com/services/selfcare/corpcustomerservice" xmlns:comm="http://xbus.xius.com/messages/common" xmlns:err="http://xbus.xius.com/messages/common/errordetails" xmlns:msgs="http://xbus.xius.com/messages/selfcare/corpcustomerservice" targetNamespace="http://xbus.xius.com/services/selfcare/corpcustomerservice">
+	<wsdl:types>
+		<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:msgs="http://xbus.xius.com/messages/selfcare/corpcustomerservice" targetNamespace="http://xbus.xius.com/services/selfcare/corpcustomerservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+			<xs:import namespace="http://xbus.xius.com/messages/selfcare/corpcustomerservice" schemaLocation="CorpCustomerService.xsd"/>
+			<xs:import namespace="http://xbus.xius.com/messages/common/errordetails" schemaLocation="../../common/ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getCorpPreDataRequest">
+		<wsdl:part name="parameter" element="msgs:GetCorpPreDataRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCorpPreDataResponse">
+		<wsdl:part name="parameter" element="msgs:GetCorpPreDataResponse"/>
+	</wsdl:message>
+	<wsdl:message name="faultData">
+		<wsdl:part name="faultData" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="scheduleTopupsRequest">
+		<wsdl:part name="parameter" element="msgs:ScheduleTopupsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="scheduleTopupsResponse">
+		<wsdl:part name="parameter" element="msgs:ScheduleTopupsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getScheduleTopupsRequest">
+		<wsdl:part name="request" element="msgs:GetScheduleTopupsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getScheduleTopupsResponse">
+		<wsdl:part name="response" element="msgs:GetScheduleTopupsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="validatePersonalIdRequest">
+		<wsdl:part name="parameter" element="msgs:ValidatePersonalIdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="validatePersonalIdResponse">
+		<wsdl:part name="parameter" element="msgs:ValidatePersonalIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="manageOfficeCodeRequest">
+		<wsdl:part name="parameter" element="msgs:ManageOfficeCodeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageOfficeCodeResponse">
+		<wsdl:part name="parameter" element="msgs:ManageOfficeCodeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="activateCorpRCProdRequest">
+		<wsdl:part name="parameter" element="msgs:activateCorpRCProdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="activateCorpRCProdResponse">
+		<wsdl:part name="parameter" element="msgs:activateCorpRCProdResponse"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="CorpCustomerServicePortType">
+		<wsdl:operation name="getCorpPreData">
+			<wsdl:input message="tns:getCorpPreDataRequest"/>
+			<wsdl:output message="tns:getCorpPreDataResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="scheduleTopups">
+			<wsdl:input message="tns:scheduleTopupsRequest"/>
+			<wsdl:output message="tns:scheduleTopupsResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getScheduleTopups">
+			<wsdl:input message="tns:getScheduleTopupsRequest"/>
+			<wsdl:output message="tns:getScheduleTopupsResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="validatePersonalId">
+			<wsdl:input message="tns:validatePersonalIdRequest"/>
+			<wsdl:output message="tns:validatePersonalIdResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<!--Added for REQ1208-->
+		<wsdl:operation name="manageOfficeCode">
+			<wsdl:input message="tns:manageOfficeCodeRequest"/>
+			<wsdl:output message="tns:manageOfficeCodeResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="activateCorpRCProd">
+			<wsdl:input message="tns:activateCorpRCProdRequest"/>
+			<wsdl:output message="tns:activateCorpRCProdResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		
+		
+	</wsdl:portType>
+	<wsdl:binding name="CorpCustomerServiceBinding" type="tns:CorpCustomerServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getCorpPreData">
+			<soap:operation soapAction="getCorpPreData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="scheduleTopups">
+			<soap:operation soapAction="scheduleTopups"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getScheduleTopups">
+			<soap:operation soapAction="getScheduleTopups"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="validatePersonalId">
+			<soap:operation soapAction="validatePersonalId"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageOfficeCode">
+			<soap:operation soapAction="manageOfficeCode"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="activateCorpRCProd">
+			<soap:operation soapAction="activateCorpRCProd"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CorpCustomerService">
+		<wsdl:port name="CorpCustomerServicePort" binding="tns:CorpCustomerServiceBinding">
+			<soap:address location="http://localhost:8080"/>
+		</wsdl:port>
+	</wsdl:service>
+	<!--Added for REQ1208  *MNP functionality changes for corporate GUI -->
+</wsdl:definitions>

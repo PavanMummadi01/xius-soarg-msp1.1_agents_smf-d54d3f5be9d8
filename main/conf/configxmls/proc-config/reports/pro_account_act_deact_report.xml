@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_account_act_deact_report-->
+	
+	<bean id="pro_account_act_deact_report" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pro_account_act_deact_report</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_account_act_deact_report_param_1"></ref>
+				<ref bean="pro_account_act_deact_report_param_2"></ref>
+				<ref bean="pro_account_act_deact_report_param_3"></ref>
+				<ref bean="pro_account_act_deact_report_param_4"></ref>
+				<ref bean="pro_account_act_deact_report_param_5"></ref>
+				<ref bean="pro_account_act_deact_report_param_6"></ref>
+				<ref bean="pro_account_act_deact_report_param_7"></ref>
+				<ref bean="pro_account_act_deact_report_param_8"></ref>
+				<ref bean="pro_account_act_deact_report_param_9"></ref>
+				<ref bean="pro_account_act_deact_report_param_10"></ref>
+				<ref bean="pro_account_act_deact_report_param_11"></ref>
+				<ref bean="pro_account_act_deact_report_param_12"></ref>
+				
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="10">
+					<ref bean="pro_account_act_deact_report_cusor_dtls"/>
+				</entry>
+			</map>
+		</property>
+		
+	</bean>
+		<bean id="pro_account_act_deact_report_cusor_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_1"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_2"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_3"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_4"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_5"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_6"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_7"/>
+				<ref bean="pro_account_act_deact_report_cusor_dtls_param_8"/>
+				
+				
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.GetAccountActDeactCancelReportCusorData"/>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_date</value></property>
+	  <property name="mapTo"><value>transactionDate</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>MSISDN</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>reason</value></property>
+	  <property name="mapTo"><value>reason</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	
+	
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>login_id</value></property>
+	  <property name="mapTo"><value>loginid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>channel_id</value></property>
+	  <property name="mapTo"><value>channelid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	 <bean id="pro_account_act_deact_report_cusor_dtls_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transactionId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>operation</value></property>
+	  <property name="mapTo"><value>operation</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="pro_account_act_deact_report_cusor_dtls_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>row_num</value></property>
+	  <property name="mapTo"><value>rowCount</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_msisdn_no</value></property>
+			<property name="mapTo"><value>pi_msisdn_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_fromdate</value></property>
+			<property name="mapTo"><value>fromDate</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_account_act_deact_report_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_todate</value></property>
+			<property name="mapTo"><value>toDate</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_account_act_deact_report_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_max_records</value></property>
+			<property name="mapTo"><value>maxRecords</value></property>
+			<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_account_act_deact_report_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_next_rec_index</value></property>
+			<property name="mapTo"><value>nextRecordIndex</value></property>
+			<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+		<bean id="pro_account_act_deact_report_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_activity_type</value></property>
+			<property name="mapTo"><value>operationtype</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_account_no</value></property>
+			<property name="mapTo"><value>pi_account_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_account_act_deact_report_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_total_records</value></property>
+			<property name="mapTo"><value>totalRecords</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_account_act_deact_report_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_actdeact_dtls</value></property>  		
+  		<property name="mapTo"><value>getaccountActDeactCancelReportCusorData</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>10</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_account_act_deact_report_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

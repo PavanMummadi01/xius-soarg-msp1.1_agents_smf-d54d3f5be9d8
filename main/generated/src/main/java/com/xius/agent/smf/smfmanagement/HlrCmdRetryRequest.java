@@ -1,0 +1,141 @@
+
+package com.xius.agent.smf.smfmanagement;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for HlrCmdRetryRequest complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="HlrCmdRetryRequest">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="transId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="userDefined1" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="userDefined2" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="userDefined3" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "HlrCmdRetryRequest", propOrder = {
+    "transId",
+    "userDefined1",
+    "userDefined2",
+    "userDefined3"
+})
+public class HlrCmdRetryRequest {
+
+    protected String transId;
+    protected String userDefined1;
+    protected String userDefined2;
+    protected String userDefined3;
+
+    /**
+     * Gets the value of the transId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTransId() {
+        return transId;
+    }
+
+    /**
+     * Sets the value of the transId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTransId(String value) {
+        this.transId = value;
+    }
+
+    /**
+     * Gets the value of the userDefined1 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUserDefined1() {
+        return userDefined1;
+    }
+
+    /**
+     * Sets the value of the userDefined1 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUserDefined1(String value) {
+        this.userDefined1 = value;
+    }
+
+    /**
+     * Gets the value of the userDefined2 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUserDefined2() {
+        return userDefined2;
+    }
+
+    /**
+     * Sets the value of the userDefined2 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUserDefined2(String value) {
+        this.userDefined2 = value;
+    }
+
+    /**
+     * Gets the value of the userDefined3 property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUserDefined3() {
+        return userDefined3;
+    }
+
+    /**
+     * Sets the value of the userDefined3 property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUserDefined3(String value) {
+        this.userDefined3 = value;
+    }
+
+}

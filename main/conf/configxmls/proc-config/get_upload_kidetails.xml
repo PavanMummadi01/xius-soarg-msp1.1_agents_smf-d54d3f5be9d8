@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="get_upload_kidetails"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_ki_key_bulk_info.get_upload_kidetails</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="get_upload_kidetails_1"></ref>
+				<ref bean="get_upload_kidetails_2"></ref>
+				<ref bean="get_upload_kidetails_3"></ref>
+				<ref bean="get_upload_kidetails_4"></ref>
+				<ref bean="get_upload_kidetails_5"></ref>
+				<ref bean="get_upload_kidetails_6"></ref>
+				<ref bean="get_upload_kidetails_7"></ref>	
+				<ref bean="get_upload_kidetails_8"></ref>
+				<ref bean="get_upload_kidetails_9"></ref>
+				<ref bean="get_upload_kidetails_10"></ref>
+				<ref bean="get_upload_kidetails_11"></ref>
+				<ref bean="get_upload_kidetails_12"></ref>
+				<ref bean="get_upload_kidetails_13"></ref>	
+				<ref bean="get_upload_kidetails_14"></ref>														
+			</list>
+		</property>
+	</bean>
+
+	<bean id="get_upload_kidetails_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_kidetails_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_msisdn_no</value></property>
+			<property name="mapTo"><value>pi_msisdn_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_kidetails_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_status_check</value></property>
+			<property name="mapTo"><value>pi_status_check</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_kidetails_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_sim_serial_no</value></property>
+			<property name="mapTo"><value>po_sim_serial_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_kidetails_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_car_type</value></property>
+			<property name="mapTo"><value>po_car_type</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_alg</value></property>
+			<property name="mapTo"><value>po_alg</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_ki_value</value></property>
+			<property name="mapTo"><value>po_ki_value</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_ema_profile</value></property>
+			<property name="mapTo"><value>po_ema_profile</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_usertype</value></property>
+			<property name="mapTo"><value>po_usertype</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_three_gind</value></property>
+			<property name="mapTo"><value>po_three_gind</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>10</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_imsi</value></property>
+			<property name="mapTo"><value>po_imsi</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="get_upload_kidetails_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_msisdn</value></property>
+			<property name="mapTo"><value>po_msisdn</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+	<bean id="get_upload_kidetails_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>13</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_kidetails_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>14</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+ </beans>

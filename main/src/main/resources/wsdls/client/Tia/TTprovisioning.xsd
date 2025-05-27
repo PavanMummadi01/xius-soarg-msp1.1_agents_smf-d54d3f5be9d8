@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://tia.xius.com/TTprovisioning.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tia.xius.com/TTprovisioning.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="provisionPCRFRequest" type="provisionPCRFRequest" />
+	<xs:element name="provisionPCRFResponse" type="provisionPCRFResponse" />
+
+	<xs:element name="deletePCRFRequest" type="deletePCRFRequest" />
+	<xs:element name="deletePCRFResponse" type="deletePCRFResponse" />
+
+	<xs:element name="queryPCRFRequest" type="queryPCRFRequest" />
+	<xs:element name="queryPCRFResponse" type="queryPCRFResponse" />
+
+	<xs:element name="volteProvisionRequest" type="volteProvisionRequest" />
+	<xs:element name="volteProvisionResponse" type="volteProvisionResponse" />
+
+	<xs:element name="volteDeProvisionRequest" type="volteDeProvisionRequest" />
+	<xs:element name="volteDeProvisionResponse" type="volteDeProvisionResponse" />
+
+	<xs:element name="volteServiceStatusRequest" type="volteServiceStatusRequest" />
+	<xs:element name="volteServiceStatusResponse" type="volteServiceStatusResponse" />
+	
+	<xs:element name="fiveGProvisionRequest" type="fiveGProvisionRequest" />
+	<xs:element name="fiveGProvisionResponse" type="fiveGProvisionResponse" />
+
+	<xs:element name="fiveGDeProvisionRequest" type="fiveGDeProvisionRequest" />
+	<xs:element name="fiveGDeProvisionResponse" type="fiveGDeProvisionResponse" />
+	
+	<xs:element name="getLicenseInfoRequest" type="getLicenseInfoRequest" />
+	<xs:element name="getLicenseInfoResponse" type="getLicenseInfoResponse" />
+	
+	<xs:element name="deviceCheckRequest" type="deviceCheckRequest" />
+	<xs:element name="deviceCheckResponse" type="deviceCheckResponse" />
+	
+	
+	
+	 <xs:complexType name="deviceCheckRequest">
+			<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType" />
+			</xs:sequence>
+    </xs:complexType>
+	
+	<xs:complexType name="deviceCheckResponse">
+			<xs:sequence>			
+			<xs:element name="returnCode" type="xs:string"	minOccurs="0" />
+			<xs:element name="respCode" type="xs:string"	minOccurs="0" />
+			<xs:element name="respDescription" type="xs:string"	minOccurs="0" />
+			<xs:element name="status" type="xs:string"	minOccurs="0" />
+			</xs:sequence>
+    </xs:complexType>
+	
+	 <xs:complexType name="getLicenseInfoRequest">
+		<xs:sequence>
+			<xs:element name="licenseType" type="xs:string" />
+		</xs:sequence>
+	 </xs:complexType>
+
+	<xs:complexType name="getLicenseInfoResponse">
+		<xs:sequence>
+			<xs:element name="mvnoName" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />	
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />	
+			<xs:element name="remainingLicense" type="xs:string" minOccurs="0" />	
+			<xs:element name="licenseUsed" type="xs:string" minOccurs="0" />	
+			<xs:element name="totalActiveLicense" type="xs:string" minOccurs="0" />		
+			<xs:element name="licenseType" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+     <xs:complexType name="fiveGProvisionRequest">
+		<xs:sequence>
+			<xs:element name="IMSI" type="IMSIType" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="accountType" type="xs:string" minOccurs="0" />
+			<xs:element name="prodList" type="ProductType" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="billCycleDate" type="xs:string" minOccurs="0" />
+			<xs:element name="transNumber" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	 </xs:complexType>
+
+	<xs:complexType name="fiveGProvisionResponse">
+		<xs:sequence>
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="fiveGDeProvisionRequest">
+		<xs:sequence>
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="accountType" type="xs:string" minOccurs="0" />
+			<xs:element name="prodList" type="ProductType" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="billCycleDate" type="xs:string" minOccurs="0" />
+			<xs:element name="transNumber" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	 </xs:complexType>
+
+	<xs:complexType name="fiveGDeProvisionResponse">
+		<xs:sequence>
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+
+	<xs:element name="ttRegNotificationRequest" type="ttRegNotificationRequest" />
+	<xs:element name="ttRegNotificationResponse" type="ttRegNotificationResponse" />
+	
+	<xs:complexType name="ttRegNotificationRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="simData" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="remarks" type="xs:string" minOccurs="0" />
+			<xs:element name="transId" type="xs:string" minOccurs="0" />
+			<xs:element name="UserDefined1" type="xs:string" minOccurs="0" />
+			<xs:element name="UserDefined2" type="xs:string" minOccurs="0" />
+			<xs:element name="UserDefined3" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ttRegNotificationResponse">
+		<xs:sequence>
+			<xs:element name="Message" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"	minOccurs="0" />
+			<xs:element name="UserDefined1" type="xs:string" minOccurs="0" />
+			<xs:element name="UserDefined2" type="xs:string" minOccurs="0" />
+			<xs:element name="UserDefined3" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="provisionPCRFRequest">
+		<xs:sequence>
+			<xs:element name="IMSI" type="IMSIType" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="threegind" type="xs:string" minOccurs="0" />
+			<xs:element name="prodList" type="ProdListType" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="provisionPCRFResponse">
+		<xs:sequence>
+			<xs:element name="transID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="queryPCRFRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="OUTParam" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="queryPCRFResponse">
+		<xs:sequence>
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="volteProvisionRequest">
+		<xs:sequence>
+			<xs:element name="transID" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+			<xs:element name="channelId" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="volteProvisionResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="volteDeProvisionRequest">
+		<xs:sequence>
+			<xs:element name="transID" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+			<xs:element name="channelId" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="volteDeProvisionResponse">
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="volteServiceStatusRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="volteServiceStatusResponse">
+		<xs:sequence>
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="ProductType">
+		<xs:sequence>
+			<xs:element name="productID" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ProdListType">
+		<xs:sequence>
+			<xs:element name="productID" type="xs:string" minOccurs="0" />
+			<xs:element name="statrtDate" type="xs:string" minOccurs="0" />
+			<xs:element name="endDate" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="deletePCRFRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="productID" type="xs:string" minOccurs="0" />
+			<xs:element name="threegind" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="deletePCRFResponse">
+		<xs:sequence>
+			<xs:element name="transID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="ResponseData" type="ResponseDataType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ResponseDataType">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:string" minOccurs="0" />
+			<xs:element name="responsecode" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="respdescription" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IMSIType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{10,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
+
+
+
+

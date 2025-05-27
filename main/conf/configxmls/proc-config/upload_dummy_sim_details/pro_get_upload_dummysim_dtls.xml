@@ -1,0 +1,158 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- get_upload_dummysim Stored Procedure -->
+	<bean id="pro_get_upload_dummysim_dtls" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>CLC_DUMMYID_REPLACE.pro_get_upload_dummysim_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="get_upload_dummysim_param_1"></ref>
+				<ref bean="get_upload_dummysim_param_2"></ref>
+				<ref bean="get_upload_dummysim_param_3"></ref>
+				<ref bean="get_upload_dummysim_param_4"></ref>
+				<ref bean="get_upload_dummysim_param_5"></ref>
+				<ref bean="get_upload_dummysim_param_6"></ref>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="get_upload_dummysim_details_ref_bean" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	 <bean id="get_upload_dummysim_details_ref_bean" class="net.bcgi.util.db.ResultSetDef"
+		scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="get_upload_dummysim_ref_cursor_param_1"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_2"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_3"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_4"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_5"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_6"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_7"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_8"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_9"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_10"></ref>
+				<ref bean="get_upload_dummysim_ref_cursor_param_11"></ref>
+			</list>
+		</property>
+			<property name="className" value="com.xius.smf.job.GetDummySimDetRefCursorData" />
+		</bean>
+				<!-- ref cursor data -->
+		<bean id="get_upload_dummysim_ref_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>sim_serial_num</value></property>
+		<property name="mapTo"><value>sim_serial_num</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>1</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>trans_num</value></property>
+		<property name="mapTo"><value>trans_num</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>id_type</value></property>
+		<property name="mapTo"><value>id_type</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>3</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>dummy_id_type</value></property>
+		<property name="mapTo"><value>dummy_id_type</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>dummy_id_val</value></property>
+		<property name="mapTo"><value>dummy_id_val</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>id_val</value></property>
+		<property name="mapTo"><value>id_val</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>txstatus</value></property>
+		<property name="mapTo"><value>txstatus</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>7</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>msisdn</value></property>
+		<property name="mapTo"><value>msisdn</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>8</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>user_id</value></property>
+		<property name="mapTo"><value>user_id</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>9</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>network_id</value></property>
+		<property name="mapTo"><value>network_id</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>10</value></property>
+		</bean>
+		<bean id="get_upload_dummysim_ref_cursor_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>network_name</value></property>
+		<property name="mapTo"><value>network_name</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>11</value></property>
+		</bean>
+		<!-- actual parameters data -->
+	<bean id="get_upload_dummysim_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pio_trans_num</value></property>
+		<property name="mapTo"><value>pio_trans_num</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN_OUT"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_dummysim_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_num</value></property>
+		<property name="mapTo"><value>pi_sim_num</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="get_upload_dummysim_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>get_upload_dummysim_details_ref_bean</value></property>
+		<property name="mapTo"><value>refcursData</value></property>
+		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_upload_dummysim_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_retry_count</value></property>
+		<property name="mapTo"><value>po_retry_count</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_upload_dummysim_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="get_upload_dummysim_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_mesg</value></property>
+		<property name="mapTo"><value>po_error_mesg</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

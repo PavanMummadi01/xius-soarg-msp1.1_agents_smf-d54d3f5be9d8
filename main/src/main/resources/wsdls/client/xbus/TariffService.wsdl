@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by xbus (xbus) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xbus.xius.com/services/billing/tariff" xmlns:ns="http://xbus.xius.com/messages/common" xmlns:msgs="http://xbus.xius.com/messages/billing/tariff" xmlns:err="http://xbus.xius.com/messages/common/errordetails" targetNamespace="http://xbus.xius.com/services/billing/tariff">
+	<wsdl:types>
+		<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+			<xs:import namespace="http://xbus.xius.com/messages/billing/tariff" schemaLocation="TariffService.xsd"/>
+			<xs:import namespace="http://xbus.xius.com/messages/common/errordetails" schemaLocation="../common/ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FaultData">
+		<wsdl:part name="faultData" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="configureServicesRequest">
+		<wsdl:part name="request" element="msgs:configureServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="configureServicesResponse">
+		<wsdl:part name="response" element="msgs:configureServicesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="updateServicesRequest">
+		<wsdl:part name="request" element="msgs:updateServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="updateServicesResponse">
+		<wsdl:part name="response" element="msgs:updateServicesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getServicesRequest">
+		<wsdl:part name="request" element="msgs:getServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getServicesResponse">
+		<wsdl:part name="response" element="msgs:getServicesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getTariffPlanInfoRequest">
+		<wsdl:part name="request" element="msgs:getTariffPlanInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getTariffPlanInfoResponse">
+		<wsdl:part name="response" element="msgs:getTariffPlanInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ChangeTariffPlanRequest">
+		<wsdl:part name="request" element="msgs:changeTariffPlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ChangeTariffPlanResponse">
+		<wsdl:part name="response" element="msgs:changeTariffPlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="changeTPRequest">
+		<wsdl:part name="request" element="msgs:changeTPRequest"/>
+	</wsdl:message>
+	<wsdl:message name="changeTPResponse">
+		<wsdl:part name="response" element="msgs:changeTPResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getTariffPlansRequest">
+		<wsdl:part name="request" element="msgs:getTariffPlansRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getTariffPlansResponse">
+		<wsdl:part name="response" element="msgs:getTariffPlansResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getTPRequest">
+		<wsdl:part name="request" element="msgs:getTPRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getTPResponse">
+		<wsdl:part name="response" element="msgs:getTPResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getDataPlansRequest">
+		<wsdl:part name="body" element="msgs:getDataPlansRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getDataPlansResponse">
+		<wsdl:part name="body" element="msgs:getDataPlansResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getDPlansRequest">
+		<wsdl:part name="body" element="msgs:getDPlansRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getDPlansResponse">
+		<wsdl:part name="body" element="msgs:getDPlansResponse"/>
+	</wsdl:message>
+	
+	
+	<wsdl:message name="manageDataPlanRequest">
+		<wsdl:part name="body" element="msgs:manageDataPlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageDataPlanResponse">
+		<wsdl:part name="body" element="msgs:manageDataPlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="manageMultipleDataPlansRequest">
+		<wsdl:part name="body" element="msgs:manageMultipleDataPlansRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageMultipleDataPlansResponse">
+		<wsdl:part name="body" element="msgs:manageMultipleDataPlansResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getDataPlanStatusRequest">
+		<wsdl:part name="body" element="msgs:getDataPlanStatusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getDataPlanStatusResponse">
+		<wsdl:part name="body" element="msgs:getDataPlanStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="accountSharingRequest">
+		<wsdl:part name="body" element="msgs:accountSharingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="accountSharingResponse">
+		<wsdl:part name="body" element="msgs:accountSharingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getAccountSharingBalRequest">
+		<wsdl:part name="body" element="msgs:getAccountSharingBalRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAccountSharingBalResponse">
+		<wsdl:part name="body" element="msgs:getAccountSharingBalResponse"/>
+	</wsdl:message>
+
+	<wsdl:message name="getServicePackInfoRequest">
+		<wsdl:part name="request" element="msgs:getServicePackInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getServicePackInfoResponse">
+		<wsdl:part name="response" element="msgs:getServicePackInfoResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="manageServicePackRequest">
+		<wsdl:part name="request" element="msgs:manageServicePackRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageServicePackResponse">
+		<wsdl:part name="response" element="msgs:manageServicePackResponse"/>
+	</wsdl:message>
+	<!-- added for OCS ramsundar.balagoni on 18-09-2014 -->
+	<wsdl:message name="getTariffServicePkgDtlRequest">
+		<wsdl:part name="request" element="msgs:getTariffServicePkgDtlRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getTariffServicePkgDtlResponse">
+		<wsdl:part name="response" element="msgs:getTariffServicePkgDtlResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getBaseSubServicesRequest">
+		<wsdl:part name="request" element="msgs:getBaseSubServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getBaseSubServicesResponse">
+		<wsdl:part name="response" element="msgs:getBaseSubServicesResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getBaseATPServicesRequest">
+		<wsdl:part name="request" element="msgs:getBaseATPServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getBaseATPServicesResponse">
+		<wsdl:part name="response" element="msgs:getBaseATPServicesResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="deleteServiceRequest">
+		<wsdl:part name="request" element="msgs:deleteServiceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="deleteServiceResponse">
+		<wsdl:part name="response" element="msgs:deleteServiceResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ATPSubscriptionRequest">
+		<wsdl:part name="request" element="msgs:ATPSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ATPSubscriptionResponse">
+		<wsdl:part name="response" element="msgs:ATPSubscriptionResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="BulkATPSubscriptionRequest">
+		<wsdl:part name="request" element="msgs:BulkATPSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="BulkATPSubscriptionResponse">
+		<wsdl:part name="response" element="msgs:BulkATPSubscriptionResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ActivateBulkATPRequest">
+		<wsdl:part name="request" element="msgs:ActivateBulkATPRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ActivateBulkATPResponse">
+		<wsdl:part name="response" element="msgs:ActivateBulkATPResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ManageMyPlanRequest">
+		<wsdl:part name="request" element="msgs:ManageMyPlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ManageMyPlanResponse">
+		<wsdl:part name="response" element="msgs:ManageMyPlanResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="MyPlanRenewalRequest">
+		<wsdl:part name="request" element="msgs:MyPlanRenewalRequest"/>
+	</wsdl:message>
+	<wsdl:message name="MyPlanRenewalResponse">
+		<wsdl:part name="response" element="msgs:MyPlanRenewalResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ATPSubscriptionWithCCRequest">
+		<wsdl:part name="request" element="msgs:ATPSubscriptionWithCCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ATPSubscriptionWithCCResponse">
+		<wsdl:part name="response" element="msgs:ATPSubscriptionWithCCResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="ManageVolteRequest">
+		<wsdl:part name="request" element="msgs:ManageVolteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ManageVolteResponse">
+		<wsdl:part name="response" element="msgs:ManageVolteResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="Manage5GRequest">
+		<wsdl:part name="request" element="msgs:Manage5GRequest"/>
+	</wsdl:message>
+	<wsdl:message name="Manage5GResponse">
+		<wsdl:part name="response" element="msgs:Manage5GResponse"/>
+	</wsdl:message>
+	
+		
+	<wsdl:portType name="TariffServicePortType">
+		<wsdl:operation name="updateServices">
+			<wsdl:input message="tns:updateServicesRequest"/>
+			<wsdl:output message="tns:updateServicesResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getServices">
+			<wsdl:input message="tns:getServicesRequest"/>
+			<wsdl:output message="tns:getServicesResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="configureServices">
+			<wsdl:input message="tns:configureServicesRequest"/>
+			<wsdl:output message="tns:configureServicesResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getTariffPlanInfo">
+			<wsdl:input message="tns:getTariffPlanInfoRequest"/>
+			<wsdl:output message="tns:getTariffPlanInfoResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="changeTariffPlan">
+			<wsdl:input message="tns:ChangeTariffPlanRequest"/>
+			<wsdl:output message="tns:ChangeTariffPlanResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="changeTP">
+			<wsdl:input message="tns:changeTPRequest"/>
+			<wsdl:output message="tns:changeTPResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTariffPlans">
+			<wsdl:input message="tns:getTariffPlansRequest"/>
+			<wsdl:output message="tns:getTariffPlansResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<!-- REQ#1213 -->
+		<wsdl:operation name="getDataPlans">
+			<wsdl:input message="tns:getDataPlansRequest"/>
+			<wsdl:output message="tns:getDataPlansResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="manageDataPlan">
+			<wsdl:input message="tns:manageDataPlanRequest"/>
+			<wsdl:output message="tns:manageDataPlanResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="manageMultipleDataPlans">
+			<wsdl:input message="tns:manageMultipleDataPlansRequest"/>
+			<wsdl:output message="tns:manageMultipleDataPlansResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<!-- Added from 5.3.6.0 to 5.3.10.0 changes -->
+		<wsdl:operation name="getDataPlanStatus">
+			<wsdl:input message="tns:getDataPlanStatusRequest"/>
+			<wsdl:output message="tns:getDataPlanStatusResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<!-- End of added from 5.3.6.0 to 5.3.10.0 changes -->
+		<!-- REQ#1213 -->
+		<wsdl:operation name="accountSharing">
+			<wsdl:input message="tns:accountSharingRequest"/>
+			<wsdl:output message="tns:accountSharingResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<!-- REQ#1554 -->
+		<wsdl:operation name="getAccountSharingBal">
+			<wsdl:input message="tns:getAccountSharingBalRequest"/>
+			<wsdl:output message="tns:getAccountSharingBalResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+	<wsdl:operation name="getServicePackInfo">
+			<wsdl:input message="tns:getServicePackInfoRequest"/>
+			<wsdl:output message="tns:getServicePackInfoResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageServicePack">
+			<wsdl:input message="tns:manageServicePackRequest"/>
+			<wsdl:output message="tns:manageServicePackResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTariffServicePkgDtl">
+			<wsdl:input message="tns:getTariffServicePkgDtlRequest"/>
+			<wsdl:output message="tns:getTariffServicePkgDtlResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getBaseSubServices">
+			<wsdl:input message="tns:getBaseSubServicesRequest"/>
+			<wsdl:output message="tns:getBaseSubServicesResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getBaseATPServices">
+			<wsdl:input message="tns:getBaseATPServicesRequest"/>
+			<wsdl:output message="tns:getBaseATPServicesResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="deleteService">
+			<wsdl:input message="tns:deleteServiceRequest"/>
+			<wsdl:output message="tns:deleteServiceResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="ATPSubscription">
+			<wsdl:input message="tns:ATPSubscriptionRequest"/>
+			<wsdl:output message="tns:ATPSubscriptionResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="ATPSubscriptionWithCC">
+			<wsdl:input message="tns:ATPSubscriptionWithCCRequest"/>
+			<wsdl:output message="tns:ATPSubscriptionWithCCResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="bulkATPSubscription">
+			<wsdl:input message="tns:BulkATPSubscriptionRequest"/>
+			<wsdl:output message="tns:BulkATPSubscriptionResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="ActivateBulkATPSub">
+			<wsdl:input message="tns:ActivateBulkATPRequest"/>
+			<wsdl:output message="tns:ActivateBulkATPResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTPs">
+			<wsdl:input message="tns:getTPRequest"/>
+			<wsdl:output message="tns:getTPResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getDPlans">
+			<wsdl:input message="tns:getDPlansRequest"/>
+			<wsdl:output message="tns:getDPlansResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+	    <wsdl:operation name="manageMyPlan">
+			<wsdl:input message="tns:ManageMyPlanRequest"/>
+			<wsdl:output message="tns:ManageMyPlanResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		 <wsdl:operation name="myPlanRenewal">
+			<wsdl:input message="tns:MyPlanRenewalRequest"/>
+			<wsdl:output message="tns:MyPlanRenewalResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		 <wsdl:operation name="manageVolte">
+			<wsdl:input message="tns:ManageVolteRequest"/>
+			<wsdl:output message="tns:ManageVolteResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+		 <wsdl:operation name="manage5G">
+			<wsdl:input message="tns:Manage5GRequest"/>
+			<wsdl:output message="tns:Manage5GResponse"/>
+			<wsdl:fault name="FaultData" message="tns:FaultData"/>
+		</wsdl:operation>
+		
+	</wsdl:portType>
+	<wsdl:binding name="TariffServiceBinding" type="tns:TariffServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="updateServices">
+			<soap:operation soapAction="updateServices"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getServices">
+			<soap:operation soapAction="getServices"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="configureServices">
+			<soap:operation soapAction="configureServices"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getTariffPlanInfo">
+			<soap:operation soapAction="getTariffPlanInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="changeTariffPlan">
+			<soap:operation soapAction="changeTariffPlan"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getTariffPlans">
+			<soap:operation soapAction="getTariffPlans"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- REQ#1213 -->
+		<wsdl:operation name="getDataPlans">
+			<soap:operation soapAction="getDataPlans"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageDataPlan">
+			<soap:operation soapAction="manageDataPlan"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageMultipleDataPlans">
+			<soap:operation soapAction="manageMultipleDataPlans"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- Added from 5.3.6.0 to 5.3.10.0 changes -->
+		<wsdl:operation name="getDataPlanStatus">
+			<soap:operation soapAction="getDataPlanStatus"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of added from 5.3.6.0 to 5.3.10.0 changes -->
+		<!-- REQ#1213 -->
+			<wsdl:operation name="accountSharing">
+			<soap:operation soapAction="accountSharing"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- REQ#1554 -->
+			<wsdl:operation name="getAccountSharingBal">
+			<soap:operation soapAction="getAccountSharingBal"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="getServicePackInfo">
+			<soap:operation soapAction="getServicePackInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageServicePack">
+			<soap:operation soapAction="manageServicePack"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="getTariffServicePkgDtl">
+			<soap:operation soapAction="getTariffServicePkgDtl"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<!-- added for ADR 06/feb/2015 mvss -->
+		<wsdl:operation name="getBaseSubServices">
+ 			<soap:operation soapAction="getBaseSubServices"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="getBaseATPServices">
+ 			<soap:operation soapAction="getBaseATPServices"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="deleteService">
+ 			<soap:operation soapAction="deleteService"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="ATPSubscription">
+ 			<soap:operation soapAction="atpSubscription"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="bulkATPSubscription">
+ 			<soap:operation soapAction="bulkATPSubscription"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="ATPSubscriptionWithCC">
+ 			<soap:operation soapAction="atpSubscriptionWithCC"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="ActivateBulkATPSub">
+ 			<soap:operation soapAction="ActivateBulkATPSub"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="getTPs">
+ 			<soap:operation soapAction="getTPs"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="getDPlans">
+ 			<soap:operation soapAction="getDPlans"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="changeTP">
+ 			<soap:operation soapAction="changeTP"/>
+ 			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+ 		</wsdl:operation>
+ 		
+ 		<wsdl:operation name="manageMyPlan">
+			<soap:operation soapAction="manageMyPlan"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="myPlanRenewal">
+			<soap:operation soapAction="myPlanRenewal"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageVolte">
+			<soap:operation soapAction="manageVolte"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manage5G">
+			<soap:operation soapAction="manage5G"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="FaultData">
+				<soap:fault name="FaultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+	<wsdl:service name="TariffService">
+		<wsdl:port name="TariffServicePort" binding="tns:TariffServiceBinding">
+			<soap:address location="http://localhost:8080"/>
+		</wsdl:port>
+	</wsdl:service>
+	<!-- REQ#1213 -->
+	<!-- Added from 5.3.6.0 to 5.3.10.0 changes -->
+	<!-- End of added from 5.3.6.0 to 5.3.10.0 changes -->
+	<!-- REQ#1213 -->
+</wsdl:definitions>

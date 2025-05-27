@@ -1,0 +1,325 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://xbus.xius.com/services/selfcare/communityaccountservice" xmlns:comm="http://xbus.xius.com/messages/common" xmlns:err="http://xbus.xius.com/messages/common/errordetails" xmlns:msgs="http://xbus.xius.com/messages/selfcare/communityaccountservice" targetNamespace="http://xbus.xius.com/services/selfcare/communityaccountservice">
+	<wsdl:types>
+		<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:msgs="http://xbus.xius.com/messages/selfcare/communityaccountservice" targetNamespace="http://xbus.xius.com/services/selfcare/communityaccountservice" elementFormDefault="qualified" attributeFormDefault="unqualified">
+			<xs:import namespace="http://xbus.xius.com/messages/selfcare/communityaccountservice" schemaLocation="CommunityAccountService.xsd"/>
+			<xs:import namespace="http://xbus.xius.com/messages/common/errordetails" schemaLocation="../../common/ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getServiceDataRequest">
+		<wsdl:part name="request" element="msgs:GetServiceDataRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getServiceDataResponse">
+		<wsdl:part name="response" element="msgs:GetServiceDataResponse"/>
+	</wsdl:message>
+	<wsdl:message name="faultData">
+		<wsdl:part name="faultData" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="managePackageRequest">
+		<wsdl:part name="request" element="msgs:ManagePackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="managePackageResponse">
+		<wsdl:part name="response" element="msgs:ManagePackageResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getPackageRequest">
+		<wsdl:part name="request" element="msgs:GetPackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPackageResponse">
+		<wsdl:part name="response" element="msgs:GetPackageResponse"/>
+	</wsdl:message>
+	<wsdl:message name="deletePackageRequest">
+		<wsdl:part name="request" element="msgs:DeletePackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="deletePackageResponse">
+		<wsdl:part name="response" element="msgs:DeletePackageResponse"/>
+	</wsdl:message>
+	<wsdl:message name="manageComuniAcctRequest">
+		<wsdl:part name="request" element="msgs:ManageComuniAcctRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageComuniAcctResponse">
+		<wsdl:part name="response" element="msgs:ManageComuniAcctResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getCADetailsRequest">
+		<wsdl:part name="request" element="msgs:GetCADetailsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCADetailsResponse">
+		<wsdl:part name="response" element="msgs:GetCADetailsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getCommAcctRequest">
+		<wsdl:part name="request" element="msgs:GetCommAcctRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCommAcctResponse">
+		<wsdl:part name="response" element="msgs:GetCommAcctResponse"/>
+	</wsdl:message>
+	<wsdl:message name="caRenwlRequest">
+		<wsdl:part name="request" element="msgs:CARenwlRequest"/>
+	</wsdl:message>
+	<wsdl:message name="caRenwlResponse">
+		<wsdl:part name="response" element="msgs:CARenwlResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getCARenwlRequest">
+		<wsdl:part name="request" element="msgs:GetCARenwlRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCARenwlResponse">
+		<wsdl:part name="response" element="msgs:GetCARenwlResponse"/>
+	</wsdl:message>
+	<wsdl:message name="manageAddOnFtrsRequest">
+		<wsdl:part name="request" element="msgs:ManageAddOnFtrsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageAddOnFtrsResponse">
+		<wsdl:part name="response" element="msgs:ManageAddOnFtrsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getAdnlFtrsRequest">
+		<wsdl:part name="request" element="msgs:GetAdnlFtrsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getAdnlFtrsResponse">
+		<wsdl:part name="response" element="msgs:GetAdnlFtrsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="updateCAAccountRequest">
+		<wsdl:part name="request" element="msgs:UpdateCAAccountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="updateCAAccountResponse">
+		<wsdl:part name="response" element="msgs:UpdateCAAccountResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="manageCommActATPRequest">
+		<wsdl:part name="request" element="msgs:ManageCommActATPRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageCommActATPResponse">
+		<wsdl:part name="response" element="msgs:ManageCommActATPResponse"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="CommunityAccountServicePortType">
+	<wsdl:operation name="getAdnlFtrs">
+			<wsdl:input message="tns:getAdnlFtrsRequest"/>
+			<wsdl:output message="tns:getAdnlFtrsResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+	</wsdl:operation>
+	<wsdl:operation name="caRenwl">
+			<wsdl:input message="tns:caRenwlRequest"/>
+			<wsdl:output message="tns:caRenwlResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getCADetails">
+			<wsdl:input message="tns:getCADetailsRequest"/>
+			<wsdl:output message="tns:getCADetailsResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getServiceData">
+			<wsdl:input message="tns:getServiceDataRequest"/>
+			<wsdl:output message="tns:getServiceDataResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="managePackage">
+			<wsdl:input message="tns:managePackageRequest"/>
+			<wsdl:output message="tns:managePackageResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPackage">
+			<wsdl:input message="tns:getPackageRequest"/>
+			<wsdl:output message="tns:getPackageResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="deletePackage">
+			<wsdl:input message="tns:deletePackageRequest"/>
+			<wsdl:output message="tns:deletePackageResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="manageComuniAcct">
+			<wsdl:input message="tns:manageComuniAcctRequest"/>
+			<wsdl:output message="tns:manageComuniAcctResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getCommAcct">
+			<wsdl:input message="tns:getCommAcctRequest"/>
+			<wsdl:output message="tns:getCommAcctResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="getCARenwl">
+			<wsdl:input message="tns:getCARenwlRequest"/>
+			<wsdl:output message="tns:getCARenwlResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="manageAddOnFtrs">
+			<wsdl:input message="tns:manageAddOnFtrsRequest"/>
+			<wsdl:output message="tns:manageAddOnFtrsResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateCAAccount">
+			<wsdl:input message="tns:updateCAAccountRequest"/>
+			<wsdl:output message="tns:updateCAAccountResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+	</wsdl:operation>
+		<wsdl:operation name="manageCommActATP">
+			<wsdl:input message="tns:manageCommActATPRequest"/>
+			<wsdl:output message="tns:manageCommActATPResponse"/>
+			<wsdl:fault name="faultData" message="tns:faultData"/>
+		</wsdl:operation>
+	
+	</wsdl:portType>
+	<wsdl:binding name="CommunityAccountServiceBinding" type="tns:CommunityAccountServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAdnlFtrs">
+			<soap:operation soapAction="getAdnlFtrs"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCARenwl">
+			<soap:operation soapAction="getCARenwl"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="caRenwl">
+			<soap:operation soapAction="caRenwl"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getServiceData">
+			<soap:operation soapAction="getServiceData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCADetails">
+			<soap:operation soapAction="getCADetails"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getPackage">
+			<soap:operation soapAction="getPackage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="managePackage">
+			<soap:operation soapAction="managePackage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="deletePackage">
+			<soap:operation soapAction="deletePackage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageComuniAcct">
+			<soap:operation soapAction="manageComuniAcct"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getCommAcct">
+			<soap:operation soapAction="getCommAcct"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageAddOnFtrs">
+			<soap:operation soapAction="manageAddOnFtrs"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="updateCAAccount">
+			<soap:operation soapAction="updateCAAccount"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="manageCommActATP">
+			<soap:operation soapAction="manageCommActATP"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="faultData">
+				<soap:fault name="faultData" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+	</wsdl:binding>
+	<wsdl:service name="CommunityAccountService">
+		<wsdl:port name="CommunityAccountServicePort" binding="tns:CommunityAccountServiceBinding">
+			<soap:address location="http://localhost:8080"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

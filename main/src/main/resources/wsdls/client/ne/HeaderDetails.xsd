@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ne.xius.com/common/header/HeaderDetails.xsd" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://ne.xius.com/common/header/HeaderDetails.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="messageHeader">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="trackingMessageHeader" type="TrackingMessageHeaderType">
+					<xs:annotation>
+						<xs:documentation>SOAP header interface to carry data elements that are relevant to tracking, reporting, troubleshooting, and non-repudiation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##any" processContents="lax">
+				<xs:annotation>
+					<xs:documentation>This is used by AXIS. Do not delete this field or AXIS generated code will have issues.</xs:documentation>
+				</xs:annotation>
+			</xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TrackingMessageHeaderType">
+		<xs:sequence>
+			<xs:element name="messageId" type="MessageIdType" />
+			<xs:element name="carrierId" type="CarrierIdType"/>
+			<xs:element name="userId" type="UserIdType">
+				<xs:annotation>
+					<xs:documentation>The ID of the user of the application within the corporate entity from which the message originated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="password" type="PasswordType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Password of the user of the application from which the message is originated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="timeToLive" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Specifies how long in seconds this message is relevant after the message timestamp. The calling application can time-out after 'timeToLive' seconds.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="messageDateTimeStamp" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The dateTimeStamp of when the message was created.  This can be used for tracking and reporting and also by the consuming application to determine if the message is stale.  Timestamp should be in GMT TZ when the caller is unable to format with timezone and offset. e.g. 2007-10-01T14:20:33 is acceptable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="UserIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CarrierIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="6"/>
+			<xs:pattern value="[0-9]{1,6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PasswordType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MessageIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

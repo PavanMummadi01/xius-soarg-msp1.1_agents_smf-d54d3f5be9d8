@@ -1,0 +1,106 @@
+<!--
+	Requirement: REQ#697(SIM bulkupdates through TTCare) 
+	Usage	   : update sims
+	Author	   : Phani.Chavala
+	Date	   : 11th Nov 2010		 
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="sim_update" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>CLC_SIM_BULKUPLOAD.sim_update</value></property>
+	<property name="returnsResult"><value>false</value></property>
+	<property name="parameters">
+		<list> <!--  parameter list -->
+			<ref bean="sim_update_1"></ref>
+			<ref bean="sim_update_2"></ref>
+			<ref bean="sim_update_3"></ref>
+			<ref bean="sim_update_4"></ref>
+			<ref bean="sim_update_5"></ref>
+			<ref bean="sim_update_6"></ref>
+			<ref bean="sim_update_7"></ref>
+			<ref bean="sim_update_8"></ref>
+			<ref bean="sim_update_9"></ref>
+			<ref bean="sim_update_10"></ref>
+		</list>
+	</property>
+	</bean>
+	  
+	<bean id="sim_update_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_no</value></property>
+		<property name="mapTo"><value>pi_sim_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_update_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_id_type</value></property>
+		<property name="mapTo"><value>pi_id_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	
+	<bean id="sim_update_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_id_no</value></property>
+		<property name="mapTo"><value>pi_id_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	
+	<bean id="sim_update_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_trans_status</value></property>
+		<property name="mapTo"><value>pi_trans_status</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_update_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_status</value></property>
+		<property name="mapTo"><value>pi_sim_status</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_update_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_trans_no</value></property>
+		<property name="mapTo"><value>pi_trans_number</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_update_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_msisdn</value></property>
+		<property name="mapTo"><value>pi_msisdn</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_update_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_order_no</value></property>
+		<property name="mapTo"><value>pi_order_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>8</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_update_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>9</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="sim_update_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+</beans>

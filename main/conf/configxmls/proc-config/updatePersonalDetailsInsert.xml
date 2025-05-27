@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="updatePersonalDetailsInsert"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_subs_personal_details_mng.pro_insert_subs_personal_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_updatePersonalDetailsInsert_param_1"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_2"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_3"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_4"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_5"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_6"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_7"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_8"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_9"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_10"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_11"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_12"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_13"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_14"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_15"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_16"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_17"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_18"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_19"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_20"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_21"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_22"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_23"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_24"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_25"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_26"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_27"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_28"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_29"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_30"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_31"></ref>
+				<ref bean="pro_updatePersonalDetailsInsert_param_32"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_old_id_no</value></property>
+			<property name="mapTo"><value>pi_old_id_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_old_id_type</value></property>
+			<property name="mapTo"><value>pi_old_id_type</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_new_id_no</value></property>
+			<property name="mapTo"><value>pi_new_id_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_new_id_type</value></property>
+			<property name="mapTo"><value>pi_new_id_type</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_sim_no</value></property>
+			<property name="mapTo"><value>pi_sim_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_first_name</value></property>
+			<property name="mapTo"><value>pi_first_name</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_last_name</value></property>
+			<property name="mapTo"><value>pi_last_name</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_first_address</value></property>
+			<property name="mapTo"><value>pi_first_address</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>  
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_second_address</value></property>
+			<property name="mapTo"><value>pi_second_address</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>10</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_postcode</value></property>
+			<property name="mapTo"><value>pi_postcode</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_city</value></property>
+			<property name="mapTo"><value>pi_city</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_state</value></property>
+			<property name="mapTo"><value>pi_state</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>13</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_country</value></property>
+			<property name="mapTo"><value>pi_country</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>14</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_tran_ref_no</value></property>
+			<property name="mapTo"><value>pi_tran_ref_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>15</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_16" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_date_of_birth</value></property>
+			<property name="mapTo"><value>pi_date_of_birth</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>16</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_17" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_gender</value></property>
+			<property name="mapTo"><value>pi_gender</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>17</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_18" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_surname</value></property>
+			<property name="mapTo"><value>pi_surname</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>18</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_19" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_email_id</value></property>
+			<property name="mapTo"><value>pi_email_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>19</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_20" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_home_phone</value></property>
+			<property name="mapTo"><value>pi_home_phone</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>20</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_21" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_office_phone</value></property>
+			<property name="mapTo"><value>pi_office_phone</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>21</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_22" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_municipality</value></property>
+			<property name="mapTo"><value>pi_municipality</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>22</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_23" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_occupation</value></property>
+			<property name="mapTo"><value>pi_occupation</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>23</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_24" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_industry</value></property>
+			<property name="mapTo"><value>pi_industry</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>24</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_25" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_annual_income</value></property>
+			<property name="mapTo"><value>pi_annual_income</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>25</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_26" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_sec_question</value></property>
+			<property name="mapTo"><value>pi_sec_question</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>26</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_27" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_sec_answer</value></property>
+			<property name="mapTo"><value>pi_sec_answer</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>27</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_28" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_user_id</value></property>
+			<property name="mapTo"><value>pi_user_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>28</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_29" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_channel</value></property>
+			<property name="mapTo"><value>pi_channel</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>29</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_updatePersonalDetailsInsert_param_30" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_transaction_id</value></property>
+			<property name="mapTo"><value>po_transaction_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>30</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+<bean id="pro_updatePersonalDetailsInsert_param_31" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>31</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_updatePersonalDetailsInsert_param_32" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>32</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+ </beans>
+	      

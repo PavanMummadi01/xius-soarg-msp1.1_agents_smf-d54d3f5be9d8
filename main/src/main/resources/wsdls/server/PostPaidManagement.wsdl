@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:tns="http://smf.agent.xius.com/PostPaidManagement.wsdl" 
+xmlns:envelope="http://smf.agent.xius.com/PostPaidManagement.xsd" 
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:wshdr="http://smf.agent.xius.com/common/header/HeaderDetails.xsd" 
+xmlns:err="http://smf.agent.xius.com/common/error/ErrorDetails.xsd" 
+targetNamespace="http://smf.agent.xius.com/PostPaidManagement.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://smf.agent.xius.com/PostPaidManagement.wsdl" targetNamespace="http://smf.agent.xius.com/PostPaidManagement.wsdl">
+			<xs:import namespace="http://smf.agent.xius.com/PostPaidManagement.xsd" schemaLocation="PostPaidManagement.xsd"/>
+			<xs:import namespace="http://smf.agent.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://smf.agent.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="paymentInquiryRequest">
+		<wsdl:part name="body" element="envelope:paymentInquiryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="paymentInquiryResponse">
+		<wsdl:part name="body" element="envelope:paymentInquiryResponse"/>
+	</wsdl:message>
+
+	
+  <wsdl:message name="doPostPaidPaymentRequest">
+		<wsdl:part name="body" element="envelope:doPostPaidPaymentRequest"/>
+	</wsdl:message>
+	<wsdl:message name="doPostPaidPaymentResponse">
+		<wsdl:part name="body" element="envelope:doPostPaidPaymentResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="PostPaidPmtUpdRequest">
+		<wsdl:part name="body" element="envelope:PostPaidPmtUpdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PostPaidPmtUpdResponse">
+		<wsdl:part name="body" element="envelope:PostPaidPmtUpdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="convertPreToPostRequest">
+		<wsdl:part name="body" element="envelope:convertPreToPostRequest"/>
+	</wsdl:message>
+	<wsdl:message name="convertPreToPostResponse">
+		<wsdl:part name="body" element="envelope:convertPreToPostResponse"/>
+	</wsdl:message>
+
+
+  <wsdl:message name="convertPreToPostUpdRequest">
+		<wsdl:part name="body" element="envelope:convertPreToPostUpdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="convertPreToPostUpdResponse">
+		<wsdl:part name="body" element="envelope:convertPreToPostUpdResponse"/>
+	</wsdl:message>
+
+<wsdl:message name="convertPostToPreRequest">
+		<wsdl:part name="body" element="envelope:convertPostToPreRequest"/>
+	</wsdl:message>
+	<wsdl:message name="convertPostToPreResponse">
+		<wsdl:part name="body" element="envelope:convertPostToPreResponse"/>
+	</wsdl:message>
+
+
+  <wsdl:message name="convertPostToPreUpdRequest">
+		<wsdl:part name="body" element="envelope:convertPostToPreUpdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="convertPostToPreUpdResponse">
+		<wsdl:part name="body" element="envelope:convertPostToPreUpdResponse"/>
+	</wsdl:message>
+	
+	
+	
+	<wsdl:message name="passwordUpdateRequest">
+		<wsdl:part name="body" element="envelope:passwordUpdateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="passwordUpdateResponse">
+		<wsdl:part name="body" element="envelope:passwordUpdateResponse"/>
+	</wsdl:message>
+	
+	
+	
+	<wsdl:message name="passwordUpdateStatusUpdateReq">
+		<wsdl:part name="body" element="envelope:passwordUpdateStatusUpdateReq"/>
+	</wsdl:message>
+	<wsdl:message name="passwordUpdateStatusUpdateRes">
+		<wsdl:part name="body" element="envelope:passwordUpdateStatusUpdateRes"/>
+	</wsdl:message>
+	
+	
+	
+	<wsdl:message name="postpaidRegistrationRequest">
+		<wsdl:part name="body" element="envelope:postpaidRegistrationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="postpaidRegistrationResponse">
+		<wsdl:part name="body" element="envelope:postpaidRegistrationResponse"/>
+	</wsdl:message>
+	
+	
+	
+	
+	<wsdl:message name="postpaidRegStatusRequest">
+		<wsdl:part name="body" element="envelope:postpaidRegStatusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="postpaidRegStatusResponse">
+		<wsdl:part name="body" element="envelope:postpaidRegStatusResponse"/>
+	</wsdl:message>
+	
+	
+	
+	
+	
+
+<wsdl:message name="WsMessageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>
+	<wsdl:message name="faultmessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	
+	
+	<wsdl:portType name="PostPaidManagementPortType">
+		<wsdl:operation name="paymentInquiry">
+			<wsdl:input message="tns:paymentInquiryRequest"/>
+			<wsdl:output message="tns:paymentInquiryResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="doPostPaidPayment">
+			<wsdl:input message="tns:doPostPaidPaymentRequest"/>
+			<wsdl:output message="tns:doPostPaidPaymentResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="PostPaidPmtUpd">
+			<wsdl:input message="tns:PostPaidPmtUpdRequest"/>
+			<wsdl:output message="tns:PostPaidPmtUpdResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+			<wsdl:operation name="convertPreToPost">
+			<wsdl:input message="tns:convertPreToPostRequest"/>
+			<wsdl:output message="tns:convertPreToPostResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="convertPreToPostUpd">
+			<wsdl:input message="tns:convertPreToPostUpdRequest"/>
+			<wsdl:output message="tns:convertPreToPostUpdResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="convertPostToPre">
+			<wsdl:input message="tns:convertPostToPreRequest"/>
+			<wsdl:output message="tns:convertPostToPreResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="convertPostToPreUpd">
+			<wsdl:input message="tns:convertPostToPreUpdRequest"/>
+			<wsdl:output message="tns:convertPostToPreUpdResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="passwordUpdate">
+			<wsdl:input message="tns:passwordUpdateRequest"/>
+			<wsdl:output message="tns:passwordUpdateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="passwordUpdateStatusUpdate">
+			<wsdl:input message="tns:passwordUpdateStatusUpdateReq"/>
+			<wsdl:output message="tns:passwordUpdateStatusUpdateRes"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="postpaidRegistration">
+			<wsdl:input message="tns:postpaidRegistrationRequest"/>
+			<wsdl:output message="tns:postpaidRegistrationResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="postpaidRegStatus">
+			<wsdl:input message="tns:postpaidRegStatusRequest"/>
+			<wsdl:output message="tns:postpaidRegStatusResponse"/>
+			<wsdl:fault name="fault" message="tns:faultmessage"/>
+		</wsdl:operation>
+		
+		
+	</wsdl:portType>
+	
+	<wsdl:binding name="PostPaidManagementServicesBinding" type="tns:PostPaidManagementPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="paymentInquiry">
+			<soap:operation soapAction="paymentInquiry"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="doPostPaidPayment">
+			<soap:operation soapAction="doPostPaidPayment"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			<wsdl:operation name="PostPaidPmtUpd">
+			<soap:operation soapAction="PostPaidPmtUpd"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+				
+				<wsdl:operation name="convertPreToPost">
+			<soap:operation soapAction="convertPreToPost"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+			<wsdl:operation name="convertPreToPostUpd">
+			<soap:operation soapAction="convertPreToPostUpd"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			<wsdl:operation name="convertPostToPre">
+			<soap:operation soapAction="convertPostToPre"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+			<wsdl:operation name="convertPostToPreUpd">
+			<soap:operation soapAction="convertPostToPreUpd"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="passwordUpdate">
+			<soap:operation soapAction="passwordUpdate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="passwordUpdateStatusUpdate">
+			<soap:operation soapAction="passwordUpdateStatusUpdate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="postpaidRegistration">
+			<soap:operation soapAction="postpaidRegistration"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+			<wsdl:operation name="postpaidRegStatus">
+			<soap:operation soapAction="postpaidRegStatus"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+					
+	</wsdl:binding>
+	
+	<wsdl:service name="PostPaidManagementServices">
+		<wsdl:port name="PostPaidManagementServicesPort" binding="tns:PostPaidManagementServicesBinding">
+			<soap:address location="http://10.10.21.249:8227/SMFAgent/PostPaidManagementServices"/>
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

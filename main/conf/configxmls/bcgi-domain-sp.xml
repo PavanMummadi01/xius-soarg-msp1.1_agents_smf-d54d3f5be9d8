@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	 			
+
+	 <bean id="sp.connection.pool"
+		class="com.sematree.tools.db.storedprocedure.ContainerDataSource" scope="singleton">
+	</bean>
+	
+	<bean id="com.sematree.tools.db.storedprocedure.StoredProcedureDefinition.PARAMETER_IN"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+
+	<bean id="com.sematree.tools.db.storedprocedure.StoredProcedureDefinition.PARAMETER_OUT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+
+	<bean id="com.sematree.tools.db.storedprocedure.StoredProcedureDefinition.PARAMETER_IN_OUT"	
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+	</bean>
+
+	 
+			
+</beans>

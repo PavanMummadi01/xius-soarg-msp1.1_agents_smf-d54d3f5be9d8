@@ -1,0 +1,25 @@
+package com.xius.smf.domaindata;
+
+public class BulkUpdateUploadSIMsData extends DomainDataBase {
+	String pi_transaction_no   ;
+	public String getPi_transaction_no() {
+		return pi_transaction_no;
+	}
+	public void setPi_transaction_no(String pi_transaction_no) {
+		this.pi_transaction_no = pi_transaction_no;
+	}
+	public String getPi_trans_status() {
+		return pi_trans_status;
+	}
+	public void setPi_trans_status(String pi_trans_status) {
+		this.pi_trans_status = pi_trans_status;
+	}
+	public String getPi_remarks() {
+		return pi_remarks;
+	}
+	public void setPi_remarks(String pi_remarks) {
+		this.pi_remarks = pi_remarks;
+	}
+	String pi_trans_status   ;
+	String pi_remarks ;
+}

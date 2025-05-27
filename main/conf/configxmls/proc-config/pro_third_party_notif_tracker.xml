@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!-- XIUS-bcgi SMSC Agent            -->
+<!--                                                                       -->
+<!-- $Id: //depot/xb/MSP1.0/MSP-AWS/agents/smf/main/config/configxmls/proc-config/pro_third_party_notif_tracker.xml#2 $     -->
+<!-- This file  will maps the SP input parameters to java fields. -->
+<!-- $Author: kiranmai.kode $  $DateTime: 2018/10/25 12:19:16       -->
+<!-- ====================================================================== -->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_user_authentication -->
+	<bean id="pro_third_party_notif_tracker" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pro_third_party_notif_tracker</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+					<ref bean="pro_third_party_notif_tracker_1"></ref>
+					<ref bean="pro_third_party_notif_tracker_2"></ref>
+					<ref bean="pro_third_party_notif_tracker_3"></ref>
+					<ref bean="pro_third_party_notif_tracker_4"></ref>
+					<ref bean="pro_third_party_notif_tracker_5"></ref>
+					<ref bean="pro_third_party_notif_tracker_6"></ref>
+					<ref bean="pro_third_party_notif_tracker_7"></ref>
+					<ref bean="pro_third_party_notif_tracker_8"></ref>
+					<ref bean="pro_third_party_notif_tracker_9"></ref>
+					<ref bean="pro_third_party_notif_tracker_10"></ref>
+					<ref bean="pro_third_party_notif_tracker_11"></ref>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="pro_third_party_notif_tracker_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_network_id</value></property>
+	  <property name="mapTo"><value>pi_network_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_third_party_notif_tracker_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_msisdn_no</value></property>
+	  <property name="mapTo"><value>pi_msisdn_no</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_third_party_notif_tracker_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_account_id</value></property>
+	  <property name="mapTo"><value>pi_account_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_third_party_notif_tracker_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_notif_trans_id</value></property>
+	  <property name="mapTo"><value>pi_notif_trans_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_third_party_notif_tracker_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_notification_type</value></property>
+	  <property name="mapTo"><value>pi_notification_type</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_third_party_notif_tracker_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_notification_msg</value></property>
+	  <property name="mapTo"><value>pi_notification_msg</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_third_party_notif_tracker_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_trans_status</value></property>
+	  <property name="mapTo"><value>pi_trans_status</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_third_party_notif_tracker_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_response_code</value></property>
+	  <property name="mapTo"><value>pi_response_code</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_third_party_notif_tracker_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_remarks</value></property>
+	  <property name="mapTo"><value>pi_remarks</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_third_party_notif_tracker_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_third_party_notif_tracker_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

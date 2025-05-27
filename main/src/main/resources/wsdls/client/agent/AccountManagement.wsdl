@@ -1,0 +1,2168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://billing.xius.com/AccountManagement.wsdl"
+	xmlns:act="http://billing.xius.com/AccountManagement.xsd"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wshdr="http://billing.xius.com/common/header/HeaderDetails.xsd"
+	xmlns:err="http://billing.xius.com/common/error/ErrorDetails.xsd"
+	targetNamespace="http://billing.xius.com/AccountManagement.wsdl">
+	<wsdl:types>
+		<xs:schema
+			xmlns:tns="http://billing.xius.com/AccountManagement.wsdl"
+			targetNamespace="http://billing.xius.com/AccountManagement.wsdl">
+			<xs:import namespace="http://billing.xius.com/AccountManagement.xsd"
+				schemaLocation="AccountManagement.xsd" />
+			<xs:import namespace="http://billing.xius.com/common/header/HeaderDetails.xsd"
+				schemaLocation="HeaderDetails.xsd" />
+			<xs:import namespace="http://billing.xius.com/common/error/ErrorDetails.xsd"
+				schemaLocation="ErrorDetails.xsd" />	
+		</xs:schema>
+	</wsdl:types>
+	
+<!-- ================================================================== Message Definition Starts here ============================== -->
+
+
+<!-- managePostPaidGrp  start -->
+
+<wsdl:message name="managePostPaidGrpRequest">
+		<wsdl:part name="body" element="act:managePostPaidGrpRequest"/>
+	</wsdl:message>
+	<wsdl:message name="managePostPaidGrpResponse">
+		<wsdl:part name="body" element="act:managePostPaidGrpResponse"/>
+	</wsdl:message>	
+<!-- managePostPaidGrpRequest  start -->
+
+	<!-- validateMSISDN  -->
+	<wsdl:message name="reActivateMSISDNRequest">
+		<wsdl:part name="body" element="act:reActivateMSISDNRequest"/>
+	</wsdl:message>
+	<wsdl:message name="reActivateMSISDNResponse">
+		<wsdl:part name="body" element="act:reActivateMSISDNResponse"/>
+	</wsdl:message>	
+	
+	<wsdl:message name="validateMSISDNRequest">
+		<wsdl:part name="body" element="act:validateMSISDNRequest"/>
+	</wsdl:message>
+	<wsdl:message name="validateMSISDNResponse">
+		<wsdl:part name="body" element="act:validateMSISDNResponse"/>
+	</wsdl:message>	
+	
+	<wsdl:message name="validateSimRequest">
+		<wsdl:part name="body" element="act:validateSimRequest"/>
+	</wsdl:message>
+	<wsdl:message name="validateSimResponse">
+		<wsdl:part name="body" element="act:validateSimResponse"/>
+	</wsdl:message>	
+	<!-- end of validateMSISDN  -->
+	
+	<!-- getAccount  -->
+	<!--Commented for TT_OCS by sampath to use the same request at selfcareagent
+		<wsdl:message name="getAccountRequest">
+			<wsdl:part name="body" element="act:getAccountRequest"/>
+		</wsdl:message>
+		<wsdl:message name="getAccountResponse">
+			<wsdl:part name="body" element="act:getAccountResponse"/>
+		</wsdl:message>	
+	--><!-- end of getAccount  -->
+
+	<!-- getCreditProfiles  -->
+	<wsdl:message name="getCreditProfilesRequest">
+		<wsdl:part name="body" element="act:getCreditProfilesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getCreditProfilesResponse">
+		<wsdl:part name="body" element="act:getCreditProfilesResponse"/>
+	</wsdl:message>	
+	<!-- end of getCreditProfiles  -->
+	<wsdl:message name="updateBillingTypeRequest">
+		<wsdl:part name="body" element="act:updateBillingTypeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="updateBillingTypeResponse">
+		<wsdl:part name="body" element="act:updateBillingTypeResponse"/>
+	</wsdl:message>	
+	<!-- viewTroubleTkts  -->
+	<wsdl:message name="viewTroubleTktsRequest">
+		<wsdl:part name="body" element="act:viewTroubleTktsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="viewTroubleTktsResponse">
+		<wsdl:part name="body" element="act:viewTroubleTktsResponse"/>
+	</wsdl:message>	
+	<!-- End of viewTroubleTkts  -->
+	
+	<!-- manageTroubleTkts  -->
+	<wsdl:message name="manageTroubleTktsRequest">
+		<wsdl:part name="body" element="act:manageTroubleTktsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageTroubleTktsResponse">
+		<wsdl:part name="body" element="act:manageTroubleTktsResponse"/>
+	</wsdl:message>	
+	<!-- End of manageTroubleTkts  -->
+	
+	<!-- getTroubleTicketPreInfo  -->
+	<wsdl:message name="trblTktsPreInfoRequest">
+		<wsdl:part name="body" element="act:trblTktsPreInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="trblTktsPreInfoResponse">
+		<wsdl:part name="body" element="act:trblTktsPreInfoResponse"/>
+	</wsdl:message>	
+	<!-- End of getTroubleTicketPreInfo  -->
+	
+	<!-- 	added to have hlr releated params -->
+	
+	<wsdl:message name="changeMSISDNsRequest">
+		<wsdl:part name="body" element="act:changeMSISDNsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="changeMSISDNsResponse">
+		<wsdl:part name="body" element="act:changeMSISDNsResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="SIMRegistrationRequest">
+		<wsdl:part name="body" element="act:SIMRegistrationRequest"/>
+	</wsdl:message>
+	
+	<wsdl:message name="SIMRegistrationResponse">
+		<wsdl:part name="body" element="act:SIMRegistrationResponse"/>
+	</wsdl:message>
+	
+	<!-- Update Account Data -->
+	<wsdl:message name="updateActDataRequest">
+		<wsdl:part name="body" element="act:updateActDataRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateActDataResponse">
+		<wsdl:part name="body" element="act:updateActDataResponse" />
+	</wsdl:message>
+	<!-- End Update Account Data -->
+	
+	<!-- Update Account Status -->
+	<wsdl:message name="updateActStatusRequest">
+		<wsdl:part name="body" element="act:updateActStatusRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateActStatusResponse">
+		<wsdl:part name="body" element="act:updateActStatusResponse" />
+	</wsdl:message>
+	<!-- End Update Account Status -->
+	
+	<!-- change MSISDN -->
+	<wsdl:message name="changeMSISDNRequest">
+		<wsdl:part name="body" element="act:changeMSISDNRequest" />
+	</wsdl:message>
+	
+	<wsdl:message name="changeMSISDNResponse">
+		<wsdl:part name="body" element="act:changeMSISDNResponse" />
+	</wsdl:message>
+	<!-- End of change MSISDN -->
+	
+	<!--  SIM Swap  -->
+	<wsdl:message name="SIMSwapRequest">
+		<wsdl:part name="body" element="act:SIMSwapRequest" />
+	</wsdl:message>
+	<wsdl:message name="SIMSwapResponse">
+		<wsdl:part name="body" element="act:SIMSwapResponse" />
+	</wsdl:message>	
+	<!--  End of SIM Swap  -->
+
+	<!-- change IMSI -->
+	<wsdl:message name="changeIMSIRequest">
+		<wsdl:part name="body" element="act:changeIMSIRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeIMSIResponse">
+		<wsdl:part name="body" element="act:changeIMSIResponse" />
+	</wsdl:message>
+	<!-- End of change IMSI -->
+	
+	<!-- change IMSIPreInfo -->
+	<wsdl:message name="changeIMSIPreInfoRequest">
+		<wsdl:part name="body" element="act:changeIMSIPreInfoRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeIMSIPreInfoResponse">
+		<wsdl:part name="body" element="act:changeIMSIPreInfoResponse" />
+	</wsdl:message>
+	<!-- End of change IMSIPreInfo -->
+	
+	<!-- De Activate Account -->
+	<wsdl:message name="deActivateAccountRequest">
+		<wsdl:part name="body" element="act:deActivateAccountRequest" />
+	</wsdl:message>
+	<wsdl:message name="deActivateAccountResponse">
+		<wsdl:part name="body" element="act:deActivateAccountResponse" />
+	</wsdl:message>
+	<!-- End of De Activate Account -->
+	
+	<!-- Change MSISDN Pre Info -->
+	<wsdl:message name="chngMSISDNPreInfoRequest">
+		<wsdl:part name="body" element="act:chngMSISDNPreInfoRequest" />
+	</wsdl:message>
+	<wsdl:message name="chngMSISDNPreInfoResponse">
+		<wsdl:part name="body" element="act:chngMSISDNPreInfoResponse" />
+	</wsdl:message>
+	<!-- End of Change MSISDN Pre Info -->
+	
+	<!-- get MSISDN Info -->
+	<wsdl:message name="getMSISDNInfoRequest">
+		<wsdl:part name="body" element="act:getMSISDNInfoRequest" />
+	</wsdl:message>
+	<wsdl:message name="getMSISDNInfoResponse">
+		<wsdl:part name="body" element="act:getMSISDNInfoResponse" />
+	</wsdl:message>
+	<!-- End of get MSISDN Info -->
+
+	<!-- subGroupChangePreInfo  -->
+	<wsdl:message name="subGroupChangePreInfoRequest">
+		<wsdl:part name="body" element="act:subGroupChangePreInfoRequest" />
+	</wsdl:message>
+	<wsdl:message name="subGroupChangePreInfoResponse">
+		<wsdl:part name="body" element="act:subGroupChangePreInfoResponse" />
+	</wsdl:message>
+	<!-- End of get MSISDN Info -->
+	<!-- subGroupChangePreInfo  -->
+	<wsdl:message name="subGroupChangeRequest">
+		<wsdl:part name="body" element="act:subGroupChangeRequest" />
+	</wsdl:message>
+	<wsdl:message name="subGroupChangeResponse">
+		<wsdl:part name="body" element="act:subGroupChangeResponse" />
+	</wsdl:message>
+	<!-- End of get MSISDN Info -->
+	
+	<wsdl:message name="manageAdditionalServicesRequest">
+		<wsdl:part name="body" element="act:manageAdditionalServicesRequest" />
+	</wsdl:message>
+	<wsdl:message name="manageAdditionalServicesResponse">
+		<wsdl:part name="body" element="act:manageAdditionalServicesResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getAdditionalServicesRequest">
+		<wsdl:part name="body" element="act:getAdditionalServicesRequest" />
+	</wsdl:message>
+	<wsdl:message name="getAdditionalServicesResponse">
+		<wsdl:part name="body" element="act:getAdditionalServicesResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="convertAccountTypeRequest">
+		<wsdl:part name="body" element="act:convertAccountTypeRequest" />
+	</wsdl:message>
+	<wsdl:message name="convertAccountTypeResponse">
+		<wsdl:part name="body" element="act:convertAccountTypeResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getPostpaidAcctDetRequest">
+		<wsdl:part name="body" element="act:getPostpaidAcctDetRequest" />
+	</wsdl:message>
+	<wsdl:message name="getPostpaidAcctDetResponse">
+		<wsdl:part name="body" element="act:getPostpaidAcctDetResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="updateCreditLimitRequest">
+		<wsdl:part name="body" element="act:updateCreditLimitRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateCreditLimitResponse">
+		<wsdl:part name="body" element="act:updateCreditLimitResponse" />
+	</wsdl:message>	
+	
+	<wsdl:message name="validateUserAPIRequest">
+		<wsdl:part name="body" element="act:validateUserAPIRequest" />
+	</wsdl:message>
+	<wsdl:message name="validateUserAPIResponse">
+		<wsdl:part name="body" element="act:validateUserAPIResponse" />
+	</wsdl:message>	
+	
+	<wsdl:message name="getAndBlockMSISDNRequest">
+		<wsdl:part name="body" element="act:getAndBlockMSISDNRequest" />
+	</wsdl:message>
+	<wsdl:message name="getAndBlockMSISDNResponse">
+		<wsdl:part name="body" element="act:getAndBlockMSISDNResponse" />
+	</wsdl:message>	
+	
+	<!-- changeSimMdnAudit -->
+	<wsdl:message name="changeSimMdnAuditRequest">
+		<wsdl:part name="body" element="act:changeSimMdnAuditRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeSimMdnAuditResponse">
+		<wsdl:part name="body" element="act:changeSimMdnAuditResponse" />
+	</wsdl:message>
+	<!-- End of changeSimMdnAudit -->
+	
+	<!-- SimDealerValidation added by sampath for REQ#1630 for TT 1.0.20.0 -->
+	<wsdl:message name="simDealerValidationRequest">
+		<wsdl:part name="body" element="act:simDealerValidationRequest" />
+	</wsdl:message>
+	<wsdl:message name="simDealerValidationResponse">
+		<wsdl:part name="body" element="act:simDealerValidationResponse" />
+	</wsdl:message>
+	<!-- End of SimDealerValidation -->
+		
+	<!-- Chnages merging from OCS,ADR and Service Management -->
+	<wsdl:message name="getChargeInfoRequest">
+		<wsdl:part name="body" element="act:getChargeInfoRequest" />
+	</wsdl:message>
+	<wsdl:message name="getChargeInfoResponse">
+		<wsdl:part name="body" element="act:getChargeInfoResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="simSwapCrdtRptUpdtRequest">
+		<wsdl:part name="body" element="act:simSwapCrdtRptUpdtRequest" />
+	</wsdl:message>
+	<wsdl:message name="simSwapCrdtRptUpdtResponse">
+		<wsdl:part name="body" element="act:simSwapCrdtRptUpdtResponse" />
+	</wsdl:message>	
+        
+        <wsdl:message name="manageProvsngRetryRequest">
+		<wsdl:part name="body" element="act:manageProvsngRetryRequest" />
+	</wsdl:message>
+	<wsdl:message name="manageProvsngRetryResponse">
+		<wsdl:part name="body" element="act:manageProvsngRetryResponse" />
+	</wsdl:message>
+	<!-- End of Merging -->
+	
+	<wsdl:message name="updatePostpaidAcctDetRequest">
+		<wsdl:part name="body" element="act:updatePostpaidAcctDetRequest" />
+	</wsdl:message>
+	<wsdl:message name="updatePostpaidAcctDetResponse">
+		<wsdl:part name="body" element="act:updatePostpaidAcctDetResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getLocationAssoMsisdnRequest">
+		<wsdl:part name="body" element="act:getLocationAssoMsisdnRequest" />
+	</wsdl:message>
+	<wsdl:message name="getLocationAssoMsisdnResponse">
+		<wsdl:part name="body" element="act:getLocationAssoMsisdnResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="activateSubscriberRequest">
+		<wsdl:part name="body" element="act:activateSubscriberRequest" />
+	</wsdl:message>
+	<wsdl:message name="activateSubscriberResponse">
+		<wsdl:part name="body" element="act:activateSubscriberResponse" />
+	</wsdl:message>
+	<wsdl:message name="forceRenewalRequest">
+		<wsdl:part name="body" element="act:forceRenewalRequest" />
+	</wsdl:message>
+	<wsdl:message name="forceRenewalResponse">
+		<wsdl:part name="body" element="act:forceRenewalResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="MDNbasedGetNwIdRequest">
+		<wsdl:part name="body" element="act:MDNbasedGetNwIdRequest" />
+	</wsdl:message>
+	<wsdl:message name="MDNbasedGetNwIdResponse">
+		<wsdl:part name="body" element="act:MDNbasedGetNwIdResponse" />
+	</wsdl:message>
+	
+		<!-- HLRIntegration -->
+		<wsdl:message name="HLRIntegrationRequest">
+		<wsdl:part name="body" element="act:HLRIntegrationRequest" />
+	</wsdl:message>
+	<wsdl:message name="HLRIntegrationResponse">
+		<wsdl:part name="body" element="act:HLRIntegrationResponse" />
+	</wsdl:message>
+	<!-- End of HLRIntegration -->
+	
+	<!-- HLRIntegrationUpdate-->
+		<wsdl:message name="HLRIntegrationUpdateRequest">
+		<wsdl:part name="body" element="act:HLRIntegrationUpdateRequest" />
+	</wsdl:message>
+	<wsdl:message name="HLRIntegrationUpdateResponse">
+		<wsdl:part name="body" element="act:HLRIntegrationUpdateResponse" />
+	</wsdl:message>
+	<!-- End of HLRIntegration -->
+	
+	<!-- Registration SimSwapRequest  -->
+	
+	<wsdl:message name="regSimSwapRequest">
+		<wsdl:part name="body" element="act:regSimSwapRequest" />
+	</wsdl:message>
+	<wsdl:message name="regSimSwapResponse">
+		<wsdl:part name="body" element="act:regSimSwapResponse" />
+	</wsdl:message>
+	
+	<!-- getTechnologyRequest -->
+	<wsdl:message name="getTechnologyRequest">
+		<wsdl:part name="body" element="act:getTechnologyRequest" />
+	</wsdl:message>
+	<wsdl:message name="getTechnologyResponse">
+		<wsdl:part name="body" element="act:getTechnologyResponse" />
+	</wsdl:message>
+	
+	
+	<!-- UpdateSubscriberCategory -->
+	<wsdl:message name="updateSubscriberCategoryRequest">
+		<wsdl:part name="body" element="act:updateSubscriberCategoryRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateSubscriberCategoryResponse">
+		<wsdl:part name="body" element="act:updateSubscriberCategoryResponse" />
+	</wsdl:message>
+	<!-- End Update SubscriberCategory -->
+	
+	
+	<!-- TroubleTicket  -->
+	
+	<wsdl:message name="updateTroubleTktRequest">
+		<wsdl:part name="body" element="act:updateTroubleTktRequest" />
+	</wsdl:message>
+	<wsdl:message name="updateTroubleTktResponse">
+		<wsdl:part name="body" element="act:updateTroubleTktResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getTroubleTktStatusRequest">
+		<wsdl:part name="body" element="act:getTroubleTktStatusRequest" />
+	</wsdl:message>
+	<wsdl:message name="getTroubleTktStatusResponse">
+		<wsdl:part name="body" element="act:getTroubleTktStatusResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getTroubleTktHistoryRequest">
+		<wsdl:part name="body" element="act:getTroubleTktHistoryRequest" />
+	</wsdl:message>
+	<wsdl:message name="getTroubleTktHistoryResponse">
+		<wsdl:part name="body" element="act:getTroubleTktHistoryResponse" />
+	</wsdl:message>
+	
+	<!-- Roaming Service Status Update -->
+	<wsdl:message name="roamingServiceStatusUpdateRequest">
+		<wsdl:part name="body" element="act:roamingServiceStatusUpdateRequest" />
+	</wsdl:message>
+	<wsdl:message name="roamingServiceStatusUpdateResponse">
+		<wsdl:part name="body" element="act:roamingServiceStatusUpdateResponse" />
+	</wsdl:message>
+	<!-- End Of Roaming Service Status Update -->
+	
+	<!-- GetAccountDates -->
+	<wsdl:message name="getAccountDatesRequest">
+		<wsdl:part name="body" element="act:getAccountDatesRequest" />
+	</wsdl:message>
+	<wsdl:message name="getAccountDatesResponse">
+		<wsdl:part name="body" element="act:getAccountDatesResponse" />
+	</wsdl:message>
+	<!-- End Of GetAccountDates -->
+	
+	<!-- GetAccountAllDates -->
+	<wsdl:message name="getAccountAllDatesRequest">
+		<wsdl:part name="body" element="act:getAccountAllDatesRequest" />
+	</wsdl:message>
+	<wsdl:message name="getAccountAllDatesResponse">
+		<wsdl:part name="body" element="act:getAccountAllDatesResponse" />
+	</wsdl:message>
+	<!-- End Of GetAccountAllDates -->
+	
+	<wsdl:message name="getcategoryIDRequest">
+		<wsdl:part name="body" element="act:getcategoryIDRequest" />
+	</wsdl:message>
+	<wsdl:message name="getcategoryIDResponse">
+		<wsdl:part name="body" element="act:getcategoryIDResponse" />
+	</wsdl:message>
+	<wsdl:message name="getForceRenDetailsRequest">
+		<wsdl:part name="body" element="act:getForceRenDetailsRequest" />
+	</wsdl:message>
+	<wsdl:message name="getForceRenDetailsResponse">
+		<wsdl:part name="body" element="act:getForceRenDetailsResponse" />
+	</wsdl:message>
+	
+	
+	<!-- GetPathInfo  -->
+	<wsdl:message name="getPathInfoRequest">
+		<wsdl:part name="body" element="act:getPathInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getPathInfoResponse">
+		<wsdl:part name="body" element="act:getPathInfoResponse"/>
+	</wsdl:message>	
+	<!-- end of GetPathInfo  -->
+	
+	
+	<!-- managePathInfo  -->
+	<wsdl:message name="managePathInfoRequest">
+		<wsdl:part name="body" element="act:managePathInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="managePathInfoResponse">
+		<wsdl:part name="body" element="act:managePathInfoResponse"/>
+	</wsdl:message>	
+	<!-- end of managePathInfo  -->
+	
+	<!-- ValidateID -->
+	<wsdl:message name="validateIDRequest">
+		<wsdl:part name="body" element="act:validateIDRequest" />
+	</wsdl:message>
+	<wsdl:message name="validateIDResponse">
+		<wsdl:part name="body" element="act:validateIDResponse" />
+	</wsdl:message>
+	<!-- ValidateID -->
+	<wsdl:message name="TeleVerificationRequest">
+		<wsdl:part name="body" element="act:TeleVerificationRequest" />
+	</wsdl:message>
+	<wsdl:message name="TeleVerificationResponse">
+		<wsdl:part name="body" element="act:TeleVerificationResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="validateCorpMSISDNVoucherRequest">
+		<wsdl:part name="body" element="act:validateCorpMSISDNVoucherRequest" />
+	</wsdl:message>
+	<wsdl:message name="validateCorpMSISDNVoucherResponse">
+		<wsdl:part name="body" element="act:validateCorpMSISDNVoucherResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="accountVsBANMappingRequest">
+		<wsdl:part name="body" element="act:accountVsBANMappingRequest" />
+	</wsdl:message>
+	<wsdl:message name="accountVsBANMappingResponse">
+		<wsdl:part name="body" element="act:accountVsBANMappingResponse" />
+	</wsdl:message>
+
+<wsdl:message name="publicityIdHLRcodeGetRequest">
+		<wsdl:part name="body" element="act:publicityIdHLRcodeGetRequest" />
+	</wsdl:message>
+	<wsdl:message name="publicityIdHLRcodeGetResponse">
+		<wsdl:part name="body" element="act:publicityIdHLRcodeGetResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="bascDrvdIdHLRcodeGetRequest">
+		<wsdl:part name="body" element="act:bascDrvdIdHLRcodeGetRequest" />
+	</wsdl:message>
+	<wsdl:message name="bascDrvdIdHLRcodeGetResponse">
+		<wsdl:part name="body" element="act:bascDrvdIdHLRcodeGetResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="ttsaUpdateRequest">
+		<wsdl:part name="body" element="act:ttsaUpdateRequest" />
+	</wsdl:message>
+	<wsdl:message name="ttsaUpdateResponse">
+		<wsdl:part name="body" element="act:ttsaUpdateResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="bascDrvdIdHLRUpdateRequest">
+		<wsdl:part name="body" element="act:bascDrvdIdHLRUpdateRequest" />
+	</wsdl:message>
+	<wsdl:message name="bascDrvdIdHLRUpdateResponse">
+		<wsdl:part name="body" element="act:bascDrvdIdHLRUpdateResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getTTPCRFintimateDtlsRequest">
+		<wsdl:part name="body" element="act:getTTPCRFintimateDtlsRequest" />
+	</wsdl:message>
+	<wsdl:message name="getTTPCRFintimateDtlsResponse">
+		<wsdl:part name="body" element="act:getTTPCRFintimateDtlsResponse" />
+	</wsdl:message>
+	
+	
+	<wsdl:message name="TTPCRFUpdateRequest">
+		<wsdl:part name="body" element="act:TTPCRFUpdateRequest" />
+	</wsdl:message>
+	<wsdl:message name="TTPCRFUpdateResponse">
+		<wsdl:part name="body" element="act:TTPCRFUpdateResponse" />
+	</wsdl:message>
+	
+	
+	<wsdl:message name="corpTpProdGetUpdateRequest">
+		<wsdl:part name="body" element="act:corpTpProdGetUpdateRequest" />
+	</wsdl:message>
+	<wsdl:message name="corpTpProdGetUpdateResponse">
+		<wsdl:part name="body" element="act:corpTpProdGetUpdateResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="accountProductIdMapRequest">
+		<wsdl:part name="body" element="act:accountProductIdMapRequest" />
+	</wsdl:message>
+	<wsdl:message name="accountProductIdMapResponse">
+		<wsdl:part name="body" element="act:accountProductIdMapResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="SIMActivateRequest">
+		<wsdl:part name="body" element="act:SIMActivateRequest" />
+	</wsdl:message>
+	<wsdl:message name="SIMActivateResponse">
+		<wsdl:part name="body" element="act:SIMActivateResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="getFreeMsisdnRequest">
+		<wsdl:part name="body" element="act:getFreeMsisdnRequest" />
+	</wsdl:message>
+	<wsdl:message name="getFreeMsisdnResponse">
+		<wsdl:part name="body" element="act:getFreeMsisdnResponse" />
+	</wsdl:message>
+	<wsdl:message name="getDtlsForRegistrationRequest">
+		<wsdl:part name="body" element="act:getDtlsForRegistrationRequest" />
+	</wsdl:message>
+	<wsdl:message name="getDtlsForRegistrationResponse">
+		<wsdl:part name="body" element="act:getDtlsForRegistrationResponse" />
+	</wsdl:message>
+	<wsdl:message name="getTripletDtlsForRegRequest">
+		<wsdl:part name="body" element="act:getTripletDtlsForRegRequest" />
+	</wsdl:message>
+	<wsdl:message name="getTripletDtlsForRegResponse">
+		<wsdl:part name="body" element="act:getTripletDtlsForRegResponse" />
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader" />
+	</wsdl:message>
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem" />
+	</wsdl:message>
+	
+<!-- ================================================================== Message Definition Ends here ============================== -->
+	
+<!-- ================================================================== PORT TYPE Definition starts here ============================== -->	
+
+
+
+
+	<wsdl:portType name="AccountManagementPortType">
+	
+	<wsdl:operation name="managePostPaidGrp">
+			<wsdl:input message="tns:managePostPaidGrpRequest"/>
+			<wsdl:output message="tns:managePostPaidGrpResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+	
+	<wsdl:operation name="getTechnology">
+			<wsdl:input message="tns:getTechnologyRequest"/>
+			<wsdl:output message="tns:getTechnologyResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="validateSim">
+			<wsdl:input message="tns:validateSimRequest"/>
+			<wsdl:output message="tns:validateSimResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<!-- validateMSISDN  -->
+		<wsdl:operation name="validateMSISDN">
+			<wsdl:input message="tns:validateMSISDNRequest"/>
+			<wsdl:output message="tns:validateMSISDNResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of validateMSISDN  -->
+		
+		<wsdl:operation name="reActivateMSISDN">
+			<wsdl:input message="tns:reActivateMSISDNRequest"/>
+			<wsdl:output message="tns:reActivateMSISDNResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- getAccount  --><!--Commented for TT_OCS by sampath to use the same request at selfcareagent
+		--><!--<wsdl:operation name="getAccount">
+			<wsdl:input message="tns:getAccountRequest"/>
+			<wsdl:output message="tns:getAccountResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		--><!-- End of getAccount  -->
+		<!-- getCreditProfiles  -->
+		<wsdl:operation name="getCreditProfiles">
+			<wsdl:input message="tns:getCreditProfilesRequest"/>
+			<wsdl:output message="tns:getCreditProfilesResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of getCreditProfiles  -->
+		<wsdl:operation name="updateBillingType">
+			<wsdl:input message="tns:updateBillingTypeRequest"/>
+			<wsdl:output message="tns:updateBillingTypeResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<!-- viewTroubleTkts  -->
+		<wsdl:operation name="viewTroubleTkts">
+			<wsdl:input message="tns:viewTroubleTktsRequest"/>
+			<wsdl:output message="tns:viewTroubleTktsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of viewTroubleTkts  -->
+		
+		<!-- manageTroubleTkts  -->
+		<wsdl:operation name="manageTroubleTkts">
+			<wsdl:input message="tns:manageTroubleTktsRequest"/>
+			<wsdl:output message="tns:manageTroubleTktsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of manageTroubleTkts  -->
+		
+		<!-- getTroubleTktsPreInfo  -->
+		<wsdl:operation name="getTroubleTktsPreInfo">
+			<wsdl:input message="tns:trblTktsPreInfoRequest"/>
+			<wsdl:output message="tns:trblTktsPreInfoResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of getTroubleTktsPreInfo  -->
+			
+		<wsdl:operation name="changeMSISDNs">
+			<wsdl:input message="tns:changeMSISDNsRequest"/>
+			<wsdl:output message="tns:changeMSISDNsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+	
+
+		<wsdl:operation name="simRegistration">
+			<wsdl:input message="tns:SIMRegistrationRequest"/>
+			<wsdl:output message="tns:SIMRegistrationResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="updateActData">
+			<wsdl:input message="tns:updateActDataRequest" />
+			<wsdl:output message="tns:updateActDataResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+				
+		<wsdl:operation name="updateActStatus">
+			<wsdl:input message="tns:updateActStatusRequest" />
+			<wsdl:output message="tns:updateActStatusResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+				
+		<wsdl:operation name="changeMSISDN">
+			<wsdl:input message="tns:changeMSISDNRequest" />
+			<wsdl:output message="tns:changeMSISDNResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="swapSIM">
+			<wsdl:input message="tns:SIMSwapRequest" />
+			<wsdl:output message="tns:SIMSwapResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="changeIMSI">
+			<wsdl:input message="tns:changeIMSIRequest" />
+			<wsdl:output message="tns:changeIMSIResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="changeIMSIPreInfo">
+			<wsdl:input message="tns:changeIMSIPreInfoRequest" />
+			<wsdl:output message="tns:changeIMSIPreInfoResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="deActivateAccount">
+			<wsdl:input message="tns:deActivateAccountRequest" />
+			<wsdl:output message="tns:deActivateAccountResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="changeMSISDNPreInfo">
+			<wsdl:input message="tns:chngMSISDNPreInfoRequest" />
+			<wsdl:output message="tns:chngMSISDNPreInfoResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getMSISDNInfo">
+			<wsdl:input message="tns:getMSISDNInfoRequest" />
+			<wsdl:output message="tns:getMSISDNInfoResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="subGroupChangePreInfo">
+			<wsdl:input message="tns:subGroupChangePreInfoRequest" />
+			<wsdl:output message="tns:subGroupChangePreInfoResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="subGroupChange">
+			<wsdl:input message="tns:subGroupChangeRequest" />
+			<wsdl:output message="tns:subGroupChangeResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="manageAdditionalServices">
+			<wsdl:input message="tns:manageAdditionalServicesRequest" />
+			<wsdl:output message="tns:manageAdditionalServicesResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="getAdditionalServices">
+			<wsdl:input message="tns:getAdditionalServicesRequest" />
+			<wsdl:output message="tns:getAdditionalServicesResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="convertAccountType">
+			<wsdl:input message="tns:convertAccountTypeRequest" />
+			<wsdl:output message="tns:convertAccountTypeResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getPostpaidAcctDet">
+			<wsdl:input message="tns:getPostpaidAcctDetRequest" />
+			<wsdl:output message="tns:getPostpaidAcctDetResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="updateCreditLimit">
+			<wsdl:input message="tns:updateCreditLimitRequest" />
+			<wsdl:output message="tns:updateCreditLimitResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="validateUserAPI">
+			<wsdl:input message="tns:validateUserAPIRequest" />
+			<wsdl:output message="tns:validateUserAPIResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="manageProvsngRetry">
+			<wsdl:input message="tns:manageProvsngRetryRequest" />
+			<wsdl:output message="tns:manageProvsngRetryResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="getAndBlockMSISDN">
+			<wsdl:input message="tns:getAndBlockMSISDNRequest" />
+			<wsdl:output message="tns:getAndBlockMSISDNResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		 <!-- changeSimMdnAudit -->
+	    <wsdl:operation name="changeSimMdnAudit">
+ 			<wsdl:input message="tns:changeSimMdnAuditRequest" />
+ 			<wsdl:output message="tns:changeSimMdnAuditResponse" />
+   			<wsdl:fault name="fault" message="tns:faultMessage" />
+   		</wsdl:operation>
+   		<!-- End of changeSimMdnAudit -->
+   		
+   		<!-- simDealerValidation -->
+	    <wsdl:operation name="simDealerValidation">
+ 			<wsdl:input message="tns:simDealerValidationRequest" />
+ 			<wsdl:output message="tns:simDealerValidationResponse" />
+   			<wsdl:fault name="fault" message="tns:faultMessage" />
+   		</wsdl:operation>
+   		<!-- End of simDealerValidation -->
+   		
+   		<!-- Chnages merging from OCS,ADR and Service Management -->
+   		<!-- getChargeInfo  -->
+		<wsdl:operation name="getChargeInfo">
+			<wsdl:input message="tns:getChargeInfoRequest"/>
+			<wsdl:output message="tns:getChargeInfoResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of getChargeInfo  -->
+		
+		<!-- simSwapCrdtRptUpdt  -->
+		<wsdl:operation name="simSwapCrdtRptUpdt">
+			<wsdl:input message="tns:simSwapCrdtRptUpdtRequest"/>
+			<wsdl:output message="tns:simSwapCrdtRptUpdtResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of simSwapCrdtRptUpdt  -->
+		
+		<wsdl:operation name="updatePostpaidAcctDet">
+			<wsdl:input message="tns:updatePostpaidAcctDetRequest" />
+			<wsdl:output message="tns:updatePostpaidAcctDetResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!-- End of Merging -->
+		
+		<wsdl:operation name="getLocationAssoMsisdn">
+			<wsdl:input message="tns:getLocationAssoMsisdnRequest" />
+			<wsdl:output message="tns:getLocationAssoMsisdnResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="activateSubscriber">
+			<wsdl:input message="tns:activateSubscriberRequest" />
+			<wsdl:output message="tns:activateSubscriberResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="forceRenewal">
+			<wsdl:input message="tns:forceRenewalRequest" />
+			<wsdl:output message="tns:forceRenewalResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+			<!-- HLRIntegration -->
+		<wsdl:operation name="HLRIntegration">
+			<wsdl:input message="tns:HLRIntegrationRequest" />
+			<wsdl:output message="tns:HLRIntegrationResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!--  end of HLRIntegration -->
+		
+	<!-- 	HLRIntegrationUpdate   -->
+	<wsdl:operation name="HLRIntegrationUpdate">
+			<wsdl:input message="tns:HLRIntegrationUpdateRequest" />
+			<wsdl:output message="tns:HLRIntegrationUpdateResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!--  end of HLRIntegrationUpdate -->
+			<wsdl:operation name="MDNbasedGetNwId">
+			<wsdl:input message="tns:MDNbasedGetNwIdRequest" />
+			<wsdl:output message="tns:MDNbasedGetNwIdResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+			<wsdl:operation name="regSimSwap">
+			<wsdl:input message="tns:regSimSwapRequest" />
+			<wsdl:output message="tns:regSimSwapResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<!--  trouble tickets -->
+		
+		<wsdl:operation name="updateTroubleTkt">
+			<wsdl:input message="tns:updateTroubleTktRequest" />
+			<wsdl:output message="tns:updateTroubleTktResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		
+		<!--  UpdateSubscriber Category -->
+		<wsdl:operation name="updateSubscriberCategory">
+			<wsdl:input message="tns:updateSubscriberCategoryRequest" />
+			<wsdl:output message="tns:updateSubscriberCategoryResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		
+		
+		
+		<wsdl:operation name="getTroubleTktStatus">
+			<wsdl:input message="tns:getTroubleTktStatusRequest" />
+			<wsdl:output message="tns:getTroubleTktStatusResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTroubleTktHistory">
+			<wsdl:input message="tns:getTroubleTktHistoryRequest" />
+			<wsdl:output message="tns:getTroubleTktHistoryResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<!-- Roaming Service Status Update  -->
+		<wsdl:operation name="roamingServiceStatusUpdate">
+			<wsdl:input message="tns:roamingServiceStatusUpdateRequest"/>
+			<wsdl:output message="tns:roamingServiceStatusUpdateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of Roaming Service Status Update  -->
+		
+		
+		<!-- getAccountDates  -->
+		<wsdl:operation name="getAccountDates">
+			<wsdl:input message="tns:getAccountDatesRequest"/>
+			<wsdl:output message="tns:getAccountDatesResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of getAccountDates  -->
+		
+		<!-- getAccountAllDates  -->
+		<wsdl:operation name="getAccountAllDates">
+			<wsdl:input message="tns:getAccountAllDatesRequest"/>
+			<wsdl:output message="tns:getAccountAllDatesResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of getAccountAllDates  -->
+		
+		
+		<!-- Added By Sambasiva Rao Aakula -->
+		
+		<!-- getForceRenDetails  -->
+		<wsdl:operation name="getForceRenDetails">
+			<wsdl:input message="tns:getForceRenDetailsRequest"/>
+			<wsdl:output message="tns:getForceRenDetailsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of getForceRenDetails  -->
+		
+		
+		<wsdl:operation name="getcategoryID">
+			<wsdl:input message="tns:getcategoryIDRequest"/>
+			<wsdl:output message="tns:getcategoryIDResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<!-- managePathInfo  -->
+		<wsdl:operation name="managePathInfo">
+			<wsdl:input message="tns:managePathInfoRequest"/>
+			<wsdl:output message="tns:managePathInfoResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of managePathInfo  -->
+	
+		<!-- GetPathInfo  -->
+		<wsdl:operation name="getPathInfo">
+			<wsdl:input message="tns:getPathInfoRequest"/>
+			<wsdl:output message="tns:getPathInfoResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of GetPathInfo  -->
+		
+			<!-- validateID  -->
+		<wsdl:operation name="validateID">
+			<wsdl:input message="tns:validateIDRequest"/>
+			<wsdl:output message="tns:validateIDResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of validateID  -->
+		
+		<wsdl:operation name="TeleVerification">
+			<wsdl:input message="tns:TeleVerificationRequest"/>
+			<wsdl:output message="tns:TeleVerificationResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="validateCorpMSISDNVoucher">
+			<wsdl:input message="tns:validateCorpMSISDNVoucherRequest"/>
+			<wsdl:output message="tns:validateCorpMSISDNVoucherResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>		
+		
+		<!-- accountVsBANMapping  -->
+		<wsdl:operation name="accountVsBANMapping">
+			<wsdl:input message="tns:accountVsBANMappingRequest"/>
+			<wsdl:output message="tns:accountVsBANMappingResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<!-- End of accountVsBANMapping  -->
+		
+		<wsdl:operation name="publicityIdHLRcodeGet">
+			<wsdl:input message="tns:publicityIdHLRcodeGetRequest"/>
+			<wsdl:output message="tns:publicityIdHLRcodeGetResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="ttsaUpdate">
+			<wsdl:input message="tns:ttsaUpdateRequest"/>
+			<wsdl:output message="tns:ttsaUpdateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="bascDrvdIdHLRcodeGet">
+			<wsdl:input message="tns:bascDrvdIdHLRcodeGetRequest"/>
+			<wsdl:output message="tns:bascDrvdIdHLRcodeGetResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="bascDrvdIdHLRUpdate">
+			<wsdl:input message="tns:bascDrvdIdHLRUpdateRequest"/>
+			<wsdl:output message="tns:bascDrvdIdHLRUpdateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="getTTPCRFintimateDtls">
+			<wsdl:input message="tns:getTTPCRFintimateDtlsRequest"/>
+			<wsdl:output message="tns:getTTPCRFintimateDtlsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="TTPCRFUpdate">
+			<wsdl:input message="tns:TTPCRFUpdateRequest"/>
+			<wsdl:output message="tns:TTPCRFUpdateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="corpTpProdGetUpdate">
+			<wsdl:input message="tns:corpTpProdGetUpdateRequest"/>
+			<wsdl:output message="tns:corpTpProdGetUpdateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="accountProductIdMap">
+			<wsdl:input message="tns:accountProductIdMapRequest"/>
+			<wsdl:output message="tns:accountProductIdMapResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+							
+		<wsdl:operation name="SIMActivate">
+			<wsdl:input message="tns:SIMActivateRequest"/>
+			<wsdl:output message="tns:SIMActivateResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getFreeMsisdn">
+			<wsdl:input message="tns:getFreeMsisdnRequest"/>
+			<wsdl:output message="tns:getFreeMsisdnResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getDtlsForRegistration">
+			<wsdl:input message="tns:getDtlsForRegistrationRequest"/>
+			<wsdl:output message="tns:getDtlsForRegistrationResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTripletDtlsForReg">
+			<wsdl:input message="tns:getTripletDtlsForRegRequest"/>
+			<wsdl:output message="tns:getTripletDtlsForRegResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+	</wsdl:portType>
+	
+<!-- ================================================================== PORT TYPE Definitions Ends here ============================== -->	
+
+<!-- ================================================================== OPERATION Definitions Start here ============================== -->	
+	<wsdl:binding name="AccountManagementBinding"
+		type="tns:AccountManagementPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+	
+
+	<wsdl:operation name="managePostPaidGrp">
+			<soap:operation soapAction="managePostPaidGrp"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="getTechnology">
+			<soap:operation soapAction="getTechnology"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<!-- getForceRenDetails -->
+		
+			<wsdl:operation name="getForceRenDetails">
+			<soap:operation soapAction="getForceRenDetails"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		<!--End Of  getForceRenDetails -->
+		
+		<wsdl:operation name="reActivateMSISDN">
+			<soap:operation soapAction="reActivateMSISDN"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<!--  getCreditProfiles -->
+		<wsdl:operation name="getCreditProfiles">
+			<soap:operation soapAction="getCreditProfiles"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getCreditProfiles -->	
+			
+		<!--  validateMSISDN -->
+		<wsdl:operation name="validateMSISDN">
+			<soap:operation soapAction="validateMSISDN"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of validateMSISDN -->	
+		<wsdl:operation name="updateBillingType">
+			<soap:operation soapAction="updateBillingType"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+			
+		<!--  viewTroubleTkts -->
+		<wsdl:operation name="viewTroubleTkts">
+			<soap:operation soapAction="viewTroubleTkts"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of manageTroubleTkts -->		
+			
+		<!--  manageTroubleTkts -->
+		<wsdl:operation name="manageTroubleTkts">
+			<soap:operation soapAction="manageTroubleTkts"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of manageTroubleTkts -->	
+			
+		<!--  getTroubleTktsPreInfo -->
+		<wsdl:operation name="getTroubleTktsPreInfo">
+			<soap:operation soapAction="getTroubleTktsPreInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getTroubleTktsPreInfo -->
+			
+		<!--  change msisdn for port in accept-->
+		<wsdl:operation name="changeMSISDNs">
+			<soap:operation soapAction="changeMSISDNs"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+			
+		<wsdl:operation name="simRegistration">
+			<soap:operation soapAction="simRegistration"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>		
+			
+		<wsdl:operation name="updateActData">
+			<soap:operation soapAction="updateActData" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="updateActStatus">
+			<soap:operation soapAction="updateActStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="changeMSISDN">
+			<soap:operation soapAction="changeMSISDN" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="swapSIM">
+			<soap:operation soapAction="swapSIM" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>			
+
+		<wsdl:operation name="changeIMSI">
+			<soap:operation soapAction="changeIMSI" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>	
+		
+		<wsdl:operation name="changeIMSIPreInfo">
+			<soap:operation soapAction="changeIMSIPreInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="deActivateAccount">
+			<soap:operation soapAction="deActivateAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>	
+		
+		<wsdl:operation name="changeMSISDNPreInfo">
+			<soap:operation soapAction="changeMSISDNPreInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+			
+		<wsdl:operation name="getMSISDNInfo">
+			<soap:operation soapAction="getMSISDNInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="subGroupChangePreInfo">
+			<soap:operation soapAction="subGroupChangePreInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="subGroupChange">
+			<soap:operation soapAction="subGroupChange" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageAdditionalServices">
+			<soap:operation soapAction="manageAdditionalServices" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getAdditionalServices">
+			<soap:operation soapAction="getAdditionalServices" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="convertAccountType">
+			<soap:operation soapAction="convertAccountType" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getPostpaidAcctDet">
+			<soap:operation soapAction="getPostpaidAcctDet" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="updateCreditLimit">
+			<soap:operation soapAction="updateCreditLimit" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="validateUserAPI">
+			<soap:operation soapAction="validateUserAPI" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getAndBlockMSISDN">
+			<soap:operation soapAction="getAndBlockMSISDN" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<!-- changeSimMdnAudit -->
+		<wsdl:operation name="changeSimMdnAudit">
+			<soap:operation soapAction="changeSimMdnAudit" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of changeSimMdnAudit -->
+		<!-- added by sampath for REQ#1630 simDealerValidation -->
+		<wsdl:operation name="simDealerValidation">
+			<soap:operation soapAction="simDealerValidation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of simDealerValidation -->
+		<!-- Chnages merging from OCS,ADR and Service Management -->
+		<!--  validateID -->
+		<wsdl:operation name="getChargeInfo">
+			<soap:operation soapAction="getChargeInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of validateID -->	
+		
+		<!--  simSwapCrdtRptUpdt -->
+		<wsdl:operation name="simSwapCrdtRptUpdt">
+			<soap:operation soapAction="simSwapCrdtRptUpdt"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of simSwapCrdtRptUpdt -->
+                <!--  getAccount --><!--Commented for TT_OCS by sampath to use the same request at selfcareagent
+		--><!--<wsdl:operation name="getAccount">
+			<soap:operation soapAction="getAccount"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		--><!--  End of getAccount --> 
+                <wsdl:operation name="manageProvsngRetry">
+			<soap:operation soapAction="manageProvsngRetry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="updatePostpaidAcctDet">
+			<soap:operation soapAction="updatePostpaidAcctDet" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of Merging -->
+		
+		
+		<wsdl:operation name="getLocationAssoMsisdn">
+		<soap:operation soapAction="getLocationAssoMsisdn" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		
+		</wsdl:operation>
+		
+		<wsdl:operation name="activateSubscriber">
+			<soap:operation soapAction="activateSubscriber" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="forceRenewal">
+			<soap:operation soapAction="forceRenewal" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			<!-- HLRIntegration -->		
+		<wsdl:operation name="HLRIntegration">
+			<soap:operation soapAction="HLRIntegration" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of HLRIntegration -->
+		
+	<!-- HLRIntegrationUpdate  -->
+	<wsdl:operation name="HLRIntegrationUpdate">
+			<soap:operation soapAction="HLRIntegrationUpdate" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of HLRIntegrationUpdate -->
+		
+		<wsdl:operation name="MDNbasedGetNwId">
+			<soap:operation soapAction="MDNbasedGetNwId" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			<!-- regSimSwap -->
+		<wsdl:operation name="regSimSwap">
+			<soap:operation soapAction="regSimSwap" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<!--  Trouble Ticket -->
+		
+			<wsdl:operation name="updateTroubleTkt">
+			<soap:operation soapAction="updateTroubleTkt" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<!--  UpdateSubscriberCategory -->
+		
+			<wsdl:operation name="updateSubscriberCategory">
+			<soap:operation soapAction="updateSubscriberCategory" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="getTroubleTktStatus">
+			<soap:operation soapAction="getTroubleTktStatus" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+			
+		<wsdl:operation name="getTroubleTktHistory">
+			<soap:operation soapAction="getTroubleTktHistory" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="roamingServiceStatusUpdate">
+			<soap:operation soapAction="roamingServiceStatusUpdate" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="getAccountDates">
+			<soap:operation soapAction="getAccountDates" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getAccountAllDates">
+			<soap:operation soapAction="getAccountAllDates" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getcategoryID">
+			<soap:operation soapAction="getcategoryID" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			
+		<!--  managePathInfo -->
+		<wsdl:operation name="managePathInfo">
+			<soap:operation soapAction="managePathInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of managePathInfo -->
+		
+		<!--  getPathInfo -->
+		<wsdl:operation name="getPathInfo">
+			<soap:operation soapAction="getPathInfo"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of getPathInfo -->
+		
+			<!--  validateID -->
+		<wsdl:operation name="validateID">
+			<soap:operation soapAction="validateID"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<!--  End of validateID -->	
+			<wsdl:operation name="TeleVerification">
+			<soap:operation soapAction="TeleVerification"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="validateCorpMSISDNVoucher">
+			<soap:operation soapAction="validateCorpMSISDNVoucher"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>		
+		
+		<wsdl:operation name="accountVsBANMapping">
+			<soap:operation soapAction="accountVsBANMapping"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="publicityIdHLRcodeGet">
+			<soap:operation soapAction="publicityIdHLRcodeGet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="ttsaUpdate">
+			<soap:operation soapAction="ttsaUpdate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="bascDrvdIdHLRcodeGet">
+			<soap:operation soapAction="bascDrvdIdHLRcodeGet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="bascDrvdIdHLRUpdate">
+			<soap:operation soapAction="bascDrvdIdHLRUpdate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="getTTPCRFintimateDtls">
+			<soap:operation soapAction="getTTPCRFintimateDtls"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		<wsdl:operation name="TTPCRFUpdate">
+			<soap:operation soapAction="TTPCRFUpdate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="corpTpProdGetUpdate">
+			<soap:operation soapAction="corpTpProdGetUpdate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="accountProductIdMap">
+			<soap:operation soapAction="accountProductIdMap"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		
+		
+		<wsdl:operation name="validateSim">
+			<soap:operation soapAction="validateSim"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	<!-- API for YOKKO SIM ACtivation flow -->	
+		<wsdl:operation name="SIMActivate">
+			<soap:operation soapAction="SIMActivate"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getFreeMsisdn">
+			<soap:operation soapAction="getFreeMsisdn"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getDtlsForRegistration">
+			<soap:operation soapAction="getDtlsForRegistration"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getTripletDtlsForReg">
+			<soap:operation soapAction="getTripletDtlsForReg"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>				
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+<!-- ================================================================== OPERATION Definitions Ends here ============================== -->	
+
+	<wsdl:service name="AccountService">
+		<wsdl:port name="AccountManagementPort"
+			binding="tns:AccountManagementBinding">
+			<soap:address
+				location="http://localhost:8080/infinet/services/v1/accountServices" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

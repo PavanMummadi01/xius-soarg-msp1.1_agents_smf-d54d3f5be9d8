@@ -1,0 +1,192 @@
+<!--
+	Requirement: REQ#727(get transaction details for TTCare) 
+	Usage	   : get the transaction details for the given transaction number
+	Author	   : 
+	Date	   : 03-03-2011	 
+-->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="insert_sub_trans_dtls_proc_api" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+		<property name="name"><value>sub_transdetailsupload_pkg.insert_sub_trans_dtls_proc_api</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="insert_sub_trans_dtls_proc_api_param_1"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_2"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_3"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_4"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_5"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_6"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_7"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_8"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_9"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_10"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_11"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_12"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_13"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_14"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_15"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_16"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_17"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_18"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_19"></ref>
+				<ref bean="insert_sub_trans_dtls_proc_api_param_20"></ref>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="insert_sub_trans_dtls_proc_api_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	
+	<bean id="insert_sub_trans_dtls_proc_api_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_icc_num_array</value></property>
+		<property name="mapTo"><value>pi_icc_num_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_id_no_array</value></property>
+		<property name="mapTo"><value>pi_id_no_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_id_type_array</value></property>
+		<property name="mapTo"><value>pi_id_type_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_first_name_array</value></property>
+		<property name="mapTo"><value>pi_first_name_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_last_name_array</value></property>
+		<property name="mapTo"><value>pi_last_name_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_first_address_array</value></property>
+		<property name="mapTo"><value>pi_first_address_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_second_address_array</value></property>
+		<property name="mapTo"><value>pi_second_address_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>8</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_postcode_array</value></property>
+		<property name="mapTo"><value>pi_postcode_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>9</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_city_array</value></property>
+		<property name="mapTo"><value>pi_city_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_state_array</value></property>
+		<property name="mapTo"><value>pi_state_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_country_array</value></property>
+		<property name="mapTo"><value>pi_country_array</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>12</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_gender</value></property>
+		<property name="mapTo"><value>pi_gender</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>13</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_date_of_birth</value></property>
+		<property name="mapTo"><value>pi_date_of_birth</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>14</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_user_id</value></property>
+		<property name="mapTo"><value>pi_user_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>15</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_16" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_name</value></property>
+		<property name="mapTo"><value>pi_network_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_17" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_user_type</value></property>
+		<property name="mapTo"><value>pi_user_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_18" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_trans_id</value></property>
+		<property name="mapTo"><value>po_trans_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>18</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_19" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>19</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="insert_sub_trans_dtls_proc_api_param_20" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>20</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+</beans>

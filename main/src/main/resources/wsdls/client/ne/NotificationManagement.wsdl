@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+ xmlns:tns="http://ne.xius.com/NotificationManagement.wsdl" 
+ xmlns:ne="http://ne.xius.com/NotificationManagement.xsd" 
+ xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+ xmlns:wshdr="http://ne.xius.com/common/header/HeaderDetails.xsd" 
+ xmlns:err="http://ne.xius.com/common/error/ErrorDetails.xsd" 
+ targetNamespace="http://ne.xius.com/NotificationManagement.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://ne.xius.com/NotificationManagement.wsdl" targetNamespace="http://ne.xius.com/NotificationManagement.wsdl">
+			<xs:import namespace="http://ne.xius.com/NotificationManagement.xsd" schemaLocation="NotificationManagement.xsd"/>
+			<xs:import namespace="http://ne.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://ne.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	
+	<!-- ping service -->
+	<wsdl:message name="pingServiceRequest">
+		<wsdl:part name="body" element="ne:pingServiceRequest" />
+	</wsdl:message>
+	<wsdl:message name="pingServiceResponse">
+		<wsdl:part name="body" element="ne:pingServiceResponse" />
+	</wsdl:message>
+	<!-- End of ping service -->
+	
+	<!-- ping service -->
+	<wsdl:message name="notifyMessageRequest">
+		<wsdl:part name="body" element="ne:notifyMessageRequest" />
+	</wsdl:message>
+	<wsdl:message name="notifyMessageResponse">
+		<wsdl:part name="body" element="ne:notifyMessageResponse" />
+	</wsdl:message>
+	<!-- End of ping service -->
+	
+	<wsdl:message name="WsMessageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>
+	<wsdl:message name="faultmessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="NotificationManagementPortType">
+	
+	<wsdl:operation name="pingService">
+			<wsdl:input message="tns:pingServiceRequest" />
+			<wsdl:output message="tns:pingServiceResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+		
+	<wsdl:operation name="notifyMessage">
+			<wsdl:input message="tns:notifyMessageRequest" />
+			<wsdl:output message="tns:notifyMessageResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+	
+		
+	</wsdl:portType>
+	
+	<wsdl:binding name="NotificationManagementBinding" type="tns:NotificationManagementPortType">
+	
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="pingService">
+			<soap:operation soapAction="pingService"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="notifyMessage">
+			<soap:operation soapAction="notifyMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+	
+	<wsdl:service name="NotificationManagementService">
+		<wsdl:port name="NotificationManagementPort" binding="tns:NotificationManagementBinding">
+			<soap:address location="http://192.168.149.179:9480/newebservices/services/NotificationManagementPort?wsdl"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

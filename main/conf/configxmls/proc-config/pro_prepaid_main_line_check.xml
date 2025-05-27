@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_get_schedule_cug_child_dtls -->
+	
+	<bean id="pro_prepaid_main_line_check" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pro_prepaid_main_line_check</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_prepaid_main_line_check_param_1"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_2"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_3"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_4"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_5"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_6"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_7"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_8"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_9"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_10"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_11"></ref>
+				<ref bean="pro_prepaid_main_line_check_param_12"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_main_line</value></property>
+			<property name="mapTo"><value>pi_main_line</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_sub_line</value></property>
+			<property name="mapTo"><value>pi_sub_line</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_account_type</value></property>
+			<property name="mapTo"><value>pi_account_type</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_id_value</value></property>
+			<property name="mapTo"><value>pi_id_value</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_orderid</value></property>
+			<property name="mapTo"><value>pi_orderid</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	  
+		<bean id="pro_prepaid_main_line_check_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_main_desired_msisdn</value></property>
+			<property name="mapTo"><value>po_main_desired_msisdn</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_sub_line_desired_msisdn</value></property>
+			<property name="mapTo"><value>po_sub_line_desired_msisdn</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	 
+	<bean id="pro_prepaid_main_line_check_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_main_line_error_code</value></property>
+			<property name="mapTo"><value>po_main_line_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_main_line_error_msg</value></property>
+			<property name="mapTo"><value>po_main_line_error_msg</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>10</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_sub_line_error_code</value></property>
+			<property name="mapTo"><value>po_sub_line_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_NUMB</value></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_prepaid_main_line_check_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_sub_line_error_msg</value></property>
+			<property name="mapTo"><value>po_sub_line_error_msg</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

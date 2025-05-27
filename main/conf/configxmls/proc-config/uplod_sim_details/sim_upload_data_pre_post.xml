@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="sim_upload_data_pre_post" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+		<property name="name"><value>clc_sim_bulkupload_pre_post.sim_upload</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="sim_upload_data_pre_post_param_1"></ref>
+				<ref bean="sim_upload_data_pre_post_param_2"></ref>
+				<ref bean="sim_upload_data_pre_post_param_3"></ref>
+				<ref bean="sim_upload_data_pre_post_param_4"></ref>
+				<ref bean="sim_upload_data_pre_post_param_5"></ref>
+				<ref bean="sim_upload_data_pre_post_param_6"></ref>
+			    <ref bean="sim_upload_data_pre_post_param_7"></ref>
+				<ref bean="sim_upload_data_pre_post_param_8"></ref>
+				<ref bean="sim_upload_data_pre_post_param_9"></ref>
+				<ref bean="sim_upload_data_pre_post_param_10"></ref>
+				<ref bean="sim_upload_data_pre_post_param_11"></ref>
+			    <ref bean="sim_upload_data_pre_post_param_12"></ref>
+				<ref bean="sim_upload_data_pre_post_param_13"></ref>
+				<ref bean="sim_upload_data_pre_post_param_14"></ref>
+				<ref bean="sim_upload_data_pre_post_param_15"></ref>
+				<ref bean="sim_upload_data_pre_post_param_16"></ref>
+				<ref bean="sim_upload_data_pre_post_param_17"></ref>
+				<ref bean="sim_upload_data_pre_post_param_18"></ref>
+				<ref bean="sim_upload_data_pre_post_param_19"></ref>
+				<ref bean="sim_upload_data_pre_post_param_20"></ref>
+				<ref bean="sim_upload_data_pre_post_param_21"></ref>
+				<ref bean="sim_upload_data_pre_post_param_22"></ref>
+				<ref bean="sim_upload_data_pre_post_param_23"></ref>
+				<ref bean="sim_upload_data_pre_post_param_24"></ref>
+				<ref bean="sim_upload_data_pre_post_param_25"></ref>
+				<ref bean="sim_upload_data_pre_post_param_26"></ref>
+				<ref bean="sim_upload_data_pre_post_param_27"></ref>
+				<ref bean="sim_upload_data_pre_post_param_28"></ref>
+				<ref bean="sim_upload_data_pre_post_param_29"></ref>
+				<ref bean="sim_upload_data_pre_post_param_30"></ref>
+				<ref bean="sim_upload_data_pre_post_param_31"></ref>
+				<ref bean="sim_upload_data_pre_post_param_32"></ref>
+		    	<ref bean="sim_upload_data_pre_post_param_33"></ref> 
+		    	<ref bean="sim_upload_data_pre_post_param_34"></ref>
+				<ref bean="sim_upload_data_pre_post_param_35"></ref>
+				<ref bean="sim_upload_data_pre_post_param_36"></ref>
+		  		<ref bean="sim_upload_data_pre_post_param_37"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_38"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_39"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_40"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_41"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_42"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_43"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_44"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_45"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_46"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_47"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_48"></ref> 
+		  		<ref bean="sim_upload_data_pre_post_param_49"></ref> 
+			</list>
+		</property>
+	</bean>
+	
+ 
+	 <bean id="sim_upload_data_pre_post_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_no</value></property>
+		<property name="mapTo"><value>pi_sim_no</value></property>
+	    <property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	
+	<bean id="sim_upload_data_pre_post_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_id_type</value></property>
+		<property name="mapTo"><value>pi_id_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_id_no</value></property>
+		<property name="mapTo"><value>pi_id_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_user_id</value></property>
+		<property name="mapTo"><value>pi_username</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_first_name</value></property>
+		<property name="mapTo"><value>pi_first_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_last_name</value></property>
+		<property name="mapTo"><value>pi_last_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sur_name</value></property>
+		<property name="mapTo"><value>pi_sur_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_date_of_birth</value></property>
+		<property name="mapTo"><value>pi_date_of_birth</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>8</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_account_type</value></property>
+		<property name="mapTo"><value>pi_account_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>9</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_credit_limit</value></property>
+		<property name="mapTo"><value>pi_credit_limit</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_bill_cycleday</value></property>
+		<property name="mapTo"><value>pi_bill_cycleday</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_municipoality</value></property>
+		<property name="mapTo"><value>pi_municipoality</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>12</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_street_limits</value></property>
+		<property name="mapTo"><value>pi_street_limits</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>13</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_gender</value></property>
+		<property name="mapTo"><value>pi_gender</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>14</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_street</value></property>
+		<property name="mapTo"><value>pi_street</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>15</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_16" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_colony</value></property>
+		<property name="mapTo"><value>pi_colony</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>16</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_17" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_country</value></property>
+		<property name="mapTo"><value>pi_country</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>17</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_18" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_state</value></property>
+		<property name="mapTo"><value>pi_state</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>18</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_19" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_city</value></property>
+		<property name="mapTo"><value>pi_city</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>19</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	 
+	<bean id="sim_upload_data_pre_post_param_20" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_postal_code</value></property>
+		<property name="mapTo"><value>pi_postal_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>20</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_21" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_email</value></property>
+		<property name="mapTo"><value>pi_email</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>21</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_22" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_alternate_contact_no</value></property>
+		<property name="mapTo"><value>pi_alternate_contact_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>22</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_23" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_tariff_package</value></property>
+		<property name="mapTo"><value>pi_tariff_package</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>23</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_24" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_tariff_package_id</value></property>
+		<property name="mapTo"><value>pi_tariff_package_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>24</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_25" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>25</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_26" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_user_input_field1</value></property>
+		<property name="mapTo"><value>pi_user_input_field1</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+	    <property name="position"><value>26</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_27" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_user_input_field2</value></property>
+		<property name="mapTo"><value>pi_user_input_field2</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>27</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_28" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_user_input_field3</value></property>
+		<property name="mapTo"><value>pi_user_input_field3</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>28</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_29" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_user_input_field4</value></property>
+		<property name="mapTo"><value>pi_user_input_field4</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>29</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_30" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_user_input_field5</value></property>
+		<property name="mapTo"><value>pi_user_input_field5</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>30</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_31" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_bill_type</value></property>
+		<property name="mapTo"><value>pi_bill_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>31</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_32" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_bill_frequency</value></property>
+		<property name="mapTo"><value>pi_bill_frequency</value></property>
+	    <property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>32</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	<bean id="sim_upload_data_pre_post_param_33" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_internal_number</value></property>
+		<property name="mapTo"><value>pi_internal_number</value></property>
+	    <property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>33</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>	
+	<bean id="sim_upload_data_pre_post_param_34" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_external_number</value></property>
+		<property name="mapTo"><value>pi_external_number</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>34</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_35" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_file_name</value></property>
+		<property name="mapTo"><value>pi_file_name</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>35</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_36" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_channel_id</value></property>
+		<property name="mapTo"><value>pi_channel_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>36</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_37" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_dealer_id</value></property>
+		<property name="mapTo"><value>pi_dealer_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>37</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_38" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_location_code</value></property>
+		<property name="mapTo"><value>pi_location_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_NUMB</value></property>
+		<property name="position"><value>38</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_39" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_personal_information_yn</value></property>
+		<property name="mapTo"><value>pi_personal_information_yn</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>39</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_40" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_office_code</value></property>
+		<property name="mapTo"><value>pi_office_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>40</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_41" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_is_corp_user_yn</value></property>
+		<property name="mapTo"><value>pi_is_corp</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>41</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_42" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_is_main_line</value></property>
+		<property name="mapTo"><value>pi_is_main_line</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>42</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_43" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_is_sub_line</value></property>
+		<property name="mapTo"><value>pi_is_sub_line</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>43</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_44" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_main_line_msisdn</value></property>
+		<property name="mapTo"><value>pi_main_line_msisdn</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>44</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_45" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_opt_grp_credit</value></property>
+		<property name="mapTo"><value>pi_opt_grp_credit</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>45</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="sim_upload_data_pre_post_param_46" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_opt_grp_bill</value></property>
+		<property name="mapTo"><value>pi_opt_grp_bill</value></property>
+		<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+		<property name="arrayName"><value>ARR_VARCHAR</value></property>
+		<property name="position"><value>46</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_47" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>po_trans_no</value></property>
+		<property name="mapTo"><value>po_trans_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>47</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="sim_upload_data_pre_post_param_48" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>48</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	<bean id="sim_upload_data_pre_post_param_49" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>49</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+	
+</beans>

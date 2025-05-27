@@ -1,0 +1,68 @@
+<xs:schema xmlns="http://tia.xius.com/WalletManagement.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tia.xius.com/WalletManagement.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<!--   ========================  WAllet Credit ================================================================================ -->
+	<xs:element name="CreditWalletRequest" type="creditWalletRequest" />
+	<xs:element name="CreditWalletResponse" type="creditWalletResponse" />
+	 
+	<xs:complexType name="creditWalletRequest">
+		<xs:sequence>
+			<xs:element name="walletID" type="xs:string" />
+			<xs:element name="transAmount" type="xs:string" />
+			 <xs:element name="tansID" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="creditWalletResponse">
+		<xs:sequence>
+			<xs:element name="responseData" type="ResponseDataType" minOccurs="0"/>		
+			<xs:element name="traceNumber" type="xs:string" minOccurs="0"/>			  
+			<xs:element name="tansID" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ResponseDataType">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:string" minOccurs="0" />
+			<xs:element name="responsecode" type="xs:string" minOccurs="0" />
+			<xs:element name="respdescription" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>	
+	<!--   ========================  End of WAllet Credit ================================================================================ -->
+	<!--   ========================  Start of WAllet Create ================================================================================ -->
+	<xs:element name="CreateWalletRequest" type="createWalletRequest" />
+	<xs:element name="CreateWalletResponse" type="createWalletResponse" />
+	
+	<xs:complexType name="createWalletRequest">
+		<xs:sequence>
+			<xs:element name="walletID" type="xs:string" />
+			<xs:element name="walletamount" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="createWalletResponse">
+		<xs:sequence>
+			<xs:element name="responseData" type="ResponseDataType" minOccurs="0"/>	
+			<xs:element name="transID" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!--   ========================  End of WAllet Create ================================================================================ -->
+	
+	
+	<!--   ========================  Start of get WAllet balance ================================================================================ -->
+	<xs:element name="GetBalanceRequest" type="getBalanceRequest" />
+	<xs:element name="GetBalanceResponse" type="getBalanceResponse" />
+	
+	<xs:complexType name="getBalanceRequest">
+		<xs:sequence>
+			<xs:element name="walletID" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="getBalanceResponse">
+		<xs:sequence>
+			<xs:element name="responseData" type="ResponseDataType" minOccurs="0"/>	
+			<xs:element name="balance" type="xs:decimal" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!--   ======================== End of get WAllet balance ================================================================================ -->
+</xs:schema>

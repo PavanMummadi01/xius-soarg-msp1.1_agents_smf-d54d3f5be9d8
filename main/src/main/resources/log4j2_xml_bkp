@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %t %p %m%n</Property>
+        <Property name="APP_LOG_ROOT">./log/</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true"
+         >
+          <PatternLayout pattern="${LOG_PATTERN}" /> 
+        </Console>
+ 
+        <RollingFile name="appLog"
+            fileName="${APP_LOG_ROOT}/SMF.log"
+            filePattern="${APP_LOG_ROOT}/SMFApplication-%d{yyyy-MM-dd'T'HH-mm-ss}-%i.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5" />
+        </RollingFile>
+ 
+    </Appenders>
+    <Loggers>
+    
+        <Logger name="com" level="debug" additivity="true">
+       </Logger>
+        <Logger name="net" level="debug" additivity="true">
+        </Logger>
+        <Root level="debug">
+             <AppenderRef ref="appLog" level="debug" />
+             <AppenderRef ref="appLog" level="error" />
+             <AppenderRef ref="Console" level="info" />
+        </Root>
+    </Loggers>
+</Configuration>

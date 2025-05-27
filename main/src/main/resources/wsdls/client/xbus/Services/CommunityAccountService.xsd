@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by xbus (xbus) -->
+<xs:schema
+	xmlns:tns="http://xbus.xius.com/messages/selfcare/communityaccountservice"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:comm="http://xbus.xius.com/messages/common"
+	targetNamespace="http://xbus.xius.com/messages/selfcare/communityaccountservice"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://xbus.xius.com/messages/common"
+		schemaLocation="../../common/CommonData.xsd" />
+	<!-- ManagePackage API -->
+	<xs:element name="ManagePackageRequest">
+		<xs:annotation>
+			<xs:documentation>Manage Package Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="actionFlag" type="comm:UpdateType" />
+						<xs:element name="package" type="tns:PackageInfoType"
+							minOccurs="1" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PackageInfoType">
+		<xs:sequence>
+			<xs:element name="pkgId" type="xs:long" minOccurs="0" />
+			<xs:element name="pkgName" type="xs:string"/>
+			<xs:element name="defaultNoOfLines" type="xs:int"/>
+			<xs:element name="rentalAmt" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="extraLineCharges" type="xs:decimal"/>
+			<xs:element name="planType" type="xs:string" minOccurs="0"/>
+			<xs:element name="rolloverFlag" type="xs:string" minOccurs="0"/>
+			<xs:element name="shelfDate" type="xs:string"/>
+			<xs:element name="pkgAdonMaps" type="tns:PkgAdonMapListType"
+				minOccurs="0" />
+			<xs:element name="serPlanCalMaps" type="tns:SerPlanCalMapListType" minOccurs="0"/>
+			<xs:element name="pkgServiceUnits" type="tns:PkgSrvcUnitsType"/>
+			<xs:element name="packageStartDate" type="xs:string"/>
+			<xs:element name="deviceGroupIdArr" type="xs:long"  maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element name="dataZoneGroupIdArr"  type="xs:long"  maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgAdonMapListType">
+		<xs:sequence>
+			<xs:element name="pkgAdOnMap" type="tns:PkgAdOnMapType"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgAdOnMapType">
+		<xs:sequence>
+			<xs:element name="featureId" type="xs:long" />
+			<xs:element name="priority" type="xs:long" />
+			<xs:element name="charge" type="xs:decimal" minOccurs="0" />
+			<!-- <xs:element name="calendarId" type="xs:long" minOccurs="0" /> -->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SerPlanCalMapListType">
+		<xs:sequence>
+			<xs:element name="serPlanCalMap" type="tns:SerPlanCalMapType"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SerPlanCalMapType">
+		<xs:sequence>
+			<xs:element name="caldrId" type="xs:long" />
+			<xs:element name="caldrServiceId" type="xs:long" />
+			<xs:element name="vistNtwId" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgSrvcUnitsType">
+		<xs:sequence>
+			<xs:element name="pkgServcUnit" type="tns:PkgSrvcUnitsItemsType"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgSrvcUnitsItemsType">
+		<xs:sequence>
+			<xs:element name="utsServiceId" type="xs:long" />
+			<xs:element name="unitType" type="xs:string" />
+			<xs:element name="unitValue" type="xs:long" />
+			<xs:element name="unitTopupCharge"  type="xs:decimal"/>
+			<xs:element name="srvcUnitLimit" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ManagePackageResponse">
+		<xs:annotation>
+			<xs:documentation>Manage Package Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- End of ManagePackage API -->
+	<!-- GetPackage API -->
+	<xs:element name="GetPackageRequest">
+		<xs:annotation>
+			<xs:documentation>get Package Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="packageId" type="xs:long" minOccurs="0"/>
+						<xs:element name="pkgStatus" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetPackageResponse">
+		<xs:annotation>
+			<xs:documentation>get Package Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="packageDetails" type="tns:PackageDetailsType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="PackageDetailsType">
+		<xs:sequence>
+			<xs:element name="package" type="tns:PkgDetListType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgDetListType">
+		<xs:sequence>
+			<xs:sequence>
+				<xs:element name="pkgId" type="xs:long" minOccurs="0" />
+				<xs:element name="pkgName" type="xs:string" minOccurs="0" />
+				<xs:element name="defaultNoOfLines" type="xs:int"
+					minOccurs="0" />
+				<xs:element name="rentalAmt" type="xs:decimal" minOccurs="0" />
+				<xs:element name="extraLineCharges" type="xs:decimal"
+					minOccurs="0" />
+				<xs:element name="homeNetworkId" type="xs:long"
+					minOccurs="0" />
+				<xs:element name="pkgStatus" type="xs:string" minOccurs="0"/>
+				<xs:element name="rolloverFlag" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="planType" type="xs:string" minOccurs="0" />
+				<xs:element name="shelfDate" type="xs:string" minOccurs="0" />
+				<xs:element name="pkgAdonMaps" type="tns:PkgAdonsViewType"
+					minOccurs="0" />
+				<xs:element name="serPlanCalMaps" type="tns:SerPlanCaldrsViewType"
+					minOccurs="0" />
+				<xs:element name="pkgServiceUnits" type="tns:PkgSrvcUnitsViewType"
+					minOccurs="0" />
+				<xs:element name="deviceInfo" type="tns:DeviceGroupInfoListType" minOccurs="0" />
+				<xs:element name="dataZoneInfo" type="tns:DataZoneGroupInfoListType" minOccurs="0" />
+				<xs:element name="startDate" type="xs:string" minOccurs="0" />
+				<xs:element name="dataZoneMapYn" type="xs:string" minOccurs="0" />
+				<xs:element name="deviceMapYn" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgAdonsViewType">
+		<xs:sequence>
+			<xs:element name="pkgAddOn" type="tns:PkgAdonsViewItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgAdonsViewItemType">
+		<xs:sequence>
+			<xs:element name="feturId" type="xs:long" minOccurs="0" />
+			<xs:element name="feturName" type="xs:string" minOccurs="0" />
+			<xs:element name="priority" type="xs:long" minOccurs="0" />
+			<xs:element name="charge" type="xs:decimal" minOccurs="0" />
+			<!-- <xs:element name="calndrId" type="xs:long" minOccurs="0" /> <xs:element 
+				name="calndrName" type="xs:string" minOccurs="0" /> -->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SerPlanCaldrsViewType">
+		<xs:sequence>
+			<xs:element name="servcPlanCalndr" type="tns:SerPlanCaldrsViewItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SerPlanCaldrsViewItemType">
+		<xs:sequence>
+			<xs:element name="calndrSrvcId" type="xs:long" minOccurs="0" />
+			<xs:element name="calndrSrvcName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="calndrId" type="xs:long" minOccurs="0" />
+			<xs:element name="calndrName" type="xs:string" minOccurs="0" />
+			<xs:element name="vistNetworkId" type="xs:long" minOccurs="0" />
+			<xs:element name="vistNetworkName" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgSrvcUnitsViewType">
+		<xs:sequence>
+			<xs:element name="pkgServcUnit" type="tns:PkgSrvcUtsViewItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PkgSrvcUtsViewItemType">
+		<xs:sequence>
+			<xs:element name="unitsSrvcId" type="xs:long" minOccurs="0" />
+			<xs:element name="unitsSrvcName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="unitType" type="xs:string" minOccurs="0" />
+			<xs:element name="unitValue" type="xs:long" minOccurs="0" />
+			<xs:element name="unitTopUpCharge" type="xs:string" minOccurs="0" />
+			<xs:element name="servUnitMaxTransPecen" type="xs:long" minOccurs="0" />
+			<xs:element name="servUnitMaxTransLimit" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of GetPackage API -->
+	<!-- GetServiceData API -->
+	<xs:element name="GetServiceDataRequest">
+		<xs:annotation>
+			<xs:documentation>Get Service Data Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest" />
+				<!-- <xs:sequence> <xs:element name="CAServiceData" type="tns:CAServiceDataType" 
+					/> </xs:sequence> -->
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- <xs:simpleType name="CAServiceDataType"> <xs:annotation> <xs:documentation>CAServiceDataType</xs:documentation> 
+		</xs:annotation> <xs:restriction base="xs:string"> <xs:enumeration value="SERVICE_DATA" 
+		/> <xs:enumeration value="ADNL_FETURES" /> <xs:enumeration value="CALENDAR_DATA" 
+		/> <xs:enumeration value="VISIT_NETWORKS" /> <xs:enumeration value="ALL" 
+		/> </xs:restriction> </xs:simpleType> -->
+	<xs:element name="GetServiceDataResponse">
+		<xs:annotation>
+			<xs:documentation>Get Service Data Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="serviceDataList" type="tns:ServiceDataListType"
+							minOccurs="0" />
+						<xs:element name="adnlFeaturesList" type="tns:AdnlFetrListType"
+							minOccurs="0" />
+						<xs:element name="calendarsList" type="tns:CaldrsListType"
+							minOccurs="0" />
+						<xs:element name="visNetworksList" type="tns:VisNetwksListType"
+							minOccurs="0" />
+						<xs:element name="deviceInfoList" type="tns:DeviceGroupInfoListType" 
+							minOccurs="0" />
+						<xs:element name="dataZoneInfoList" type="tns:DataZoneGroupInfoListType" 
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ServiceDataListType">
+		<xs:sequence>
+			<xs:element name="serviceDataList" type="tns:ServiceDataType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceDataType">
+		<xs:sequence>
+			<xs:element name="serviceId" type="xs:long" minOccurs="0" />
+			<xs:element name="serviceType" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdnlFetrListType">
+		<xs:sequence>
+			<xs:element name="adfeature" type="tns:AdnlFetType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdnlFetType">
+		<xs:sequence>
+			<xs:element name="feturId" type="xs:long" minOccurs="0" />
+			<!-- feturId is mandatory in agent side -->
+			<xs:element name="charge" type="xs:decimal" minOccurs="0" />
+			<xs:element name="name" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CaldrsListType">
+		<xs:sequence>
+			<xs:element name="calendar" type="tns:CaldrType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CaldrType">
+		<xs:sequence>
+			<xs:element name="calendarId" type="xs:long" minOccurs="0" />
+			<xs:element name="name" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VisNetwksListType">
+		<xs:sequence>
+			<xs:element name="visNetwork" type="tns:NetwksType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NetwksType">
+		<xs:sequence>
+			<xs:element name="networkId" type="xs:long" minOccurs="0" />
+			<xs:element name="networkName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of GetServiceData API -->
+	<!-- DeletePackage API -->
+	<xs:element name="DeletePackageRequest">
+		<xs:annotation>
+			<xs:documentation>Delete package request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="pkgId" type="xs:long" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeletePackageResponse">
+		<xs:annotation>
+			<xs:documentation>Delete package Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- End of DeletePackage API -->
+	<!-- ManageComuniAcct API (agents==>ManageCAGroupAPI) -->
+	<xs:element name="ManageComuniAcctRequest">
+		<xs:annotation>
+			<xs:documentation>Manage Community Account Group Request
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="actionFlag" type="comm:ManageType" />
+						<xs:element name="communityGroup" type="tns:CommunityGroupType" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CommunityGroupType">
+		<xs:sequence>
+			<xs:element name="groupID" type="xs:long" minOccurs="0" />
+			<xs:element name="groupName" type="xs:string" />
+			<xs:element name="pkgID" type="xs:long" />
+			<xs:element name="parntAcctID" type="xs:long" />
+			<!-- <xs:element name="groupValDate" type="xs:string"/> -->
+			<xs:element name="useParntSrvce" type="xs:string" />
+			<xs:element name="iterFlag" type="xs:string" />
+			<xs:element name="parntExpStatus" type="xs:string" />
+			<xs:element name="childDefltLimt" type="xs:string" />
+			<xs:element name="groupAddons" type="tns:GrpAddonListType" minOccurs="0" />
+			<xs:element name="childAccts" type="tns:ChildAcctsType" minOccurs="0" />
+			<xs:element name="grpParentMsisdnNO" type="xs:long"  minOccurs="0"/>
+			<xs:element name="grpPrntDeviceIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>		
+			<xs:element name="grpPrntZoneIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>	
+			<xs:element name="topUpServiceIds" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>	
+		
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GrpAddonListType">
+		<xs:sequence>
+			<xs:element name="grpAddOn" type="tns:GrpAddOnItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GrpAddOnItemType">
+		<xs:sequence>
+			<xs:element name="feturId" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildAcctsType">
+		<xs:sequence>
+			<xs:element name="acctBalLists" type="tns:AcctBalListsType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildAcctLmtListType">
+		<xs:sequence>
+			<xs:element name="childLmt" type="tns:ChildLmtItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildLmtItemType">
+		<xs:sequence>
+			<xs:element name="serviceId" type="xs:long" />
+			<xs:element name="unitType" type="xs:string" />
+			<xs:element name="limitValue" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AcctBalListsType">
+		<xs:sequence>
+			<xs:element name="msisdn" type="xs:string" />
+			<xs:element name="useParntCaBal" type="xs:string" />
+			<xs:element name="useParntCoreBal" type="xs:string" />
+			
+			<xs:element name="allowedBalType" type="xs:int" />
+			<xs:element name="serviceUnits" type="tns:ServiceUnitsType"
+				minOccurs="0" />
+			<xs:element name="acctLmts" type="tns:ChildAcctLmtListType"
+				minOccurs="0" />
+					<xs:element name="deviceGrpIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="zoneGrpIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			
+			<!-- added by shashi -->
+			<xs:element name="useParntBktBal" type="xs:string" minOccurs="0"/>
+			<xs:element name="useOwnBktBal" type="xs:string" minOccurs="0"/>
+		
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceUnitsType">
+		<xs:sequence>
+			<xs:element name="unit" type="tns:ServiceUnitType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceUnitType">
+		<xs:sequence>
+			<xs:element name="serviceId" type="xs:long" />
+			<xs:element name="unitType" type="xs:string" />
+			<xs:element name="unitValue" type="xs:long" />
+				<xs:element name="topUpCharge" type="xs:decimal" minOccurs="0" />
+				<xs:element name="srvcUnitLimit" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- <xs:simpleType name="BalanceType"> <xs:restriction base="xs:string"> 
+		<xs:enumeration value="CA" /> <xs:enumeration value="INDIVIDUAL" /> <xs:enumeration 
+		value="BOTH" /> </xs:restriction> </xs:simpleType> -->
+	<xs:element name="ManageComuniAcctResponse">
+		<xs:annotation>
+			<xs:documentation>Manage Community Account Group Response
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="failureList" type="tns:FailListType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- End of ManageComuniAcct API -->
+	<!-- GetCommAcct API (agent api==>GetCAGroup) -->
+	<xs:element name="GetCommAcctRequest">
+		<xs:annotation>
+			<xs:documentation>Get Comm Acct Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="grpId" type="xs:long" minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCommAcctResponse">
+		<xs:annotation>
+			<xs:documentation>Get Comm Acct Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="grpID" type="xs:long" minOccurs="0" />
+						<xs:element name="grpName" type="xs:string" minOccurs="0" />
+						<xs:element name="pkgID" type="xs:long" minOccurs="0" />
+						<xs:element name="pkgName" type="xs:string" minOccurs="0" />
+						<xs:element name="parntAcctID" type="xs:long"
+							minOccurs="0" />
+						<xs:element name="grpValDate" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="useParntSrvce" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="iterFlag" type="xs:string" minOccurs="0" />
+						<xs:element name="parntExpStatus" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="homeNetworkId" type="xs:long"
+							minOccurs="0" />
+						<xs:element name="childDefltLimt" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="grpAddons" type="tns:GrpAddonsViewType"
+							minOccurs="0" />
+						<xs:element name="grpBalance" type="tns:ServUnitsViewType"
+							minOccurs="0" />
+						<xs:element name="parntSrvcUnits" type="tns:ServUnitsViewType"
+							minOccurs="0" />
+						<xs:element name="childAccts" type="tns:ChildAcctsViewType"
+							minOccurs="0" />
+						<xs:element name="parntDeviceIds" type="xs:string" minOccurs="0"/>
+						<xs:element name="parntZoneGrpIds" type="xs:string" minOccurs="0"/>		
+						<xs:element name="cumulatvChildLimitDtls" type="tns:ServUnitsViewType" minOccurs="0"/>	
+						<xs:element name="caAtpDesc" type="xs:string" minOccurs="0"/>
+ 						<xs:element name="caAtpId" type="xs:string" minOccurs="0"/>	
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GrpAddonsViewType">
+		<xs:sequence>
+			<xs:element name="grpAddOn" type="tns:GrpAddOnViewItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GrpAddOnViewItemType">
+		<xs:sequence>
+			<xs:element name="feturId" type="xs:long" minOccurs="0" />
+			<xs:element name="feturName" type="xs:string" minOccurs="0" />
+			<xs:element name="charge" type="xs:decimal" minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildAcctsViewType">
+		<xs:sequence>
+			<xs:element name="childAcctDetails" type="tns:ChildAcctDetailsViewType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of GetCommAcct API (GetCAGroup) -->
+	<!-- GetCADetails (agent==>getCAInfo) -->
+	<xs:element name="GetCADetailsRequest">
+		<xs:annotation>
+			<xs:documentation>Getting CA information Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="acctId" type="xs:long" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCADetailsResponse">
+		<xs:annotation>
+			<xs:documentation>GetCA info Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="parntAcctId" type="xs:long"
+							minOccurs="0" />
+						<xs:element name="coreBal" type="xs:decimal" minOccurs="0" />
+						<xs:element name="grpID" type="xs:long" minOccurs="0" />
+						<xs:element name="grpName" type="xs:string" minOccurs="0" />
+						<xs:element name="pkgID" type="xs:long" minOccurs="0" />
+						<xs:element name="pkgName" type="xs:string" minOccurs="0" />
+						<xs:element name="grpValDate" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="acctHolder" type="xs:string"
+							minOccurs="0" />
+						<xs:element name="rentalAmt" type="xs:decimal"
+							minOccurs="0" />
+						<xs:element name="childAcctInfo" type="tns:ChildAcctViewType"
+							minOccurs="0" />
+								<xs:element name="parntDeviceIds" type="xs:string" minOccurs="0"/>
+								<xs:element name="parntZoneGrpIds" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ChildAcctViewType">
+		<xs:sequence>
+			<xs:element name="msisdn" type="xs:string" minOccurs="0" />
+			<xs:element name="childAcctId" type="xs:long" minOccurs="0" />
+			<xs:element name="useParntCaBal" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="isAcctActive" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="useParntCoreBal" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="allowedBalType" type="xs:int" minOccurs="0" />
+			<xs:element name="childSrvcUnits" type="tns:ServUnitsViewType"
+				minOccurs="0" />
+				<xs:element name="childDeviceIds" type="xs:string" minOccurs="0"/>
+			<xs:element name="childZoneGrpIds" type="xs:string" minOccurs="0"/>		
+			<!-- added by shashi -->
+			<xs:element name="useParntBktBal" type="xs:string" minOccurs="0"/>
+			<xs:element name="useOwnBktBal" type="xs:string" minOccurs="0"/>			
+		
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildAcctDetailsViewType">
+		<xs:sequence>
+			<xs:element name="msisdn" type="xs:string" minOccurs="0" />
+			<xs:element name="childAcctId" type="xs:long" minOccurs="0" />
+			<xs:element name="useParentCABal" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="isAcctActive" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="useParentCoreBal" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="allowedBalType" type="xs:int" minOccurs="0" />
+			<xs:element name="childServUnits" type="tns:ServUnitsViewType"
+				minOccurs="0" />
+			<xs:element name="childLimits" type="tns:ChildAcctLimitListViewType"
+				minOccurs="0" />
+				<xs:element name="childDeviceIds" type="xs:string" minOccurs="0"/>
+			<xs:element name="childZoneGrpIds" type="xs:string" minOccurs="0"/>		
+			<!-- added by shashi -->
+			<xs:element name="useParntBktBal" type="xs:string" minOccurs="0"/>
+			<xs:element name="useOwnBktBal" type="xs:string" minOccurs="0"/>	
+		
+			<!-- added -->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildAcctLimitListViewType">
+		<xs:sequence>
+			<xs:element name="childLimit" type="tns:ChildLimitItemViewType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChildLimitItemViewType">
+		<xs:sequence>
+			<xs:element name="srvcId" type="xs:long" minOccurs="0" />
+			<xs:element name="srvcName" type="xs:string" minOccurs="0" />
+			<xs:element name="unitType" type="xs:string" minOccurs="0" />
+			<xs:element name="limitValue" type="xs:decimal" minOccurs="0" />
+			<xs:element name="topUpCharge" type="xs:decimal" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServUnitsViewType">
+		<xs:sequence>
+			<xs:element name="unit" type="tns:ServUnitsItemViewType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServUnitsItemViewType">
+		<xs:sequence>
+			<xs:element name="serviceId" type="xs:long" minOccurs="0" />
+			<xs:element name="serviceName" type="xs:string" minOccurs="0" />
+			<xs:element name="unitType" type="xs:string" minOccurs="0" />
+			<xs:element name="unitValue" type="xs:decimal" minOccurs="0" />
+			<xs:element name="topUpCharge" type="xs:decimal" minOccurs="0" />
+			<xs:element name="srvcUnitLimit" type="xs:long" minOccurs="0" />
+				
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of GetCADetails API -->
+	<!-- CARenwl API -->
+	<xs:element name="CARenwlRequest">
+		<xs:annotation>
+			<xs:documentation>CA Renewl Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="grpId" type="xs:long" />
+						<xs:element name="pkgId" type="xs:long" />
+						<xs:element name="status" type="xs:string" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CARenwlResponse">
+		<xs:annotation>
+			<xs:documentation>CA Renewl Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- GetCARenwl API -->
+	<xs:element name="GetCARenwlRequest">
+		<xs:annotation>
+			<xs:documentation>Get CARenwl Request</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest" />
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCARenwlResponse">
+		<xs:annotation>
+			<xs:documentation>Get CARenwl Response</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="caRenewals" type="tns:CARenwlsType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CARenwlsType">
+		<xs:sequence>
+			<xs:element name="renewalInfo" type="tns:CARenwlType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CARenwlType">
+		<xs:sequence>
+			<xs:element name="grpId" type="xs:long" />
+			<xs:element name="grpName" type="xs:string" minOccurs="0" />
+			<xs:element name="pkgId" type="xs:long" minOccurs="0" />
+			<xs:element name="pkgName" type="xs:string" minOccurs="0" />
+			<xs:element name="pkgRentalAmt" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="acctId" type="xs:long" minOccurs="0" />
+			<xs:element name="msisdn" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ManageAddOnFtrs API In this API if addonFtrs exist, this API will update 
+		those addonFtrs, if addonFtrs don't exist this APi will create new AddonFtrs -->
+	<xs:element name="ManageAddOnFtrsRequest">
+		<xs:annotation>
+			<xs:documentation>ManageAddOnFtrsRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="actionFlag" type="comm:ManageType" />
+						<xs:element name="addOnFtrs" type="tns:AddOnFtrsType"
+							minOccurs="1" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AddOnFtrsType">
+		<xs:sequence>
+			<xs:element name="AddOnFeatures" type="tns:AddOnFeatrsDataType"
+				minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddOnFeatrsDataType">
+		<xs:sequence>
+			<xs:element name="addOnFeatureId" type="xs:long"
+				minOccurs="0" />
+			<xs:element name="addOnCharges" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="addOnFeaturName" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="addOnType" type="xs:string" minOccurs="0" />
+			<xs:element name="attribute1" type="xs:string" minOccurs="0" />
+			<xs:element name="attribute2" type="xs:string" minOccurs="0" />
+			<xs:element name="MOCPulse" type="xs:string" minOccurs="0" />
+			<xs:element name="MOCRate" type="xs:decimal" minOccurs="0" />
+			<xs:element name="MTCPulse" type="xs:string" minOccurs="0" />
+			<xs:element name="MTCRate" type="xs:decimal" minOccurs="0" />
+			<xs:element name="SMSRate" type="xs:decimal" minOccurs="0" />
+			<xs:element name="DataPulse" type="xs:string" minOccurs="0" />
+			<xs:element name="DataRate" type="xs:decimal" minOccurs="0" />
+			<xs:element name="validityPeriod" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ManageAddOnFtrsResponse">
+		<xs:annotation>
+			<xs:documentation>ManageAddOnFtrsResponse</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="failureList" type="tns:FailListType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FailListType">
+		<xs:sequence>
+			<xs:element name="failure" type="tns:FailureType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FailureType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0" />
+			<xs:element name="errorCode" type="xs:long" minOccurs="0" />
+			<xs:element name="errorMessage" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- GetAdnlFtrs API -->
+	<xs:element name="GetAdnlFtrsRequest">
+		<xs:annotation>
+			<xs:documentation>GetAdnlFtrsRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="feturId" type="xs:long" minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetAdnlFtrsResponse">
+		<xs:annotation>
+			<xs:documentation>GetAdnlFtrsResponse</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+					<xs:sequence>
+						<xs:element name="features" type="tns:AddOnFtrsType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UpdateCAAccountRequest">
+		<xs:annotation>
+			<xs:documentation>UpdateCAAccountRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+					<xs:sequence>
+						<xs:element name="Id" type="tns:IDType" />
+						<xs:element name="optionFlag" type="comm:OptionFlagType" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="IDType">
+		<xs:choice>
+			<xs:element name="groupId" type="xs:long" minOccurs="0" />
+			<xs:element name="packageId" type="xs:long" minOccurs="0" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="UpdateCAAccountResponse">
+		<xs:annotation>
+			<xs:documentation>UpdateCAAccountResponse</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="DeviceGroupInfoListType">
+		<xs:sequence>
+			<xs:element name="deviceGroupInfo" type="tns:DeviceGroupInfoType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DeviceGroupInfoType">
+		<xs:sequence>
+			<xs:element name="deviceGroupSeqNo" type="xs:long" minOccurs="0" />
+			<xs:element name="deviceGroupName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="DataZoneGroupInfoListType">
+		<xs:sequence>
+			<xs:element name="dataZoneGroupInfo" type="tns:DataZoneGroupInfoType" minOccurs="0" 	maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DataZoneGroupInfoType">
+		<xs:sequence>
+			<xs:element name="zoneGroupId" type="xs:long" minOccurs="0" />
+			<xs:element name="zoneGroupName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="ManageCommActATPRequest">
+		<xs:annotation>
+			<xs:documentation>ManageCommActATPRequest</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSRequest">
+				<xs:sequence>
+					<xs:element name="caGroup" type="tns:CAGroupType" />
+					<xs:element name="caUserType" type="xs:string" minOccurs="0" />
+					<xs:element name="svcPlanId" type="xs:long" minOccurs="0"/>
+					<xs:element name="typeOfservice" type="xs:long" minOccurs="0"/>
+					<xs:element name="chargeId" type="xs:string" minOccurs="0" />
+					<xs:element name="svcStartDate" type="xs:string" minOccurs="0"/>
+					<xs:element name="svcEndDate" type="xs:string" minOccurs="0"/>
+					<xs:element name="actDeactFlag" type="xs:string" minOccurs="0" />
+					<xs:element name="serviceFlag" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ManageCommActATPResponse">
+		<xs:annotation>
+			<xs:documentation>ManageCommActATPResponse</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="comm:WSResponse">
+						<xs:sequence>
+							<xs:element name="errorDetails" type="tns:ErrorDetailsList" minOccurs="0" />
+						</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:complexType name="ErrorDetailsList">
+		<xs:sequence>
+			<xs:element name="errorDetailsList" type="tns:ErrorDetailsItem"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ErrorDetailsItem">
+		<xs:sequence>
+			<xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+			<xs:element name="error_desc" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CAGroupType">
+		<xs:sequence>
+			<xs:element name="grpID" type="xs:long" minOccurs="0" />
+			<xs:element name="grpName" type="tns:Str100Type" />
+			<xs:element name="pkgID" type="xs:long" />
+			<xs:element name="parntAcctID" type="xs:long" />
+			<!-- xs:element name="grpValDate" type="DDMMYYYYDateType" / -->
+			<xs:element name="grpParentMsisdnNO" type="xs:long"  minOccurs="0"/>
+			<xs:element name="useParntSrvce" type="tns:Str1Type" />
+			<xs:element name="iterFlag" type="tns:Str1Type" />
+			<xs:element name="parntExpStatus" type="tns:Str1Type" />
+			<xs:element name="childDefltLimt" type="tns:Str1Type" />
+			<xs:element name="grpAddons" type="tns:GrpAddonListType" minOccurs="0"/>
+			<xs:element name="childAccts" type="tns:ChildAcctsType" minOccurs="0"/>
+			<xs:element name="grpPrntDeviceIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>		
+			<xs:element name="grpPrntZoneIds" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="topUpServiceIds" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>	
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="Str100Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Str20Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Str30Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Str10Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Str1Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

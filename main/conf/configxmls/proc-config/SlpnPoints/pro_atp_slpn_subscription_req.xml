@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_atp_slpn_subscription_req"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_atp_by_slpn_points_mgmt.pro_atp_slpn_subscription_req</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_atp_slpn_subscription_req_param_1"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_2"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_3"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_4"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_5"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_6"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_7"></ref>																
+				<ref bean="pro_atp_slpn_subscription_req_param_8"></ref>																
+				<ref bean="pro_atp_slpn_subscription_req_param_9"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_10"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_11"></ref>
+				<ref bean="pro_atp_slpn_subscription_req_param_12"></ref>																
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_atp_slpn_subscription_req_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_atp_slpn_subscription_req_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_msisdn_no</value></property>
+			<property name="mapTo"><value>pi_msisdn_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_atp_slpn_subscription_req_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_client_id</value></property>
+			<property name="mapTo"><value>pi_client_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_atp_slpn_subscription_req_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_slpn_points</value></property>
+			<property name="mapTo"><value>pi_slpn_points</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_atp_slpn_subscription_req_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_recharge_denom</value></property>
+			<property name="mapTo"><value>pi_recharge_denom</value></property>
+			<property name="type"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_atp_slpn_subscription_req_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_reversal_ref_no</value></property>
+			<property name="mapTo"><value>pi_reversal_ref_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_atp_slpn_subscription_req_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_publicity_id</value></property>
+			<property name="mapTo"><value>pi_publicity_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_atp_slpn_subscription_req_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_operation</value></property>
+			<property name="mapTo"><value>pi_operation</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_atp_slpn_subscription_req_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_channel_id</value></property>
+			<property name="mapTo"><value>pi_channel</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_atp_slpn_subscription_req_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_transaction_id</value></property>
+			<property name="mapTo"><value>po_transaction_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>10</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+
+	<bean id="pro_atp_slpn_subscription_req_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_atp_slpn_subscription_req_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+ </beans>

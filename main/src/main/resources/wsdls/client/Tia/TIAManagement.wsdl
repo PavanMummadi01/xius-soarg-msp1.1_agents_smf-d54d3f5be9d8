@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tia.xius.com/TIAManagement.wsdl"
+	xmlns:tia="http://tia.xius.com/TIAManagement.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wshdr="http://tia.xius.com/common/header/HeaderDetails.xsd"
+	xmlns:err="http://tia.xius.com/common/error/ErrorDetails.xsd"
+	targetNamespace="http://tia.xius.com/TIAManagement.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://tia.xius.com/TIAManagement.wsdl"
+			targetNamespace="http://tia.xius.com/TIAManagement.wsdl">
+			<xs:import namespace="http://tia.xius.com/TIAManagement.xsd"
+				schemaLocation="TIAManagement.xsd" />
+			<xs:import namespace="http://tia.xius.com/common/header/HeaderDetails.xsd"
+				schemaLocation="HeaderDetails.xsd" />
+			<xs:import namespace="http://tia.xius.com/common/error/ErrorDetails.xsd"
+				schemaLocation="ErrorDetails.xsd" />
+		</xs:schema>
+	</wsdl:types>
+
+	<wsdl:message name="changeSubMSISDNRequest">
+		<wsdl:part name="changeSubMSISDNRequest" element="tia:changeSubMSISDNRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeSubMSISDNResponse">
+		<wsdl:part name="changeSubMSISDNResponse" element="tia:changeSubMSISDNResponse" />
+	</wsdl:message>
+	<wsdl:message name="simSwapRequest">
+		<wsdl:part name="simSwapRequest" element="tia:simSwapRequest" />
+	</wsdl:message>
+	<wsdl:message name="simSwapResponse">
+		<wsdl:part name="simSwapResponse" element="tia:simSwapResponse" />
+	</wsdl:message>
+	<wsdl:message name="activateSubscriberRequest">
+		<wsdl:part name="activateSubscriberRequest" element="tia:activateSubscriberRequest" />
+	</wsdl:message>
+	<wsdl:message name="activateSubscriberResponse">
+		<wsdl:part name="activateSubscriberResponse" element="tia:activateSubscriberResponse" />
+	</wsdl:message>
+
+
+	<wsdl:message name="deactivateSubscriberRequest">
+		<wsdl:part name="deactivateSubscriberRequest" element="tia:deactivateSubscriberRequest" />
+	</wsdl:message>
+	<wsdl:message name="deactivateSubscriberResponse">
+		<wsdl:part name="deactivateSubscriberResponse" element="tia:deactivateSubscriberResponse" />
+	</wsdl:message>
+
+
+	<wsdl:message name="suspendSubscriberRequest">
+		<wsdl:part name="suspendSubscriberRequest" element="tia:suspendSubscriberRequest" />
+	</wsdl:message>
+	<wsdl:message name="suspendSubscriberResponse">
+		<wsdl:part name="suspendSubscriberResponse" element="tia:suspendSubscriberResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="createSubscriptionRequest">
+		<wsdl:part name="createSubscriptionRequest" element="tia:createsubscriptionrequest" />
+	</wsdl:message>
+	<wsdl:message name="createSubscriptionResponse">
+		<wsdl:part name="createSubscriptionResponse" element="tia:createsubscriptionresponse" />
+	</wsdl:message>
+	<wsdl:message name="createAccountRequest">
+		<wsdl:part name="createAccountRequest" element="tia:createaccountrequest" />
+	</wsdl:message>
+	<wsdl:message name="createAccountResponse">
+		<wsdl:part name="createAccountResponse" element="tia:createaccountresponse" />
+	</wsdl:message>
+
+	<wsdl:message name="getSubscriptionProfileRequest">
+		<wsdl:part name="getSubscriptionProfileRequest" element="tia:getsubscriptionprofileRequest" />
+	</wsdl:message>
+	<wsdl:message name="getSubscriptionProfileResponse">
+		<wsdl:part name="getSubscriptionProfileResponse" element="tia:getsubscriptionprofileResponse" />
+	</wsdl:message>
+	<wsdl:message name="changeTechnologyRequest">
+		<wsdl:part name="changeTechnologyRequest" element="tia:changeTechnologyRequest" />
+	</wsdl:message>
+	<wsdl:message name="changeTechnologyResponse">
+		<wsdl:part name="changeTechnologyResponse" element="tia:changeTechnologyResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="RoamingRequest">
+		<wsdl:part name="RoamingRequest" element="tia:RoamingRequest" />
+	</wsdl:message>
+	<wsdl:message name="RoamingResponse">
+		<wsdl:part name="RoamingResponse" element="tia:RoamingResponse" />
+	</wsdl:message>
+
+
+
+	<wsdl:message name="TTPCRFNotifyRequest">
+		<wsdl:part name="TTPCRFNotifyRequest" element="tia:TTPCRFNotifyRequest" />
+	</wsdl:message>
+	<wsdl:message name="TTPCRFNotifyResponse">
+		<wsdl:part name="TTPCRFNotifyResponse" element="tia:TTPCRFNotifyResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="PackageNotifyRequest">
+		<wsdl:part name="PackageNotifyRequest" element="tia:PackageNotifyRequest" />
+	</wsdl:message>
+	<wsdl:message name="PackageNotifyResponse">
+		<wsdl:part name="PackageNotifyResponse" element="tia:PackageNotifyResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="DPIValidationRequest">
+		<wsdl:part name="DPIValidationRequest" element="tia:DPIValidationRequest" />
+	</wsdl:message>
+	<wsdl:message name="DPIValidationResponse">
+		<wsdl:part name="DPIValidationResponse" element="tia:DPIValidationResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="SIMActivationRequest">
+		<wsdl:part name="SIMActivationRequest" element="tia:SIMActivationRequest" />
+	</wsdl:message>
+	<wsdl:message name="SIMActivationResponse">
+		<wsdl:part name="SIMActivationResponse" element="tia:SIMActivationResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="YFCreateInvoiceRequest">
+		<wsdl:part name="YFCreateInvoiceRequest" element="tia:YFCreateInvoiceRequest" />
+	</wsdl:message>
+	<wsdl:message name="YFCreateInvoiceResponse">
+		<wsdl:part name="YFCreateInvoiceResponse" element="tia:YFCreateInvoiceResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="YFNotificationRequest">
+		<wsdl:part name="YFNotificationRequest" element="tia:YFNotificationRequest" />
+	</wsdl:message>
+	<wsdl:message name="YFNotificationResponse">
+		<wsdl:part name="YFNotificationResponse" element="tia:YFNotificationResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="queryHLRRequest">
+		<wsdl:part name="queryHLRRequest" element="tia:queryHLRRequest" />
+	</wsdl:message>
+	<wsdl:message name="queryHLRResponse">
+		<wsdl:part name="queryHLRResponse" element="tia:queryHLRResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="queryTransactionsRequest">
+		<wsdl:part name="queryTransactionsRequest" element="tia:queryTransactionsRequest" />
+	</wsdl:message>
+	<wsdl:message name="queryTransactionsResponse">
+		<wsdl:part name="queryTransactionsResponse" element="tia:queryTransactionsResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="webhookNotificationRequest">
+		<wsdl:part name="webhookNotificationRequest" element="tia:webhookNotificationRequest" />
+	</wsdl:message>
+	<wsdl:message name="webhookNotificationResponse">
+		<wsdl:part name="webhookNotificationResponse" element="tia:webhookNotificationResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="IMEIEnquiryRequest">
+		<wsdl:part name="IMEIEnquiryRequest" element="tia:IMEIEnquiryRequest" />
+	</wsdl:message>
+	<wsdl:message name="IMEIEnquiryResponse">
+		<wsdl:part name="IMEIEnquiryResponse" element="tia:IMEIEnquiryResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem" />
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader" />
+	</wsdl:message>
+
+	<wsdl:portType name="TIAManagementPortType">
+
+		<wsdl:operation name="changeSubMSISDN">
+			<wsdl:input message="tns:changeSubMSISDNRequest" />
+			<wsdl:output message="tns:changeSubMSISDNResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="simSwap">
+			<wsdl:input message="tns:simSwapRequest" />
+			<wsdl:output message="tns:simSwapResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="activateSubscriber">
+			<wsdl:input message="tns:activateSubscriberRequest" />
+			<wsdl:output message="tns:activateSubscriberResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="deactivateSubscriber">
+			<wsdl:input message="tns:deactivateSubscriberRequest" />
+			<wsdl:output message="tns:deactivateSubscriberResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="suspendSubscriber">
+			<wsdl:input message="tns:suspendSubscriberRequest" />
+			<wsdl:output message="tns:suspendSubscriberResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="CreateSubscription">
+			<wsdl:input message="tns:createSubscriptionRequest" />
+			<wsdl:output message="tns:createSubscriptionResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CreateAccount">
+			<wsdl:input message="tns:createAccountRequest" />
+			<wsdl:output message="tns:createAccountResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="GetSubscriptionProfile">
+			<wsdl:input message="tns:getSubscriptionProfileRequest" />
+			<wsdl:output message="tns:getSubscriptionProfileResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="changeTechnology">
+			<wsdl:input message="tns:changeTechnologyRequest" />
+			<wsdl:output message="tns:changeTechnologyResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="Roaming">
+			<wsdl:input message="tns:RoamingRequest" />
+			<wsdl:output message="tns:RoamingResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="TTPCRFNotify">
+			<wsdl:input message="tns:TTPCRFNotifyRequest" />
+			<wsdl:output message="tns:TTPCRFNotifyResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="PackageNotify">
+			<wsdl:input message="tns:PackageNotifyRequest" />
+			<wsdl:output message="tns:PackageNotifyResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="DPIValidation">
+			<wsdl:input message="tns:DPIValidationRequest" />
+			<wsdl:output message="tns:DPIValidationResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="SIMActivation">
+			<wsdl:input message="tns:SIMActivationRequest" />
+			<wsdl:output message="tns:SIMActivationResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="YFCreateInvoice">
+			<wsdl:input message="tns:YFCreateInvoiceRequest" />
+			<wsdl:output message="tns:YFCreateInvoiceResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="YFNotification">
+			<wsdl:input message="tns:YFNotificationRequest" />
+			<wsdl:output message="tns:YFNotificationResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="QueryHLR">
+			<wsdl:input message="tns:queryHLRRequest" />
+			<wsdl:output message="tns:queryHLRResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+
+		<wsdl:operation name="QueryTransactions">
+			<wsdl:input message="tns:queryTransactionsRequest" />
+			<wsdl:output message="tns:queryTransactionsResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="webhookNotification">
+			<wsdl:input message="tns:webhookNotificationRequest" />
+			<wsdl:output message="tns:webhookNotificationResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="IMEIEnquiry">
+			<wsdl:input message="tns:IMEIEnquiryRequest" />
+			<wsdl:output message="tns:IMEIEnquiryResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+	<wsdl:binding name="TIAManagementBinding" type="tns:TIAManagementPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<wsdl:operation name="changeSubMSISDN">
+			<soap:operation soapAction="changeSubMSISDN" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="simSwap">
+			<soap:operation soapAction="simSwap" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="activateSubscriber">
+			<soap:operation soapAction="activateSubscriber" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="deactivateSubscriber">
+			<soap:operation soapAction="deactivateSubscriber" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="suspendSubscriber">
+			<soap:operation soapAction="suspendSubscriber" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="CreateSubscription">
+			<soap:operation soapAction="CreateSubscription" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAccount">
+			<soap:operation soapAction="CreateAccount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="GetSubscriptionProfile">
+			<soap:operation soapAction="GetSubscriptionProfile" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="changeTechnology">
+			<soap:operation soapAction="changeTechnology" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="Roaming">
+			<soap:operation soapAction="Roaming" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="TTPCRFNotify">
+			<soap:operation soapAction="TTPCRFNotify" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="PackageNotify">
+			<soap:operation soapAction="PackageNotify" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="DPIValidation">
+			<soap:operation soapAction="DPIValidation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<!-- Start of SIM Activation in HLR -->
+		<wsdl:operation name="SIMActivation">
+			<soap:operation soapAction="SIMActivation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of SIM Activation in HLR -->
+
+		<!-- Start of YFCreateInvoice in HLR -->
+		<wsdl:operation name="YFCreateInvoice">
+			<soap:operation soapAction="YFCreateInvoice" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of YFCreateInvoice in HLR -->
+
+
+		<!-- Start of YFNotification in HLR -->
+		<wsdl:operation name="YFNotification">
+			<soap:operation soapAction="YFNotification" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of YFNotification in HLR -->
+
+		<!-- Start of query in HLR -->
+		<wsdl:operation name="QueryHLR">
+			<soap:operation soapAction="QueryHLR" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of query in HLR -->
+
+		<!-- Start of QueryTransactions -->
+		<wsdl:operation name="QueryTransactions">
+			<soap:operation soapAction="QueryTransactions" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of QueryTransactions -->
+
+		<wsdl:operation name="webhookNotification">
+			<soap:operation soapAction="webhookNotification" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="IMEIEnquiry">
+			<soap:operation soapAction="IMEIEnquiry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+	</wsdl:binding>
+	<wsdl:service name="TIAManagement">
+		<wsdl:port name="TIAManagementPort" binding="tns:TIAManagementBinding">
+			<soap:address location="http://localhost:8080/axis/TIAManagement/v1" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

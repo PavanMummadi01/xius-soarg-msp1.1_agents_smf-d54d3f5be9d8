@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!-- XIUS-bcgi SMF Agent            -->
+<!--                                                                       -->
+<!-- $Id: //depot/xb/MSP1.0/MSP-AWS/agents/smf/main/config/configxmls/proc-config/IMEIBlockUnBlock/pro_imei_enquiry.xml#2 $     -->
+<!-- This file  will maps the SP input parameters to java fields. -->
+<!-- $Author: kiranmai.kode $  $DateTime: 2020/06/16 12:40:16       -->
+<!-- ====================================================================== -->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_imei_enquiry -->
+	<bean id="pro_imei_enquiry" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_imei_api.pro_imei_enquiry</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+					<ref bean="pro_imei_enquiry_1"></ref>
+					<ref bean="pro_imei_enquiry_2"></ref>
+					<ref bean="pro_imei_enquiry_3"></ref>
+					<ref bean="pro_imei_enquiry_4"></ref>
+					<ref bean="pro_imei_enquiry_5"></ref>
+					<ref bean="pro_imei_enquiry_6"></ref>
+					<ref bean="pro_imei_enquiry_7"></ref>
+					<ref bean="pro_imei_enquiry_8"></ref>
+					<ref bean="pro_imei_enquiry_9"></ref>
+					<ref bean="pro_imei_enquiry_10"></ref>
+					<ref bean="pro_imei_enquiry_11"></ref>
+					
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="8">
+					<ref bean="po_imei_enq_dtls"/>
+				</entry>
+				 
+				<entry key="9">
+					<ref bean="po_imei_his_dtls"/>
+				</entry>
+			 
+			</map>
+		</property>
+		 
+	</bean>
+	<bean id="po_imei_enq_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_imei_enq_dtls_1"/>
+				<ref bean="po_imei_enq_dtls_2"/>
+				<ref bean="po_imei_enq_dtls_3"/>
+				<ref bean="po_imei_enq_dtls_4"/>
+				<ref bean="po_imei_enq_dtls_5"/>
+				<ref bean="po_imei_enq_dtls_6"/>
+				<ref bean="po_imei_enq_dtls_7"/>
+				<ref bean="po_imei_enq_dtls_8"/>
+				<ref bean="po_imei_enq_dtls_9"/>
+				<ref bean="po_imei_enq_dtls_10"/>
+				<ref bean="po_imei_enq_dtls_11"/>
+				<ref bean="po_imei_enq_dtls_12"/>
+				<ref bean="po_imei_enq_dtls_13"/>
+				<ref bean="po_imei_enq_dtls_14"/>
+				<ref bean="po_imei_enq_dtls_15"/>
+				<ref bean="po_imei_enq_dtls_16"/>
+				<ref bean="po_imei_enq_dtls_17"/>
+				<ref bean="po_imei_enq_dtls_18"/>
+				<ref bean="po_imei_enq_dtls_19"/>
+				<ref bean="po_imei_enq_dtls_20"/>
+				<ref bean="po_imei_enq_dtls_21"/>
+				<ref bean="po_imei_enq_dtls_22"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.Imei_enq_dtls_cursor_dtls"/>
+	</bean>
+	
+	<bean id="po_imei_enq_dtls_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	
+	  <property name="procedureColumnName"><value>device_id</value></property>
+	  <property name="mapTo"><value>device_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	 
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	
+	  <property name="procedureColumnName"><value>partner_id</value></property>
+	  <property name="mapTo"><value>partner_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	 
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	
+	  <property name="procedureColumnName"><value>branch_id</value></property>
+	  <property name="mapTo"><value>branch_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	 
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	 
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	
+	  <property name="procedureColumnName"><value>user_id</value></property>
+	  <property name="mapTo"><value>user_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	 
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="po_imei_enq_dtls_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>gsma_refcode</value></property>
+	  <property name="mapTo"><value>gsma_refcode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="po_imei_enq_dtls_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>gsma_status</value></property>
+	  <property name="mapTo"><value>gsma_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	
+	<bean id="po_imei_enq_dtls_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>record_identifier</value></property>
+	  <property name="mapTo"><value>record_identifier</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	<bean id="po_imei_enq_dtls_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>blacklist_status</value></property>
+	  <property name="mapTo"><value>blacklist_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	
+	<bean id="po_imei_enq_dtls_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>greylist_status</value></property>
+	  <property name="mapTo"><value>greylist_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>manufacturer</value></property>
+	  <property name="mapTo"><value>manufacturer</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>brand_name</value></property>
+	  <property name="mapTo"><value>brand_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>marketing_name</value></property>
+	  <property name="mapTo"><value>marketing_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>model_name</value></property>
+	  <property name="mapTo"><value>model_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>band</value></property>
+	  <property name="mapTo"><value>band</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>operatingsys</value></property>
+	  <property name="mapTo"><value>operatingsys</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>nfc</value></property>
+	  <property name="mapTo"><value>nfc</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>bluetooth</value></property>
+	  <property name="mapTo"><value>bluetooth</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>18</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>wlan</value></property>
+	  <property name="mapTo"><value>wlan</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>19</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_20" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>devicetype</value></property>
+	  <property name="mapTo"><value>devicetype</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>20</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_21" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>resp_code</value></property>
+	  <property name="mapTo"><value>resp_code</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>21</value></property>
+	</bean>
+	<bean id="po_imei_enq_dtls_22" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>resp_description</value></property>
+	  <property name="mapTo"><value>resp_description</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>22</value></property>
+	</bean>
+	
+	<bean id="po_imei_his_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_imei_his_dtls_1"/>
+				<ref bean="po_imei_his_dtls_2"/>
+				<ref bean="po_imei_his_dtls_3"/>
+				<ref bean="po_imei_his_dtls_4"/>
+				<ref bean="po_imei_his_dtls_5"/>
+				<ref bean="po_imei_his_dtls_6"/>
+				<ref bean="po_imei_his_dtls_7"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.Imei_His_dtls_cursor_dtls"/>
+	</bean>
+	
+	
+	
+	<bean id="po_imei_his_dtls_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	
+	  <property name="procedureColumnName"><value>NETWORK_ID</value></property>
+	  <property name="mapTo"><value>NETWORK_ID</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	 
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_imei_his_dtls_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	 <property name="procedureColumnName"><value>USER_ID</value></property>
+	  <property name="mapTo"><value>USER_ID</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_imei_his_dtls_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>IMEI</value></property>
+	  <property name="mapTo"><value>IMEI</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_imei_his_dtls_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>TASKP_ERFOMED</value></property>
+	  <property name="mapTo"><value>TASKP_ERFOMED</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="po_imei_his_dtls_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>TASK_ASSIGNEDON</value></property>
+	  <property name="mapTo"><value>TASK_ASSIGNEDON</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="po_imei_his_dtls_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>TASK_PERFOMEDBY</value></property>
+	  <property name="mapTo"><value>TASK_PERFOMEDBY</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="po_imei_his_dtls_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>COUNTRY</value></property>
+	  <property name="mapTo"><value>COUNTRY</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	 
+	
+	
+	<bean id="pro_imei_enquiry_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_network_id</value></property>
+	  <property name="mapTo"><value>pi_network_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_user_id</value></property>
+	  <property name="mapTo"><value>pi_username</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_deviceid</value></property>
+	  <property name="mapTo"><value>pi_deviceid</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_partnerid</value></property>
+	  <property name="mapTo"><value>pi_partnerid</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_branchid</value></property>
+	  <property name="mapTo"><value>pi_branchid</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_recordidentifier</value></property>
+	  <property name="mapTo"><value>pi_recordidentifier</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_response</value></property>
+	  <property name="mapTo"><value>po_response</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	 <bean id="pro_imei_enquiry_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_imei_enq_dtls</value></property>  		
+  		<property name="mapTo"><value>po_imei_enq_dtls</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>8</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_imei_his_dtls</value></property>  		
+  		<property name="mapTo"><value>po_imei_his_dtls</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>9</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_imei_enquiry_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>11</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_subs_bulk_flw_trcr_report" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pro_subs_bulk_flw_trcr_report</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_1"></ref>  
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_2"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_3"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_4"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_5"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_6"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_7"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_8"></ref>
+				<ref bean="pro_subs_bulk_flw_trcr_report_param_9"></ref>
+							
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="7">
+					<ref bean="po_subs_bulk_flw"/>
+				</entry>
+			</map>
+		</property>
+		
+	</bean>
+	
+	<bean id="po_subs_bulk_flw" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_subs_bulk_flw_param_1"/>
+				<ref bean="po_subs_bulk_flw_param_2"/>
+				<ref bean="po_subs_bulk_flw_param_3"/>
+				<ref bean="po_subs_bulk_flw_param_4"/>
+				<ref bean="po_subs_bulk_flw_param_5"/>
+				<ref bean="po_subs_bulk_flw_param_6"/>
+				<ref bean="po_subs_bulk_flw_param_7"/>
+				<ref bean="po_subs_bulk_flw_param_8"/>
+				<ref bean="po_subs_bulk_flw_param_9"/>
+				<ref bean="po_subs_bulk_flw_param_10"/>
+				<ref bean="po_subs_bulk_flw_param_11"/>
+				<ref bean="po_subs_bulk_flw_param_12"/>
+				<ref bean="po_subs_bulk_flw_param_13"/>
+				<ref bean="po_subs_bulk_flw_param_14"/>
+				<ref bean="po_subs_bulk_flw_param_15"/>
+				<ref bean="po_subs_bulk_flw_param_16"/>
+				<ref bean="po_subs_bulk_flw_param_17"/>
+				<ref bean="po_subs_bulk_flw_param_18"/>
+				<ref bean="po_subs_bulk_flw_param_19"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.FiveGReportCusorData"/>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>trans_id</value></property>
+	  <property name="mapTo"><value>transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>provision_type</value></property>
+	  <property name="mapTo"><value>provision_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_date</value></property>
+	  <property name="mapTo"><value>transaction_date</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>processing_flag</value></property>
+	  <property name="mapTo"><value>status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>remarks</value></property>
+	  <property name="mapTo"><value>remarks</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>row_update_time</value></property>
+	  <property name="mapTo"><value>row_update_time</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>internal_transaction_id</value></property>
+	  <property name="mapTo"><value>internal_transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	 
+	
+	<bean id="po_subs_bulk_flw_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>insert_date</value></property>
+	  <property name="mapTo"><value>insert_date</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	
+	
+	<bean id="po_subs_bulk_flw_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>row_num</value></property>
+	  <property name="mapTo"><value>row_num</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_id</value></property>
+	  <property name="mapTo"><value>user_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	
+	
+	<bean id="po_subs_bulk_flw_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_type</value></property>
+	  <property name="mapTo"><value>account_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>channel</value></property>
+	  <property name="mapTo"><value>channel</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>service_flag</value></property>
+	  <property name="mapTo"><value>service_flag</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>activity_id</value></property>
+	  <property name="mapTo"><value>activity_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_id</value></property>
+	  <property name="mapTo"><value>account_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sim_serial_no</value></property>
+	  <property name="mapTo"><value>sim_serial_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>imsi_no</value></property>
+	  <property name="mapTo"><value>imsi_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>18</value></property>
+	</bean>
+	
+	<bean id="po_subs_bulk_flw_param_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>acct_status</value></property>
+	  <property name="mapTo"><value>acct_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>19</value></property>
+	</bean>
+	
+	
+	<bean id="pro_subs_bulk_flw_trcr_report_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_subs_bulk_flw_trcr_report_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_msisdn</value></property>
+			<property name="mapTo"><value>msisdn_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_subs_bulk_flw_trcr_report_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_from_date</value></property>
+			<property name="mapTo"><value>fromDate</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_subs_bulk_flw_trcr_report_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_to_date</value></property>
+			<property name="mapTo"><value>toDate</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_subs_bulk_flw_trcr_report_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_max_records</value></property>
+			<property name="mapTo"><value>maxRecords</value></property>
+			<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_subs_bulk_flw_trcr_report_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_next_rec_index</value></property>
+			<property name="mapTo"><value>nextRecordIndex</value></property>
+			<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+
+	<bean id="pro_subs_bulk_flw_trcr_report_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_subs_bulk_flw</value></property>  		
+  		<property name="mapTo"><value>po_fiveG_cursor</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>7</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_subs_bulk_flw_trcr_report_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_subs_bulk_flw_trcr_report_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+</beans>
+	

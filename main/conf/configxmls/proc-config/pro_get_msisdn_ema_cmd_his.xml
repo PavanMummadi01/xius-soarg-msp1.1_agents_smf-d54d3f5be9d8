@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_get_msisdn_ema_cmd_his" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+									 
+		<property name="name"><value>pro_get_msisdn_ema_cmd_his</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_1"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_2"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_3"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_4"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_5"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_6"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_7"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_8"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_9"></ref>
+				<ref bean="pro_get_msisdn_ema_cmd_his_param_10"></ref>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="8">
+					<ref bean="po_hlr_his_cursor"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_hlr_his_cursor_dtls_1"/>
+				<ref bean="po_hlr_his_cursor_dtls_2"/>
+				<ref bean="po_hlr_his_cursor_dtls_3"/>
+				<ref bean="po_hlr_his_cursor_dtls_4"/>
+				<ref bean="po_hlr_his_cursor_dtls_5"/>
+				<ref bean="po_hlr_his_cursor_dtls_6"/>
+				<ref bean="po_hlr_his_cursor_dtls_7"/>
+				<ref bean="po_hlr_his_cursor_dtls_8"/>
+				<ref bean="po_hlr_his_cursor_dtls_9"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.HlrCmdReportCursorData"/>
+	</bean>
+
+	<bean id="po_hlr_his_cursor_dtls_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_date</value></property>
+	  <property name="mapTo"><value>transaction_date</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>command_name</value></property>
+	  <property name="mapTo"><value>command_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>command</value></property>
+	  <property name="mapTo"><value>command</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>reason</value></property>
+	  <property name="mapTo"><value>reason</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>userId</value></property>
+	  <property name="mapTo"><value>userId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	<bean id="po_hlr_his_cursor_dtls_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>flow_name</value></property>
+	  <property name="mapTo"><value>flow_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	
+
+	<bean id="pro_get_msisdn_ema_cmd_his_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_network_id</value></property>
+	  <property name="mapTo"><value>pi_network_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_msisdn_no</value></property>
+	  <property name="mapTo"><value>pi_msisdn_no</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_imsi</value></property>  		
+  	  <property name="mapTo"><value>pi_imsi</value></property>
+      <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+  	  <property name="position"><value>3</value></property>
+  	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_fromdate</value></property>  		
+  	  <property name="mapTo"><value>pi_fromdate</value></property>
+      <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+  	  <property name="position"><value>4</value></property>
+  	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_todate</value></property>  		
+  	  <property name="mapTo"><value>pi_todate</value></property>
+      <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+  	  <property name="position"><value>5</value></property>
+  	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_flag_type</value></property>
+	  <property name="mapTo"><value>pi_flag_type</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_get_flag</value></property>
+	  <property name="mapTo"><value>pi_get_flag</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_hlr_his_cursor</value></property>
+	  <property name="mapTo"><value>po_hlr_his_cursor</value></property>
+	  <property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_error_code</value></property>
+	  <property name="mapTo"><value>po_error_code</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>9</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_msisdn_ema_cmd_his_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_error_desc</value></property>
+	  <property name="mapTo"><value>po_error_desc</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+</beans>

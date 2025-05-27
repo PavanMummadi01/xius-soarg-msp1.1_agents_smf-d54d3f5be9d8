@@ -1,0 +1,76 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- hlr_subscriber_trace_info Stored Procedure -->
+	<bean id="PRO_AMS_LOWBAL_NOTIFY_UPD" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>PRO_AMS_LOWBAL_NOTIFY_UPD</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="lowbal_notify_upd_param_1"></ref>
+				<ref bean="lowbal_notify_upd_param_2"></ref>
+				<ref bean="lowbal_notify_upd_param_3"></ref>
+				<ref bean="lowbal_notify_upd_param_4"></ref>
+				<ref bean="lowbal_notify_upd_param_5"></ref>
+				<ref bean="lowbal_notify_upd_param_6"></ref>
+				<ref bean="lowbal_notify_upd_param_7"></ref>				
+			</list>
+		</property>
+	</bean>
+	 
+	<bean id="lowbal_notify_upd_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="lowbal_notify_upd_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_source</value></property>
+		<property name="mapTo"><value>pi_source</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	 
+	<bean id="lowbal_notify_upd_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_consumer_type</value></property>
+		<property name="mapTo"><value>pi_consumer_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>  
+	
+	<bean id="lowbal_notify_upd_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_status</value></property>
+		<property name="mapTo"><value>pi_status</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>    
+	
+	<bean id="lowbal_notify_upd_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_failure_reason</value></property>
+		<property name="mapTo"><value>pi_failure_reason</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="lowbal_notify_upd_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_seq_no</value></property>
+		<property name="mapTo"><value>pi_seq_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="lowbal_notify_upd_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>

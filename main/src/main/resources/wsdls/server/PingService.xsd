@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+           xmlns="http://smf.agent.xius.com/PingService.xsd" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://smf.agent.xius.com/PingService.xsd" 
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified">
+           
+	<xs:element name="pingService" type="PingServiceRequest"/>
+	<xs:element name="pingResponse" type="PingResponse"/>
+	
+	 <xs:complexType name="PingServiceRequest">	
+		 <xs:sequence>
+		 </xs:sequence>         			
+	 </xs:complexType>
+	 
+	<xs:complexType name="PingResponse">	
+			<xs:sequence>
+				<xs:element name="message" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+</xs:schema>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id=" pro_get_chg_msisdn_upld_dtls" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>pkg_change_msisdn_info.pro_get_chg_msisdn_upld_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_get_chg_msisdn_upld_dtls_1"/>
+				<ref bean="pro_get_chg_msisdn_upld_dtls_2"/>
+				<ref bean="pro_get_chg_msisdn_upld_dtls_3"/>		
+				<ref bean="pro_get_chg_msisdn_upld_dtls_4"/>
+				<ref bean="pro_get_chg_msisdn_upld_dtls_5"/>
+				<ref bean="pro_get_chg_msisdn_upld_dtls_6"/>
+				
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="4">
+					<ref bean="po_chg_msisdn_dtls"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="po_chg_msisdn_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_chg_msisdn_cursor_param_1"/>
+				<ref bean="po_chg_msisdn_cursor_param_2"/>
+				<ref bean="po_chg_msisdn_cursor_param_3"/>
+				<ref bean="po_chg_msisdn_cursor_param_4"/>
+				<ref bean="po_chg_msisdn_cursor_param_5"/>
+				<ref bean="po_chg_msisdn_cursor_param_6"/>
+				<ref bean="po_chg_msisdn_cursor_param_7"/>
+				<ref bean="po_chg_msisdn_cursor_param_8"/>
+				<ref bean="po_chg_msisdn_cursor_param_9"/>
+				<ref bean="po_chg_msisdn_cursor_param_10"/>
+				<ref bean="po_chg_msisdn_cursor_param_11"/>
+				<ref bean="po_chg_msisdn_cursor_param_12"/>
+				<ref bean="po_chg_msisdn_cursor_param_13"/>
+				<ref bean="po_chg_msisdn_cursor_param_14"/>
+				<ref bean="po_chg_msisdn_cursor_param_15"/>
+				
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.GetBulkChangeMsisdnDtlsCursorData"/>
+	</bean>
+
+	<bean id="po_chg_msisdn_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_chg_msisdn_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_id</value></property>
+	  <property name="mapTo"><value>user_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn</value></property>
+	  <property name="mapTo"><value>msisdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_chg_msisdn_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_id</value></property>
+	  <property name="mapTo"><value>account_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_chg_msisdn_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>device_type</value></property>
+	  <property name="mapTo"><value>device_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_chg_msisdn_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>charge</value></property>
+	  <property name="mapTo"><value>charge</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_value</value></property>
+	  <property name="mapTo"><value>id_value</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="po_chg_msisdn_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_value</value></property>
+	  <property name="mapTo"><value>new_value</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_value</value></property>
+	  <property name="mapTo"><value>old_value</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	<bean id="po_chg_msisdn_cursor_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_serial_no</value></property>
+	  <property name="mapTo"><value>new_serial_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>zip_code</value></property>
+	  <property name="mapTo"><value>zip_code</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>provcomp</value></property>
+	  <property name="mapTo"><value>provcomp</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	
+	<bean id="po_chg_msisdn_cursor_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>failed_node</value></property>
+	  <property name="mapTo"><value>failed_node</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	
+		<bean id="po_chg_msisdn_cursor_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>simSaleTransID</value></property>
+	  <property name="mapTo"><value>simSaleTransID</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+		
+	<!-- End of cursor mapping  -->
+	
+	<bean id="pro_get_chg_msisdn_upld_dtls_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_chg_msisdn_upld_dtls_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_max_rows</value></property>
+		<property name="mapTo"><value>pi_max_rows</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_chg_msisdn_upld_dtls_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_transaction_id</value></property>
+		<property name="mapTo"><value>pi_transaction_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_get_chg_msisdn_upld_dtls_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_chg_msisdn_dtls</value></property>  		
+  		<property name="mapTo"><value>po_chg_msisdn_dtls</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>4</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_chg_msisdn_upld_dtls_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_chg_msisdn_upld_dtls_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

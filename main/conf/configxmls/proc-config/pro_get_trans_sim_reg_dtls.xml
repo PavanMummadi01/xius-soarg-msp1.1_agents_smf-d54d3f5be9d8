@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- start pro_get_trans_sim_reg_dtls  -->
+	        
+	<bean id="pro_get_trans_sim_reg_dtls" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>cs_sim_reg_tracker_pkg.pro_get_trans_sim_reg_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_get_trans_sim_reg_dtls_param_1"></ref>
+				<ref bean="pro_get_trans_sim_reg_dtls_param_2"></ref>
+				<ref bean="pro_get_trans_sim_reg_dtls_param_3"></ref>
+				<ref bean="pro_get_trans_sim_reg_dtls_param_4"></ref>
+				<ref bean="pro_get_trans_sim_reg_dtls_param_5"></ref>									
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="pro_get_trans_sim_reg_dtls_cursor_data"/>
+				</entry>
+			</map>
+		</property>
+		
+	</bean>
+	   
+      	<bean id="pro_get_trans_sim_reg_dtls_cursor_data" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_1"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_2"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_3"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_4"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_5"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_6"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_7"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_8"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_9"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_10"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_11"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_12"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_13"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_14"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_15"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_16"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_17"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_18"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_19"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_20"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_21"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_22"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_23"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_24"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_25"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_26"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_27"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_28"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_29"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_30"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_31"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_32"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_33"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_34"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_35"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_36"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_37"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_38"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_39"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_40"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_41"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_42"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_43"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_44"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_45"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_46"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_47"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_48"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_49"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_50"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_51"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_52"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_53"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_54"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_55"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_56"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_57"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_58"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_59"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_60"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_61"/>	
+								
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_62"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_63"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_64"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_65"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_66"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_67"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_68"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_69"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_70"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_71"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_72"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_73"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_74"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_75"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_76"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_77"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_78"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_79"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_80"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_81"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_82"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_83"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_84"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_85"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_86"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_87"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_88"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_89"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_90"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_91"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_92"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_93"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_94"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_95"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_96"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_97"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_98"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_99"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_100"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_101"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_102"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_103"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_104"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_105"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_106"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_107"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_108"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_109"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_110"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_111"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_112"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_113"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_114"/>	
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_115"/>	
+								
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_116"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_117"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_118"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_119"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_120"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_121"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_122"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_123"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_124"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_125"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_126"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_127"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_128"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_129"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_130"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_131"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_132"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_133"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_134"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_135"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_136"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_137"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_138"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_139"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_140"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_141"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_142"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_143"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_144"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_145"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_146"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_147"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_148"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_149"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_150"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_151"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_152"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_153"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_154"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_155"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_156"/>
+								<ref bean="pro_get_trans_sim_reg_dtls_cursor_data_param_157"/>
+					
+
+																				
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.PrepaidActivationRetryCursorData"/>
+	</bean>
+
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>networkid</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property> 
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	 <property name="procedureColumnName"><value>sim</value></property>
+	  <property name="mapTo"><value>sim</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_type</value></property>
+	  <property name="mapTo"><value>id_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_no</value></property>
+	  <property name="mapTo"><value>id_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>first_name</value></property>
+	  <property name="mapTo"><value>first_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>last_name</value></property>
+	  <property name="mapTo"><value>last_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sur_name</value></property>
+	  <property name="mapTo"><value>sur_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>date_of_birth</value></property>
+	  <property name="mapTo"><value>date_of_birth</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>accounttype</value></property>
+	  <property name="mapTo"><value>accounttype</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>billcycle_day</value></property>
+	  <property name="mapTo"><value>billcycle_day</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>credit_limit</value></property>
+	  <property name="mapTo"><value>credit_limit</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>municipoality</value></property>
+	  <property name="mapTo"><value>municipoality</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>street_limits</value></property>
+	  <property name="mapTo"><value>street_limits</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>gender</value></property>
+	  <property name="mapTo"><value>gender</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>street</value></property>
+	  <property name="mapTo"><value>street</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>colony</value></property>
+	  <property name="mapTo"><value>colony</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>city</value></property>
+	  <property name="mapTo"><value>city</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>state</value></property>
+	  <property name="mapTo"><value>state</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>18</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>country</value></property>
+	  <property name="mapTo"><value>country</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>19</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_20" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>postalcode</value></property>
+	  <property name="mapTo"><value>postalcode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>20</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_21" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>emailid</value></property>
+	  <property name="mapTo"><value>emailid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>21</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_22" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>alternate_contactno</value></property>
+	  <property name="mapTo"><value>alternate_contactno</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>22</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_23" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>trafficpack_id</value></property>
+	  <property name="mapTo"><value>trafficpack_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>23</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_24" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>exttransid</value></property>
+	  <property name="mapTo"><value>exttransid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>24</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_25" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>billtype</value></property>
+	  <property name="mapTo"><value>billtype</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>25</value></property>
+	</bean>
+	
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_26" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>billfrequency</value></property>
+	  <property name="mapTo"><value>billfrequency</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>26</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_27" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>27</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_28" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>remarks</value></property>
+	  <property name="mapTo"><value>remarks</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>28</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_29" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>userinputfield3</value></property>
+	  <property name="mapTo"><value>userinputfield3</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>29</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_30" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>userinputfield4</value></property>
+	  <property name="mapTo"><value>userinputfield4</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>30</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_31" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>userinputfield5</value></property>
+	  <property name="mapTo"><value>userinputfield5</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>31</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_32" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>dealerid</value></property>
+	  <property name="mapTo"><value>dealerid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>32</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_33" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>locationcode</value></property>
+	  <property name="mapTo"><value>locationcode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>33</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_34" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>personalinfoflag</value></property>
+	  <property name="mapTo"><value>personalinfoflag</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>34</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_35" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>channel</value></property>
+	  <property name="mapTo"><value>channel</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>35</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_36" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>officecode</value></property>
+	  <property name="mapTo"><value>officecode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>36</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_37" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>iscorp</value></property>
+	  <property name="mapTo"><value>iscorp</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>37</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_38" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sna</value></property>
+	  <property name="mapTo"><value>sna</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>38</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_39" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>userid</value></property>
+	  <property name="mapTo"><value>userid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>39</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_40" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>internal_trans_id</value></property>
+	  <property name="mapTo"><value>internal_trans_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>40</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_41" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>order_id</value></property>
+	  <property name="mapTo"><value>order_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>41</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_42" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>blocked_msisdn</value></property>
+	  <property name="mapTo"><value>blocked_msisdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>42</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_43" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>address_1</value></property>
+	  <property name="mapTo"><value>address_1</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>43</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_44" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>address_2</value></property>
+	  <property name="mapTo"><value>address_2</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>44</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_45" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>address_3</value></property>
+	  <property name="mapTo"><value>address_3</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>45</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_46" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_name</value></property>
+	  <property name="mapTo"><value>network_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>46</value></property>
+	</bean>
+
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_47" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>officename</value></property>
+	  <property name="mapTo"><value>officename</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>47</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_48" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>contractid</value></property>
+	  <property name="mapTo"><value>contractid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>48</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_49" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>tp_name</value></property>
+	  <property name="mapTo"><value>tp_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>49</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_50" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>dealer_name</value></property>
+	  <property name="mapTo"><value>dealer_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>50</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_51" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>failednode</value></property>
+	  <property name="mapTo"><value>failednode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>51</value></property>
+	</bean>
+		
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_52" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_account_name</value></property>
+	  <property name="mapTo"><value>user_account_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>52</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_53" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_account_password</value></property>
+	  <property name="mapTo"><value>user_account_password</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>53</value></property>
+	</bean>
+	
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_54" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>initiated_from</value></property>
+	  <property name="mapTo"><value>initiated_from</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>54</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_55" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>usertype</value></property>
+	  <property name="mapTo"><value>userType</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>55</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_56" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>messageid</value></property>
+	  <property name="mapTo"><value>messageID</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>56</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_57" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>eventflag</value></property>
+	  <property name="mapTo"><value>eventFlag</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>57</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_58" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>promocode</value></property>
+	  <property name="mapTo"><value>PromoCode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>58</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_59" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>atpid</value></property>
+	  <property name="mapTo"><value>ATPId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>59</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_60" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_sim</value></property>
+	  <property name="mapTo"><value>old_sim</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>60</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_61" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_mdn</value></property>
+	  <property name="mapTo"><value>account_mdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>61</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_62" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_password</value></property>
+	  <property name="mapTo"><value>new_password</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>62</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_63" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>registration_required</value></property>
+	  <property name="mapTo"><value>registration_required</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>63</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_64" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>icc_no</value></property>
+	  <property name="mapTo"><value>icc_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>64</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_65" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>registration_type</value></property>
+	  <property name="mapTo"><value>registration_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>65</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_66" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_status</value></property>
+	  <property name="mapTo"><value>account_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>66</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_67" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sc_iccno</value></property>
+	  <property name="mapTo"><value>sc_iccno</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>67</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_68" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>golden_icc_no</value></property>
+	  <property name="mapTo"><value>golden_icc_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>68</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_69" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>normal_order_id</value></property>
+	  <property name="mapTo"><value>normal_order_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>69</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_70" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sub_account_status</value></property>
+	  <property name="mapTo"><value>sub_account_status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>70</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_71" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>hlr_fr_connection</value></property>
+	  <property name="mapTo"><value>hlr_fr_connection</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>71</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_72" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>content</value></property>
+	  <property name="mapTo"><value>content</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>72</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_73" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>order_list</value></property>
+	  <property name="mapTo"><value>order_list</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>73</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_74" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_list_long</value></property>
+	  <property name="mapTo"><value>msisdn_list_long</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>74</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_75" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>util_list</value></property>
+	  <property name="mapTo"><value>util_list</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>75</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_76" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>charges</value></property>
+	  <property name="mapTo"><value>charges</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>76</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_77" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_list</value></property>
+	  <property name="mapTo"><value>msisdn_list</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>77</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_78" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>device_id_key</value></property>
+	  <property name="mapTo"><value>device_id_key</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>78</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_79" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_value</value></property>
+	  <property name="mapTo"><value>new_value</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>79</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_80" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>authenticate_carrierid</value></property>
+	  <property name="mapTo"><value>authenticate_carrierid</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>80</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_81" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>dt_failure_error_code</value></property>
+	  <property name="mapTo"><value>dt_failure_error_code</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>81</value></property>
+	</bean>
+	
+	
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_82" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>denominations</value></property>
+	  <property name="mapTo"><value>denominations</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>82</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_83" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>tax_id</value></property>
+	  <property name="mapTo"><value>tax_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>83</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_84" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>balance_amount</value></property>
+	  <property name="mapTo"><value>balance_amount</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>84</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_85" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>order_date</value></property>
+	  <property name="mapTo"><value>order_date</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>85</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_86" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_validity_date</value></property>
+	  <property name="mapTo"><value>new_validity_date</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>86</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_87" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>port_req_form_id</value></property>
+	  <property name="mapTo"><value>port_req_form_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>87</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_88" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>port_id</value></property>
+	  <property name="mapTo"><value>port_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>88</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_89" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>rejected_data</value></property>
+	  <property name="mapTo"><value>rejected_data</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>89</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_90" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>npr_subm_time</value></property>
+	  <property name="mapTo"><value>npr_subm_time</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>90</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_91" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>threshold_time</value></property>
+	  <property name="mapTo"><value>threshold_time</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>91</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_92" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>comp_email_id</value></property>
+	  <property name="mapTo"><value>comp_email_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>92</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_93" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>notification_data_email</value></property>
+	  <property name="mapTo"><value>notification_data_email</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>93</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_94" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>mdn</value></property>
+	  <property name="mapTo"><value>mdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>94</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_95" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_mdn</value></property>
+	  <property name="mapTo"><value>new_mdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>95</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_96" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>fr_trn_no</value></property>
+	  <property name="mapTo"><value>fr_trn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>96</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_97" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_cc_msisdn</value></property>
+	  <property name="mapTo"><value>new_cc_msisdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>97</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_98" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_cc_msisdn</value></property>
+	  <property name="mapTo"><value>old_cc_msisdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>98</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_99" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_imsi</value></property>
+	  <property name="mapTo"><value>old_imsi</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>99</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_100" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>service_type</value></property>
+	  <property name="mapTo"><value>service_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>100</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_101" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>imsi_sim_registration</value></property>
+	  <property name="mapTo"><value>imsi_sim_registration</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>101</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_102" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_imsi_sim_registration</value></property>
+	  <property name="mapTo"><value>old_imsi_sim_registration</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>102</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_103" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>actual_msisdn</value></property>
+	  <property name="mapTo"><value>actual_msisdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>103</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_104" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_id</value></property>
+	  <property name="mapTo"><value>account_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>104</value></property>
+	</bean>
+	
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_105" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_cc_mdn_list</value></property>
+	  <property name="mapTo"><value>old_cc_mdn_list</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>105</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_106" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>new_cc_mdn_list</value></property>
+	  <property name="mapTo"><value>new_cc_mdn_list</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>106</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_107" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>active</value></property>
+	  <property name="mapTo"><value>active</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>107</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_108" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>ussd_mdn</value></property>
+	  <property name="mapTo"><value>ussd_mdn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>108</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_109" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>dealer_user_id</value></property>
+	  <property name="mapTo"><value>dealer_user_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>109</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_110" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>input_icc_no</value></property>
+	  <property name="mapTo"><value>input_icc_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>110</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_111" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>login_id</value></property>
+	  <property name="mapTo"><value>login_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>111</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_112" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>workgroup_id</value></property>
+	  <property name="mapTo"><value>workgroup_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>112</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_113" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>imei</value></property>
+	  <property name="mapTo"><value>imei</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>113</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_114" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sale_type</value></property>
+	  <property name="mapTo"><value>sale_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>114</value></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_115" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>price</value></property>
+	  <property name="mapTo"><value>price</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>115</value></property>
+	</bean>
+	
+
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_116" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>sim_is_actual</value></property>
+        <property name="mapTo"><value>sim_is_actual</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>116</value></property>
+    </bean>
+    
+
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_117" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>sim_psuedo</value></property>
+        <property name="mapTo"><value>sim_psuedo</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>117</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_118" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>invalid_account_state</value></property>
+        <property name="mapTo"><value>invalid_account_state</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>118</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_119" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>reason</value></property>
+        <property name="mapTo"><value>reason</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>119</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_120" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>update_product_status</value></property>
+        <property name="mapTo"><value>update_product_status</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>120</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_121" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>no_kad_id_code</value></property>
+        <property name="mapTo"><value>no_kad_id_code</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>121</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_122" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>get_order_details</value></property>
+        <property name="mapTo"><value>get_order_details</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>122</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_123" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>error_code</value></property>
+        <property name="mapTo"><value>error_code</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>123</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_124" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>input_personal_data</value></property>
+        <property name="mapTo"><value>input_personal_data</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>124</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_125" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>get_account_details</value></property>
+        <property name="mapTo"><value>get_account_details</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>125</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_126" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>request_type</value></property>
+        <property name="mapTo"><value>request_type</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>126</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_127" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>user_name</value></property>
+        <property name="mapTo"><value>user_name</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>127</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_128" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>middle_name</value></property>
+        <property name="mapTo"><value>middle_name</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>128</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_129" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>post_paid</value></property>
+        <property name="mapTo"><value>post_paid</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>129</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_130" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>old_mdn</value></property>
+        <property name="mapTo"><value>old_mdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>130</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_131" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>zipcode</value></property>
+        <property name="mapTo"><value>zipcode</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>131</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_132" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>old_value</value></property>
+        <property name="mapTo"><value>old_value</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>132</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_133" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>new_imsi</value></property>
+        <property name="mapTo"><value>new_imsi</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>133</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_134" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>transaction_id</value></property>
+        <property name="mapTo"><value>transaction_id</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>134</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_135" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>sub_transaction_id</value></property>
+        <property name="mapTo"><value>sub_transaction_id</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>135</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_136" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>icc_id</value></property>
+        <property name="mapTo"><value>icc_id</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>136</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_137" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_old_sim</value></property>
+        <property name="mapTo"><value>audit_old_sim</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>137</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_138" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>imsi</value></property>
+        <property name="mapTo"><value>imsi</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>138</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_139" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>msisdn</value></property>
+        <property name="mapTo"><value>msisdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>139</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_140" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>external_trans_id_2</value></property>
+        <property name="mapTo"><value>external_trans_id_2</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>140</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_141" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_old_msisdn</value></property>
+        <property name="mapTo"><value>audit_old_msisdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>141</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_142" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_new_msisdn</value></property>
+        <property name="mapTo"><value>audit_new_msisdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>142</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_143" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_imsi</value></property>
+        <property name="mapTo"><value>audit_imsi</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>143</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_144" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_action</value></property>
+        <property name="mapTo"><value>audit_action</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>144</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_145" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_icc_id</value></property>
+        <property name="mapTo"><value>audit_icc_id</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>145</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_146" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>data</value></property>
+        <property name="mapTo"><value>data</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>146</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_147" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_new_sim</value></property>
+        <property name="mapTo"><value>audit_new_sim</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>147</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_148" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>audit_msisdn</value></property>
+        <property name="mapTo"><value>audit_msisdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>148</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_149" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>old_msisdn</value></property>
+        <property name="mapTo"><value>old_msisdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>149</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_150" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+       <property name="procedureColumnName"><value>new_msisdn</value></property>
+        <property name="mapTo"><value>new_msisdn</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>150</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_151" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>failed_msisdns_list_old</value></property>
+        <property name="mapTo"><value>failed_msisdns_list_old</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>151</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_152" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>failed_msisdns_list_new</value></property>
+        <property name="mapTo"><value>failed_msisdns_list_new</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>152</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_153" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>is_subscribed</value></property>
+        <property name="mapTo"><value>is_subscribed</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>153</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_154" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>flag_5g</value></property>
+        <property name="mapTo"><value>flag_5g</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>154</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_155" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>return_code</value></property>
+        <property name="mapTo"><value>return_code</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>155</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_156" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>response_code</value></property>
+        <property name="mapTo"><value>response_code</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>156</value></property>
+    </bean>
+    
+    <bean id="pro_get_trans_sim_reg_dtls_cursor_data_param_157" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+        <property name="procedureColumnName"><value>new_sim</value></property>
+        <property name="mapTo"><value>new_sim</value></property>
+        <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+        <property name="position"><value>157</value></property>
+    </bean>
+   
+
+<bean id="pro_get_trans_sim_reg_dtls_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_networkid</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_trans_ref_number</value></property>
+			<property name="mapTo"><value>pi_trans_ref_number</value></property>
+		    <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_nw_pend_sim_reg_dtls</value></property>
+			<property name="mapTo"><value>po_nw_pend_sim_reg_dtls</value></property>
+			<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+		<bean id="pro_get_trans_sim_reg_dtls_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_trans_sim_reg_dtls_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+ </beans>
+
+

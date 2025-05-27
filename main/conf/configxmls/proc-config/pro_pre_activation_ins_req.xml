@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_pre_activation_ins_req"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pro_pre_activation_ins_req</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_pro_pre_activation_ins_req_param_1"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_2"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_3"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_4"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_5"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_6"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_7"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_8"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_9"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_10"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_11"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_12"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_13"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_14"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_15"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_16"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_17"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_18"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_19"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_20"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_21"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_22"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_23"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_24"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_25"></ref>
+				<ref bean="pro_pro_pre_activation_ins_req_param_26"></ref>
+				
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_sub_address_info</value></property>
+			<property name="mapTo"><value>pi_sub_address_info</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_iscorp</value></property>
+		<property name="mapTo"><value>pi_iscorp</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_initiatedfrom</value></property>
+		<property name="mapTo"><value>pi_initiatedfrom</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_locationcode</value></property>
+		<property name="mapTo"><value>pi_locationcode</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_messageid</value></property>
+		<property name="mapTo"><value>pi_messageid</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_msisdninfo</value></property>
+			<property name="mapTo"><value>pi_msisdninfo</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_networkname</value></property>
+		<property name="mapTo"><value>pi_networkname</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>8</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_officecode</value></property>
+		<property name="mapTo"><value>pi_officecode</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>9</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_orderid</value></property>
+		<property name="mapTo"><value>pi_orderid</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>10</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_otherinfo</value></property>
+			<property name="mapTo"><value>pi_otherinfo</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_personalinfo</value></property>
+			<property name="mapTo"><value>pi_personalinfo</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_promocode</value></property>
+		<property name="mapTo"><value>pi_promocode</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>13</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_registrationrequired</value></property>
+		<property name="mapTo"><value>pi_registrationrequired</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>14</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_registrationtype</value></property>
+		<property name="mapTo"><value>pi_registrationtype</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>15</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_16" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_securityid</value></property>
+			<property name="mapTo"><value>pi_securityid</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>16</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_17" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_servicecontext</value></property>
+			<property name="mapTo"><value>pi_servicecontext</value></property>
+			<property name="type"><ref bean="java.sql.Types.ARRAY"></ref></property>
+			<property name="arrayName"><value>ARR_VARCHAR</value></property>
+			<property name="position"><value>17</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_18" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_tariffpackageid</value></property>
+		<property name="mapTo"><value>pi_tariffpackageid</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>18</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_19" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_subscriberstatus</value></property>
+		<property name="mapTo"><value>pi_subscriberstatus</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>19</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_20" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_usertype</value></property>
+		<property name="mapTo"><value>pi_usertype</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>20</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_21" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_version</value></property>
+		<property name="mapTo"><value>pi_version</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>21</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_22" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sna</value></property>
+		<property name="mapTo"><value>pi_sna</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>22</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_23" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_transactionid</value></property>
+		<property name="mapTo"><value>pi_transactionid</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>	
+		<property name="position"><value>23</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_24" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_trans_id</value></property>
+			<property name="mapTo"><value>po_trans_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>24</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_25" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_err_code</value></property>
+			<property name="mapTo"><value>po_err_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>25</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_pro_pre_activation_ins_req_param_26" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_err_desc</value></property>
+			<property name="mapTo"><value>po_err_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>26</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	
+ </beans>
+	      

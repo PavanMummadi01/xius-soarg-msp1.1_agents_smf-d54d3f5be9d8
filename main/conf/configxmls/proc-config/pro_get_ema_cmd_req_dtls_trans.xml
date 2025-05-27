@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_get_ema_cmd_req_dtls_trans" class="net.bcgi.util.db.SPDefinition" scope="singleton">
+									 
+		<property name="name"><value>pkg_ttsa_ema_cmd_request.pro_get_ema_cmd_req_dtls_trans</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_get_ema_cmd_req_dtls_trans_param_1"></ref>
+				<ref bean="pro_get_ema_cmd_req_dtls_trans_param_2"></ref>
+				<ref bean="pro_get_ema_cmd_req_dtls_trans_param_3"></ref>
+				<ref bean="pro_get_ema_cmd_req_dtls_trans_param_4"></ref>
+				<ref bean="pro_get_ema_cmd_req_dtls_trans_param_5"></ref>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="po_ema_cmd_req_dtls"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_ema_cmd_req_dtls_1"/>
+				<ref bean="po_ema_cmd_req_dtls_2"/>
+				<ref bean="po_ema_cmd_req_dtls_3"/>
+				<ref bean="po_ema_cmd_req_dtls_4"/>
+				<ref bean="po_ema_cmd_req_dtls_5"/>
+				<ref bean="po_ema_cmd_req_dtls_6"/>
+				<ref bean="po_ema_cmd_req_dtls_7"/>
+				<ref bean="po_ema_cmd_req_dtls_8"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.InvokeBulkEmaStatusCursorTrans"/>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>login_id</value></property>
+	  <property name="mapTo"><value>LoginId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>Internal_TranId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>MSISDN</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>command_name</value></property>
+	  <property name="mapTo"><value>CMD_NAME</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>created_date</value></property>
+	  <property name="mapTo"><value>CREATED_DATE</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>STATUS</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>remarks</value></property>
+	  <property name="mapTo"><value>REMARKS</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	
+	<bean id="po_ema_cmd_req_dtls_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>reason</value></property>
+	  <property name="mapTo"><value>reason</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+
+	<bean id="pro_get_ema_cmd_req_dtls_trans_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_network_id</value></property>
+	  <property name="mapTo"><value>pi_network_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_ema_cmd_req_dtls_trans_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>pi_transaction_id</value></property>
+	  <property name="mapTo"><value>pi_transaction_id</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_ema_cmd_req_dtls_trans_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_ema_cmd_req_dtls</value></property>  		
+  	  <property name="mapTo"><value>po_ema_cmd_req_dtls</value></property>
+      <property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  	  <property name="position"><value>3</value></property>
+  	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_ema_cmd_req_dtls_trans_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_error_code</value></property>
+	  <property name="mapTo"><value>po_error_code</value></property>
+	  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>4</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_ema_cmd_req_dtls_trans_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	  <property name="name"><value>po_error_msg</value></property>
+	  <property name="mapTo"><value>po_error_msg</value></property>
+	  <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+</beans>

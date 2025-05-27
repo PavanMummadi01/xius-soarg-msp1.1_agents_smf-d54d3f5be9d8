@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- January 5, 2006 -->
+<xsd:schema
+        targetNamespace="http://topup.tunetalk.com/schema/common"
+        xmlns:common_xsd="http://topup.tunetalk.com/schema/common"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name="MSISDN">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value='1'/>
+            <xsd:maxLength value='15'/>
+            <xsd:pattern value="[0-9]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Datetime">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value='14' fixed='true'/>
+            <xsd:pattern value="[0-9]*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DecimalType">
+    <xsd:restriction base="xsd:decimal">
+        <xsd:totalDigits value="6"/>
+        <xsd:fractionDigits value="2"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+    <xsd:simpleType name="Result">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Success"/>
+            <xsd:enumeration value="Fail"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="PartnerReferenceId">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="16"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="SubscriptionId">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="9"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="ReferenceId">
+        <xsd:sequence>
+            <xsd:element name="SubscriptionId" type="common_xsd:SubscriptionId" minOccurs="0"/>
+            <xsd:element name="PartnerReferenceId" type="common_xsd:PartnerReferenceId" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Parameter">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Response">
+        <xsd:sequence>
+            <xsd:element name="Result" type="common_xsd:Result"/>
+            <xsd:element name="Code" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ResponseWithReferenceId">
+        <xsd:complexContent>
+            <xsd:extension base="common_xsd:Response">
+                <xsd:sequence>
+                    <xsd:element name="ReferenceId" type="common_xsd:ReferenceId" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="ServiceError" type="common_xsd:ErrorReason"/>
+    <xsd:complexType name="ErrorReason">
+        <xsd:sequence>
+            <xsd:element name="code" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="variables" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="AuthHeader" type="common_xsd:AuthHeader"/>
+    <xsd:complexType name="AuthHeader">
+        <xsd:sequence>
+            <xsd:element name="username" type="xsd:string"/>
+            <xsd:element name="password" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+</xsd:schema>

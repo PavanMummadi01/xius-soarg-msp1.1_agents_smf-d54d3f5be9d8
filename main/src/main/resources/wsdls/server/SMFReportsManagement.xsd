@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://smfreport.agent.xius.com/SMFReportsManagement.xsd"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ targetNamespace="http://smfreport.agent.xius.com/SMFReportsManagement.xsd" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+<xs:element name="SlpnPointsTransactionReportRequest" type="slpnPointsTransactionReportRequest"/>
+<xs:element name="SlpnPointsTransactionReportResponse" type="slpnPointsTransactionReportResponse"/>
+
+<xs:element name="fiveGReportRequest" type="fiveGReportRequest"/>
+<xs:element name="fiveGReportResponse" type="fiveGReportResponse"/>
+
+<xs:element name="stateChangeReportRequest" type="stateChangeReportRequest"/>
+<xs:element name="stateChangeReportResponse" type="stateChangeReportResponse"/>
+
+<xs:element name="volteProcessReportRequest" type="volteProcessReportRequest"/>
+<xs:element name="volteProcessReportResponse" type="volteProcessReportResponse"/>
+  
+<xs:element name="getAccountActDeactCancelReportRequest" type="getAccountActDeactCancelReportRequest"/>
+<xs:element name="getAccountActDeactCancelReportResponse" type="getAccountActDeactCancelReportResponse"/> 
+ 
+<xs:element name="caGroupTransactionReportRequest" type="caGroupTransactionReportRequest"/>
+<xs:element name="caGroupTransactionReportResponse" type="caGroupTransactionReportResponse"/>  
+ 
+ <xs:complexType name="slpnPointsTransactionReportRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="operationType" type="xs:string" minOccurs="0"/>
+ 			<xs:element name="fromDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="toDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="maxRecords" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="nextRecordIndex" type="xs:int" minOccurs="0"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 
+ 	<xs:complexType name="slpnPointsTransactionReportResponse">
+		<xs:sequence>	
+		     <xs:element name="totalRecords" type="xs:long" minOccurs="0"/>   		
+			<xs:element name="SlpnPointsTransactions" type="slpnPointsTransactionsType" minOccurs="0"  maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 
+ 
+ <xs:complexType name="slpnPointsTransactionsType">
+			<xs:sequence>
+			     <xs:element name="MSISDN" type="xs:long" minOccurs="0"/>  
+			     <xs:element name="clientId" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transactionDate" type="xs:string" minOccurs="0"/>
+				<xs:element name="operation" type="xs:string" minOccurs="0"/>
+				<xs:element name="extErrorCode" type="xs:long" minOccurs="0"/>
+	      		<xs:element name="remarks" type="xs:string" minOccurs="0"/>
+	      		<xs:element name="Status" type="xs:string" minOccurs="0"/>
+                <xs:element name="reverseReffNum" type="xs:string" minOccurs="0"/>  
+                <xs:element name="publicityId" type="xs:string" minOccurs="0"/>
+                <xs:element name="slpnPoints" type="xs:decimal" minOccurs="0"/>
+                <xs:element name="redeemptionDenomination" type="xs:decimal" minOccurs="0"/>
+                 <xs:element name="rowCount" type="xs:long" minOccurs="0"/>	
+                 <xs:element name="userDefined1" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined2" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined3" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+ 
+ <xs:complexType name="stateChangeReportRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="fromDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="toDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="maxRecords" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="nextRecordIndex" type="xs:int" minOccurs="0"/>	
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 	<xs:complexType name="stateChangeReportResponse">
+		<xs:sequence>	
+		     <xs:element name="totalRecords" type="xs:long" minOccurs="0"/>   		
+			<xs:element name="stateChangeTransactions" type="stateChangeReportType" minOccurs="0"  maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 
+ 
+ <xs:complexType name="stateChangeReportType">
+			<xs:sequence>
+			     <xs:element name="newSubscrStatus" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transactionDate" type="xs:string" minOccurs="0"/>
+				<xs:element name="reason" type="xs:string" minOccurs="0"/>
+				<xs:element name="userId" type="xs:string" minOccurs="0"/>
+	      		<xs:element name="CHANNELID" type="xs:string" minOccurs="0"/>
+	      		<xs:element name="transactionRefNum" type="xs:string" minOccurs="0"/>
+                <xs:element name="oldSubcrStatus" type="xs:string" minOccurs="0"/>  
+                <xs:element name="remarks" type="xs:string" minOccurs="0"/>
+                <xs:element name="status" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined1" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined2" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined3" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+	<xs:complexType name="fiveGReportRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="fromDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="toDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="maxRecords" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="nextRecordIndex" type="xs:int" minOccurs="0"/>
+ 		</xs:sequence>
+	</xs:complexType>
+ 
+ 	<xs:complexType name="fiveGReportResponse">
+		<xs:sequence>	
+		     <xs:element name="totalRecords" type="xs:long" minOccurs="0"/>   		
+			<xs:element name="fiveGTransactions" type="fiveGReportType" minOccurs="0"  maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 
+ <xs:complexType name="fiveGReportType">
+			<xs:sequence>
+			     <xs:element name="msisdn_no" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transaction_id" type="xs:string" minOccurs="0"/>
+			     <xs:element name="provision_type" type="xs:string" minOccurs="0"/>
+				 <xs:element name="transaction_date" type="xs:string" minOccurs="0"/>
+				 <xs:element name="Status" type="xs:string" minOccurs="0"/>
+                 <xs:element name="Remarks" type="xs:string" minOccurs="0"/>
+                 <xs:element name="row_update_time" type="xs:string" minOccurs="0"/>
+                 <xs:element name="internalTransId" type="xs:string" minOccurs="0"/>
+                <!--  <xs:element name="remarks" type="xs:string" minOccurs="0"/> -->
+                 <xs:element name="insert_date" type="xs:string" minOccurs="0"/>
+                 <xs:element name="user_id" type="xs:string" minOccurs="0"/>
+                 <xs:element name="account_type" type="xs:string" minOccurs="0"/>
+                 <xs:element name="channel" type="xs:string" minOccurs="0"/>
+                 <xs:element name="service_flag" type="xs:string" minOccurs="0"/>
+                 <xs:element name="activity_id" type="xs:string" minOccurs="0"/>
+                 <xs:element name="account_id" type="xs:string" minOccurs="0"/>
+                 <xs:element name="sim_serial_no" type="xs:string" minOccurs="0"/>
+                 <xs:element name="imsi_no" type="xs:string" minOccurs="0"/>
+                 <xs:element name="acct_status" type="xs:string" minOccurs="0"/>
+				 <xs:element name="userDefined1" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined2" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined3" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+
+	<xs:complexType name="volteProcessReportRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="fromDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="toDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="maxRecords" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="nextRecordIndex" type="xs:int" minOccurs="0"/>
+ 		</xs:sequence>
+	</xs:complexType>
+ 
+ 	<xs:complexType name="volteProcessReportResponse">
+		<xs:sequence>	
+		     <xs:element name="totalRecords" type="xs:long" minOccurs="0"/>   		
+			<xs:element name="volteProcessTransactions" type="volteProcessReportType" minOccurs="0"  maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 
+ 		
+ 	<xs:complexType name="volteProcessReportType">
+			<xs:sequence>
+			     <xs:element name="msisdn_no" type="xs:string" minOccurs="0"/>
+			     <xs:element name="ext_transaction_id" type="xs:string" minOccurs="0"/>
+			     <xs:element name="internal_transaction_id" type="xs:string" minOccurs="0"/>
+				 <xs:element name="user_id" type="xs:string" minOccurs="0"/>
+				 <xs:element name="channelID" type="xs:string" minOccurs="0"/>
+                 <xs:element name="Status" type="xs:string" minOccurs="0"/>
+                 <xs:element name="Remarks" type="xs:string" minOccurs="0"/>
+                 <xs:element name="accountType" type="xs:string" minOccurs="0"/>
+                 <xs:element name="ProcessDate" type="xs:string" minOccurs="0"/>
+                 <xs:element name="serviceFlag" type="xs:string" minOccurs="0"/>
+                 <xs:element name="activityId" type="xs:string" minOccurs="0"/>
+				 <xs:element name="accountId" type="xs:string" minOccurs="0"/>
+				 <xs:element name="ICCID" type="xs:string" minOccurs="0"/>
+				 <xs:element name="IMSI" type="xs:string" minOccurs="0"/>
+				 <xs:element name="accountStatus" type="xs:string" minOccurs="0"/>
+	 			 <xs:element name="userDefined1" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined2" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined3" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+			
+ 
+ 
+ 	<xs:complexType name="getAccountActDeactCancelReportRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0"/>
+			<xs:element name="account" type="AccountIdType" minOccurs="0"/>
+			<xs:element name="operationType" type="xs:string" minOccurs="0"/>
+ 			<xs:element name="fromDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="toDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="maxRecords" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="nextRecordIndex" type="xs:int" minOccurs="0"/>	
+		</xs:sequence>
+	</xs:complexType>
+  	<xs:complexType name="getAccountActDeactCancelReportResponse">
+		<xs:sequence>	
+		     <xs:element name="totalRecords" type="xs:long" minOccurs="0"/>   		
+			<xs:element name="actDeactCancelTransactions" type="actDeactCancelTransactionsType" minOccurs="0"  maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ <xs:complexType name="actDeactCancelTransactionsType">
+			<xs:sequence>
+			     <xs:element name="MSISDN" type="xs:long" minOccurs="0"/>  
+			     <xs:element name="channelId" type="xs:string" minOccurs="0"/>
+			     <xs:element name="loginId" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			     <xs:element name="transactionDate" type="xs:string" minOccurs="0"/>
+				<xs:element name="reason" type="xs:string" minOccurs="0"/>
+                <xs:element name="rowCount" type="xs:long" minOccurs="0"/>	
+                <xs:element name="operation" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined1" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined2" type="xs:string" minOccurs="0"/>
+                 <xs:element name="userDefined3" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+	<!-- caGroupTransactionReport Start -->	
+	<xs:complexType name="caGroupTransactionReportRequest">
+		<xs:sequence>
+ 			<xs:element name="fromDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="toDate" type="DateTypeMMDD" minOccurs="0"/>
+ 			<xs:element name="maxRecords" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="nextRecordIndex" type="xs:int" minOccurs="0"/>
+ 			<xs:element name="externalTransactionId" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 	<xs:complexType name="caGroupTransactionReportResponse">
+		<xs:sequence>	
+	        <xs:element name="totalRecords" type="xs:long" minOccurs="0"/>   		
+			<xs:element name="caGroupTransactions" type="caGroupTransactionsType" minOccurs="0"  maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+ 
+ 	<xs:complexType name="caGroupTransactionsType">
+		<xs:sequence>
+			<xs:element name="grpName" type="xs:string" minOccurs="0" />
+			<xs:element name="parntAcctID" type="xs:long" minOccurs="0" />
+			<xs:element name="grpParentMsisdnNO" type="xs:long" minOccurs="0" />
+			<xs:element name="childMSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="Status" type="xs:string" minOccurs="0"/>
+		    <xs:element name="userName" type="xs:string" minOccurs="0"/>
+		     <xs:element name="statusUpdatedDate" type="xs:string" minOccurs="0"/>
+		    <xs:element name="internalTransactionId" type="xs:string" minOccurs="0"/>
+		    <xs:element name="transactionDate" type="xs:string" minOccurs="0"/>
+		    <xs:element name="externalTransactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="remarks" type="xs:string" minOccurs="0"/>
+			<xs:element name="rowCount" type="xs:long" minOccurs="0"/>	
+		</xs:sequence>
+	</xs:complexType>
+ 
+ <!-- caGroupTransactionReport End -->	
+ 
+ <xs:simpleType name="DateTypeMMDD">
+		<xs:restriction base="xs:string">
+			<!-- MM/DD/YYYY format -->
+			<xs:pattern value="([0][1-9]|[1][0-2])/([0][1-9]|[1-2][0-9]|[3][0-1])/([1-9][0-9][0-9][0-9])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AccountIdType">
+		<xs:restriction base="xs:long">
+		</xs:restriction>
+	</xs:simpleType>
+	
+ 
+ <xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+ 
+ <xs:simpleType name="IMSIType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{10,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SIMType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+<xs:complexType name="AccountType">
+		<xs:choice>
+			<xs:element name="accountId" type="AccountIdType" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+	    </xs:choice>
+	 </xs:complexType>
+</xs:schema>

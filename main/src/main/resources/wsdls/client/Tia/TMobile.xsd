@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://tia.xius.com/TMobile.xsd"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tia.xius.com/TMobile.xsd"
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+<xs:element name="activateRequest" type="activateRequest" />
+<xs:element name="activateResponse" type="activateResponse" />
+
+<xs:element name="reactivateRequest" type="ReactivateRequest" />
+<xs:element name="reactivateResponse" type="ReactivateResponse" />
+
+
+<xs:element name="suspendRequest" type="suspendRequest" />
+<xs:element name="suspendResponse" type="suspendResponse" />
+
+<xs:element name="restoreSubscriberRequest" type="RestoreSubscriberRequest" />
+<xs:element name="restoreSubscriberResponse" type="RestoreSubscriberResponse" />
+
+<xs:element name="deactivateRequest" type="DeactivateRequest" />
+<xs:element name="deactivateResponse" type="DeactivateResponse" />
+
+
+<xs:element name="addProductRequest" type="AddProductRequest" />
+<xs:element name="addProductResponse" type="AddProductResponse" />
+
+<xs:element name="replaceProductRequest" type="ReplaceProductRequest" />
+<xs:element name="replaceProductResponse" type="ReplaceProductResponse" />
+
+<xs:element name="removeProductRequest" type="RemoveProductRequest" />
+<xs:element name="removeProductResponse" type="RemoveProductResponse" />
+
+<xs:element name="queryNetworkRequest" type="QueryNetworkRequest" />
+<xs:element name="queryNetworkResponse" type="QueryNetworkResponse" />
+
+<xs:element name="subscriberInquiryRequest" type="SubscriberInquiryRequest" />
+<xs:element name="subscriberInquiryResponse" type="SubscriberInquiryResponse" />
+
+
+<xs:element name="cancelDeviceLocRequest" type="CancelDeviceLocRequest" />
+<xs:element name="cancelDeviceLocResponse" type="CancelDeviceLocResponse" />
+
+<xs:element name="queryTrancStatusRequest" type="QueryTrancStatusRequest" />
+<xs:element name="queryTrancStatusResponse" type="QueryTrancStatusResponse" />
+
+<xs:element name="changeSIMRequest" type="ChangeSIMRequest" />
+<xs:element name="changeSIMResponse" type="ChangeSIMResponse" />
+
+<xs:element name="changeMSISDNRequest" type="ChangeMSISDNRequest" />
+<xs:element name="changeMSISDNResponse" type="ChangeMSISDNResponse" />
+
+
+<xs:element name="updateWPSRequest" type="UpdateWPSRequest" />
+<xs:element name="updateWPSResponse" type="UpdateWPSResponse" />
+
+<xs:element name="manageIMEIBlackListRequest" type="ManageIMEIBlackListRequest" />
+<xs:element name="manageIMEIBlackListResponse" type="ManageIMEIBlackListResponse" />
+
+
+
+
+<xs:element name="querySubscriberUsageRequest" type="QuerySubscriberUsageRequest" />
+<xs:element name="querySubscriberUsageResponse" type="QuerySubscriberUsageResponse" />
+
+<xs:element name="HLRBlockSIMRequest" type="HLRBlockSIMRequest" />
+<xs:element name="HLRBlockSIMResponse" type="HLRBlockSIMResponse" />
+
+
+<xs:element name="sendOTAMSISDNRequest" type="SendOTAMSISDNRequest" />
+<xs:element name="sendOTAMSISDNResponse" type="SendOTAMSISDNResponse" />
+
+<xs:element name="queryIMEIRequest" type="QueryIMEIRequest" />
+<xs:element name="queryIMEIResponse" type="QueryIMEIResponse" />
+
+
+<xs:complexType name="activateRequest">
+		<xs:sequence>
+			
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="mktZip" type="xs:string" minOccurs="0" />
+			<xs:element name="NGP" type="xs:string" minOccurs="0"  />	
+		    <xs:element name="ProductID" type="xs:string" minOccurs="0" />
+		    
+		    <!--isCallBackUrlRequired=Y or N-->
+		    <xs:element name="isBaseProduct" type="NonEmptyString" minOccurs="0" />
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="activateResponse">
+		<xs:sequence>
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ReactivateRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+			
+			<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="ReactivateResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+		
+	<xs:complexType name="suspendRequest">
+		<xs:sequence>
+			
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+		    <xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="suspendResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RestoreSubscriberRequest">
+		<xs:sequence>
+			
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="RestoreSubscriberResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:complexType name="DeactivateRequest">
+		<xs:sequence>		
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+ 		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="DeactivateResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="AddProductRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+		    <xs:element name="productID" type="NonEmptyString" />
+		    <!-- product Action should be  Add--> 
+		     <xs:element name="isBaseProduct" type="NonEmptyString" />
+		  
+		    <xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="AddProductResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ReplaceProductRequest">
+		<xs:sequence>
+			
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+		    <xs:element name="productID" type="NonEmptyString" />
+		    <xs:element name="productIDToReplace" type="NonEmptyString" minOccurs="0" />
+		    <xs:element name="isBaseProduct" type="NonEmptyString"/>
+			<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		    		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="ReplaceProductResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="RemoveProductRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+		    <xs:element name="productID" type="NonEmptyString" />
+		    <xs:element name="isBaseProduct" type="NonEmptyString"/>
+			<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		    		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="RemoveProductResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="QueryNetworkRequest">
+	             	<xs:sequence>
+					<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+					<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+			        <xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			  	    <xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		    		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="QueryNetworkResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			  <xs:element name="productID" type="xs:string" minOccurs="0"/>
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="SubscriberInquiryRequest">
+		<xs:sequence>
+	       <xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+		 	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		 </xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="SubscriberInquiryResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="CancelDeviceLocRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+		    <xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		 </xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="CancelDeviceLocResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QueryTrancStatusRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="transactionID" type="NonEmptyString"/>
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="QueryTrancStatusResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="marketZip" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="ChangeSIMRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="NonEmptyString"  minOccurs="0"/>
+			<xs:element name="newICCID" type="NonEmptyString" minOccurs="0" />
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		    
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	  <xs:complexType name="ChangeSIMResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+		    <xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="ChangeMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="MSISDN" type="NonEmptyString"  minOccurs="0"/>
+			<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+			<xs:choice>
+			<xs:element name="marketZip" type="xs:string" minOccurs="0" />
+			<xs:element name="NGP" type="xs:string" minOccurs="0" />
+			</xs:choice>
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		    
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	  <xs:complexType name="ChangeMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+		    <xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="UpdateWPSRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="MSISDN" type="NonEmptyString"  minOccurs="0"/>
+			<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+			<xs:element name="productID" type="xs:string" minOccurs="0"/>
+			<xs:element name="WPS" type="xs:string" minOccurs="0"/>
+			   <xs:element name="isBaseProduct" type="NonEmptyString" minOccurs="0"/>
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	  <xs:complexType name="UpdateWPSResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+		    <xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	
+	
+	
+	
+	<xs:complexType name="ManageIMEIBlackListRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="MSISDN" type="NonEmptyString"  minOccurs="0"/>
+		    <xs:element name="IMEIaction" type="NonEmptyString" minOccurs="0" />
+			<xs:element name="IMEI" type="xs:string" minOccurs="0"/>
+			<xs:element name="reason" type="xs:string" minOccurs="0"/>
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		    
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	  <xs:complexType name="ManageIMEIBlackListResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="IMEIaction" type="NonEmptyString" minOccurs="0" />
+			<xs:element name="IMEI" type="xs:string" minOccurs="0"/>
+			<xs:element name="reason" type="xs:string" minOccurs="0"/>
+		    <xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="QuerySubscriberUsageRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:choice>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+			<xs:element name="IMSI" type="NonEmptyString" minOccurs="0" />
+		    </xs:choice>
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+      <xs:complexType name="QuerySubscriberUsageResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="IMSI" type="xs:string" minOccurs="0" />
+		   <xs:element name="baseProduct" type="baseProductType" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="HLRBlockSIMRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+			<xs:element name="ICCID" type="NonEmptyString"  />
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="HLRBlockSIMResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="ICCID" type="xs:string" minOccurs="0" />
+			<xs:element name="IMSI" type="xs:string" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="SendOTAMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+		<xs:choice>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="ICCID" type="NonEmptyString" minOccurs="0" />
+		    </xs:choice>
+		  	<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="SendOTAMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+
+	<xs:complexType name="QueryIMEIRequest">
+		<xs:sequence>
+	<xs:element name="partnerTransactionID" type="NonEmptyString"/>
+	<xs:choice>
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="IMEI" type="NonEmptyString" minOccurs="0" />
+	 </xs:choice>
+			<xs:element name="isCallBackUrlRequired" type="NonEmptyString" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name="QueryIMEIResponse">
+		<xs:sequence>
+			<xs:element name="partnerTransactionID" type="xs:string" minOccurs="0" />
+			<xs:element name="partnerID" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="action" type="xs:string" minOccurs="0"  />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+				<xs:element name="IMEIInfo" type="IMEIInfoType" minOccurs="0" />
+			<xs:element name="result" type="xs:string" minOccurs="0" />
+			<xs:element name="resultStatus" type="xs:string" minOccurs="0" />
+			<xs:element name="resultMessage" type="xs:string" minOccurs="0" />
+			<xs:element name="responseCount" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="NonEmptyString">
+    <xs:restriction base="xs:string">
+    <xs:minLength value="1" />
+  </xs:restriction>
+        </xs:simpleType>
+        
+     <xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType> 
+	
+	 <xs:complexType name="baseProductType">
+			<xs:sequence>
+		         <xs:element name="product" type="productType" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+	</xs:complexType> 
+	 <xs:complexType name="productType">
+			<xs:sequence>
+		         <xs:element name="productID" type="xs:string" minOccurs="0"  />
+		         <xs:element name="renewalInfo" type="renewalInfoType" minOccurs="0"  />
+		         <xs:element name="usage" type="usageType" minOccurs="0"  />
+		     
+			</xs:sequence>
+	</xs:complexType> 
+	
+	 <xs:complexType name="renewalInfoType">
+			<xs:sequence>
+		         <xs:element name="autoRenewal" type="xs:string" minOccurs="0"  />
+		         <xs:element name="periodType" type="xs:string" minOccurs="0"  />
+		         <xs:element name="periodValue" type="xs:string" minOccurs="0"  />
+		         <xs:element name="renewalDay" type="xs:string" minOccurs="0"  />
+			</xs:sequence>
+	</xs:complexType> 
+
+	 <xs:complexType name="usageType">
+			<xs:sequence>
+		         <xs:element name="limit" type="limitType" minOccurs="0"  />
+		         <xs:element name="status" type="xs:string" minOccurs="0"  />
+		         <xs:element name="used" type="xs:string" minOccurs="0"  />
+		         <xs:element name="remaining" type="xs:string" minOccurs="0"  />
+		         <xs:element name="currentBehavior" type="xs:string" minOccurs="0"  />
+		   
+			</xs:sequence>
+	</xs:complexType> 
+	 <xs:complexType name="limitType">
+			<xs:sequence>
+		         <xs:element name="category" type="xs:string" minOccurs="0"  />
+		         <xs:element name="type" type="xs:string" minOccurs="0"  />
+		         <xs:element name="bucketValue" type="xs:string" minOccurs="0"  />
+		         <xs:element name="thresholds" type="thresholdInfoType" minOccurs="0"  />
+		     </xs:sequence>
+	</xs:complexType> 
+				
+				
+	 <xs:complexType name="thresholdInfoType">
+			     <xs:sequence>
+		         <xs:element name="thresholdType" type="xs:string" minOccurs="0"  />
+		         <xs:element name="type" type="xs:string" minOccurs="0"  />
+		         <xs:element name="behavior" type="xs:string" minOccurs="0"  />
+		          </xs:sequence>
+	</xs:complexType> 
+				
+				
+	 <xs:complexType name="IMEIInfoType">
+			    <xs:sequence>
+		         <xs:element name="IMEI" type="xs:string" minOccurs="0"  />
+		         <xs:element name="make" type="xs:string" minOccurs="0"  />
+		         <xs:element name="model" type="xs:string" minOccurs="0"  />
+	             <xs:element name="lastUpdateDateTime" type="xs:string" minOccurs="0"  />
+		         <xs:element name="blocked" type="xs:string" minOccurs="0"  />
+		         <xs:element name="reason" type="xs:string" minOccurs="0"  />
+	             </xs:sequence>
+	</xs:complexType> 
+			
+			
+		
+			
+
+</xs:schema>

@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://hlr.ttsa.xius.com/HLRManagement.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hlr.ttsa.xius.com/HLRManagement.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="simRegistrationRequest" type="SimRegistrationRequest" />
+	<xs:element name="changeSubMSISDNRequest" type="ChangeSubMSISDNRequest" />
+	<xs:element name="simSwapRequest" type="SIMSwapRequest" />
+	<xs:element name="activateGSMGPRSRequest" type="ActivateGSMGPRSRequest" />
+	<xs:element name="purgeSubscriberRequest" type="PurgeSubscriberRequest" />
+	<xs:element name="getGsmGprsStatusRequest" type="GetGsmGprsStatusRequest" />
+	<xs:element name="updateOptionalServicesRequest" type="UpdateOptionalServicesRequest" />
+	<xs:element name="addAllowedFtnRangeRequest" type="AddAllowedFtnRangeRequest" />
+	<xs:element name="manageAllowedFtnRangeRequest" type="ManageAllowedFtnRangeRequest" />
+	<xs:element name="changeSubMSISDNBulkRequest" type="ChangeSubMSISDNBulkRequest" />
+	<xs:element name="unbarServicesRequest" type="UnbarServicesRequest" />
+<xs:element name="removeSubscriberRequest" type="RemoveSubscriberRequest" />
+
+	<xs:element name="simRegistrationResponse" type="SimRegistrationResponse" />
+	<xs:element name="changeSubMSISDNResponse" type="ChangeSubMSISDNResponse" />
+	<xs:element name="simSwapResponse" type="SIMSwapResponse" />
+	<xs:element name="activateGSMGPRSResponse" type="ActivateGSMGPRSResponse" />
+	<xs:element name="purgeSubscriberResponse" type="PurgeSubscriberResponse" />
+	<xs:element name="updateOptionalServicesResponse" type="UpdateOptionalServicesResponse" />
+	<xs:element name="addAllowedFtnRangeResponse" type="AddAllowedFtnRangeResponse" />
+	<xs:element name="manageAllowedFtnRangeResponse" type="ManageAllowedFtnRangeResponse" />
+	<xs:element name="changeSubMSISDNBulkResponse" type="ChangeSubMSISDNBulkResponse" />
+	<xs:element name="getGsmGprsStatusResponse" type="GetGsmGprsStatusResponse" />
+	<xs:element name="unbarServicesResponse" type="UnbarServicesResponse" />
+<xs:element name="removeSubscriberResponse" type="RemoveSubscriberResponse" />
+	<xs:complexType name="SimRegistrationRequest">
+		<xs:sequence>
+			<xs:element name="oldMSISDN" type="xs:long" />
+			<xs:element name="newMSISDN" type="xs:long" />
+			<xs:element name="newIMSI" type="xs:long" />
+			<xs:element name="disableODBValue" type="xs:long"
+				minOccurs="0" />
+			<xs:element name="subscriberState" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="orderNo" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDNType" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeSubMSISDNRequest">
+		<xs:sequence>
+			<xs:element name="oldMSISDN" type="xs:long" />
+			<xs:element name="newMSISDN" type="xs:long" />
+			<xs:element name="oldIMSI" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SIMSwapRequest">
+		<xs:sequence>
+			<xs:element name="newIMSI" type="xs:long" />
+			<xs:element name="MSISDN" type="xs:long" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ActivateGSMGPRSRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MSISDN" type="xs:long" />
+				<xs:element name="IMSI" type="xs:long" />
+			</xs:choice>
+			<xs:element name="targetGSMstate" type="xs:int" />
+			<xs:element name="targetGPRSstate" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PurgeSubscriberRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MSISDN" type="xs:long" />
+				<xs:element name="IMSI" type="xs:long" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdateOptionalServicesRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MSISDN" type="xs:long" />
+				<xs:element name="IMSI" type="xs:long" />
+			</xs:choice>
+			<xs:element name="servicesList" type="ServicesListType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddAllowedFtnRangeRequest">
+		<xs:sequence>
+			<xs:element name="allowedFTNRangeList" type="AllowedFTNRangeListType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageAllowedFtnRangeRequest">
+		<xs:sequence>
+			<xs:element name="oldCC" type="xs:integer" />
+			<xs:element name="newCC" type="xs:integer" minOccurs="0" />
+			<xs:element name="oldNDC" type="xs:integer" minOccurs="0" />
+			<xs:element name="newNDC" type="xs:integer" minOccurs="0" />
+			<xs:element name="actionFlag" type="OptionFlagType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeSubMSISDNBulkRequest">
+		<xs:sequence>
+			<xs:element name="oldMSISDN" type="xs:long" maxOccurs="unbounded" />
+			<xs:element name="newMSISDN" type="xs:long" maxOccurs="unbounded" />
+			<xs:element name="oldIMSI" type="xs:long" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetGsmGprsStatusRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="IMSI" type="xs:long" />
+				<xs:element name="MSISDN" type="xs:long" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="UnbarServicesRequest">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="MSISDN" type="xs:long" />
+				<xs:element name="IMSI" type="xs:long" />
+			</xs:choice>
+			<xs:element name="enableODBValue" type="xs:long" />
+		</xs:sequence>
+	</xs:complexType>
+<xs:complexType name="RemoveSubscriberRequest">
+		<xs:sequence>
+		<xs:choice>
+			<xs:element name="IMSI" type="xs:long" />
+			<xs:element name="MSISDN" type="xs:long" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SimRegistrationResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ChangeSubMSISDNResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SIMSwapResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ActivateGSMGPRSResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PurgeSubscriberResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdateOptionalServicesResponse">
+		<xs:sequence>
+			<xs:element name="failedServiceType" type="ServiceType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddAllowedFtnRangeResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ManageAllowedFtnRangeResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangeSubMSISDNBulkResponse">
+		<xs:sequence>
+			<xs:element name="failedPortInList" type="xs:long"
+				maxOccurs="unbounded" minOccurs="0" />
+			<xs:element name="failedPortInMessages" type="xs:string"
+				maxOccurs="unbounded" minOccurs="0" />
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UnbarServicesResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetGsmGprsStatusResponse">
+		<xs:sequence>
+			<xs:element name="gsmStatus" type="xs:integer" />
+			<xs:element name="gprsStatus" type="xs:integer" />
+		</xs:sequence>
+	</xs:complexType>
+<xs:complexType name="RemoveSubscriberResponse">
+		<xs:sequence>
+			<xs:element name="returnCode" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ServicesListType">
+		<xs:sequence>
+			<xs:element name="service" type="ServiceType" maxOccurs="unbounded" />
+			<xs:element name="VMSNumber" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ServiceType">
+		<xs:sequence>
+			<xs:element name="ssCode" type="xs:int" minOccurs="0" />
+			<xs:element name="subUnsubFlag" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="OptionFlagType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ADD"></xs:enumeration>
+			<xs:enumeration value="MODIFY"></xs:enumeration>
+			<xs:enumeration value="DELETE"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AllowedFTNRangeListType">
+		<xs:sequence>
+			<xs:element name="allowedFTNRange" type="AllowedFTNRangeType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AllowedFTNRangeType">
+		<xs:sequence>
+			<xs:element name="cc" type="xs:integer" />
+			<xs:element name="ndc" type="xs:integer" minOccurs="0" />
+			<xs:element name="ccNdc" type="xs:integer" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

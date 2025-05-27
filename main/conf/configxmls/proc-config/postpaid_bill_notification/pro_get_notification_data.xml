@@ -1,0 +1,229 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="pro_get_notification_data" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>pkg_subscriber_notif_details.pro_get_notification_data</value></property>
+	<property name="returnsResult"><value>false</value></property>
+	<property name="parameters">
+		<list> <!--  parameter list -->
+			<ref bean="pro_get_notification_data_param_1"></ref>
+			<ref bean="pro_get_notification_data_param_2"></ref>
+			<ref bean="pro_get_notification_data_param_3"></ref>
+			<ref bean="pro_get_notification_data_param_4"></ref>
+			<ref bean="pro_get_notification_data_param_5"></ref>
+			<ref bean="pro_get_notification_data_param_6"></ref>
+			<ref bean="pro_get_notification_data_param_7"></ref>
+			<ref bean="pro_get_notification_data_param_8"></ref>						
+			<ref bean="pro_get_notification_data_param_9"></ref>
+			<ref bean="pro_get_notification_data_param_10"></ref>						
+			<ref bean="pro_get_notification_data_param_11"></ref>
+		</list>
+	</property>
+	<property name="refCursors">
+		<map>
+			<entry key="9">
+				<ref bean="po_get_notification_info_cursor"/>
+			</entry>
+			<entry key="10">
+				<ref bean="po_pro_get_language_info_cursor"/>
+			</entry>
+		</map>
+	</property>
+</bean>
+
+<bean id="po_pro_get_language_info_cursor" class="net.bcgi.util.db.ResultSetDef" scope="prototype">
+	<property name="resultSetParams">
+		<list>
+			<ref bean="po_pro_get_language_info_cursor_param_1"></ref>
+			<ref bean="po_pro_get_language_info_cursor_param_2"></ref>
+		</list>
+	</property>
+	<property name="className" value="com.xius.smf.domaindata.GetLanguagesCursorData"/>
+</bean>
+	
+
+<bean id="po_pro_get_language_info_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>language_id</value></property>
+	  <property name="mapTo"><value>language_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+	<bean id="po_pro_get_language_info_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>language_desc</value></property>
+	  <property name="mapTo"><value>language_desc</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+
+<bean id="po_get_notification_info_cursor" class="net.bcgi.util.db.ResultSetDef" scope="prototype">
+	<property name="resultSetParams">
+		<list>
+			<ref bean="po_get_notification_info_cursor_param_1"></ref>
+			<ref bean="po_get_notification_info_cursor_param_2"></ref>
+			<ref bean="po_get_notification_info_cursor_param_3"></ref>
+			<ref bean="po_get_notification_info_cursor_param_4"></ref>
+			<ref bean="po_get_notification_info_cursor_param_5"></ref>
+			<ref bean="po_get_notification_info_cursor_param_6"></ref>
+			<ref bean="po_get_notification_info_cursor_param_7"></ref>
+			<ref bean="po_get_notification_info_cursor_param_8"></ref>
+			<ref bean="po_get_notification_info_cursor_param_9"></ref>
+			<ref bean="po_get_notification_info_cursor_param_10"></ref>
+		</list>
+	</property>
+	<property name="className" value="com.xius.smf.domaindata.GetNotificationCursorData"/>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>account_id</value></property>
+  <property name="mapTo"><value>account_id</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+  <property name="position"><value>1</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>msisdn_no</value></property>
+  <property name="mapTo"><value>msisdn_no</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+  <property name="position"><value>2</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>sim</value></property>
+  <property name="mapTo"><value>sim</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+  <property name="position"><value>3</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>imsi_no</value></property>
+  <property name="mapTo"><value>imsi_no</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+  <property name="position"><value>4</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>personal_id</value></property>
+  <property name="mapTo"><value>personal_id</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+  <property name="position"><value>5</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>email_id</value></property>
+  <property name="mapTo"><value>email_id</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+  <property name="position"><value>6</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>email_notification_lang</value></property>
+  <property name="mapTo"><value>email_notification_lang</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+  <property name="position"><value>7</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>sms_notification_lang</value></property>
+  <property name="mapTo"><value>sms_notification_lang</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+  <property name="position"><value>8</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>ussd_notification_lang</value></property>
+  <property name="mapTo"><value>ussd_notification_lang</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+  <property name="position"><value>9</value></property>
+</bean>
+
+<bean id="po_get_notification_info_cursor_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+  <property name="procedureColumnName"><value>ivr_notification_lang</value></property>
+  <property name="mapTo"><value>ivr_notification_lang</value></property>
+  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+  <property name="position"><value>10</value></property>
+</bean>
+
+
+<bean id="pro_get_notification_data_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_network_id</value></property>
+	<property name="mapTo"><value>pi_network_id</value></property>
+	<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	<property name="position"><value>1</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+</bean>
+
+<bean id="pro_get_notification_data_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_account_id</value></property>
+	<property name="mapTo"><value>pi_account_id</value></property>
+	<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	<property name="position"><value>2</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+</bean>
+<bean id="pro_get_notification_data_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_msisdn_no</value></property>
+	<property name="mapTo"><value>pi_msisdn_no</value></property>
+	<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	<property name="position"><value>3</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+</bean>
+<bean id="pro_get_notification_data_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_imsi_no</value></property>
+	<property name="mapTo"><value>pi_imsi_no</value></property>
+	<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	<property name="position"><value>4</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+</bean>
+
+<bean id="pro_get_notification_data_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_sim</value></property>
+	<property name="mapTo"><value>pi_sim</value></property>
+	<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	<property name="position"><value>5</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+</bean>
+
+<bean id="pro_get_notification_data_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>pi_personal_id</value></property>
+	<property name="mapTo"><value>pi_personal_id</value></property>
+	<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	<property name="position"><value>6</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+</bean>
+<bean id="pro_get_notification_data_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>po_def_lang_id</value></property>
+	<property name="mapTo"><value>po_def_lang_id</value></property>
+	<property name="type"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	<property name="position"><value>7</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+</bean>
+<bean id="pro_get_notification_data_param_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>po_def_lang_desc</value></property>
+	<property name="mapTo"><value>po_def_lang_desc</value></property>
+	<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	<property name="position"><value>8</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+</bean>
+<bean id="pro_get_notification_data_param_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>po_get_notification_info</value></property>
+	<property name="mapTo"><value>notifCursor</value></property>
+	<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+	<property name="position"><value>9</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+</bean>
+
+<bean id="pro_get_notification_data_param_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+	<property name="name"><value>po_available_lang</value></property>
+	<property name="mapTo"><value>langCursor</value></property>
+	<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+	<property name="position"><value>10</value></property>
+	<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+</bean>
+
+<bean id="pro_get_notification_data_param_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  <property name="name"><value>po_error_code</value></property>
+  <property name="mapTo"><value>po_error_code</value></property>
+  <property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+  <property name="position"><value>11</value></property>
+  <property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+</bean> 
+</beans>

@@ -1,0 +1,709 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.xius</groupId>
+	<artifactId>SMFApplication</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SMFApplication</name>
+	<description>SMFApplication</description>
+	<packaging>jar</packaging>
+	<properties>
+		<java.version>1.8</java.version>
+		<maven.test.skip>true</maven.test.skip>
+		<Name.version>SMFApplication-1.1.1.0</Name.version>
+	</properties>
+	<!-- lookup parent from repository -->	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.18</version>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			
+		</dependency>
+		
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+		</dependency>
+
+	
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>net.bcgi.util</groupId>
+			<artifactId>mosf-app</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}\lib\mosf.jar</systemPath>
+		</dependency>
+		
+	 	 <dependency>
+			<groupId>configxmls</groupId>
+			<artifactId>configxmls</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}\lib\configxmls.jar</systemPath>
+		</dependency>
+
+
+   	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.17.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.17.1</version>
+		</dependency>
+
+ 
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+        <version>2.20.0</version>
+    </dependency>
+ <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+
+
+   <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.36</version>  
+    </dependency>
+
+
+		<!--<dependency>
+			<groupId>AppMonitor</groupId>
+			<artifactId>AppMonitor</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}\lib\appmonitor.jar</systemPath>
+		</dependency>-->
+
+
+
+		<dependency>
+			<groupId>clientstub</groupId>
+			<artifactId>clientstub</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}\lib\clientstub.jar</systemPath>
+		</dependency>
+
+
+	
+<!--		<dependency>
+			<groupId>quartz</groupId>
+			<artifactId>quartz</artifactId>
+			<version>1.6.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}\lib\quartz-1.6.0.jar</systemPath>
+		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<!--		<dependency>
+			<groupId>oracle</groupId>
+			<artifactId>oracle</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}\lib\ojdbc8.jar</systemPath>
+		</dependency>-->
+
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+		</dependency>
+
+		<!-- JSON Processing API -->
+		<dependency>
+			<groupId>javax.json</groupId>
+			<artifactId>javax.json-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis-ant</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis-jaxrpc</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/axis/axis-wsdl4j -->
+		<dependency>
+			<groupId>axis</groupId>
+			<artifactId>axis-wsdl4j</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-discovery/commons-discovery -->
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>0.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-modeler/commons-modeler -->
+		<dependency>
+			<groupId>commons-modeler</groupId>
+			<artifactId>commons-modeler</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-tools-common</artifactId>
+			<version>2.7.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>1.4.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.castor</groupId>
+			<artifactId>castor-xml</artifactId>
+			<version>1.4.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Thanks for using https://jar-download.com -->
+
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.castor/spring-xml -->
+		<dependency>
+			<groupId>org.codehaus.castor</groupId>
+			<artifactId>spring-xml</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>0.1.54</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.19</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.ws.commons.axiom/axiom-api -->
+		<dependency>
+			<groupId>org.apache.ws.commons.axiom</groupId>
+			<artifactId>axiom-api</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.ws.commons.axiom/axiom-dom -->
+		<dependency>
+			<groupId>org.apache.ws.commons.axiom</groupId>
+			<artifactId>axiom-dom</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.ws.commons.axiom/axiom-impl -->
+		<dependency>
+			<groupId>org.apache.ws.commons.axiom</groupId>
+			<artifactId>axiom-impl</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.axiom/com.springsource.org.apache.axiom -->
+		<!-- <dependency> <groupId>org.apache.axiom</groupId> <artifactId>com.springsource.org.apache.axiom</artifactId> 
+			<version>1.2.5</version> </dependency> -->
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.axis2/axis2-adb -->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-adb</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.axis2/axis2-kernel -->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-kernel</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.stream</groupId>
+			<artifactId>stax-api</artifactId>
+			<version>1.0-2</version> <!-- Use the appropriate version -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+
+
+<dependency>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-registry-prometheus</artifactId>
+    </dependency>
+
+    <!-- AspectJ for method interception -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+    </dependency>
+		
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+					<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<!-- Thanks for using https://jar-download.com -->
+	</dependencies>
+
+
+	<repositories>
+		<repository>
+			<id>commons-net</id>
+			<url>https://mvnrepository.com/artifact/commons-net/commons-net</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.xius.smf.app.SMFApplication</mainClass>
+					<layout>ZIP</layout>
+					<addResources>true</addResources>
+					<finalName>${Name.version}</finalName>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
+				<goals>
+					<goal>repackage</goal>
+				</goals>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.xius.smf.app.SMFApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.build.directory}/lib
+							</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>create-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<finalName>configxmls</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+							<outputDirectory>${basedir}/lib</outputDirectory>
+							<archive>
+								<manifest>
+									<mainClass></mainClass>
+								</manifest>
+							</archive>
+							<descriptors>
+								<descriptor>${basedir}/src/main/resources/folder-assembly.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>generated/src/main/java</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- usage of jax-ws maven plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>1.12</version>
+				<executions>
+					<execution>
+						<id>wsimport-from-jdk</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<!-- <defaultOptions> <bindingFiles> <bindingFile>${basedir}/src/main/resources/bind2.xml</bindingFile> 
+						</bindingFiles> <noAddressBinding>true</noAddressBinding> </defaultOptions> -->
+					<bindingDirectory>src/main/resources</bindingDirectory>
+					<bindingFiles>
+						<bindingFile>bindings.xjc</bindingFile>
+						<!-- <bindingFile>bind.xjc</bindingFile> -->
+					</bindingFiles>
+					<wsdlDirectory>src/main/resources/wsdls/server</wsdlDirectory>
+					<wsdlFiles>
+					    <wsdlFile>PostPaidManagement.wsdl</wsdlFile>
+						<wsdlFile>SMFManagement.wsdl</wsdlFile> 
+						<wsdlFile>SMFReportsManagement.wsdl</wsdlFile>
+						<wsdlFile>PingService.wsdl</wsdlFile>
+					</wsdlFiles>
+					<keep>true</keep>
+					<verbose>true</verbose>
+					<sourceDestDir>${project.basedir}/generated/src/main/java</sourceDestDir>
+				</configuration>
+			</plugin>
+
+			 <plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<path id="compile_classpath" refid="maven.compile.classpath" />
+								<taskdef resource="axis-tasks.properties" classpathref="compile_classpath" />
+
+								<property name="wsdl.location" value="src/main/resources/wsdls" />
+
+								<property name="gensrc" value="generated/src/main/java" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/agent/AccountManagement.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/agent/BalanceManagement.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/agent/CAManagement.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/agent/ProductManagement.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/agent/SubscriberManagement.wsdl" />
+
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/agent/scare/CorpManagement.wsdl" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/HLRClient/HLRManagement.wsdl" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/ne/NotificationManagement.wsdl" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/Tia/CreditCardManagment.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/Tia/SorianacardIntegration.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/Tia/TIAManagement.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/Tia/TMobile.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/Tia/TTprovisioning.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/Tia/WalletManagement.wsdl" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/xbus/DeviceService.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/xbus/ProvisiongApp.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/xbus/SubscriberApp.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true" url="${wsdl.location}/client/xbus/TariffService.wsdl" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/xbus/corp/CorpCustomerService.wsdl" />
+
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/xbus/Services/CommunityAccountService.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/xbus/Services/SelfCareService.wsdl" />
+								<axis-wsdl2java serverside="false" output="${gensrc}"
+									verbose="true"
+									url="${wsdl.location}/client/xbus/noncxf/DeviceServicesApp.wsdl" />
+
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>  
+
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											jaxws-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.12,)
+										</versionRange>
+										<goals>
+											<goal>wsimport</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId> org.apache.maven.plugins
+										</groupId>
+										<artifactId> maven-antrun-plugin </artifactId>
+										<versionRange>
+											[,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

@@ -1,0 +1,203 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_lac_sac_notif_info" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>pkg_third_party_notification.pro_get_lac_sac_notif_info</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="data_renewal_data_threshold_notifi_param_1"/>
+				<ref bean="data_renewal_data_threshold_notifi_param_2"/>
+				<ref bean="data_renewal_data_threshold_notifi_param_3"/>		
+				<ref bean="data_renewal_data_threshold_notifi_param_4"/>
+				<ref bean="data_renewal_data_threshold_notifi_param_5"/>
+				<ref bean="data_renewal_data_threshold_notifi_param_6"/>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="4">
+					<ref bean="po_data_renewal_data_threshold_notifi_ref"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="po_data_renewal_data_threshold_notifi_ref" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_1"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_2"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_3"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_4"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_5"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_6"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_7"/>	
+				<ref bean="po_data_renewal_data_threshold_notifi_param_8"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_9"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_10"/>				
+				<ref bean="po_data_renewal_data_threshold_notifi_param_11"/>				
+				<ref bean="po_data_renewal_data_threshold_notifi_param_12"/>				
+				<ref bean="po_data_renewal_data_threshold_notifi_param_13"/>	
+				<ref bean="po_data_renewal_data_threshold_notifi_param_14"/>	
+				<ref bean="po_data_renewal_data_threshold_notifi_param_15"/>
+				<ref bean="po_data_renewal_data_threshold_notifi_param_16"/>	
+				<ref bean="po_data_renewal_data_threshold_notifi_param_17"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.DataRenewalDataThresholdCursorData"/>
+	</bean>
+	
+	<bean id="po_data_renewal_data_threshold_notifi_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	
+	<bean id="po_data_renewal_data_threshold_notifi_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>accountid</value></property>
+	  <property name="mapTo"><value>account_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_data_renewal_data_threshold_notifi_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_data_renewal_data_threshold_notifi_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>imsi_no</value></property>
+	  <property name="mapTo"><value>imsi</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_data_renewal_data_threshold_notifi_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>publicity_id</value></property>
+	  <property name="mapTo"><value>publicityId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_data_renewal_data_threshold_notifi_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>data_volume_remaining</value></property>
+	  <property name="mapTo"><value>volumeRemain</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+    <bean id="po_data_renewal_data_threshold_notifi_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>data_volume_used</value></property>
+	  <property name="mapTo"><value>volumeUsed</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	
+	 <bean id="po_data_renewal_data_threshold_notifi_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>data_volume_total</value></property>
+	  <property name="mapTo"><value>volumeTotal</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	 <bean id="po_data_renewal_data_threshold_notifi_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>threshold_percentage</value></property>
+	  <property name="mapTo"><value>threshold</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	 <bean id="po_data_renewal_data_threshold_notifi_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>latest_tariff_planid</value></property>
+	  <property name="mapTo"><value>tariffId</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	<bean id="po_data_renewal_data_threshold_notifi_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>current_balance</value></property>
+	  <property name="mapTo"><value>currBalance</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>	
+	<bean id="po_data_renewal_data_threshold_notifi_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>bndl_event_type</value></property>
+	  <property name="mapTo"><value>eventType</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>	
+	<bean id="po_data_renewal_data_threshold_notifi_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value> tr_timestmap</value></property>
+	  <property name="mapTo"><value>dateTime</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>	
+	<bean id="po_data_renewal_data_threshold_notifi_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>	
+	<bean id="po_data_renewal_data_threshold_notifi_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>	
+	<bean id="po_data_renewal_data_threshold_notifi_param_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>lac_sac</value></property>
+	  <property name="mapTo"><value>lac_sac</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>	
+	
+	<bean id="po_data_renewal_data_threshold_notifi_param_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>notify_api_flag</value></property>
+	  <property name="mapTo"><value>notify_api_flag</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>	
+	
+	<!-- End of cursor mapping -->
+	
+	<bean id="data_renewal_data_threshold_notifi_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="data_renewal_data_threshold_notifi_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_max_rec</value></property>
+		<property name="mapTo"><value>pi_maxRecords</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="data_renewal_data_threshold_notifi_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_app_id</value></property>
+		<property name="mapTo"><value>pi_app_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>		
+	
+	<bean id="data_renewal_data_threshold_notifi_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_lac_sac_notif_ref</value></property>  		
+  		<property name="mapTo"><value>cursor</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>4</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="data_renewal_data_threshold_notifi_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="data_renewal_data_threshold_notifi_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

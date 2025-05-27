@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_lte_srvc_req_insrt"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pkg_lte_srvc.pro_lte_srvc_req_insrt</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_lte_srvc_req_insrt_1"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_2"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_3"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_4"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_5"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_6"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_7"></ref>																
+				<ref bean="pro_lte_srvc_req_insrt_8"></ref>				
+				<ref bean="pro_lte_srvc_req_insrt_9"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_10"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_11"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_12"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_13"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_14"></ref>
+				<ref bean="pro_lte_srvc_req_insrt_15"></ref>																	
+																		
+			</list> 
+		</property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_lte_srvc_req_insrt_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_msisdn_no</value></property>
+			<property name="mapTo"><value>pi_msisdn_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_lte_srvc_req_insrt_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_acc_type</value></property>
+			<property name="mapTo"><value>pi_acc_type</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_lte_srvc_req_insrt_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_channel_name</value></property>
+			<property name="mapTo"><value>pi_channel_name</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>4</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_lte_srvc_req_insrt_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_ext_transaction_id</value></property>
+			<property name="mapTo"><value>pi_ext_transaction_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>5</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_lte_srvc_req_insrt_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_service_flag</value></property>
+			<property name="mapTo"><value>pi_service_flag</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>6</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_user_id</value></property>
+			<property name="mapTo"><value>pi_login_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>7</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_8" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_activity_id</value></property>
+			<property name="mapTo"><value>pi_activity_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>8</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_9" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_account_id</value></property>
+			<property name="mapTo"><value>pi_account_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>9</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_10" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_sim_serial_no</value></property>
+			<property name="mapTo"><value>pi_sim_serial_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>10</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_11" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_imsi_no</value></property>
+			<property name="mapTo"><value>pi_imsi_no</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>11</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_lte_srvc_req_insrt_12" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_acct_status</value></property>
+			<property name="mapTo"><value>pi_acct_status</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>12</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+		<bean id="pro_lte_srvc_req_insrt_13" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_intrnl_transaction_id</value></property>
+			<property name="mapTo"><value>po_intrnl_transaction_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>13</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+	<bean id="pro_lte_srvc_req_insrt_14" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_code</value></property>
+			<property name="mapTo"><value>po_error_code</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>14</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_lte_srvc_req_insrt_15" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_error_desc</value></property>
+			<property name="mapTo"><value>po_error_desc</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>15</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+
+ </beans>

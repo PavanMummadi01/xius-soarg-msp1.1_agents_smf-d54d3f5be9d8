@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:tns="http://smfreport.agent.xius.com/SMFReportsManagement.wsdl" 
+xmlns:envelope="http://smfreport.agent.xius.com/SMFReportsManagement.xsd" 
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:wshdr="http://smf.agent.xius.com/common/header/HeaderDetails.xsd"
+ xmlns:err="http://smf.agent.xius.com/common/error/ErrorDetails.xsd" 
+ targetNamespace="http://smfreport.agent.xius.com/SMFReportsManagement.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://smfreport.agent.xius.com/SMFReportsManagement.wsdl" targetNamespace="http://smfreport.agent.xius.com/SMFReportsManagement.wsdl">
+			<xs:import namespace="http://smfreport.agent.xius.com/SMFReportsManagement.xsd" schemaLocation="SMFReportsManagement.xsd"/>
+			<xs:import namespace="http://smf.agent.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://smf.agent.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<!--Deceleration-->
+	<wsdl:message name="SlpnPointsTransactionReportRequest">
+		<wsdl:part name="body" element="envelope:SlpnPointsTransactionReportRequest"/>
+	</wsdl:message>	
+	<wsdl:message name="SlpnPointsTransactionReportResponse">
+		<wsdl:part name="body" element="envelope:SlpnPointsTransactionReportResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="fiveGReportRequest">
+		<wsdl:part name="body" element="envelope:fiveGReportRequest"/>
+	</wsdl:message>	
+	<wsdl:message name="fiveGReportResponse">
+		<wsdl:part name="body" element="envelope:fiveGReportResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="stateChangeReportRequest">
+		<wsdl:part name="body" element="envelope:stateChangeReportRequest"/>
+	</wsdl:message>	
+	<wsdl:message name="stateChangeReportResponse">
+		<wsdl:part name="body" element="envelope:stateChangeReportResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="volteProcessReportRequest">
+		<wsdl:part name="body" element="envelope:volteProcessReportRequest"/>
+	</wsdl:message>	
+	<wsdl:message name="volteProcessReportResponse">
+		<wsdl:part name="body" element="envelope:volteProcessReportResponse"/>
+	</wsdl:message>
+	
+	<!--getAccountActDeactCancelReport-->
+	<wsdl:message name="getAccountActDeactCancelReportRequest">
+		<wsdl:part name="body" element="envelope:getAccountActDeactCancelReportRequest"/>
+	</wsdl:message>	
+	<wsdl:message name="getAccountActDeactCancelReportResponse">
+		<wsdl:part name="body" element="envelope:getAccountActDeactCancelReportResponse"/>
+	</wsdl:message>
+	<!--getAccountActDeactReport-->
+	
+	<!--caGroupTransactionReport-->
+	<wsdl:message name="caGroupTransactionReportRequest">
+		<wsdl:part name="body" element="envelope:caGroupTransactionReportRequest"/>
+	</wsdl:message>	
+	<wsdl:message name="caGroupTransactionReportResponse">
+		<wsdl:part name="body" element="envelope:caGroupTransactionReportResponse"/>
+	</wsdl:message>
+	<!--caGroupTransactionReport-->
+	<wsdl:message name="WsMessageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>
+	<wsdl:message name="faultmessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<!-- End of Deceleration-->
+	
+	<!--Decleration of operations -->
+	<wsdl:portType name="SMFReportsManagementPortType">
+	
+		<wsdl:operation name="SlpnPointsTransactionReport">
+			<wsdl:input message="tns:SlpnPointsTransactionReportRequest" />
+			<wsdl:output message="tns:SlpnPointsTransactionReportResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="fiveGReport">
+			<wsdl:input message="tns:fiveGReportRequest" />
+			<wsdl:output message="tns:fiveGReportResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="stateChangeReport">
+			<wsdl:input message="tns:stateChangeReportRequest" />
+			<wsdl:output message="tns:stateChangeReportResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="volteProcessReport">
+			<wsdl:input message="tns:volteProcessReportRequest" />
+			<wsdl:output message="tns:volteProcessReportResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+	
+		<wsdl:operation name="getAccountActDeactCancelReport">
+			<wsdl:input message="tns:getAccountActDeactCancelReportRequest" />
+			<wsdl:output message="tns:getAccountActDeactCancelReportResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="caGroupTransactionReport">
+			<wsdl:input message="tns:caGroupTransactionReportRequest" />
+			<wsdl:output message="tns:caGroupTransactionReportResponse" />
+			<wsdl:fault name="fault" message="tns:faultmessage" />
+		</wsdl:operation>
+		
+	</wsdl:portType>
+	<!--End of operations -->
+	<wsdl:binding name="SMFReportsManagementServicesBinding" type="tns:SMFReportsManagementPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="stateChangeReport">
+			<soap:operation soapAction="stateChangeReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="volteProcessReport">
+			<soap:operation soapAction="volteProcessReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="fiveGReport">
+			<soap:operation soapAction="fiveGReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="SlpnPointsTransactionReport">
+			<soap:operation soapAction="SlpnPointsTransactionReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>	
+		
+		<wsdl:operation name="getAccountActDeactCancelReport">
+			<soap:operation soapAction="getAccountActDeactCancelReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="caGroupTransactionReport">
+			<soap:operation soapAction="caGroupTransactionReport"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:WsMessageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+			
+		
+		</wsdl:binding>
+		
+	<wsdl:service name="SMFReportsManagementServices">
+		<wsdl:port name="SMFReportsManagementServicesPort" binding="tns:SMFReportsManagementServicesBinding">
+			<soap:address location="http://10.10.21.81:8227/SMFAgent/SMFService"/>
+		</wsdl:port>
+	
+	</wsdl:service>
+</wsdl:definitions>
+		
+		
+	

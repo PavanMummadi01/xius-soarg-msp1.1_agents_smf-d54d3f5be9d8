@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_mdn_retry_trans_id" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>pkg_msisdn_imsi_stat_chng_aud.pro_get_mdn_retry_trans_id</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_get_mdn_retry_trans_id_param_1"/>
+				<ref bean="pro_get_mdn_retry_trans_id_param_2"/>
+				<ref bean="pro_get_mdn_retry_trans_id_param_3"/>		
+				<ref bean="pro_get_mdn_retry_trans_id_param_4"/>
+				<ref bean="pro_get_mdn_retry_trans_id_param_5"/>
+				<ref bean="pro_get_mdn_retry_trans_id_param_6"/>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="4">
+					<ref bean="po_retry_trans_details"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="po_retry_trans_details"  
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_retry_trans_details_cursor_param_1"/>
+				<ref bean="po_retry_trans_details_cursor_param_2"/>
+				<ref bean="po_retry_trans_details_cursor_param_3"/>
+				<ref bean="po_retry_trans_details_cursor_param_4"/>
+				<ref bean="po_retry_trans_details_cursor_param_5"/>
+				<ref bean="po_retry_trans_details_cursor_param_6"/>
+				<ref bean="po_retry_trans_details_cursor_param_7"/>
+				<ref bean="po_retry_trans_details_cursor_param_8"/>
+				<ref bean="po_retry_trans_details_cursor_param_9"/>
+				<ref bean="po_retry_trans_details_cursor_param_10"/>
+				<ref bean="po_retry_trans_details_cursor_param_11"/>
+				<ref bean="po_retry_trans_details_cursor_param_12"/>
+				<ref bean="po_retry_trans_details_cursor_param_13"/>
+				<ref bean="po_retry_trans_details_cursor_param_14"/>
+				<ref bean="po_retry_trans_details_cursor_param_15"/>
+				<ref bean="po_retry_trans_details_cursor_param_16"/>
+				<ref bean="po_retry_trans_details_cursor_param_17"/>
+				<ref bean="po_retry_trans_details_cursor_param_18"/>
+				<ref bean="po_retry_trans_details_cursor_param_19"/>
+				<ref bean="po_retry_trans_details_cursor_param_20"/>
+				<ref bean="po_retry_trans_details_cursor_param_21"/>
+				<ref bean="po_retry_trans_details_cursor_param_22"/>
+				<ref bean="po_retry_trans_details_cursor_param_23"/>
+				<ref bean="po_retry_trans_details_cursor_param_24"/>
+				<ref bean="po_retry_trans_details_cursor_param_25"/>
+				<ref bean="po_retry_trans_details_cursor_param_26"/>
+				<ref bean="po_retry_trans_details_cursor_param_27"/>
+				<ref bean="po_retry_trans_details_cursor_param_28"/>
+				
+				<ref bean="po_retry_trans_details_cursor_param_29"/>
+				<ref bean="po_retry_trans_details_cursor_param_30"/>
+				<ref bean="po_retry_trans_details_cursor_param_31"/>
+				<ref bean="po_retry_trans_details_cursor_param_32"/>
+				<ref bean="po_retry_trans_details_cursor_param_33"/>
+				<ref bean="po_retry_trans_details_cursor_param_34"/>
+				<ref bean="po_retry_trans_details_cursor_param_35"/>
+				<ref bean="po_retry_trans_details_cursor_param_36"/>
+				<ref bean="po_retry_trans_details_cursor_param_37"/>
+				
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.GetMDNRetryCursorData"/>
+	</bean>
+
+		<bean id="po_retry_trans_details_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>network_id</value></property>
+		    <property name="mapTo"><value>network_id</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		    <property name="position"><value>1</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>activity_type</value></property>
+		    <property name="mapTo"><value>activity_type</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>2</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>old_msisdn</value></property>
+		    <property name="mapTo"><value>old_msisdn</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>3</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>new_msisdn</value></property>
+		    <property name="mapTo"><value>new_msisdn</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>4</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>old_sim</value></property>
+		    <property name="mapTo"><value>old_sim</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>5</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>new_sim</value></property>
+		    <property name="mapTo"><value>new_sim</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>6</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>old_imsi</value></property>
+		    <property name="mapTo"><value>old_imsi</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>7</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>new_imsi</value></property>
+		    <property name="mapTo"><value>new_imsi</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>8</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>curr_state_id</value></property>
+		    <property name="mapTo"><value>curr_state_id</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>9</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>status</value></property>
+		    <property name="mapTo"><value>status</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>10</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>remarks</value></property>
+		    <property name="mapTo"><value>remarks</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>11</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>trans_id</value></property>
+		    <property name="mapTo"><value>trans_id</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>12</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>custom_field1</value></property>
+		    <property name="mapTo"><value>custom_field1</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>13</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>old_account_id</value></property>
+		    <property name="mapTo"><value>old_account_id</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>14</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>new_account_id</value></property>
+		    <property name="mapTo"><value>new_account_id</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>15</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>status_change_date</value></property>
+		    <property name="mapTo"><value>status_change_date</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>16</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>old_state</value></property>
+		    <property name="mapTo"><value>old_state</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>17</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>new_state</value></property>
+		    <property name="mapTo"><value>new_state</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>18</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>technology</value></property>
+		    <property name="mapTo"><value>technology</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>19</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_20" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>ext_trans_id2</value></property>
+		    <property name="mapTo"><value>ext_trans_id2</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>20</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_21" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>channel</value></property>
+		    <property name="mapTo"><value>channel</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>21</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_22" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>custom_field2</value></property>
+		    <property name="mapTo"><value>custom_field2</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>22</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_23" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>custom_field3</value></property>
+		    <property name="mapTo"><value>custom_field3</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>23</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_24" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>custom_field4</value></property>
+		    <property name="mapTo"><value>custom_field4</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>24</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_25" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>custom_field5</value></property>
+		    <property name="mapTo"><value>custom_field5</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>25</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_26" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>custom_field6</value></property>
+		    <property name="mapTo"><value>custom_field6</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>26</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_27" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>unsub_atp_yn</value></property>
+		    <property name="mapTo"><value>unsub_atp_yn</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>27</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_28" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>nir</value></property>
+		    <property name="mapTo"><value>nir</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>28</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_29" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>volteTransID</value></property>
+		    <property name="mapTo"><value>volteTransID</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>29</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_30" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>volteDeProvRespCode</value></property>
+		    <property name="mapTo"><value>volteDeProvRespCode</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>30</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_31" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>simSaleTransID</value></property>
+		    <property name="mapTo"><value>simSaleTransID</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>31</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_32" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>flag_4G</value></property>
+		    <property name="mapTo"><value>flag_4G</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>32</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_33" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>flag_5G</value></property>
+		    <property name="mapTo"><value>flag_5G</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>34</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_34" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>insertSubsFlowTrackerTransID</value></property>
+		    <property name="mapTo"><value>insertSubsFlowTrackerTransID</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>34</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_35" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>insertSubsFlowTrackGenTransID</value></property>
+		    <property name="mapTo"><value>insertSubsFlowTrackGenTransID</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		    <property name="position"><value>35</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_36" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>newccmsisdn</value></property>
+		    <property name="mapTo"><value>newccmsisdn</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		    <property name="position"><value>36</value></property>
+		</bean>
+		
+		<bean id="po_retry_trans_details_cursor_param_37" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		    <property name="procedureColumnName"><value>oldccmsisdn</value></property>
+		    <property name="mapTo"><value>oldccmsisdn</value></property>
+		    <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		    <property name="position"><value>37</value></property>
+		</bean>
+		
+
+<!-- End of cursor mapping  -->
+	
+	
+	<bean id="pro_get_mdn_retry_trans_id_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+		
+	<bean id="pro_get_mdn_retry_trans_id_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_retry_trans_id</value></property>
+		<property name="mapTo"><value>pi_retry_trans_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_mdn_retry_trans_id_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_user_type</value></property>
+		<property name="mapTo"><value>pi_user_type</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_mdn_retry_trans_id_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_retry_trans_details</value></property>  		
+  		<property name="mapTo"><value>po_retry_trans_details</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>4</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_mdn_retry_trans_id_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_mdn_retry_trans_id_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,401 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+<import resource="proc-config/hlr_ema_cmd_retry/pro_reini_fail_emaflow_trans.xml"/>
+
+<import resource="proc-config/hlr_ema_cmd_retry/pro_reini_fail_ema_cmd_trans.xml"/>
+
+<import resource="proc-config/pro_get_ema_cmd_req_dtls_trans.xml"/>
+
+<import resource="proc-config/pro_get_msisdn_ema_cmd_his.xml"/>
+	<import resource="proc-config/pro_get_mdn_retry_trans_id.xml"/>
+ 	<import resource="proc-config/pro_rty_sim_swap_chg_mdn_dtls.xml"/>
+
+	<import resource="proc-config/pro_get_trans_sim_reg_dtls.xml"/>
+	<import resource="proc-config/pro_get_nw_pend_sim_reg_dtls.xml"/>
+	<import resource="proc-config/pro_ema_flwcmds_ins.xml"/>
+
+    <!-- Added for tpbased commands by venkatesh.c on 10/06/2024-->
+    <import resource="proc-config/pro_msisdn_tp_cmd_name_ttsa.xml"/>
+    
+    <!-- Added for BulkEmaCmdStatus by venkatesh.c on 07/06/2024-->
+    <import resource="proc-config/pro_get_ema_cmd_request_dtls.xml"/>
+    
+	<import resource="proc-config/pro_sim_reg_status_exttrans_pre.xml"/>
+	<import resource="proc-config/pro_sim_reg_status_exttrans_post.xml"/>
+	
+	<import resource="proc-config/pro_update_cmd_details.xml"/>
+    <import resource="proc-config/pro_get_cmd_details.xml"/>
+    
+    <!-- Added for dupilcate transid cheak by vekatesh.c on 05/06/2024-->
+    <import resource="proc-config/pro_ttsa_check_exttransid.xml"/>
+    
+    <!-- Added for user Authentication by vekatesh.c on 03/06/2024-->
+    <import resource="proc-config/pro_TTSA_restapi_user_auth.xml"/>
+    
+    <import resource="proc-config/pro_sim_reg_tracker_insert.xml" />
+	<import resource="proc-config/pro_sim_reg_tracker_update.xml" />
+    <!-- Added for prepaid validation by vekatesh.c on 31/05/2024-->
+    <import resource="proc-config/pro_prepaid_main_line_check.xml"/>
+	<!-- Added for changemsisdn validation by vekatesh.c on 31/05/2024-->
+    <import resource="proc-config/pro_pre_msisdn_bk.xml"/>
+  	<!-- Added for get_ema_cmd by vekatesh.c on 15/04/2024-->
+    <import resource="proc-config/proc_ttsa_ema_cmd_retry_update.xml"/>
+ 	<!-- Added for get_ema_cmd by vekatesh.c on 15/04/2024-->
+    <import resource="proc-config/pro_get_invoke_ema_cmd_status.xml"/>
+	<!-- Added for emc_cmd_retry job by vekatesh.c on 25/04/2024-->
+    <import resource="proc-config/retryJob/pro_ttsa_ema_cmd_get.xml"/>
+    
+    <import resource="proc-config/pro_get_chg_msisdn_upld_dtls.xml"/>
+ 	<import resource="proc-config/pro_ema_flow_ins_req.xml"/>
+	<import resource="proc-config/pro_get_ema_flow_cmds.xml"/>
+	<import resource="proc-config/pro_update_ema_flow_cmds.xml"/>
+ 	<import resource="proc-config/pro_change_msisdn_upd.xml"/>
+	<import resource="proc-config/pro_pre_activation_ins_req.xml"/>
+    <import resource="proc-config/proc_ttsa_ema_cmd_req_update.xml"/>
+    <import resource="proc-config/pro_ttsa_ema_cmd_insert.xml"/>
+    <import resource="proc-config/pro_ttsa_ema_cmd_bulk_insert.xml"/>
+
+    <import resource="proc-config/proc_ttsa_cancel_loc_update.xml"/>	
+    <import resource="proc-config/pro_ttsa_cancel_loc_insert.xml"/>
+    <import resource="proc-config/get_upload_kidetails.xml"/>
+    
+	<import resource="proc-config/pro_change_msisdn_upload.xml"/>
+	<import resource="proc-config/pro_get_change_msisdn_dtls.xml"/>
+	
+	<import resource="proc-config/pro_get_5gprov_details.xml"/>
+	<import resource="proc-config/pro_get_mblser_add_detch_dtls.xml"/>
+	<import resource="proc-config/pro_subs_bulk_flow_tracker_insert.xml"/>
+	<import resource="proc-config/pro_subs_bulk_flow_tracker_get.xml" />
+	<import resource="proc-config/pro_subs_bulk_flow_tracker_update.xml" />
+	<import resource="proc-config/pro_get_sub_info.xml" />
+	<import resource="proc-config/pro_subs_bulk_flw_trcr_report.xml" />
+	<import resource="proc-config/pro_lte_srvc_volte_retry.xml" />
+	
+
+
+	<import resource="proc-config/pro_main_line_sub_line_check.xml"/>
+	<import
+		resource="proc-config/balance_notification/pro_ams_lowbal_notify_upd.xml" />
+	<import resource="proc-config/balance_notification/proc_bal_notification.xml" />
+	<import resource="proc-config/get_exp_msisdns.xml" />
+	<import
+		resource="proc-config/cug_schedule_topup/pro_get_sched_cug_groups_dtls.xml" />
+	<import
+		resource="proc-config/cug_schedule_topup/pro_get_sched_cug_child_dtls.xml" />
+	<import resource="proc-config/cug_schedule_topup/pro_upd_sched_debit_status.xml" />
+	<import resource="proc-config/cug_schedule_topup/pro_upd_sched_topup_status.xml" />
+	
+
+	<import
+		resource="proc-config/update_sub_dmgp_details/pro_get_upload_sub_trans_dtls.xml" />
+	<import
+		resource="proc-config/update_sub_dmgp_details/update_upload_sub_trans_dtls.xml" />
+	<import
+		resource="proc-config/update_sub_dmgp_details/update_sub_trans_details_proc.xml" />
+
+	<import
+		resource="proc-config/subscriber_bulk_upload/insert_sub_trans_dtls_proc_api.xml" />
+
+
+	<import
+		resource="proc-config/upload_dummy_sim_details/pro_get_upload_dummysim_dtls.xml"></import>
+	<import
+		resource="proc-config/upload_dummy_sim_details/update_upload_dummysim_dtls.xml"></import>
+	<import resource="proc-config/upload_dummy_sim_details/dummyid_update.xml"></import>
+
+
+	<import resource="proc-config/HLR/pro_get_acct_status_chng_to_ac.xml"></import>
+	<import resource="proc-config/HLR/pro_upd_acct_status_chng_to_ac.xml"></import>
+	<import
+		resource="proc-config/topup_notification_thirdparty/pro_get_topup_notifi_schd.xml"></import>
+	<import
+		resource="proc-config/topup_notification_thirdparty/pro_topup_trans_status_update.xml"></import>
+	<import
+		resource="proc-config/manage_persistence/pro_persistance_manage_data_plan.xml"></import>
+
+	<import
+		resource="proc-config/data_renewal_data_threshold_notification/pro_get_lac_sac_info.xml"></import>
+	<import
+		resource="proc-config/data_renewal_data_threshold_notification/pro_get_lac_sac_notif_info.xml"></import>
+	<import
+		resource="proc-config/data_renewal_data_threshold_notification/pro_lac_sac_status_update.xml"></import>
+
+
+	<import
+		resource="proc-config/postpaid_bill_notification/get_notification_msisdns.xml"></import>
+	<import
+		resource="proc-config/postpaid_bill_notification/manage_invoice_notifications.xml"></import>
+	<import
+		resource="proc-config/postpaid_bill_notification/pro_send_notification_msgs.xml"></import>
+	<import
+		resource="proc-config/postpaid_bill_notification/pro_get_notification_data.xml"></import>
+
+	<!-- Added for Hlr Status Notify Job TIA -->
+	<import resource="proc-config/HlrStateChgJob/pro_hlr_statechange_notif_job.xml" />
+	<import resource="proc-config/HlrStateChgJob/pro_hlr_statechange_notif_upd.xml" />
+
+
+	<!-- Added for Change MSISDN Retry Job TIA -->
+	<import resource="proc-config/retryJob/pro_chng_msisdn_retry_job.xml" />
+	<import resource="proc-config/retryJob/pro_chng_msisdn_retry_upd.xml" />
+
+	<!-- Added for SimSwap Retry Job TIA -->
+	<import resource="proc-config/retryJob/pro_sim_swap_retry_job.xml" />
+	<import resource="proc-config/retryJob/pro_simswap_retry_upd.xml" />
+
+	<!-- Added for StateChange Retry Job TIA -->
+	<import resource="proc-config/retryJob/pro_state_change_retry_job.xml" />
+	<import resource="proc-config/retryJob/pro_state_change_retry_upd.xml" />
+
+	<!-- Added for StateChangeExpiry Job soriana -->
+	<import resource="proc-config/HlrStateChgJob/pro_ext_transaction_update.xml" />
+	<import resource="proc-config/HlrStateChgJob/pro_extcard_info_on_acct_exp.xml" />
+
+	<!-- Added for Sim Activation And Sim Sale -->
+	<import resource="proc-config/SimActivation/pro_sim_act_req_insert.xml" />
+	<import resource="proc-config/SimActivation/pro_sim_act_req_update.xml" />
+	<import resource="proc-config/SimActivation/pro_sim_act_req_check.xml" />
+
+	<import resource="proc-config/SimSale/pro_sim_sale_req_insert.xml" />
+	<import resource="proc-config/SimSale/pro_sim_sale_req_update.xml" />
+
+	<import resource="proc-config/RetryFrmSMF/pro_mdn_imsi_statchng_rtry_upd.xml" />
+	<import resource="proc-config/RetryFrmSMF/pro_msisdn_imsi_statchng_retry.xml" />
+
+
+
+	<import
+		resource="proc-config/bulkATPSubscriptionUpload/pro_bulkatp_subscription_upld.xml" />
+	<import
+		resource="proc-config/bulkATPSubscriptionUpload/pro_get_bulkatp_upload_dtls.xml" />
+	<import
+		resource="proc-config/bulkATPSubscriptionUpload/pro_bulkatp_subscription_upd.xml" />
+	<import
+		resource="proc-config/bulkATPSubscriptionUpload/pro_bulkatp_subs_trans_dtls.xml" />
+
+	<import resource="proc-config/uplod_sim_details/update_dispensed_sim.xml" />
+	<import resource="proc-config/uplod_sim_details/get_office_details.xml" />
+	<import resource="proc-config/uplod_sim_details/sim_upload_data.xml" />
+	<import resource="proc-config/uplod_sim_details/update_upload_sim_dtls.xml" />
+	<import resource="proc-config/uplod_sim_details/pro_get_upload_sim_dtls.xml" />
+	<import resource="proc-config/uplod_sim_details/sim_update.xml" />
+	<import resource="proc-config/uplod_sim_details/transdetails_duration.xml" />
+	<import resource="proc-config/uplod_sim_details/simdetails_transno.xml" />
+
+	<!-- Added for Product Purchase with charge and update -->
+	<import resource="proc-config/pro_prod_purchage_req_insert.xml" />
+	<import resource="proc-config/pro_prod_purchage_req_update.xml" />
+
+	<import resource="proc-config/SlpnPoints/pro_atp_subscription_stus_upd.xml" />
+	<import resource="proc-config/SlpnPoints/pro_atp_slpn_subscription_req.xml" />
+
+	<import resource="proc-config/debitTransaction.xml" />
+	<import resource="proc-config/debitTransactionUpdate.xml" />
+
+	<import resource="proc-config/pro_api_request_tracker.xml" />
+
+	<import resource="proc-config/pro_sim_reg_request_insert.xml" />
+
+	<import resource="proc-config/pro_sim_reg_request_upd.xml" />
+
+	<import resource="proc-config/reports/pro_slpn_points_redem_rpt.xml" />
+
+
+	<import resource="proc-config/pro_selfc_debit_susped_req.xml" />
+	<import resource="proc-config/pro_selfc_debit_susped_req_upd.xml" />
+	<import resource="proc-config/pro_first_lu_req_update.xml" />
+
+	<import resource="proc-config/pro_bkt_summary_req_insert.xml" />
+	<import resource="proc-config/pro_bkt_summary_req_update.xml" />
+
+	<import
+		resource="proc-config/bulkTPSubscription/pro_bulk_tarifpack_change_upd.xml" />
+	<import
+		resource="proc-config/bulkTPSubscription/pro_bulk_tarifpack_change_upld.xml" />
+	<import
+		resource="proc-config/bulkTPSubscription/pro_bulk_tp_change_trans_dtls.xml" />
+	<import
+		resource="proc-config/bulkTPSubscription/pro_get_bulk_tp_chng_upld_dtls.xml" />
+
+	<import resource="proc-config/reports/pro_account_act_deact_report.xml" />
+
+	<import resource="proc-config/sorianaRetry/pro_first_lu_retry_job.xml" />
+	<import resource="proc-config/sorianaRetry/pro_first_lu_rtry_upd.xml" />
+	<import resource="proc-config/pro_user_login_logout_tracking.xml" />
+
+	<import resource="proc-config/uplod_sim_details/pro_bad_file_req_insert.xml" />
+
+	<import resource="proc-config/pro_tarifpack_change_req.xml" />
+	<import resource="proc-config/pro_atp_subscription_req.xml" />
+	<import resource="proc-config/postPaid/pro_pre_post_convert_req_upd.xml" />
+	<import resource="proc-config/postPaid/pro_pre_post_convert_req.xml" />
+	<import resource="proc-config/postPaid/pro_payment_enquiry_request.xml" />
+	<import resource="proc-config/postPaid/pro_postpaid_payment_req_insert.xml" />
+	<import resource="proc-config/postPaid/pro_postpaid_payment_req_upd.xml" />
+
+	<import resource="proc-config/postPaid/pro_password_update_request.xml" />
+	<import resource="proc-config/postPaid/pro_password_reqst_status_upd.xml" />
+
+	<import resource="proc-config/pro_free_msisdn_threshold_job.xml" />
+
+	<import resource="proc-config/pro_otp_generation_request.xml" />
+	<import resource="proc-config/pro_otp_request_validation.xml" />
+	<import resource="proc-config/pro_simreg_retry.xml" />
+
+	<import resource="proc-config/payment/pro_payment_req_upd.xml" />
+	<import resource="proc-config/payment/pro_payment_req_insrt.xml" />
+	<import resource="proc-config/payment/pro_payment_transaction_rpt.xml" />
+
+	<!-- Added By Sambasiva Rao Aakula For Bulk RC For Corp -->
+	<import
+		resource="proc-config/bulkRcSubscription_forCorp/pro_get_schdual_topup_dtls.xml" />
+	<import
+		resource="proc-config/bulkRcSubscription_forCorp/get_topup_msisdns_detls.xml" />
+	<import
+		resource="proc-config/bulkRcSubscription_forCorp/topup_msisdns_stat_upd.xml" />
+
+	<import resource="proc-config/bulkSplCredit/pro_bulk_spl_credit_trans_dtls.xml" />
+	<import resource="proc-config/bulkSplCredit/pro_bulk_subs_spcl_credit_upd.xml" />
+	<import resource="proc-config/bulkSplCredit/pro_bulk_subs_spcl_credit_upld.xml" />
+	<import resource="proc-config/bulkSplCredit/pro_get_spcl_credit_upld_dtls.xml" />
+
+	<import resource="proc-config/bulkCredit/pro_bulk_credit_trans_dtls.xml" />
+	<import resource="proc-config/bulkCredit/pro_bulk_subs_credit_upd.xml" />
+	<import resource="proc-config/bulkCredit/pro_bulk_subs_credit_upld.xml" />
+	<import resource="proc-config/bulkCredit/pro_get_subs_credit_upld_dtls.xml" />
+
+	<import resource="proc-config/bulkDebit/pro_bulk_debit_trans_dtls.xml" />
+	<import resource="proc-config/bulkDebit/pro_bulk_subs_debit_upd.xml" />
+	<import resource="proc-config/bulkDebit/pro_bulk_subs_debit_upld.xml" />
+	<import resource="proc-config/bulkDebit/pro_get_subs_debit_upld_dtls.xml" />
+
+	<import resource="proc-config/paytm/pro_payment_retry.xml" />
+	
+	<import resource="proc-config/paytm/pro_payment_retry_upd.xml" />
+	<import resource="proc-config/updatePersonalDetailsInsert.xml"/>
+	<import resource="proc-config/updtPrsnlDtlsUpdate.xml"/>
+	
+	<import resource="proc-config/pro_corp_deactive_reactive_req.xml"/>
+	<import resource="proc-config/pro_corp_bulk_rct_req.xml"/>
+	<import resource="proc-config/pro_get_deact_react_upld_dtls.xml"/>
+	<import resource="proc-config/pro_corp_deact_react_upd.xml"/>
+	<import resource="proc-config/pro_corp_rct_upd.xml"/>
+	<import resource="proc-config/pro_get_rct_upld_dtls.xml"/>
+	<import resource="proc-config/pro_third_party_notif_tracker.xml"/>
+	<import resource="proc-config/pro_switch_gprs_manage.xml"/>
+	<import resource="proc-config/pro_nw_avg_threshold_notif_mng.xml"/>
+	<import resource="proc-config/bulkLU/pro_bulk_flu_insert.xml"/>
+	<import resource="proc-config/bulkLU/pro_bulk_flu_validation.xml"/>
+	<import resource="proc-config/bulkLU/pro_bulk_flu_staus_upd.xml"/>
+	<import resource="proc-config/first_lu_process_job/pro_get_bulk_flu.xml" />	
+	<import resource="proc-config/bulkLU/pro_bulk_flu_reject_insert.xml"/>
+	<import resource="proc-config/pro_balance_adjust_rpt.xml"/>
+	
+	<import resource="proc-config/yf_api_process_job/pro_thiredparty_notification.xml"/>
+	<import resource="proc-config/yf_api_process_job/pro_thiredparty_get.xml"/>
+	<import resource="proc-config/yf_api_process_job/pro_thiredparty_notific_update.xml"/>
+	<import resource="proc-config/tia_retry_processjob/pro_sim_activation.xml"/>
+	<import resource="proc-config/tia_retry_processjob/pro_tia_notific_update.xml"/>
+	<import resource="proc-config/pro_sms_notify_ne_pro_backup.xml"/>
+	
+	<import resource="proc-config/bulkCA/pro_bulk_ca_group_insert.xml"/>
+	<import resource="proc-config/bulkCA/pro_get_ca_group_dtls.xml"/>
+	<import resource="proc-config/bulkCA/pro_ca_group_dtls_update.xml"/>
+	<import resource="proc-config/bulkCA/pro_ca_group_transdetails.xml"/>
+	
+	<import resource="proc-config/IMEIBlockUnBlock/pro_imei_block.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_imei_enquiry.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_imei_unblock.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_get_fileinfo.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_update_fileinfo.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_imei_enquiry_insert.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_gsme_job_fail_imei_dtls.xml"/>
+	<import resource="proc-config/IMEIBlockUnBlock/pro_get_file_name.xml"/>
+	
+	<import resource="proc-config/MDNRegActJob/pro_get_msisdn_action_dtls.xml"/>
+	<import resource="proc-config/MDNRegActJob/pro_get_msdn_action_dtls_upd.xml"/>
+	
+	<!-- bulk MSISDN upload regact -->
+   <import resource="proc-config/upload_MDNReg_act_details/pro_msisdn_bulk_insert.xml"/>
+	<!-- bulk MSISDN upload reports -->
+	<import resource="proc-config/upload_MDNReg_act_details/pro_get_msdn_report_dtls.xml"/>
+	<import resource="proc-config/upload_MDNReg_act_details/msisdndetails_transno.xml"/>
+	
+	<!-- TTPCRF TUNETALK -->
+	 <import resource="proc-config/TTPCRF/select_policy_tracker.xml"/>
+	<import resource="proc-config/TTPCRF/update_policy_tracker.xml"/>
+	<import resource="proc-config/TTPCRF/delete_policy_tracker.xml"/>
+	
+	<!-- volte service  -->
+	<import resource="proc-config/volte_insert_update/pro_lte_srvc_req_insrt.xml"/>
+	<import resource="proc-config/volte_insert_update/pro_lte_srvc_update.xml"/>
+	
+	<import resource="proc-config/VOLTE/pro_lte_statechange_notif_job.xml"/>
+	
+	
+	<import resource="proc-config/pro_state_change_Track/pro_state_change_Track_Insert.xml"/>
+	<import resource="proc-config/pro_state_change_Track/pro_state_change_Track_Update.xml"/>
+
+	<import resource="proc-config/reports/pro_state_change_track_report.xml" />
+ 	<import resource="proc-config/PKG_MSISDN_VS_TARIFF_ID/pro_msisdnvstariffid_view.xml"/>
+   	<import resource="proc-config/PKG_MSISDN_VS_TARIFF_ID/pro_msisdnvstpid_insert.xml"/>
+   
+    <import resource="proc-config/Bulk_Sim_Swap/pro_sim_swap_bulk_insert.xml"/>
+  	<import resource="proc-config/Bulk_Sim_Swap/pro_sim_swap_report_dtls.xml"/>
+  	<import resource="proc-config/Bulk_Sim_Swap/simswapdetails_transno.xml"/>
+	
+	<import resource="proc-config/Bulk_SimSwap_job/pro_get_sim_swap_action_dtls.xml"/>
+	<import resource="proc-config/Bulk_SimSwap_job/pro_sim_swap_upd.xml"/>
+	
+	<import resource="proc-config/force_sim_activation/pro_force_sim_bulk_insert.xml"/>
+  	<import resource="proc-config/force_sim_activation/pro_force_sim_report_dtls.xml"/>
+  	<import resource="proc-config/force_sim_activation/forcesimActdetails_transno.xml"/>
+  	
+  	<import resource="proc-config/bulk_deact_react_report/blkActDeactstatus_transno.xml"/>
+  	<import resource="proc-config/bulk_deact_react_report/pro_deact_react_report_dtls.xml"/>
+  	
+  	<import resource="proc-config/blk_corp_rc_reports/blkCorpRCstatus_transno.xml"/>
+  	<import resource="proc-config/blk_corp_rc_reports/pro_corp_rct_report_dtls.xml"/>
+  	
+  	<!-- bulk statechange insert/reports start -->
+	<import resource="proc-config/Bulk_State_Change/bulk_statechang_dtls_transno.xml"/>
+	<import resource="proc-config/Bulk_State_Change/pro_state_change_bulk_insert.xml"/>
+	<import resource="proc-config/Bulk_State_Change/pro_state_change_report_dtls.xml"/>
+  	<!-- bulk statechange insert/reports END -->
+  	
+  	<!--bulk statechange job insert/reports start-->
+  	<import resource="proc-config/bulk_State_Change_Job/pro_state_change_upd.xml"/>
+	<import resource="proc-config/bulk_State_Change_Job/pro_state_change_action_dtls.xml"/>
+  	<!-- bulk statechange job insert/reports END- -->
+  		<import resource="proc-config/reports/pro_lte_srvc_volte_report.xml"/>
+  			<!--InsertExternalDetails// getExternalDetils start -->
+	<import
+		resource="proc-config/pro_insert_sim_act_ext_dtls/pro_insert_sim_act_ext_dtls.xml" />
+	<import resource="proc-config/getExternalDetails/pro_get_external_dtls.xml" />
+	<!--InsertExternalDetails// getExternalDetils end -->
+
+	<!-- deleteExternal and UpdateAccountDetals -->
+	<import resource="proc-config/pro_del_external_dtils/pro_del_external_dtils.xml" />
+	<import
+		resource="proc-config/pro_upd_external_details/pro_upd_external_details.xml" />
+	<!-- deleteExternal and UpdateAccountDetals end -->
+	
+	 <!-- PP simRegistration -->
+	<!--<import resource="proc-config/uplod_sim_details/sim_upload_data.xml" />-->
+	<import resource="proc-config/uplod_sim_details/pro_get_upload_sim_dtls_pre_post.xml"/>
+	<import resource="proc-config/uplod_sim_details/pro_sim_reg_status_pre_post.xml"/>
+	<import resource="proc-config/uplod_sim_details/sim_update_pre_post.xml"/>
+	<import resource="proc-config/uplod_sim_details/update_upload_sim_dtls_pre_post.xml"/>
+
+	 <!-- PP simRegStatus -->
+   <import resource="proc-config/uplod_sim_details/pro_sim_reg_status.xml"/>
+   
+   
+    <!-- Added for TTSA -->
+     <import resource="proc-config/ema_pocs/pro_upd_emaid_vs_emacommand.xml"/>
+       <import resource="proc-config/ema_pocs/pro_get_emaid_vs_emacommand.xml"/>
+	<import resource="proc-config/pro_get_simswap_simreg_chngmd.xml"/>
+	
+</beans>

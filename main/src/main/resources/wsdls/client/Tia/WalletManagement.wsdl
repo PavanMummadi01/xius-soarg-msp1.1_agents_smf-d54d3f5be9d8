@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:tns="http://tia.xius.com/WalletManagement.wsdl" 
+xmlns:tia="http://tia.xius.com/WalletManagement.xsd"
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:wshdr="http://tia.xius.com/common/header/HeaderDetails.xsd" 
+xmlns:err="http://tia.xius.com/common/error/ErrorDetails.xsd"
+targetNamespace="http://tia.xius.com/WalletManagement.wsdl">
+	 <wsdl:types>
+		<xs:schema xmlns:tns="http://tia.xius.com/WalletManagement.wsdl" targetNamespace="http://tia.xius.com/WalletManagement.wsdl">
+			<xs:import namespace="http://tia.xius.com/WalletManagement.xsd" schemaLocation="WalletManagement.xsd"/>
+			<xs:import namespace="http://tia.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://tia.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	
+<!-- ================================================= messages definition Starts ======================================================= -->	
+	
+	<wsdl:message name="CreditWalletRequest">
+	<wsdl:part name="CreditWalletRequest" element="tia:CreditWalletRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreditWalletResponse">
+	<wsdl:part name="CreditWalletResponse" element="tia:CreditWalletResponse"/>
+	</wsdl:message>
+	
+	<!--  Create Wallet  -->	
+		<wsdl:message name="CreateWalletRequest">
+		<wsdl:part name="CreateWalletRequest" element="tia:CreateWalletRequest"/>
+		</wsdl:message>
+		<wsdl:message name="CreateWalletResponse">
+		<wsdl:part name="CreateWalletResponse" element="tia:CreateWalletResponse"/>
+		</wsdl:message>
+	<!--  Create Wallet  -->
+	
+	<!--  get Wallet balance  -->	
+		<wsdl:message name="GetBalanceRequest">
+		<wsdl:part name="GetBalanceRequest" element="tia:GetBalanceRequest"/>
+		</wsdl:message>
+		<wsdl:message name="GetBalanceResponse">
+		<wsdl:part name="GetBalanceResponse" element="tia:GetBalanceResponse"/>
+		</wsdl:message>
+	<!--  get Wallet balance  -->
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>	
+<!-- ================================================= messages definition ends here ======================================================= -->	
+<!-- ================================================= Port Type definition Starts ======================================================= -->	
+
+<wsdl:portType name="WalletIntegrationPortType">
+	<wsdl:operation name="creditWallet">
+		<wsdl:input message="tns:CreditWalletRequest" />
+		<wsdl:output message="tns:CreditWalletResponse" />
+		<wsdl:fault name="fault" message="tns:faultMessage" />
+	</wsdl:operation>
+ 
+
+	<wsdl:operation name="createWallet">
+		<wsdl:input message="tns:CreateWalletRequest" />
+		<wsdl:output message="tns:CreateWalletResponse" />
+		<wsdl:fault name="fault" message="tns:faultMessage" />
+	</wsdl:operation>
+	
+	<wsdl:operation name="getBalance">
+		<wsdl:input message="tns:GetBalanceRequest" />
+		<wsdl:output message="tns:GetBalanceResponse" />
+		<wsdl:fault name="fault" message="tns:faultMessage" />
+	</wsdl:operation>
+</wsdl:portType>
+
+<!-- ================================================= Port Type definition Ends ======================================================= -->	
+<!-- ================================================ Binding (operation) definition start============================================== -->	
+	<wsdl:binding name="WalletIntegrationBinding" type="tns:WalletIntegrationPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+				<!--  Begin Credit Wallet  -->
+		<wsdl:operation name="creditWallet">
+			<soap:operation soapAction="creditWallet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+			<!--  End Credit Wallet  -->
+			
+			<!--  Begin create Wallet  -->
+		<wsdl:operation name="createWallet">
+			<soap:operation soapAction="createWallet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+			<!--  End create Wallet  -->
+			
+			<!--  Begin get Wallet Balance   -->
+		<wsdl:operation name="getBalance">
+			<soap:operation soapAction="getBalance"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+			<!--  End get Wallet Balance -->
+	</wsdl:binding>
+<!-- ================================================ Binding (operation) definition End============================================== -->		
+<!-- ================================================ Service definition start============================================== -->	
+	<wsdl:service name="WalletIntegration">
+		<wsdl:port name="WalletIntegrationPort" binding="tns:WalletIntegrationBinding">
+			<soap:address location="http://localhost:8080/axis/WalletIntegration/v1"/>
+		</wsdl:port>
+	</wsdl:service>
+<!-- ================================================ Service definition End============================================== -->	
+</wsdl:definitions>	

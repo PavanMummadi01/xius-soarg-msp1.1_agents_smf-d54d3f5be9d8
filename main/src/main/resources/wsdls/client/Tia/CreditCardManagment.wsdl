@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+ xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+ xmlns:tns="http://ccard.tia.xius.com/CreditCardManagment.wsdl" 
+ xmlns:envelope="http://ccard.tia.xius.com/CreditCardManagment.xsd"
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+   xmlns:wshdr="http://tia.xius.com/common/header/HeaderDetails.xsd" 
+   xmlns:err="http://tia.xius.com/common/error/ErrorDetails.xsd"
+    targetNamespace="http://ccard.tia.xius.com/CreditCardManagment.wsdl">
+	 <wsdl:types>
+		<xs:schema xmlns:tns="http://ccard.tia.xius.com/CreditCardManagment.wsdl" targetNamespace="http://ccard.tia.xius.com/CreditCardManagment.wsdl">
+			<xs:import namespace="http://ccard.tia.xius.com/CreditCardManagment.xsd" schemaLocation="CreditCardManagment.xsd"/>
+			<xs:import namespace="http://tia.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://tia.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	
+	<wsdl:message name="debitFromCardRequest">
+		<wsdl:part name="body" element="envelope:debitFromCardRequest"/>
+	</wsdl:message>
+	<wsdl:message name="debitFromCardResponse">
+		<wsdl:part name="body" element="envelope:debitFromCardResponse"/>
+	</wsdl:message>
+	
+	
+		<wsdl:message name="debitFromWalletRequest">
+		<wsdl:part name="body" element="envelope:debitFromWalletRequest"/>
+	</wsdl:message>
+	<wsdl:message name="debitFromWalletResponse">
+		<wsdl:part name="body" element="envelope:debitFromWalletResponse"/>
+	</wsdl:message>
+	
+	 
+		<wsdl:message name="debitFromCCRequest">
+		<wsdl:part name="body" element="envelope:debitFromCCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="debitFromCCResponse">
+		<wsdl:part name="body" element="envelope:debitFromCCResponse"/>
+	</wsdl:message>
+	 <wsdl:message name="registerCCRequest">
+		<wsdl:part name="body" element="envelope:registerCCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="registerCCResponse">
+		<wsdl:part name="body" element="envelope:registerCCResponse"/>
+	</wsdl:message>
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>	
+	<wsdl:portType name="CreditCardManagmentPortType">
+		
+		<wsdl:operation name="debitFromCard">
+			<wsdl:input message="tns:debitFromCardRequest"/>
+			<wsdl:output message="tns:debitFromCardResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="debitFromWallet">
+			<wsdl:input message="tns:debitFromWalletRequest"/>
+			<wsdl:output message="tns:debitFromWalletResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="debitFromCC">
+			<wsdl:input message="tns:debitFromCCRequest"/>
+			<wsdl:output message="tns:debitFromCCResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="registerCC">
+			<wsdl:input message="tns:registerCCRequest"/>
+			<wsdl:output message="tns:registerCCResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CreditCardManagmentBinding" type="tns:CreditCardManagmentPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="debitFromCard">
+			<soap:operation soapAction="debitFromCard"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="debitFromWallet">
+			<soap:operation soapAction="debitFromWallet"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="debitFromCC">
+			<soap:operation soapAction="debitFromCC"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+<!-- YF credit card registration during activation -->
+		<wsdl:operation name="registerCC">
+			<soap:operation soapAction="registerCC"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+			</wsdl:binding>
+	<wsdl:service name="CreditCardManagment">
+		<wsdl:port name="CreditCardManagmentPort" binding="tns:CreditCardManagmentBinding">
+			<soap:address location="http://localhost:8080/axis/CreditCardManagment/v1"/>
+		</wsdl:port>
+	</wsdl:service>	
+</wsdl:definitions>

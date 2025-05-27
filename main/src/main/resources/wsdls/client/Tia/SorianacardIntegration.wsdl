@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+xmlns:tns="http://tia.xius.com/SorianacardIntegration.wsdl" 
+xmlns:tia="http://tia.xius.com/SorianacardIntegration.xsd"
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:wshdr="http://tia.xius.com/common/header/HeaderDetails.xsd" 
+xmlns:err="http://tia.xius.com/common/error/ErrorDetails.xsd"
+targetNamespace="http://tia.xius.com/SorianacardIntegration.wsdl">
+	 <wsdl:types>
+		<xs:schema xmlns:tns="http://tia.xius.com/SorianacardIntegration.wsdl" targetNamespace="http://tia.xius.com/SorianacardIntegration.wsdl">
+			<xs:import namespace="http://tia.xius.com/SorianacardIntegration.xsd" schemaLocation="SorianacardIntegration.xsd"/>
+			<xs:import namespace="http://tia.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://tia.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	
+	
+	
+	
+	<wsdl:message name="getSorianaPointsRequest">
+	<wsdl:part name="getSorianaPointsRequest" element="tia:getSorianaPointsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getSorianaPointsResponse">
+	<wsdl:part name="getSorianaPointsResponse" element="tia:getSorianaPointsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getClientIdRequest">
+	<wsdl:part name="getClientIdRequest" element="tia:getClientIdRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getClientIdResponse">
+	<wsdl:part name="getClientIdResponse" element="tia:getClientIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="modifyprincipalMSISDNRequest">
+	<wsdl:part name="modifyprincipalMSISDNRequest" element="tia:modifyprincipalMSISDNRequest"/>
+	</wsdl:message>
+	<wsdl:message name="modifyprincipalMSISDNResponse">
+	<wsdl:part name="modifyprincipalMSISDNResponse" element="tia:modifyprincipalMSISDNResponse"/>
+	</wsdl:message>
+	<wsdl:message name="addMSISDNRequest">
+	<wsdl:part name="addMSISDNRequest" element="tia:addMSISDNRequest"/>
+	</wsdl:message>
+	<wsdl:message name="addMSISDNResponse">
+	<wsdl:part name="addMSISDNResponse" element="tia:addMSISDNResponse"/>
+	</wsdl:message>
+ 
+	<wsdl:message name="deleteMSISDNRequest">
+	<wsdl:part name="deleteMSISDNRequest" element="tia:deleteMSISDNRequest"/>
+	</wsdl:message>
+	<wsdl:message name="deleteMSISDNResponse">
+	<wsdl:part name="deleteMSISDNResponse" element="tia:deleteMSISDNResponse"/>
+	</wsdl:message>
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>	
+	<wsdl:portType name="SorianacardIntegrationPortType">
+		
+		<wsdl:operation name="getSorianaPoints">
+			<wsdl:input message="tns:getSorianaPointsRequest"/>
+			<wsdl:output message="tns:getSorianaPointsResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="getclientId">
+			<wsdl:input message="tns:getClientIdRequest"/>
+			<wsdl:output message="tns:getClientIdResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="modifyprincipalMSISDN">
+			<wsdl:input message="tns:modifyprincipalMSISDNRequest"/>
+			<wsdl:output message="tns:modifyprincipalMSISDNResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddMSISDN">
+			<wsdl:input message="tns:addMSISDNRequest"/>
+			<wsdl:output message="tns:addMSISDNResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="deleteMSISDN">
+			<wsdl:input message="tns:deleteMSISDNRequest"/>
+			<wsdl:output message="tns:deleteMSISDNResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		
+		
+	</wsdl:portType>
+	<wsdl:binding name="SorianacardIntegrationBinding" type="tns:SorianacardIntegrationPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="getSorianaPoints">
+			<soap:operation soapAction="getSorianaPoints"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getclientId">
+			<soap:operation soapAction="getclientId"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+
+	<wsdl:operation name="deleteMSISDN">
+			<soap:operation soapAction="deleteMSISDN"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+
+	<wsdl:operation name="modifyprincipalMSISDN">
+			<soap:operation soapAction="modifyprincipalMSISDN"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+
+	<wsdl:operation name="AddMSISDN">
+			<soap:operation soapAction="AddMSISDN"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+		
+	<wsdl:service name="SorianacardIntegration">
+		<wsdl:port name="SorianacardIntegrationPort" binding="tns:SorianacardIntegrationBinding">
+			<soap:address location="http://localhost:8080/axis/SorianacardIntegration/v1"/>
+		</wsdl:port>
+	</wsdl:service>	
+</wsdl:definitions>

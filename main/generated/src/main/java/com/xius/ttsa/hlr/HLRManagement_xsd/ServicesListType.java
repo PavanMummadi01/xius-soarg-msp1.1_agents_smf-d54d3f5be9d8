@@ -1,0 +1,173 @@
+/**
+ * ServicesListType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.xius.ttsa.hlr.HLRManagement_xsd;
+
+public class ServicesListType  implements java.io.Serializable {
+    private com.xius.ttsa.hlr.HLRManagement_xsd.ServiceType[] service;
+
+    private java.lang.Long VMSNumber;
+
+    public ServicesListType() {
+    }
+
+    public ServicesListType(
+           com.xius.ttsa.hlr.HLRManagement_xsd.ServiceType[] service,
+           java.lang.Long VMSNumber) {
+           this.service = service;
+           this.VMSNumber = VMSNumber;
+    }
+
+
+    /**
+     * Gets the service value for this ServicesListType.
+     * 
+     * @return service
+     */
+    public com.xius.ttsa.hlr.HLRManagement_xsd.ServiceType[] getService() {
+        return service;
+    }
+
+
+    /**
+     * Sets the service value for this ServicesListType.
+     * 
+     * @param service
+     */
+    public void setService(com.xius.ttsa.hlr.HLRManagement_xsd.ServiceType[] service) {
+        this.service = service;
+    }
+
+    public com.xius.ttsa.hlr.HLRManagement_xsd.ServiceType getService(int i) {
+        return this.service[i];
+    }
+
+    public void setService(int i, com.xius.ttsa.hlr.HLRManagement_xsd.ServiceType _value) {
+        this.service[i] = _value;
+    }
+
+
+    /**
+     * Gets the VMSNumber value for this ServicesListType.
+     * 
+     * @return VMSNumber
+     */
+    public java.lang.Long getVMSNumber() {
+        return VMSNumber;
+    }
+
+
+    /**
+     * Sets the VMSNumber value for this ServicesListType.
+     * 
+     * @param VMSNumber
+     */
+    public void setVMSNumber(java.lang.Long VMSNumber) {
+        this.VMSNumber = VMSNumber;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof ServicesListType)) return false;
+        ServicesListType other = (ServicesListType) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.service==null && other.getService()==null) || 
+             (this.service!=null &&
+              java.util.Arrays.equals(this.service, other.getService()))) &&
+            ((this.VMSNumber==null && other.getVMSNumber()==null) || 
+             (this.VMSNumber!=null &&
+              this.VMSNumber.equals(other.getVMSNumber())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getService() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getService());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getService(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getVMSNumber() != null) {
+            _hashCode += getVMSNumber().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(ServicesListType.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://hlr.ttsa.xius.com/HLRManagement.xsd", "ServicesListType"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("service");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://hlr.ttsa.xius.com/HLRManagement.xsd", "service"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://hlr.ttsa.xius.com/HLRManagement.xsd", "ServiceType"));
+        elemField.setNillable(false);
+        elemField.setMaxOccursUnbounded(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("VMSNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://hlr.ttsa.xius.com/HLRManagement.xsd", "VMSNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}

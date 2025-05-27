@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://billing.xius.com/BalanceManagement.xsd" targetNamespace="http://billing.xius.com/BalanceManagement.xsd"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+
+	<!-- Special Top-Up -->
+	<xs:element name="specialDebitRequest" type="SpecialDebitRequest" />
+	<xs:element name="specialDebitResponse" type="SpecialDebitResponse" />
+	<!-- End of Special Top-Up -->
+
+
+	<!-- Special Top-Up -->
+	<xs:element name="specialTopUpRequest" type="SpecialTopUpRequest" />
+	<xs:element name="specialTopUpResponse" type="SpecialTopUpResponse" />
+	<!-- End of Special Top-Up -->
+
+	<!-- transfer Balance -->
+	<xs:element name="transferBalanceRequest" type="TransferBalanceRequest" />
+	<xs:element name="transferBalanceResponse" type="TransferBalanceResponse" />
+	<!-- End of transfer Balance -->
+
+	<!-- debit -->
+	<xs:element name="debitRequest" type="DebitRequest" />
+	<xs:element name="debitResponse" type="DebitResponse" />
+	<!-- End of debit -->
+
+	<!-- Waiver -->
+	<xs:element name="waiverRequest" type="WaiverRequest" />
+	<xs:element name="waiverResponse" type="WaiverResponse" />
+	<!-- End of Waiver -->
+
+	<!-- TopUp -->
+	<xs:element name="topUpRequest" type="TopUpRequest" />
+	<xs:element name="topUpResponse" type="TopUpResponse" />
+	<!-- End of TopUp -->
+
+	<!-- debit bulk -->
+	<xs:element name="debitBulkRequest" type="DebitBulkRequest" />
+	<xs:element name="debitBulkResponse" type="DebitBulkResponse" />
+	<!-- End of debit -->
+
+
+	<!-- retrieveVoucher -->
+	<!-- Description : retrieveVouchers will talk to PA directly. i.e., reason 
+		we are separating(writing a new API) it as retrieveVouchers in InfinetBilling 
+		Added By : Phani.Chavala Reason to ADD: REQ#CCUI phase 2 Date : 27th Mar, 
+		2012 -->
+	<xs:element name="retrieveVoucherRequest" type="RetrieveVoucherRequest" />
+	<xs:element name="retrieveVoucherResponse" type="RetrieveVoucherResponse" />
+	<!-- End of retrieveVoucher -->
+
+
+	<!-- BulkBalanceAdjustmentReq -->
+	<xs:element name="bulkBalAdjustmentRequest" type="BulkBalAdjustmentRequest" />
+	<xs:element name="bulkBalAdjustmentResponse" type="BulkBalAdjustmentResponse" />
+	<!-- End of BulkBalanceAdjustmentReq -->
+	
+<!--	GetAllBalances -->
+	<xs:element name="GetAllBalancesRequest" type="GetAllBalancesRequest" />
+	<xs:element name="GetAllBalancesResponse" type="GetAllBalancesResponse" />
+	
+	
+	
+	
+	<!-- End of	GetAllBalances -->
+	
+	<!--	DebitFullOrPartialCoreBal -->
+	
+	<xs:element name="DebitFullOrPartialCoreBalRequest" type="DebitFullOrPartialCoreBalRequest" />
+	<xs:element name="DebitFullOrPartialCoreBalResponse" type="DebitFullOrPartialCoreBalResponse" />
+	
+<!--	DebitFullOrPartialCoreBal -->
+
+
+<!--Added for getAllBalanceC1-->
+	<xs:element name="getAllBalanceC1Request"  type="getAllBalanceC1Request" />
+	<xs:element name="getAllBalanceC1Response" type="getAllBalanceC1Response" />
+	<!-- End of getAllBalanceC1-->
+	
+	
+	<!--Added for getAllBalanceC1-->
+	<xs:element name="rechargeStatusUpdRequest"  type="rechargeStatusUpdRequest" />
+	<xs:element name="rechargeStatusUpdResponse" type="rechargeStatusUpdResponse" />
+	<!-- End of getAllBalanceC1-->
+	
+	<xs:element name="getRechargeInfoRequest"  type="getRechargeInfoRequest" />
+	<xs:element name="getRechargeInfoResponse" type="getRechargeInfoResponse" />	
+	
+	<xs:element name="getRcProductRequest"  type="getRcProductRequest" />
+	<xs:element name="getRcProductResponse" type="getRcProductResponse" />
+	
+	<xs:element name="getMDNRcProductRequest"  type="getMDNRcProductRequest" />
+	<xs:element name="getMDNRcProductResponse" type="getMDNRcProductResponse" />
+	
+	<xs:element name="multiBalAdjustmentRequest"  type="multiBalAdjustmentRequest" />
+	<xs:element name="multiBalAdjustmentResponse" type="multiBalAdjustmentResponse" />
+	
+	<xs:element name="getCategoryListRequest"  type="getCategoryListRequest" />
+	<xs:element name="getCategoryListResponse" type="getCategoryListResponse" />
+	
+		<xs:complexType name="getCategoryListRequest">
+   		    <xs:sequence>
+				<xs:element name="tariffPackId"  type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+      	<xs:complexType name="getCategoryListResponse">
+   		  <xs:sequence>
+	     	 <xs:element name="categoryList"  type="categoryListType" minOccurs="0" />	
+		  </xs:sequence>	
+		</xs:complexType>
+		<xs:complexType name="categoryListType">
+   		  <xs:sequence>
+	     	 <xs:element name="categoryName"  type="xs:string" minOccurs="0" maxOccurs="unbounded"/>	
+		  </xs:sequence>	
+		</xs:complexType>
+		
+	
+	<xs:complexType name="multiBalAdjustmentRequest">
+   		    <xs:sequence>
+				 <xs:element name="MSISDN"  type="MSISDNType"/>	
+				 <xs:element name="channelType"  type="xs:string"/>	
+			      <xs:element name="wallets" type="walletListType" minOccurs="0" />
+			      <xs:element name="oldValidity" type="xs:string" minOccurs="0"/>
+			      <xs:element name="mrp" type="xs:string" minOccurs="0"/>
+				  <xs:element name="tpId" type="xs:string" minOccurs="0"/>
+				  <xs:element name="voucherPin"  type="xs:string" minOccurs="0"/>	
+			      <xs:element name="voucherProfileId" type="xs:string" minOccurs="0"/>
+			      <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	
+	
+		<xs:complexType name="multiBalAdjustmentResponse">
+   		  <xs:sequence>
+   			 
+			  <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			  <xs:element name="responseCode" type="xs:string" minOccurs="0"/>
+			  <xs:element name="responseDesc" type="xs:string" minOccurs="0"/>
+		  </xs:sequence>	
+		</xs:complexType>
+	
+		<xs:complexType name="getRechargeInfoRequest">
+   		    <xs:sequence>
+				 <xs:element name="MSISDN"  type="MSISDNType" minOccurs="0"/>	
+				 <xs:element name="accountId"  type="AccountIdType" minOccurs="0"/>	
+				 <xs:element name="channelType"  type="xs:string" minOccurs="0"/>
+				 <xs:element name="days"  type="xs:string" minOccurs="0"/>	
+				 <xs:element name="currency"  type="xs:string" minOccurs="0"/>	
+				 <xs:element name="reason"  type="xs:string" minOccurs="0"/>	
+				 <xs:element name="rcCode"  type="xs:string" minOccurs="0"/>	
+				 <xs:element name="externalTransId"  type="xs:string" minOccurs="0" />	
+				 <xs:element name="voucherPin"  type="xs:string" minOccurs="0"/>	
+				 <xs:element name="mrp"  type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+      	<xs:complexType name="getRechargeInfoResponse">
+   		  <xs:sequence>
+   		  	  <xs:element name="MSISDN"  type="MSISDNType" minOccurs="0"/>	
+   			  <xs:element name="voucherPin"  type="xs:string"  minOccurs="0"/>	
+   			  <xs:element name="voucherSerialNo" type="xs:string" minOccurs="0"/>
+			  <xs:element name="voucherProfileId" type="xs:string" minOccurs="0"/>
+			   <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			  <xs:element name="balance" type="mainBalanceType" minOccurs="0" />
+			  <xs:element name="wallets" type="walletListType" minOccurs="0" />
+			  <xs:element name="rctId" type="xs:string" minOccurs="0"/>
+			  <xs:element name="charge" type="xs:string" minOccurs="0"/>
+			  <xs:element name="tpId" type="xs:string" minOccurs="0"/>
+			  <xs:element name="oldValidity" type="xs:string" minOccurs="0"/>
+			  <xs:element name="rcCatogory"  type="xs:string" minOccurs="0"/>	
+			  <xs:element name="respCode" type="xs:string" minOccurs="0"/>
+			  <xs:element name="respDescription" type="xs:string" minOccurs="0"/>
+		   </xs:sequence>	
+	</xs:complexType>
+	
+	<xs:complexType name="mainBalanceType">
+		<xs:sequence>
+			<xs:element name="accountBalance" type="xs:string" minOccurs="0"/>
+			<xs:element name="validityDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="gracePeriod1" type="xs:string" minOccurs="0"/>
+			<xs:element name="gracePeriod2" type="xs:string" minOccurs="0"/>
+			<xs:element name="gracePeriod3" type="xs:string" minOccurs="0"/>
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="walletListType">
+		<xs:sequence>
+			<xs:element name="walletList" type="walletType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="walletType">
+		<xs:sequence>
+			<xs:element name="walletId" type="xs:string" minOccurs="0"/>
+			<xs:element name="walletName" type="xs:string" minOccurs="0"/>
+			<xs:element name="walletAmount" type="xs:string" minOccurs="0"/>
+			<xs:element name="walletValidity" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	
+		<xs:complexType name="getRcProductRequest">
+   		    <xs:sequence>
+					<xs:element name="channel"  type="xs:string" minOccurs="0"/>	
+			</xs:sequence>
+		</xs:complexType>
+      	<xs:complexType name="getRcProductResponse">
+   		  <xs:sequence>
+	     	<xs:element name="catogory" type="catogoryTypeList" minOccurs="0" />
+		  </xs:sequence>	
+		</xs:complexType>
+		
+		
+		
+		<xs:complexType name="getMDNRcProductRequest">
+   		    <xs:sequence>
+   		   	 	 <xs:element name="MSISDN"  type="MSISDNType" />	
+				 <xs:element name="channel"  type="xs:string" minOccurs="0"/>	
+			</xs:sequence>
+		</xs:complexType>
+      	<xs:complexType name="getMDNRcProductResponse">
+   		    <xs:sequence>
+				<xs:element name="catogory" type="catogoryTypeList" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+		
+	
+	
+	<xs:complexType name="catogoryTypeList">
+		<xs:sequence>
+			<xs:element name="catogories" type="catogoryType" minOccurs="0"   maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="catogoryType">
+		<xs:sequence>
+			<xs:element name="catogoryName" type="xs:string" minOccurs="0"/>
+			<xs:element name="Plan" type="plansType" minOccurs="0"   maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="plansType">
+		<xs:sequence>
+			<xs:element name="publicityId" type="xs:string" minOccurs="0"/>
+			<xs:element name="airTime" type="airTimeType" minOccurs="0"/>
+			<xs:element name="benefits" type="benefitType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="wallet" type="walletInfoType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="charge" type="xs:string" minOccurs="0"/>
+			<xs:element name="mrp" type="xs:string" minOccurs="0"/>
+			<xs:element name="channel" type="xs:string" minOccurs="0"  maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="airTimeType">
+		<xs:sequence>
+			<xs:element name="value" type="xs:string" minOccurs="0"/>
+			<xs:element name="validity" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="benefitType">
+		<xs:sequence>
+			<xs:element name="benefitName" type="xs:string" minOccurs="0"/>
+			<xs:element name="flag" type="xs:string" minOccurs="0"/>
+			<xs:element name="validity" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+		<xs:complexType name="walletInfoType">
+		<xs:sequence>
+			<xs:element name="walletName" type="xs:string" minOccurs="0"/>
+			<xs:element name="value" type="xs:string" minOccurs="0"/>
+			<xs:element name="validity" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="rechargeStatusUpdRequest">
+   		  <xs:sequence>
+				
+					 <xs:element name="MSISDN"  type="MSISDNType" />	
+			         <xs:element name="vocherPin"  type="xs:string" minOccurs="0"/>	
+			          <xs:element name="topUpStatus"  type="xs:string" minOccurs="0"/>
+			          <xs:element name="reason"  type="xs:string" minOccurs="0"/>	
+			          <xs:element name="transId"  type="xs:string" minOccurs="0"/>	
+					 <xs:element name="rctId"  type="xs:string" minOccurs="0"/>	
+					<xs:element name="userDefined1" type="xs:string" minOccurs="0" />
+					<xs:element name="userDefined2" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+			
+			
+			<xs:complexType name="rechargeStatusUpdResponse">
+   		    <xs:sequence>
+   		
+   			<xs:element name="publicityId" type="publicityIdType"  minOccurs="0"  maxOccurs="unbounded" /> 
+   			
+   			<xs:element name="userDefined1" type="xs:string" minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string" minOccurs="0" />
+   		</xs:sequence>
+      </xs:complexType>
+      
+	   <xs:complexType name="publicityIdType">
+   		<xs:sequence>
+   			<xs:element name="publicityId" type="xs:string"  minOccurs="0"   /> 
+   			<xs:element name="actDeactFlag" type="xs:string" minOccurs="0"  />
+     	</xs:sequence>
+      </xs:complexType>
+	
+	<xs:complexType name="getAllBalanceC1Request">
+   		  <xs:sequence>
+				<xs:choice>
+					<xs:element name="MSISDN"  type="MSISDNType" minOccurs="0"/>	
+					<xs:element name="accountId"  type="AccountIdType" minOccurs="0"/>	
+				</xs:choice>
+					<xs:element name="userDefined1" type="xs:string" minOccurs="0" />
+					<xs:element name="userDefined2" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:complexType>
+      
+	<xs:complexType name="getAllBalanceC1Response">
+   		<xs:sequence>
+   		
+   			<xs:element name="balanceDtls" type="balanceDtlsType"  minOccurs="0" /> 
+   			<xs:element name="userDefined1" type="xs:string" minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string" minOccurs="0" />
+   		</xs:sequence>
+      </xs:complexType>
+      
+       <xs:complexType name="balanceDtlsType">
+   		<xs:sequence>
+   			<xs:element name="balance" type="balanceType" minOccurs="0" />
+   			<xs:element name="ATPBalance" type="BalancedataType"  minOccurs="0"/>
+   			<xs:element name="modulesBalance" type="BalancedataType"  minOccurs="0"/> 
+     	</xs:sequence>
+      </xs:complexType>
+   
+   
+      <xs:complexType name="balanceType">
+   		<xs:sequence>
+   			<xs:element name="mainbalance" type="xs:string" minOccurs="0" />
+   			<xs:element name="initialbalance" type="xs:string"  minOccurs="0"/>
+   			<xs:element name="promobalance" type="xs:string"  minOccurs="0"/> 
+     	</xs:sequence>
+      </xs:complexType>
+   
+   <xs:complexType name="BalancedataType">
+   		<xs:sequence>
+   			<xs:element name="publicityid" type="publicityidDtlsType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="publicityidDtlsType">
+   		<xs:sequence>
+   		    <xs:element name="publicityid" type="xs:string" minOccurs="0" />
+   			<xs:element name="voice" type="voiceDetailsType" minOccurs="0" />
+   			<xs:element name="sms" type="smsDetailsType" minOccurs="0" />
+   			<xs:element name="data" type="dataDetailsType" minOccurs="0" />
+   			<xs:element name="globalamount" type="xs:string" minOccurs="0" />
+        	</xs:sequence>
+      </xs:complexType>
+  
+	<xs:complexType name="voiceDetailsType">
+		<xs:sequence>
+		<xs:element name="voiceAmt" type="xs:string"  minOccurs="0" />
+		<xs:element name="voiceMin" type="xs:string"  minOccurs="0" />
+		<xs:element name="numOfCalls" type="xs:string"  minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="smsDetailsType">
+       <xs:sequence>
+		<xs:element name="smsAmt" type="xs:string"  minOccurs="0" />
+		<xs:element name="numOfSms" type="xs:string"  minOccurs="0" />
+		</xs:sequence>		
+
+	</xs:complexType>
+	
+	<xs:complexType name="dataDetailsType">
+		<xs:sequence>
+		<xs:element name="dataMB" type="xs:string"  minOccurs="0" />
+		<xs:element name="dataAmt" type="xs:string"  minOccurs="0" />
+		<xs:element name="SocialdataMB" type="xs:string"  minOccurs="0" />
+		<xs:element name="SocialdataAmt" type="xs:string"  minOccurs="0" />	
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+
+<!-- Added by Sambasiva Rao  Aakula-->
+
+	<!-- Recharge request -->
+	<xs:element name="rechargeRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element name="MSISDN" type="MSISDNType" />
+					<xs:element name="accountId" type="xs:string" />
+					<xs:element name="ICC" type="xs:string" />
+				</xs:choice>
+				<xs:element name="amount" type="BalanceType" />
+				<xs:element name="channel" type="ChannelType" minOccurs="0" />
+				<xs:element name="currencyCode" type="currencyCodeType"
+					minOccurs="0" />
+				<xs:element name="transRefNumber" type="xs:string" />
+				<xs:element name="reason" type="xs:string" minOccurs="0" />
+				<xs:element name="additionalInput1" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="additionalInput2" type="xs:string"
+					minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Recharge request end -->
+
+	<!-- Recharge response -->
+	<xs:element name="rechargeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="transStatus" type="xs:int" />
+				<xs:element name="respCode" type="xs:string" />
+				<xs:element name="respDescription" type="xs:string" />
+				<xs:element name="transID" type="xs:string" minOccurs="0" />
+				<xs:element name="remarks" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Recharge response end -->
+
+	<!-- Recharge reversal request -->
+	<xs:element name="rechargeReversalRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrgTransRefNumber" type="xs:string" />
+				<xs:element name="amount" type="BalanceType" minOccurs="0" />
+				<xs:element name="transRefNumber" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="transactionID" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="reason" type="xs:string" minOccurs="0" />
+				<xs:element name="additionalInput1" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="additionalInput2" type="xs:string"
+					minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Recharge reversal request end -->
+
+	<!-- Recharge reversal response -->
+	<xs:element name="rechargeReversalResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="transStatus" type="xs:int" />
+				<xs:element name="respCode" type="xs:string" />
+				<xs:element name="respDescription" type="xs:string" />
+				<xs:element name="remarks" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Recharge reversal response end -->
+
+	<!-- Recharge inquiry request -->
+	<xs:element name="rechargeInquiryRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OrgtransRefNumber" type="xs:string" />
+				<xs:element name="transRefNumber" type="xs:string"
+					minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Recharge inquiry request end -->
+
+	<!-- Recharge inquiry response -->
+	<xs:element name="rechargeInquiryResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="transStatus" type="xs:int" />
+				<xs:element name="respCode" type="xs:string" />
+				<xs:element name="respDescription" type="xs:string" />
+				<xs:element name="remarks" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Recharge inquiry response end -->
+
+
+
+	<xs:element name="updatePostPaidDiscountRequest" type="UpdatePostPaidDiscountRequest" />
+	<xs:element name="updatePostPaidDiscountResponse" type="UpdatePostPaidDiscountResponse" />
+	<xs:complexType name="UpdatePostPaidDiscountResponse">
+		<xs:sequence>
+			<xs:element name="successAccunts" type="xs:long"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="failedAccunts" type="xs:long" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="failedAccuntDiscounts" type="xs:decimal"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UpdatePostPaidDiscountRequest">
+		<xs:sequence>
+			<xs:element name="discounts" type="DiscountListType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiscountListType">
+		<xs:sequence>
+			<xs:element name="DiscountListType" type="DiscountType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DiscountType">
+		<xs:sequence>
+			<xs:element name="accountId" type="xs:long" />
+			<xs:element name="discountAmt" type="xs:decimal"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- BulkBalAdjustmentRequest -->
+	<xs:complexType name="BulkBalAdjustmentRequest">
+		<xs:sequence>
+			<!-- xs:element name="balancesList" type="BulkBalanceListType"/ -->
+			<xs:element name="msisdns" type="MSISDNsType" />
+			<xs:element name="adjustementAmt" type="xs:decimal" />
+			<xs:element name="adjustementType" type="AdjustmentType" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of BulkBalAdjustmentRequest -->
+
+	<!-- <xs:complexType name="BulkBalanceListType"> <xs:sequence> <xs:element 
+		name="balance" type="BulkBalanceType" maxOccurs="unbounded"/> </xs:sequence> 
+		</xs:complexType> <xs:complexType name="BulkBalanceType"> <xs:sequence> <xs:element 
+		name="msisdn" type="MSISDNType"/> <xs:element name="adjustementAmt" type="xs:decimal"/> 
+		<xs:element name="adjustementType" type="AdjustmentType"/> </xs:sequence> 
+		</xs:complexType> -->
+
+	<xs:complexType name="MSISDNListType">
+		<xs:sequence>
+			<xs:element name="msisdns" type="MSISDNsType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MSISDNsType">
+		<xs:sequence>
+			<xs:element name="msisdn" type="MSISDNType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- BulkBalAdjustmentResponse -->
+	<xs:complexType name="BulkBalAdjustmentResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of BulkBalAdjustmentResponse -->
+
+	<!-- RetrieveVoucherRequest -->
+	<xs:complexType name="RetrieveVoucherRequest">
+		<xs:choice>
+			<xs:element name="vchrNumber" type="xs:long" />
+			<xs:element name="vchrPin" type="xs:long" />
+		</xs:choice>
+	</xs:complexType>
+	<!-- End of RetrieveVoucherRequest -->
+
+	<!-- RetrieveVoucherResponse -->
+	<xs:complexType name="RetrieveVoucherResponse">
+		<xs:sequence>
+			<xs:element name="vchrNumber" type="xs:long" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="mrp" type="xs:decimal" minOccurs="0" />
+			<xs:element name="talkTime" type="xs:decimal" minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+			<xs:element name="brandPartner" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of RetrieveVoucherResponse -->
+
+	<!-- Special Top-Up Request -->
+	<xs:complexType name="SpecialTopUpRequest">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="amountToCredit" type="BalanceType" />
+			<xs:element name="reason" type="ReasonType" minOccurs="0" />
+			<xs:element name="newValidityDate" type="DDMONYYYYFormat" />
+			<xs:element name="newGracePeriodIEndDate" type="DDMONYYYYFormat" />
+			<xs:element name="newExpiryDate" type="DDMONYYYYFormat" />
+			<xs:element name="transactionId" minOccurs="0" type="xs:string" />
+			<!-- Chnages merging from OCS,ADR and Service Management -->
+			<xs:element name="activityId" type="xs:long" minOccurs="0" />
+			<xs:element name="newGracePeriod2EndDate" type="DDMONYYYYFormat" minOccurs="0"/>
+			<xs:element name="newGracePeriod3EndDate" type="DDMONYYYYFormat"  minOccurs="0"/>
+			<xs:element name="serviceType" minOccurs="0" type="xs:string" />
+			<!-- End of Merging -->
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of Special Top-Up Request -->
+
+	<!-- Special Top-Up Response -->
+	<xs:complexType name="SpecialTopUpResponse">
+		<xs:sequence>
+			<xs:element name="accountID" type="xs:string" minOccurs="0" />
+			<xs:element name="creditedAmount" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="currentBalance" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="accountStatus" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="gracePeriodOneEndDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of Special Top-Up Response -->
+
+	<!-- transfer Balance Request -->
+	<xs:complexType name="TransferBalanceRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="destinationMSISDN" type="MSISDNType" />
+			<xs:element name="transferAmount" type="BalanceType" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of transfer Balance Request -->
+
+	<!-- transfer Balance Response -->
+	<xs:complexType name="TransferBalanceResponse">
+		<xs:sequence>
+			<xs:element name="sourceMSISDN" type="MSISDNType" />
+			<xs:element name="sourceAccountBalance" type="xs:decimal" />
+			<xs:element name="destinationMSISDN" type="MSISDNType" />
+			<!-- <xs:element name="destinationMSISDNBalance" type="comm:BalanceType" 
+				/> -->
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of transfer Balance Response -->
+
+	<!-- Debit Request -->
+	<xs:complexType name="DebitRequest">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="operator" type="OperatorType" minOccurs="0" />
+			<xs:element name="debitAmount" type="BalanceType" />
+			<xs:element name="debitPromo" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="detailedBill" type="DetailedBillType"
+				minOccurs="0" />
+			<xs:element name="reason" type="ReasonType" minOccurs="0" />
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="transactionMode" type="TransactionModeType"
+				minOccurs="0" />
+			<!-- Added new optional element service id as per BNR changes. As per 
+				Kiran Kumar Avunoori's mail on: 19th Apr 2012 11:02 AM Added By: Phani.Chavala 
+				Date : 19th Apr 2012 -->
+			<xs:element name="serviceId" type="ServiceIDType"
+				minOccurs="0" />
+			<!-- Added new optional element Reserve credit for data plan subscription. 
+				Added By: Srikanth.Sarma Date : 13th Nov 2013 -->
+			<xs:element name="reservedCredit" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="activityId" type="xs:long" minOccurs="0" />
+			<xs:element name="ServiceType" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of Debit Request -->
+
+	<!-- Debit Response -->
+	<xs:complexType name="DebitResponse">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="accountId" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="currentBalance" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="promoBalance" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="promoTime" type="xs:integer" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of Debit Response -->
+
+
+	<!-- Debit Bulk Request -->
+	<xs:complexType name="DebitBulkRequest">
+		<xs:sequence>
+			<xs:element name="debitBulkList" type="DebitBulkListType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DebitBulkListType">
+		<xs:sequence>
+			<xs:element name="DebitBulkDetails" type="DebitBulkData"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DebitBulkData">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="debitAmount" type="BalanceType" />
+			<xs:element name="reason" type="ReasonType" minOccurs="0" />
+			<xs:element name="serviceId" type="TansactionIdType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of Debit Bulk Request -->
+
+	<!-- Debit Response -->
+	<xs:complexType name="DebitBulkResponse">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="accountId" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="currentBalance" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="promoBalance" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="promoTime" type="xs:integer" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- end of Debit Response -->
+
+	<!-- Waiver Request -->
+	<xs:complexType name="WaiverRequest">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="waiverAmount" type="BalanceType" />
+			<xs:element name="reason" type="ReasonType" minOccurs="0" />
+			<xs:element name="operator" type="OperatorType" minOccurs="0" />
+			<xs:element name="waiverPromo" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="creditLevel" type="CreditLevelType"
+				minOccurs="0" />
+			<!-- Added new optional element service id as per BNR changes. As per 
+				Kiran Kumar Avunoori's mail on: 15th May 2012 11:26 AM Added By: Phani.Chavala 
+				Date : 22nd May 2012 -->
+			<xs:element name="serviceId" type="ServiceIDType"
+				minOccurs="0" />
+			<!-- Chnages merging from OCS,ADR and Service Management -->
+			<xs:element name="transactionId" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="activityId" type="xs:long" minOccurs="0" />
+			<!-- End of Merging -->
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of Waiver Request -->
+
+	<!-- Waiver Response -->
+	<xs:complexType name="WaiverResponse">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="accountId" type="xs:string" minOccurs="0" />
+			<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="currentBalance" type="BalanceType" />
+			<xs:element name="promoBalance" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="promoTime" type="xs:integer" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of Waiver Response -->
+
+	<!-- TopUp Request -->
+	<xs:complexType name="TopUpRequest">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" />
+			<xs:element name="voucherPIN" type="VoucherPINType" />
+			<xs:element name="IVR" type="IVRType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of TopUp Request -->
+
+	<!-- TopUp Response -->
+	<xs:complexType name="TopUpResponse">
+		<xs:sequence>
+			<xs:element name="account" type="AccountType" minOccurs="0" />
+			<xs:element name="currentBalance" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="accountStatus" type="AccountStatusType"
+				minOccurs="0" />
+			<xs:element name="vocherNo" type="xs:string" minOccurs="0" />
+			<xs:element name="adminFee" type="BalanceType" minOccurs="0" />
+			<xs:element name="creditedAmount" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="denomination" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="gracePeriodOneEndDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+			<xs:element name="lateRechargeFee" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="promoValidityDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="promoBalance" type="BalanceType"
+				minOccurs="0" />
+			<xs:element name="promoTime" type="xs:integer" minOccurs="0" />
+			<xs:element name="dataValidityDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="dataBalance" type="BalanceType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- End of TopUp Response -->
+
+
+	<xs:complexType name="SpecialDebitRequest">
+		<xs:sequence>
+			<!-- xs:element name="account" type="AccountType" / -->
+			<xs:element name="MSISDN" type="MSISDNType" />
+			<xs:element name="reason" minOccurs="0" type="ReasonType" />
+			<xs:element name="amountToDebit" type="DebitAmtType" />
+			<xs:element name="newValidityDate" type="DDMONYYYYFormat" />
+			<xs:element name="newGracePeriodEndDate" type="DDMONYYYYFormat" />
+			<xs:element name="newExpiryDate" type="DDMONYYYYFormat" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SpecialDebitResponse">
+		<xs:sequence>
+			<xs:element name="accountId" type="xs:string" minOccurs="0" />
+			<xs:element name="currentBalance" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="debitedAmt" type="xs:decimal" minOccurs="0" />
+			<xs:element name="validityDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="gracePeriodIEndDate" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="expiryDate" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Complex Types -->
+
+	<xs:complexType name="AccountType">
+		<xs:choice>
+			<xs:element name="accountId" type="AccountIdType" />
+			<xs:element name="MSISDN" type="MSISDNType" />
+		</xs:choice>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="GetAllBalancesRequest">
+		<xs:sequence>
+			<xs:element name="MSISDN" type="MSISDNType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GetAllBalancesResponse">
+		<xs:sequence>
+			<xs:element name="coreBalance" type="BalanceType" minOccurs="0" />
+			<xs:element name="coreBalanceValidity" type="xs:string" minOccurs="0" />
+			<xs:element name="initialBalance" type="BalanceType" minOccurs="0" />
+			<xs:element name="initialBalanceValidity" type="xs:string" minOccurs="0" />
+			<xs:element name="parkingBalance" type="BalanceType" minOccurs="0" />
+			<xs:element name="parkingBalanceValidity" type="xs:string" minOccurs="0" />
+			<xs:element name="promoBalance" type="BalanceType" minOccurs="0" />
+			<xs:element name="promoBalanceValidity" type="xs:string" minOccurs="0" />
+		    <xs:element name="globalAmount" type="BalanceType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="DebitFullOrPartialCoreBalRequest">
+		<xs:sequence>
+		<xs:choice>
+			<xs:element name="msisdn" type="MSISDNType"  nillable="false"/>
+	  		<xs:element name="accountId" type="AccountIdType"   nillable="false"/>
+		</xs:choice>
+		  	<xs:element name="amount" type="BalanceType" />
+		  	<xs:element name="reason" type="xs:string" minOccurs="0" />
+			<xs:element name="additionalInput1" type="xs:string"  minOccurs="0" />
+			<xs:element name="additionalInput2" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DebitFullOrPartialCoreBalResponse">
+		<xs:sequence>
+	  		    <xs:element name="accountId" type="AccountIdType" minOccurs="0"/>
+				<xs:element name="message" type="xs:string" minOccurs="0"/>
+				<xs:element name="MSISDN" type="MSISDNType" minOccurs="0" />
+				<xs:element name="debitedAmount" type="BalanceType" minOccurs="0"/>
+				<xs:element name="status" type="xs:string" minOccurs="0"/>
+				<xs:element name="remainingBalance" type="BalanceType" minOccurs="0"/>
+	  	</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+
+	<!-- End of Complex Types -->
+
+	<!-- Simple Types -->
+
+	<xs:simpleType name="AccountIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="AccountStatusType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="BalanceType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="5" />
+			<xs:totalDigits value="11" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DebitAmtType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2" />
+			<xs:totalDigits value="15" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DetailedBillType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="16" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TansactionIdType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="10" />
+			<xs:pattern value="[a-zA-Z0-9\-'\(\)+,./:=?;!*#@$_%]*" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TransactionModeType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VoucherPINType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="32" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IVRType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OperatorType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="32" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ReasonType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="250" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CreditLevelType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="AdjustmentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ServiceIDType">
+		<xs:restriction base="xs:long">
+			<xs:maxExclusive value="999999" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DDMONYYYYFormat">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="(([0-3]{1}[0-9]{1})+([\-])+((Jan)|(Feb)|(Mar)|(Apr)|(May)|(Jun)|(Jul)|(Aug)|(Sep)|(Oct)|(Nov)|(Dec))+([\-])+([1-2]{1}[0-9]{3}))" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ChannelType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="35" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="currencyCodeType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][A-Z][A-Z]" />
+			<xs:maxLength fixed="true" value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- End of Simple Types -->
+</xs:schema>

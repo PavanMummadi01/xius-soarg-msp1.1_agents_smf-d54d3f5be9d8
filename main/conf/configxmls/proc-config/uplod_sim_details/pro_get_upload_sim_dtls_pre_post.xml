@@ -1,0 +1,469 @@
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_upload_sim_dtlspost" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	<property name="name"><value>clc_sim_bulkupload_pre_post.pro_get_upload_sim_dtls</value></property>
+	<property name="returnsResult"><value>false</value></property>
+	<property name="parameters">
+		<list> 
+			<ref bean="pro_get_upload_sim_dtlspost_1"/>
+			<ref bean="pro_get_upload_sim_dtlspost_2"/>
+			<ref bean="pro_get_upload_sim_dtlspost_3"/>
+			<ref bean="pro_get_upload_sim_dtlspost_4"/>
+			<ref bean="pro_get_upload_sim_dtlspost_5"/>
+			<ref bean="pro_get_upload_sim_dtlspost_6"/>
+			<ref bean="pro_get_upload_sim_dtlspost_7"/>			
+		</list>
+	</property>
+	<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="po_sim_upload_data_bulk_post"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_bulk_post" class="net.bcgi.util.db.ResultSetDef" scope="prototype">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_sim_upload_data_post_1"/>
+				<ref bean="po_sim_upload_data_post_2"/>
+				<ref bean="po_sim_upload_data_post_3"/>
+				<ref bean="po_sim_upload_data_post_4"/>
+				<ref bean="po_sim_upload_data_post_5"/>
+				<ref bean="po_sim_upload_data_post_6"/>
+				<ref bean="po_sim_upload_data_post_7"/>
+				<ref bean="po_sim_upload_data_post_8"/>
+				<ref bean="po_sim_upload_data_post_9"/>
+				<ref bean="po_sim_upload_data_post_10"/>
+				<ref bean="po_sim_upload_data_post_11"/>
+				<ref bean="po_sim_upload_data_post_12"/>
+				<ref bean="po_sim_upload_data_post_13"/>
+				<ref bean="po_sim_upload_data_post_14"/>
+				<ref bean="po_sim_upload_data_post_15"/>
+				<ref bean="po_sim_upload_data_post_16"/>
+				<ref bean="po_sim_upload_data_post_17"/>
+				<ref bean="po_sim_upload_data_post_18"/>
+				<ref bean="po_sim_upload_data_post_19"/>
+				<ref bean="po_sim_upload_data_post_20"/>
+				<ref bean="po_sim_upload_data_post_21"/>	
+				<ref bean="po_sim_upload_data_post_22"/>
+				<ref bean="po_sim_upload_data_post_23"/>
+				<ref bean="po_sim_upload_data_post_24"/>
+				<ref bean="po_sim_upload_data_post_25"/>
+				<ref bean="po_sim_upload_data_post_26"/>
+				<ref bean="po_sim_upload_data_post_27"/>
+				<ref bean="po_sim_upload_data_post_28"/>
+				<ref bean="po_sim_upload_data_post_29"/>
+				<ref bean="po_sim_upload_data_post_30"/>
+				<ref bean="po_sim_upload_data_post_31"/>	
+				<ref bean="po_sim_upload_data_post_32"/>
+				<ref bean="po_sim_upload_data_post_33"/>
+				<ref bean="po_sim_upload_data_post_34"/>	
+				<ref bean="po_sim_upload_data_post_35"/>
+				<ref bean="po_sim_upload_data_post_36"/> 
+				<ref bean="po_sim_upload_data_post_37"/>
+				<ref bean="po_sim_upload_data_post_38"/>	
+				<ref bean="po_sim_upload_data_post_39"/>
+				<ref bean="po_sim_upload_data_post_40"/>
+				<ref bean="po_sim_upload_data_post_41"/>
+				<ref bean="po_sim_upload_data_post_42"/>
+				<ref bean="po_sim_upload_data_post_43"/>
+				<ref bean="po_sim_upload_data_post_44"/>
+				<ref bean="po_sim_upload_data_post_45"/>
+				<ref bean="po_sim_upload_data_post_46"/>    
+				<ref bean="po_sim_upload_data_post_47"/>
+				<ref bean="po_sim_upload_data_post_48"/>
+				<ref bean="po_sim_upload_data_post_49"/>  
+				
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.BulkSIMSUploadCursorData"/>
+	</bean>	
+	
+	<bean id="po_sim_upload_data_post_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sim_serial_no</value></property>
+	  <property name="mapTo"><value>sim_serial_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>trans_id</value></property>
+	  <property name="mapTo"><value>trans_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_type</value></property>
+	  <property name="mapTo"><value>id_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>id_no</value></property>
+	  <property name="mapTo"><value>id_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_no</value></property>
+	  <property name="mapTo"><value>transaction_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>status</value></property>
+	  <property name="mapTo"><value>status</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>order_no</value></property>
+	  <property name="mapTo"><value>order_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>updated_date</value></property>
+	  <property name="mapTo"><value>updated_date</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DATE"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>first_name</value></property>
+	  <property name="mapTo"><value>first_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>last_name</value></property>
+	  <property name="mapTo"><value>last_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sur_name</value></property>
+	  <property name="mapTo"><value>sur_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>date_of_birth</value></property>
+	  <property name="mapTo"><value>date_of_birth</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>14</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_15" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_type</value></property>
+	  <property name="mapTo"><value>account_type</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>15</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_16" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>credit_limit</value></property>
+	  <property name="mapTo"><value>credit_limit</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>16</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_17" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>bill_cycleday</value></property>
+	  <property name="mapTo"><value>bill_cycleday</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>17</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_18" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>municipoality</value></property>
+	  <property name="mapTo"><value>municipoality</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>18</value></property>
+	</bean>
+	<bean id="po_sim_upload_data_post_19" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>street_limits</value></property>
+	  <property name="mapTo"><value>street_limits</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>19</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_20" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>gender</value></property>
+	  <property name="mapTo"><value>gender</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>20</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_21" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	   <property name="procedureColumnName"><value>street</value></property>
+		<property name="mapTo"><value>street</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>21</value></property>
+	</bean>
+		
+	<bean id="po_sim_upload_data_post_22" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	 <property name="procedureColumnName"><value>colony</value></property>
+		<property name="mapTo"><value>colony</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>22</value></property>
+		
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_23" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	   <property name="procedureColumnName"><value>country</value></property>
+		<property name="mapTo"><value>country</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>23</value></property>
+	
+	</bean>
+	<bean id="po_sim_upload_data_post_24" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>state</value></property>
+		<property name="mapTo"><value>state</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>24</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_25" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>city</value></property>
+		<property name="mapTo"><value>city</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>25</value></property>
+	</bean>	
+	<bean id="po_sim_upload_data_post_26" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>postal_code</value></property>
+		<property name="mapTo"><value>postal_code</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>26</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_27" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	 <property name="procedureColumnName"><value>email</value></property>
+		<property name="mapTo"><value>email</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>27</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_28" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	   <property name="procedureColumnName"><value>alternate_contact_no</value></property>
+		<property name="mapTo"><value>alternate_contact_no</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>28</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_29" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	   <property name="procedureColumnName"><value>tariff_plan</value></property>
+		<property name="mapTo"><value>tariff_plan</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>29</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_30" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	 <property name="procedureColumnName"><value>user_input_field1</value></property>
+		<property name="mapTo"><value>user_input_field1</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>30</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_31" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	   <property name="procedureColumnName"><value>user_input_field2</value></property>
+		<property name="mapTo"><value>user_input_field2</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>31</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_32" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_input_field3</value></property>
+		<property name="mapTo"><value>user_input_field3</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>32</value></property>
+	
+	</bean>
+	<bean id="po_sim_upload_data_post_33" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	 <property name="procedureColumnName"><value>user_input_field4</value></property>
+		<property name="mapTo"><value>user_input_field4</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>33</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_34" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_input_field5</value></property>
+		<property name="mapTo"><value>user_input_field5</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>34</value></property>
+	
+	</bean>
+	<bean id="po_sim_upload_data_post_35" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>tariff_plan_id</value></property>
+		<property name="mapTo"><value>tariff_plan_id</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>35</value></property>
+	
+	</bean>
+	<bean id="po_sim_upload_data_post_36" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_id</value></property>
+		<property name="mapTo"><value>user_id</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>36</value></property>
+	
+	</bean>
+	 <bean id="po_sim_upload_data_post_37" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	     <property name="procedureColumnName"><value>bill_type</value></property>
+	    	<property name="mapTo"><value>bill_type</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>37</value></property>
+		
+	</bean>
+	<bean id="po_sim_upload_data_post_38" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>bill_frequency</value></property>
+		<property name="mapTo"><value>bill_frequency</value></property>
+	   <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>38</value></property>
+	
+	</bean>	
+	<bean id="po_sim_upload_data_post_39" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>internal_number</value></property>
+		<property name="mapTo"><value>internal_number</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>39</value></property>
+	
+	</bean>	
+	<bean id="po_sim_upload_data_post_40" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	    <property name="procedureColumnName"><value>external_number</value></property>
+		<property name="mapTo"><value>external_number</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>40</value></property>
+	</bean>
+	
+	
+	<!-- Added By Samba -->
+	
+	<bean id="po_sim_upload_data_post_41" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>dealer_id</value></property>
+		<property name="mapTo"><value>dealer_id</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>41</value></property>
+	</bean>	
+	<bean id="po_sim_upload_data_post_42" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	    <property name="procedureColumnName"><value>location_code</value></property>
+		<property name="mapTo"><value>location_code</value></property>
+		<property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>42</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_43" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>office_code</value></property>
+		<property name="mapTo"><value>office_code</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>43</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_44" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>is_corp</value></property>
+		<property name="mapTo"><value>is_corp</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>44</value></property>
+	</bean>
+	
+	
+	<bean id="po_sim_upload_data_post_45" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>pi_is_main_line</value></property>
+		<property name="mapTo"><value>is_main_line</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>45</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_46" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>pi_is_sub_line</value></property>
+		<property name="mapTo"><value>is_sub_line</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>46</value></property>
+	</bean>
+	
+	
+	<bean id="po_sim_upload_data_post_47" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>pi_main_line_msisdn</value></property>
+		<property name="mapTo"><value>main_line_msisdn</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>47</value></property>
+	</bean>
+	
+	
+	<bean id="po_sim_upload_data_post_48" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>pi_opt_grp_credit</value></property>
+		<property name="mapTo"><value>opt_grp_credit</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>48</value></property>
+	</bean>
+	
+	<bean id="po_sim_upload_data_post_49" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+		<property name="procedureColumnName"><value>pi_opt_grp_bill</value></property>
+		<property name="mapTo"><value>opt_grp_bill</value></property>
+	    <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>49</value></property>
+	</bean>
+	
+	<bean id="pro_get_upload_sim_dtlspost_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_transaction_no</value></property>
+		<property name="mapTo"><value>pi_transaction_no</value></property>
+	     <property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_get_upload_sim_dtlspost_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_sim_no</value></property>
+		<property name="mapTo"><value>pi_sim_no</value></property>
+	<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_get_upload_sim_dtlspost_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_sim_upload_data</value></property>
+		<property name="mapTo"><value>po_sim_upload_data</value></property>
+		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_upload_sim_dtlspost_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_retry_cnt</value></property>
+		<property name="mapTo"><value>po_retry_cnt</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_upload_sim_dtlspost_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_transaction_no</value></property>
+		<property name="mapTo"><value>po_transaction_no</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_upload_sim_dtlspost_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>po_error_code</value></property>
+  		<property name="mapTo"><value>po_error_code</value></property>
+  		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+  		<property name="position"><value>6</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_upload_sim_dtlspost_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>	
+</beans>

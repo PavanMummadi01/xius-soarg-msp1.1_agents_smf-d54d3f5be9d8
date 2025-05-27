@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://billing.xius.com/BalanceManagement.wsdl"
+	xmlns:bal="http://billing.xius.com/BalanceManagement.xsd"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wshdr="http://billing.xius.com/common/header/HeaderDetails.xsd"
+	xmlns:err="http://billing.xius.com/common/error/ErrorDetails.xsd"
+	targetNamespace="http://billing.xius.com/BalanceManagement.wsdl">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://billing.xius.com/BalanceManagement.wsdl"
+			targetNamespace="http://billing.xius.com/BalanceManagement.wsdl">
+			<xs:import namespace="http://billing.xius.com/BalanceManagement.xsd"
+				schemaLocation="BalanceManagement.xsd" />
+			<xs:import namespace="http://billing.xius.com/common/header/HeaderDetails.xsd"
+				schemaLocation="HeaderDetails.xsd" />
+			<xs:import namespace="http://billing.xius.com/common/error/ErrorDetails.xsd"
+				schemaLocation="ErrorDetails.xsd" />
+		</xs:schema>
+	</wsdl:types>
+
+	<!-- bulkBalAdjustment -->
+	<wsdl:message name="bulkBalAdjustmentRequest">
+		<wsdl:part name="body" element="bal:bulkBalAdjustmentRequest" />
+	</wsdl:message>
+	<wsdl:message name="bulkBalAdjustmentResponse">
+		<wsdl:part name="body" element="bal:bulkBalAdjustmentResponse" />
+	</wsdl:message>
+	<!-- End of bulkBalAdjustment -->
+
+	<!-- retrieveVoucher -->
+	<wsdl:message name="retrieveVoucherRequest">
+		<wsdl:part name="body" element="bal:retrieveVoucherRequest" />
+	</wsdl:message>
+	<wsdl:message name="retrieveVoucherResponse">
+		<wsdl:part name="body" element="bal:retrieveVoucherResponse" />
+	</wsdl:message>
+	<!-- End of retrieveVoucher -->
+
+	<!-- Special Debit -->
+	<wsdl:message name="specialDebitRequest">
+		<wsdl:part name="body" element="bal:specialDebitRequest" />
+	</wsdl:message>
+	<wsdl:message name="specialDebitResponse">
+		<wsdl:part name="body" element="bal:specialDebitResponse" />
+	</wsdl:message>
+	<!-- End of Special Top-Up -->
+
+	<!-- Special Top-Up -->
+	<wsdl:message name="specialTopUpRequest">
+		<wsdl:part name="body" element="bal:specialTopUpRequest" />
+	</wsdl:message>
+	<wsdl:message name="specialTopUpResponse">
+		<wsdl:part name="body" element="bal:specialTopUpResponse" />
+	</wsdl:message>
+	<!-- End of Special Top-Up -->
+
+	<!-- transfer Balance -->
+	<wsdl:message name="transferBalanceRequest">
+		<wsdl:part name="body" element="bal:transferBalanceRequest" />
+	</wsdl:message>
+	<wsdl:message name="transferBalanceResponse">
+		<wsdl:part name="body" element="bal:transferBalanceResponse" />
+	</wsdl:message>
+	<!-- End of transfer Balance -->
+
+	<!-- Debit -->
+	<wsdl:message name="debitRequest">
+		<wsdl:part name="body" element="bal:debitRequest" />
+	</wsdl:message>
+	<wsdl:message name="debitResponse">
+		<wsdl:part name="body" element="bal:debitResponse" />
+	</wsdl:message>
+	<!-- End of Debit -->
+
+	<!-- Waiver -->
+	<wsdl:message name="waiverRequest">
+		<wsdl:part name="body" element="bal:waiverRequest" />
+	</wsdl:message>
+	<wsdl:message name="waiverResponse">
+		<wsdl:part name="body" element="bal:waiverResponse" />
+	</wsdl:message>
+	<!-- End of Waiver -->
+
+	<!-- TopUp -->
+	<wsdl:message name="topUpRequest">
+		<wsdl:part name="body" element="bal:topUpRequest" />
+	</wsdl:message>
+	<wsdl:message name="topUpResponse">
+		<wsdl:part name="body" element="bal:topUpResponse" />
+	</wsdl:message>
+	<!-- End of TopUp -->
+
+	<wsdl:message name="updatePostPaidDiscountRequest">
+		<wsdl:part name="body" element="bal:updatePostPaidDiscountRequest" />
+	</wsdl:message>
+	<wsdl:message name="updatePostPaidDiscountResponse">
+		<wsdl:part name="body" element="bal:updatePostPaidDiscountResponse" />
+	</wsdl:message>
+
+	<!-- for recharge Reversal -->
+
+	<wsdl:message name="rechargeReversalRequest">
+		<wsdl:part name="body" element="bal:rechargeReversalRequest" />
+	</wsdl:message>
+	<wsdl:message name="rechargeReversalResponse">
+		<wsdl:part name="body" element="bal:rechargeReversalResponse" />
+	</wsdl:message>
+	<!-- End of recharge Reversal -->
+
+
+	<!-- For Recharge Enquiry -->
+
+	<wsdl:message name="rechargeInquiryRequest">
+		<wsdl:part name="body" element="bal:rechargeInquiryRequest" />
+	</wsdl:message>
+	<wsdl:message name="rechargeInquiryResponse">
+		<wsdl:part name="body" element="bal:rechargeInquiryResponse" />
+	</wsdl:message>
+
+
+	<!-- End of Recharge Enquiry -->
+
+
+	<wsdl:message name="GetAllBalancesRequest">
+		<wsdl:part name="body" element="bal:GetAllBalancesRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetAllBalancesResponse">
+		<wsdl:part name="body" element="bal:GetAllBalancesResponse" />
+	</wsdl:message>
+
+
+
+	<!-- for do recharge -->
+
+	<wsdl:message name="rechargeRequest">
+		<wsdl:part name="body" element="bal:rechargeRequest" />
+	</wsdl:message>
+	<wsdl:message name="rechargeResponse">
+		<wsdl:part name="body" element="bal:rechargeResponse" />
+	</wsdl:message>
+	
+	
+	<!--  getAllBalanceC1  -->
+  
+	
+    <wsdl:message name="getAllBalanceC1Request">
+ 		<wsdl:part name="getAllBalanceC1Request" element="bal:getAllBalanceC1Request"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="getAllBalanceC1Response">
+ 		<wsdl:part name="getAllBalanceC1Response" element="bal:getAllBalanceC1Response"/>
+ 	</wsdl:message>
+  <!--  getBalances  -->
+  
+    <wsdl:message name="rechargeStatusUpdRequest">
+ 		<wsdl:part name="rechargeStatusUpdRequest" element="bal:rechargeStatusUpdRequest"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="rechargeStatusUpdResponse">
+ 		<wsdl:part name="rechargeStatusUpdResponse" element="bal:rechargeStatusUpdResponse"/>
+ 	</wsdl:message>
+ 	
+ 	<wsdl:message name="getRcProductRequest">
+ 		<wsdl:part name="getRcProductRequest" element="bal:getRcProductRequest"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="getRcProductResponse">
+ 		<wsdl:part name="getRcProductResponse" element="bal:getRcProductResponse"/>
+ 	</wsdl:message>
+ 	
+ 	<wsdl:message name="getMDNRcProductRequest">
+ 		<wsdl:part name="getMDNRcProductRequest" element="bal:getMDNRcProductRequest"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="getMDNRcProductResponse">
+ 		<wsdl:part name="getMDNRcProductResponse" element="bal:getMDNRcProductResponse"/>
+ 	</wsdl:message>
+ 	
+ 	<wsdl:message name="getRechargeInfoRequest">
+ 		<wsdl:part name="getRechargeInfoRequest" element="bal:getRechargeInfoRequest"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="getRechargeInfoResponse">
+ 		<wsdl:part name="getRechargeInfoResponse" element="bal:getRechargeInfoResponse"/>
+ 	</wsdl:message>
+
+ 	<wsdl:message name="getCategoryListRequest">
+ 		<wsdl:part name="getCategoryListRequest" element="bal:getCategoryListRequest"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="getCategoryListResponse">
+ 		<wsdl:part name="getCategoryListResponse" element="bal:getCategoryListResponse"/>
+ 	</wsdl:message>
+ 	
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader" />
+	</wsdl:message>
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem" />
+	</wsdl:message>
+	
+	<!-- Added For debitFullOrPartialCoreBal -->
+	
+	
+	<wsdl:message name="multiBalAdjustmentRequest">
+ 		<wsdl:part name="multiBalAdjustmentRequest" element="bal:multiBalAdjustmentRequest"/>
+ 	</wsdl:message>
+ 	<wsdl:message name="multiBalAdjustmentResponse">
+ 		<wsdl:part name="multiBalAdjustmentResponse" element="bal:multiBalAdjustmentResponse"/>
+ 	</wsdl:message>
+	
+	<wsdl:message name="DebitFullOrPartialCoreBalRequest">
+		<wsdl:part name="body" element="bal:DebitFullOrPartialCoreBalRequest" />
+	</wsdl:message>
+	<wsdl:message name="DebitFullOrPartialCoreBalResponse">
+		<wsdl:part name="body" element="bal:DebitFullOrPartialCoreBalResponse" />
+	</wsdl:message>
+	<!-- Added For debitFullOrPartialCoreBal -->
+	<wsdl:portType name="BalanceManagementPortType">
+
+		<wsdl:operation name="updatePostPaidDiscount">
+			<wsdl:input message="tns:updatePostPaidDiscountRequest" />
+			<wsdl:output message="tns:updatePostPaidDiscountResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+
+<wsdl:operation name="multiBalAdjustment">
+			<wsdl:input message="tns:multiBalAdjustmentRequest" />
+			<wsdl:output message="tns:multiBalAdjustmentResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!-- bulkBalAdjustment -->
+		<wsdl:operation name="bulkBalAdjustment">
+			<wsdl:input message="tns:bulkBalAdjustmentRequest" />
+			<wsdl:output message="tns:bulkBalAdjustmentResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!-- End of bulkBalAdjustment -->
+
+		<!-- retrieveVoucher -->
+		<wsdl:operation name="retrieveVoucher">
+			<wsdl:input message="tns:retrieveVoucherRequest" />
+			<wsdl:output message="tns:retrieveVoucherResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!-- End of retrieveVoucher -->
+
+		<wsdl:operation name="specialDebit">
+			<wsdl:input message="tns:specialDebitRequest" />
+			<wsdl:output message="tns:specialDebitResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="specialTopUp">
+			<wsdl:input message="tns:specialTopUpRequest" />
+			<wsdl:output message="tns:specialTopUpResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="transferBalance">
+			<wsdl:input message="tns:transferBalanceRequest" />
+			<wsdl:output message="tns:transferBalanceResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="debit">
+			<wsdl:input message="tns:debitRequest" />
+			<wsdl:output message="tns:debitResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="waiver">
+			<wsdl:input message="tns:waiverRequest" />
+			<wsdl:output message="tns:waiverResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="topUp">
+			<wsdl:input message="tns:topUpRequest" />
+			<wsdl:output message="tns:topUpResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+		<wsdl:operation name="recharge">
+			<wsdl:input message="tns:rechargeRequest" />
+			<wsdl:output message="tns:rechargeResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+
+
+		<wsdl:operation name="rechargeReversal">
+			<wsdl:input message="tns:rechargeReversalRequest" />
+			<wsdl:output message="tns:rechargeReversalResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="rechargeInquiry">
+			<wsdl:input message="tns:rechargeInquiryRequest" />
+			<wsdl:output message="tns:rechargeInquiryResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+	
+		<wsdl:operation name="GetAllBalances">
+			<wsdl:input message="tns:GetAllBalancesRequest" />
+			<wsdl:output message="tns:GetAllBalancesResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		
+		
+		
+		<wsdl:operation name="debitFullOrPartialCoreBal">
+			<wsdl:input message="tns:DebitFullOrPartialCoreBalRequest" />
+			<wsdl:output message="tns:DebitFullOrPartialCoreBalResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+
+
+
+<!-- getAllBalanceC1 -->
+		<wsdl:operation name="getAllBalanceC1">
+			<wsdl:input message="tns:getAllBalanceC1Request" />
+			<wsdl:output message="tns:getAllBalanceC1Response" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<!-- getAllBalanceC1 -->
+		
+		
+		<wsdl:operation name="rechargeStatusUpd">
+			<wsdl:input message="tns:rechargeStatusUpdRequest" />
+			<wsdl:output message="tns:rechargeStatusUpdResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="getRcProduct">
+			<wsdl:input message="tns:getRcProductRequest" />
+			<wsdl:output message="tns:getRcProductResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="getMDNRcProduct">
+			<wsdl:input message="tns:getMDNRcProductRequest" />
+			<wsdl:output message="tns:getMDNRcProductResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="getRechargeInfo">
+			<wsdl:input message="tns:getRechargeInfoRequest" />
+			<wsdl:output message="tns:getRechargeInfoResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="getCategoryList">
+			<wsdl:input message="tns:getCategoryListRequest" />
+			<wsdl:output message="tns:getCategoryListResponse" />
+			<wsdl:fault name="fault" message="tns:faultMessage" />
+		</wsdl:operation>
+		
+		</wsdl:portType>
+
+	<wsdl:binding name="BalanceManagementBinding" type="tns:BalanceManagementPortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="updatePostPaidDiscount">
+			<soap:operation soapAction="updatePostPaidDiscount" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<!-- bulkBalAdjustment -->
+		<wsdl:operation name="bulkBalAdjustment">
+			<soap:operation soapAction="bulkBalAdjustment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of bulkBalAdjustment -->
+
+		<!-- retrieveVoucher -->
+		<!-- Description : retrieveVouchers will talk to PA directly. i.e., reason 
+			we are separating(writing a new API) it as voucherSearch in InfinetBilling 
+			Added By : Phani.Chavala Reason to ADD: REQ#CCUI phase 2 Date : 27th Mar, 
+			2012 -->
+		<wsdl:operation name="retrieveVoucher">
+			<soap:operation soapAction="retrieveVoucher" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<!-- End of retrieveVoucher -->
+
+		<wsdl:operation name="specialDebit">
+			<soap:operation soapAction="specialDebit" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="specialTopUp">
+			<soap:operation soapAction="specialTopUp" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="transferBalance">
+			<soap:operation soapAction="transferBalance" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="debit">
+			<soap:operation soapAction="debit" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="waiver">
+			<soap:operation soapAction="waiver" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="topUp">
+			<soap:operation soapAction="topUp" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head"
+					use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="recharge">
+			<soap:operation soapAction="recharge" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="rechargeReversal">
+			<soap:operation soapAction="rechargeReversal" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="rechargeInquiry">
+			<soap:operation soapAction="rechargeInquiry" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetAllBalances">
+			<soap:operation soapAction="GetAllBalances" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="debitFullOrPartialCoreBal">
+			<soap:operation soapAction="debitFullOrPartialCoreBal" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header use="literal" part="head" message="tns:messageHeader" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			<!-- getAllBalanceC1 -->
+		<wsdl:operation name="getAllBalanceC1">
+			<soap:operation soapAction="getAllBalanceC1" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+	<!--  End of getAllBalanceC1 -->
+		
+		
+		<wsdl:operation name="rechargeStatusUpd">
+			<soap:operation soapAction="rechargeStatusUpd" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="getRcProduct">
+			<soap:operation soapAction="getRcProduct" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getMDNRcProduct">
+			<soap:operation soapAction="getMDNRcProduct" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="getRechargeInfo">
+			<soap:operation soapAction="getRechargeInfo" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		
+		<wsdl:operation name="multiBalAdjustment">
+			<soap:operation soapAction="multiBalAdjustment" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="getCategoryList">
+			<soap:operation soapAction="getCategoryList" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:messageHeader" part="head" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+			</wsdl:binding>
+	<wsdl:service name="BalanceService">
+		<wsdl:port name="BalanceManagementPort" binding="tns:BalanceManagementBinding">
+			<soap:address
+				location="http://localhost:8080/infinet/services/v1/balanceServices" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema xmlns="http://smf.agent.xius.com/PostPaidManagement.xsd" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://smf.agent.xius.com/PostPaidManagement.xsd" 
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<xs:element name="paymentInquiryRequest" type="paymentInquiryRequest"/>
+	<xs:element name="paymentInquiryResponse" type="paymentInquiryResponse"/>
+	
+	<xs:element name="doPostPaidPaymentRequest" type="doPostPaidPaymentRequest"/>
+	<xs:element name="doPostPaidPaymentResponse" type="doPostPaidPaymentResponse"/>
+	
+	<xs:element name="convertPreToPostRequest" type="convertPreToPostRequest"/>
+	<xs:element name="convertPreToPostResponse" type="convertPreToPostResponse"/>
+	
+	
+	<xs:element name="convertPreToPostUpdRequest" type="convertPreToPostUpdRequest"/>
+	<xs:element name="convertPreToPostUpdResponse" type="convertPreToPostUpdResponse"/>
+	
+	<xs:element name="PostPaidPmtUpdRequest" type="PostPaidPmtUpdRequest"/>
+	<xs:element name="PostPaidPmtUpdResponse" type="PostPaidPmtUpdResponse"/>
+	
+	
+	<xs:element name="convertPostToPreRequest" type="convertPostToPreRequest"/>
+	<xs:element name="convertPostToPreResponse" type="convertPostToPreResponse"/>
+	
+	
+	<xs:element name="convertPostToPreUpdRequest" type="convertPostToPreUpdRequest"/>
+	<xs:element name="convertPostToPreUpdResponse" type="convertPostToPreUpdResponse"/>
+	
+	
+	<xs:element name="passwordUpdateRequest" type="passwordUpdateRequest"/>
+	<xs:element name="passwordUpdateResponse" type="passwordUpdateResponse"/>
+	
+	<xs:element name="passwordUpdateStatusUpdateReq" type="passwordUpdateStatusUpdateReq"/>
+	<xs:element name="passwordUpdateStatusUpdateRes" type="passwordUpdateStatusUpdateRes"/>
+	
+	<xs:element name="postpaidRegistrationRequest" type="postpaidRegistrationRequest"/>
+	<xs:element name="postpaidRegistrationResponse" type="postpaidRegistrationResponse"/>
+	
+	<xs:element name="postpaidRegStatusRequest" type="PostpaidRegStatusRequest"/>
+	<xs:element name="postpaidRegStatusResponse" type="PostpaidRegStatusResponse"/>
+	
+	<xs:complexType name="PostpaidRegStatusRequest">
+		<xs:sequence>
+			<xs:element name="transRefferenceID" type="xs:string" minOccurs="0" />
+			<xs:element name="SIMNumber" type="SIMType" minOccurs="0" />
+			<xs:element name="msisdn" type="MSISDNType" minOccurs="0" />
+			<xs:element name="additionalInput1" type="xs:string" minOccurs="0" />
+			<xs:element name="additionalInput2" type="xs:string" minOccurs="0" />
+			<xs:element name="additionalInput3" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostpaidRegStatusResponse">
+		<xs:sequence>
+			<xs:element name="transStatus" type="xs:int" />
+			<xs:element name="respCode" type="xs:int" />
+			<xs:element name="respDescription" type="xs:string" />
+			<xs:element name="transRefferenceID" type="xs:string" />
+			<xs:element name="regStatusInfo" type="RegStatusInfoListtype" minOccurs="0"  maxOccurs="unbounded"/>
+			<xs:element name="additionalOutput1" type="xs:string" minOccurs="0" />
+			<xs:element name="additionalOutput2" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	
+	
+	<xs:complexType name="RegStatusInfoListtype">
+		<xs:sequence>
+			<xs:element name="Status" type="xs:string"  minOccurs="0"/>
+			<xs:element name="remarks" type="xs:string"  minOccurs="0"/>
+			<xs:element name="SIMNumber" type="SIMType" minOccurs="0" />
+			<xs:element name="msisdn" type="MSISDNType" minOccurs="0" />
+			<xs:element name="userDefined1" type="xs:string" minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<!-- PostPaid Registration -->
+	<xs:complexType name="postpaidRegistrationRequest">
+		<xs:sequence>
+			<xs:element name="msisdnInfo" type="MSISDNInfotype" />
+			<xs:element name="dealerUserId" type="UserIDType"
+				minOccurs="0" />
+			<xs:element name="personalInfo" type="subcriberPersonalInfotype" />
+			<xs:element name="addressInfo" type="subcriberAddressInfotype" />
+			<xs:element name="orderID" type="OrderIDType" minOccurs="0" />
+			<xs:element name="userType" type="UserIDType" />
+			<xs:element name="postpaidDetails" type="PostpaidDetails"
+				minOccurs="0" />
+			<xs:element name="tariffPackageId" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="promoCode" type="xs:string" minOccurs="0" />
+			<xs:element name="isMainLine" type="flagType" minOccurs="0"/>
+			<xs:element name="isSubLine" type="flagType" minOccurs="0" />
+			<xs:element name="subLineInfo" type="subLineInfoListType" minOccurs="0" maxOccurs="10" />
+			<xs:element name="userDefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="flagType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[YNyn]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="subLineInfoListType">
+		<xs:sequence>
+			<xs:element name="ICCID" type="SIMType"  />
+			<xs:element name="TPID" type="xs:string" />
+			<xs:element name="creditLimit" type="xs:string" />
+			<xs:element name="MSISDN" type="xs:string" minOccurs="0" />
+			<xs:element name="optGRPCredit" type="flagType" minOccurs="0" />
+			<xs:element name="optGrpBill" type="flagType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:complexType name="ChildAddAccType">
+		<xs:sequence>
+			<xs:element name="mainLineMSISDN" type="MSISDNType" minOccurs="0" />
+			<xs:element name="optGRPCredit" type="flagType" minOccurs="0" />
+			<xs:element name="optGrpBill" type="flagType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+
+  
+	<xs:complexType name="PostpaidDetails">
+		<xs:sequence>
+			<xs:element name="availableCreditLimit" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="billingDate" type="xs:string" minOccurs="0" />
+			<xs:element name="billingFrequency" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="billingType" type="xs:string" minOccurs="0" />
+			<xs:element name="creditLimit" type="xs:decimal"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="subcriberAddressInfotype">
+		<xs:sequence>
+			<xs:element name="address1" type="Address1Type" />
+			<xs:element name="address2" type="Address2Type" minOccurs="0" />
+			<xs:element name="city" type="CityType" />
+			<xs:element name="state" type="StateType" />
+			<xs:element name="country" type="CountryType" />
+			<xs:element name="postalCode" type="PostalCodeType" />
+			<xs:element name="userDefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+
+	  <xs:complexType name="MSISDNInfotype">
+		<xs:sequence>
+			<xs:element name="blockedMSISDN" type="MSISDNType"
+				minOccurs="0" />
+			<xs:element name="SIMNumber" type="SIMType"  minOccurs="0" />
+			<xs:element name="userDefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="subcriberPersonalInfotype">
+		<xs:sequence>
+			<xs:element name="firstName" type="FirstNameType" />
+			<xs:element name="lastName" type="LastNameType" minOccurs="0" />
+			<xs:element name="gender" type="GenderType" />
+			<xs:element name="idType" type="IDType" />
+			<xs:element name="idValue" type="IDNoType" />
+			<xs:element name="dateOfBirth" type="xs:date" />
+			<xs:element name="ethnic" type="EthnicType" minOccurs="0" />
+			<xs:element name="email" type="EmailType" minOccurs="0" />
+			<xs:element name="contactnumber" type="MSISDNType"
+				minOccurs="0" />
+			<xs:element name="userDefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="postpaidRegistrationResponse">
+		<xs:sequence>
+			<xs:element name="transStatus" type="xs:int" minOccurs="0" />
+			<xs:element name="respCode" type="xs:string" minOccurs="0" />
+			<xs:element name="respDescription" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="msisdn" type="MSISDNType" minOccurs="0" />
+			<xs:element name="transactionID" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined1" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="userDefined2" type="xs:string"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+		<xs:complexType name="paymentInquiryRequest">
+		<xs:sequence>
+			<xs:element name="transId" type="xs:string" />
+			<xs:element name="transRefNumber" type="xs:string" minOccurs="0" />
+			<xs:element name="channel"        type="xs:string"  minOccurs="0"/>
+	        <xs:element name="UserDefined1"   type="xs:string"  minOccurs="0"/>
+			<xs:element name="UserDefined2"   type="xs:string"  minOccurs="0"/>
+			<xs:element name="UserDefined3"   type="xs:string"  minOccurs="0"/>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="paymentInquiryResponse">
+		<xs:sequence>
+			<xs:element name="enquiryDetails" type="enquiryDetailsType" minOccurs="0" />
+			<xs:element name="UserDefined1"   type="xs:string"  minOccurs="0"/>
+	    	<xs:element name="UserDefined2"   type="xs:string"  minOccurs="0"/>
+	    	<xs:element name="UserDefined3"   type="xs:string"  minOccurs="0"/>	
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="enquiryDetailsType">
+		<xs:sequence>
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="transRefNum" type="xs:string" minOccurs="0"/>
+			<xs:element name="invoiceId" type="xs:long" minOccurs="0" />
+			<xs:element name="tranxDate" type="xs:string" minOccurs="0" />
+			<xs:element name="amountPaid" type="xs:string" minOccurs="0"/> 
+			<xs:element name="paymentMode" type="xs:string" minOccurs="0" />
+			<xs:element name="paymentRefID" type="xs:long" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+			<xs:complexType name="doPostPaidPaymentRequest">
+		<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+				<xs:element name="accountId" type="AccountIdType" minOccurs="0" />
+	            <xs:element name="transRefNum"    type="xs:string" minOccurs="0"/>  
+				<xs:element name="invoiceId"      type="xs:long"  minOccurs="0"/>
+				<xs:element name="tranxDate"      type="xs:string"  minOccurs="0"/>
+				<xs:element name="amountPaid"     type="xs:string"  minOccurs="0"/>
+				<xs:element name="paymentMode"    type="xs:string"  minOccurs="0"/>
+				<xs:element name="PaymentRefID"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="channel"        type="xs:string"  minOccurs="0"/>
+				<xs:element name="remarks"        type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3"   type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+		
+		
+		
+		
+		<xs:complexType name="doPostPaidPaymentResponse">
+		<xs:sequence>
+			   <xs:element name="transactionId" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3" type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="PostPaidPmtUpdRequest">
+		
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string"/>
+			<xs:element name="extErrorCode" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="remarks" type="xs:string" minOccurs="0" />
+	        <xs:element name="curStateId" type="xs:string" minOccurs="0" />
+	
+		</xs:sequence>
+	</xs:complexType>
+		
+		
+		
+		
+		<xs:complexType name="PostPaidPmtUpdResponse">
+		<xs:sequence>
+			   <xs:element name="message" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3" type="xs:string"  minOccurs="0"/>
+				
+				
+					
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+		<xs:complexType name="convertPreToPostRequest">
+		<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+				<xs:element name="accountId" type="AccountIdType" minOccurs="0" />
+				<xs:element name="tariffPlanID"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="tariffPlanName" type="xs:string"  minOccurs="0"/>
+				<xs:element name="billCycleDay"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="creditLimit"    type="CreditLimitType"  minOccurs="0"/>
+				<xs:element name="transRefNum"    type="xs:string"  minOccurs="0"/>
+				<xs:element name="channel"        type="xs:string"  minOccurs="0"/>
+				<xs:element name="remarks"        type="xs:string"  minOccurs="0"/>
+				<xs:element name="activityID"      type="xs:string"  minOccurs="0"/>
+				
+				<xs:element name="UserDefined1"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3"   type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+		
+		
+		
+		
+		<xs:complexType name="convertPreToPostResponse">
+		<xs:sequence>
+			   <xs:element name="transactionId" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3" type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="convertPreToPostUpdRequest">
+		
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="extErrorCode" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="remarks" type="xs:string" minOccurs="0" />
+		    <xs:element name="curStateId" type="xs:string" minOccurs="0" />
+		    <xs:element name="tariffPlanName" type="xs:string"  minOccurs="0"/>
+  		    <xs:element name="billCycleDay"   type="xs:string"  minOccurs="0"/>
+            <xs:element name="creditLimit"    type="CreditLimitType"  minOccurs="0"/>
+            <xs:element name="tariffPlanID"   type="xs:string"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+		
+		
+		
+		
+		<xs:complexType name="convertPreToPostUpdResponse">
+		<xs:sequence>
+			   <xs:element name="message" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3" type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+			<xs:complexType name="convertPostToPreRequest">
+		<xs:sequence>
+				<xs:element name="MSISDN" type="MSISDNType"  minOccurs="0"/>
+				<xs:element name="accountId" type="AccountIdType" minOccurs="0" />
+				<xs:element name="tariffPlanID"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="tariffPlanName" type="xs:string"  minOccurs="0"/>
+				<xs:element name="transRefNum"    type="xs:string"  minOccurs="0"/>
+				<xs:element name="channel"        type="xs:string"  minOccurs="0"/>
+				<xs:element name="remarks"        type="xs:string"  minOccurs="0"/>
+				<xs:element name="activityID"      type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2"   type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3"   type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+		
+		
+		
+		
+		<xs:complexType name="convertPostToPreResponse">
+		<xs:sequence>
+			   <xs:element name="transactionId" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3" type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	
+	<xs:complexType name="convertPostToPreUpdRequest">
+		
+		<xs:sequence>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+			<xs:element name="extErrorCode" type="xs:string" minOccurs="0" />
+			<xs:element name="status" type="xs:string" minOccurs="0" />
+			<xs:element name="remarks" type="xs:string" minOccurs="0" />
+	       <xs:element name="curStateId" type="xs:string" minOccurs="0" />
+	        <xs:element name="tariffPlanName" type="xs:string"  minOccurs="0"/>
+  		    <xs:element name="billCycleDay"   type="xs:string"  minOccurs="0"/>
+            <xs:element name="creditLimit"    type="CreditLimitType"  minOccurs="0"/>
+            <xs:element name="tariffPlanID"   type="xs:string"  minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+		
+		
+		
+		
+		<xs:complexType name="convertPostToPreUpdResponse">
+		<xs:sequence>
+			   <xs:element name="message" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined1" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined2" type="xs:string"  minOccurs="0"/>
+				<xs:element name="UserDefined3" type="xs:string"  minOccurs="0"/>
+					
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+<!-- password Update -->
+
+	<xs:complexType name="passwordUpdateRequest">
+	<xs:sequence>
+		<xs:element name="loginId" type="xs:string" minOccurs="0" />
+		<xs:element name="externalTransId" type="xs:string"  minOccurs="0" />
+		<xs:element name="channel" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined1" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined2" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined3" type="xs:string" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+
+
+	<xs:complexType name="passwordUpdateResponse">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+			<xs:element name="transId" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+<!-- password Update End -->
+
+
+<!-- password Update Status Update -->
+
+	<xs:complexType name="passwordUpdateStatusUpdateReq">
+	<xs:sequence>
+		<xs:element name="status" type="xs:string" minOccurs="0" />
+		<xs:element name="transId" type="xs:string" />
+		<xs:element name="remarks" type="xs:string" minOccurs="0" />
+		<xs:element name="extErrCode" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined1" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined2" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined3" type="xs:string" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+
+	<xs:complexType name="passwordUpdateStatusUpdateRes">
+	<xs:sequence>
+		<xs:element name="message" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined1" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined2" type="xs:string" minOccurs="0" />
+		<xs:element name="UserDefined3" type="xs:string" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+	
+	
+<!--password Update Status Update End -->
+
+
+
+	
+
+<xs:simpleType name="MSISDNType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AccountIdType">
+		<xs:restriction base="xs:long">
+		</xs:restriction>
+	</xs:simpleType>
+	
+	 <xs:simpleType name="CreditLimitType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4" />
+			<xs:totalDigits value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+<xs:simpleType name="DateTypeDDMMYYYY">
+		<xs:restriction base="xs:string">
+
+			<xs:pattern
+				value="([0][1-9]|[1-2][0-9]|[3][0-1])/([0][1-9]|[1][0-2])/([1-9][0-9][0-9][0-9])" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OrderIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="60" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UserIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="60" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="Address1Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="150" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Address2Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="60" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CityType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="60" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StateType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="60" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CountryType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="60" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EthnicType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SIMType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="7" />
+			<xs:maxLength value="20" />
+			<xs:pattern value="[0-9]{7,20}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FirstNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="255" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="LastNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IDNoType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="64" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GenderType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PostalCodeType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EmailType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="60" />
+			<xs:pattern value="[^@]+@[^\.]+\..+" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+
+
+
+	<xs:simpleType name="AmountType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4" />
+			<xs:totalDigits value="11" />
+		</xs:restriction>
+	</xs:simpleType>
+<xs:simpleType name="BillFreqType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="4"/>			
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	 <xs:simpleType name="CreditType">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4" />
+			<xs:totalDigits value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	 <xs:simpleType name="BillType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1"/>			
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="pro_free_msisdn_threshold_job"
+		class="net.bcgi.util.db.SPDefinition" scope="singleton">
+		<property name="name"><value>pro_free_msisdn_threshold_job</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list>
+				<ref bean="pro_free_msisdn_threshold_job_param_1"></ref>
+				<ref bean="pro_free_msisdn_threshold_job_param_2"></ref>
+				<ref bean="pro_free_msisdn_threshold_job_param_3"></ref>
+				<ref bean="pro_free_msisdn_threshold_job_param_4"></ref>
+				<ref bean="pro_free_msisdn_threshold_job_param_5"></ref>
+			</list>
+		</property>
+		
+		<property name="refCursors">
+			<map>
+				<entry key="3">
+					<ref bean="po_pool_percentage_dtls"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="po_pool_percentage_dtls" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_pool_percentage_dtls_param_1"/>
+				<ref bean="po_pool_percentage_dtls_param_2"/>
+				<ref bean="po_pool_percentage_dtls_param_3"/>
+				<ref bean="po_pool_percentage_dtls_param_4"/>
+				<ref bean="po_pool_percentage_dtls_param_5"/>
+				<ref bean="po_pool_percentage_dtls_param_6"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.ThresholdLimitCurData"/>
+	</bean>
+	
+	
+	<bean id="po_pool_percentage_dtls_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_display</value></property>
+	  <property name="mapTo"><value>pi_network_display</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_pool_percentage_dtls_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>nir_code</value></property>
+	  <property name="mapTo"><value>pi_nir_code</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_pool_percentage_dtls_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>current_percentage</value></property>
+	  <property name="mapTo"><value>pi_cur_percentage</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_pool_percentage_dtls_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>free_msisdn_threshold_per</value></property>
+	  <property name="mapTo"><value>pi_msisdn_threshold_percentage</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_pool_percentage_dtls_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>limit_reached_yn</value></property>
+	  <property name="mapTo"><value>pi_limit_reached_yn</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_pool_percentage_dtls_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>pi_network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	
+	
+	
+	
+	<bean id="pro_free_msisdn_threshold_job_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_network_id</value></property>
+			<property name="mapTo"><value>pi_network_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+			<property name="position"><value>1</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	
+	<bean id="pro_free_msisdn_threshold_job_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>pi_nirCode_id</value></property>
+			<property name="mapTo"><value>pi_nirCode_id</value></property>
+			<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+			<property name="position"><value>2</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="pro_free_msisdn_threshold_job_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+			<property name="name"><value>po_pool_percentage_dtls</value></property>
+			<property name="mapTo"><value>po_pool_percentage_dtls</value></property>
+			<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+			<property name="position"><value>3</value></property>
+			<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_free_msisdn_threshold_job_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_free_msisdn_threshold_job_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+	
+	
+
+ </beans>

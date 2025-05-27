@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_sim_swap_action_dtls" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>pkg_sim_swap_bulk.pro_get_sim_swap_action_dtls</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="pro_get_sim_swap_action_dtls_1"/>
+				<ref bean="pro_get_sim_swap_action_dtls_2"/>
+				<ref bean="pro_get_sim_swap_action_dtls_3"/>		
+				<ref bean="pro_get_sim_swap_action_dtls_4"/>
+				<ref bean="pro_get_sim_swap_action_dtls_5"/>
+				<ref bean="pro_get_sim_swap_action_dtls_6"/>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="4">
+					<ref bean="po_sim_swap_cursor"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="po_sim_swap_cursor" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_sim_swap_cursor_param_1"/>
+				<ref bean="po_sim_swap_cursor_param_2"/>
+				<ref bean="po_sim_swap_cursor_param_3"/>
+				<ref bean="po_sim_swap_cursor_param_4"/>
+				<ref bean="po_sim_swap_cursor_param_5"/>
+				<ref bean="po_sim_swap_cursor_param_6"/>
+				<ref bean="po_sim_swap_cursor_param_7"/>
+				<ref bean="po_sim_swap_cursor_param_8"/>
+				<ref bean="po_sim_swap_cursor_param_9"/>
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.GetBulkSimSwapDtlsCursorData"/>
+	</bean>
+
+	<bean id="po_sim_swap_cursor_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.INTEGER"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_sim_swap_cursor_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>user_id</value></property>
+	  <property name="mapTo"><value>user_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	
+	<bean id="po_sim_swap_cursor_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>NEW_SIM</value></property>
+	  <property name="mapTo"><value>NEW_SIM</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_sim_swap_cursor_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>OLD_MSISDN</value></property>
+	  <property name="mapTo"><value>OLD_MSISDN</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_sim_swap_cursor_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>REMARKS</value></property>
+	  <property name="mapTo"><value>REMARKS</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_sim_swap_cursor_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>TRANS_ID</value></property>
+	  <property name="mapTo"><value>TRANS_ID</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+	<bean id="po_sim_swap_cursor_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>file_name</value></property>
+	  <property name="mapTo"><value>file_name</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+		
+	<bean id="po_sim_swap_cursor_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>failed_node</value></property>
+	  <property name="mapTo"><value>failednode</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	
+	<bean id="po_sim_swap_cursor_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>simSaleTransID</value></property>
+	  <property name="mapTo"><value>simSaleTransID</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+		
+	<!-- End of cursor mapping  -->
+	
+	<bean id="pro_get_sim_swap_action_dtls_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType">	<ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_sim_swap_action_dtls_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_max_records</value></property>
+		<property name="mapTo"><value>pi_max_records</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_sim_swap_action_dtls_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_trans_id</value></property>
+		<property name="mapTo"><value>pi_trans_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	
+	<bean id="pro_get_sim_swap_action_dtls_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_sim_swap_cursor</value></property>  		
+  		<property name="mapTo"><value>po_sim_swap_cursor</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>4</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_sim_swap_action_dtls_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>5</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="pro_get_sim_swap_action_dtls_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,185 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="pro_get_topup_notifi_schd" class="net.bcgi.util.db.SPDefinition" scope="prototype">
+	    <property name="name"><value>pkg_third_party_notification.pro_get_topup_notifi_schd</value></property>
+		<property name="returnsResult"><value>false</value></property>
+		<property name="parameters">
+			<list> <!--  parameter list -->
+				<ref bean="topup_notifi_3rdparty_param_1"/>
+				<ref bean="topup_notifi_3rdparty_param_2"/>
+				<ref bean="topup_notifi_3rdparty_param_3"/>		
+				<ref bean="topup_notifi_3rdparty_param_4"/>
+				<ref bean="topup_notifi_3rdparty_param_5"/>
+				<ref bean="topup_notifi_3rdparty_param_6"/>
+				<ref bean="topup_notifi_3rdparty_param_7"/>
+			</list>
+		</property>
+		<property name="refCursors">
+			<map>
+				<entry key="5">
+					<ref bean="po_topup_notifi_3rdparty_ref"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_ref" 
+		class="net.bcgi.util.db.ResultSetDef" scope="singleton">
+		<property name="resultSetParams">
+			<list>
+				<ref bean="po_topup_notifi_3rdparty_param_1"/>
+				<ref bean="po_topup_notifi_3rdparty_param_2"/>
+				<ref bean="po_topup_notifi_3rdparty_param_3"/>
+				<ref bean="po_topup_notifi_3rdparty_param_4"/>
+				<ref bean="po_topup_notifi_3rdparty_param_5"/>
+				<ref bean="po_topup_notifi_3rdparty_param_6"/>
+				<ref bean="po_topup_notifi_3rdparty_param_7"/>	
+				<ref bean="po_topup_notifi_3rdparty_param_8"/>
+				<ref bean="po_topup_notifi_3rdparty_param_9"/>
+				<ref bean="po_topup_notifi_3rdparty_param_10"/>				
+				<ref bean="po_topup_notifi_3rdparty_param_11"/>				
+				<ref bean="po_topup_notifi_3rdparty_param_12"/>				
+				<ref bean="po_topup_notifi_3rdparty_param_13"/>
+				<ref bean="po_topup_notifi_3rdparty_param_14"/>					
+			</list>
+		</property>
+		<property name="className" value="com.xius.smf.domaindata.TopUpCursorData"/>
+	</bean>
+	
+	<bean id="po_topup_notifi_3rdparty_param_1" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>network_id</value></property>
+	  <property name="mapTo"><value>network_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>1</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_2" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>account_id</value></property>
+	  <property name="mapTo"><value>account_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>2</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_3" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>imsi</value></property>
+	  <property name="mapTo"><value>imsi</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>3</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_4" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>msisdn_no</value></property>
+	  <property name="mapTo"><value>msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>4</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_5" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sim</value></property>
+	  <property name="mapTo"><value>sim</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>5</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_6" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>transaction_id</value></property>
+	  <property name="mapTo"><value>transaction_id</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>6</value></property>
+	</bean>
+    <bean id="po_topup_notifi_3rdparty_param_7" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>topupamnt</value></property>
+	  <property name="mapTo"><value>topupamnt</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>7</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_8" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>dateTime</value></property>
+	  <property name="mapTo"><value>dateTime</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>8</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_9" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>prevBalance</value></property>
+	  <property name="mapTo"><value>prevBalance</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>9</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_10" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>currBalance</value></property>
+	  <property name="mapTo"><value>currBalance</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.DECIMAL"></ref></property>
+	  <property name="position"><value>10</value></property>
+	</bean>	
+	<bean id="po_topup_notifi_3rdparty_param_11" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>sourceType</value></property>
+	  <property name="mapTo"><value>sourceType</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+	  <property name="position"><value>11</value></property>
+	</bean>	
+	<bean id="po_topup_notifi_3rdparty_param_12" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>old_msisdn_no</value></property>
+	  <property name="mapTo"><value>old_msisdn_no</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>12</value></property>
+	</bean>	
+	<bean id="po_topup_notifi_3rdparty_param_13" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+	  <property name="procedureColumnName"><value>voucherSerial</value></property>
+	  <property name="mapTo"><value>voucherSerial</value></property>
+	  <property name="columnType"><ref bean="java.sql.Types.BIGINT"></ref></property>
+	  <property name="position"><value>13</value></property>
+	</bean>
+	<bean id="po_topup_notifi_3rdparty_param_14" class="net.bcgi.util.db.ResultSetParam" scope="singleton">
+ 	  <property name="procedureColumnName"><value>user_id</value></property>
+ 	  <property name="mapTo"><value>userId</value></property>
+ 	  <property name="columnType"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+ 	  <property name="position"><value>14</value></property>
+ 	</bean>	
+	<!-- End of cursor mapping -->
+	
+	<bean id="topup_notifi_3rdparty_param_1" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_network_id</value></property>
+		<property name="mapTo"><value>pi_network_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>1</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="topup_notifi_3rdparty_param_2" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>pi_app_id</value></property>
+		<property name="mapTo"><value>pi_app_id</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>2</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="topup_notifi_3rdparty_param_3" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>pi_max_records</value></property>
+		<property name="mapTo"><value>pi_maxRecords</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>3</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>
+	<bean id="topup_notifi_3rdparty_param_4" class="net.bcgi.util.db.ParamDef" scope="singleton">
+  		<property name="name"><value>sourceType</value></property>
+		<property name="mapTo"><value>sourceType</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>4</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.IN"></ref></property>
+	</bean>		
+	
+	<bean id="topup_notifi_3rdparty_param_5" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_topup_notifi_3rdparty_ref</value></property>  		
+  		<property name="mapTo"><value>cursor</value></property>
+  		<property name="type"><ref bean="oracle.jdbc.driver.OracleTypes.CURSOR"></ref></property>
+  		<property name="position"><value>5</value></property>
+  		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="topup_notifi_3rdparty_param_6" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_code</value></property>
+		<property name="mapTo"><value>po_error_code</value></property>
+		<property name="type"><ref bean="java.sql.Types.BIGINT"></ref></property>
+		<property name="position"><value>6</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	<bean id="topup_notifi_3rdparty_param_7" class="net.bcgi.util.db.ParamDef" scope="singleton">
+		<property name="name"><value>po_error_desc</value></property>
+		<property name="mapTo"><value>po_error_desc</value></property>
+		<property name="type"><ref bean="java.sql.Types.VARCHAR"></ref></property>
+		<property name="position"><value>7</value></property>
+		<property name="parameterType"><ref bean="net.bcgi.util.db.ParamDef.OUT"></ref></property>
+	</bean>
+	
+</beans>

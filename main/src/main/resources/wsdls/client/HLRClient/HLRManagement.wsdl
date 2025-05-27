@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://hlr.ttsa.xius.com/HLRManagement.wsdl" xmlns:envelope="http://hlr.ttsa.xius.com/HLRManagement.xsd" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wshdr="http://hlr.ttsa.xius.com/common/header/HeaderDetails.xsd" xmlns:err="http://hlr.ttsa.xius.com/common/error/ErrorDetails.xsd" targetNamespace="http://hlr.ttsa.xius.com/HLRManagement.wsdl">
+	 <wsdl:types>
+		<xs:schema xmlns:tns="http://hlr.ttsa.xius.com/HLRManagement.wsdl" targetNamespace="http://hlr.ttsa.xius.com/HLRManagement.wsdl">
+			<xs:import namespace="http://hlr.ttsa.xius.com/HLRManagement.xsd" schemaLocation="HLRManagement.xsd"/>
+			<xs:import namespace="http://hlr.ttsa.xius.com/common/header/HeaderDetails.xsd" schemaLocation="HeaderDetails.xsd"/>
+			<xs:import namespace="http://hlr.ttsa.xius.com/common/error/ErrorDetails.xsd" schemaLocation="ErrorDetails.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="simRegistrationRequest">
+		<wsdl:part name="body" element="envelope:simRegistrationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="simRegistrationResponse">
+		<wsdl:part name="body" element="envelope:simRegistrationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="changeSubMSISDNRequest">
+		<wsdl:part name="body" element="envelope:changeSubMSISDNRequest"/>
+	</wsdl:message>
+	<wsdl:message name="changeSubMSISDNResponse">
+		<wsdl:part name="body" element="envelope:changeSubMSISDNResponse"/>
+	</wsdl:message>
+	<wsdl:message name="simSwapRequest">
+		<wsdl:part name="body" element="envelope:simSwapRequest"/>
+	</wsdl:message>
+	<wsdl:message name="simSwapResponse">
+		<wsdl:part name="body" element="envelope:simSwapResponse"/>
+	</wsdl:message>
+	<wsdl:message name="activateGSMGPRSRequest">
+		<wsdl:part name="body" element="envelope:activateGSMGPRSRequest"/>
+	</wsdl:message>
+	<wsdl:message name="activateGSMGPRSResponse">
+		<wsdl:part name="body" element="envelope:activateGSMGPRSResponse"/>
+	</wsdl:message>
+	<wsdl:message name="purgeSubscriberRequest">
+		<wsdl:part name="body" element="envelope:purgeSubscriberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="purgeSubscriberResponse">
+		<wsdl:part name="body" element="envelope:purgeSubscriberResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="updateOptionalServicesRequest">
+		<wsdl:part name="body" element="envelope:updateOptionalServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="updateOptionalServicesResponse">
+		<wsdl:part name="body" element="envelope:updateOptionalServicesResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="addAllowedFtnRangeRequest">
+		<wsdl:part name="body" element="envelope:addAllowedFtnRangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="addAllowedFtnRangeResponse">
+		<wsdl:part name="body" element="envelope:addAllowedFtnRangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="manageAllowedFtnRangeRequest">
+		<wsdl:part name="body" element="envelope:manageAllowedFtnRangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="manageAllowedFtnRangeResponse">
+		<wsdl:part name="body" element="envelope:manageAllowedFtnRangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="changeSubMSISDNBulkRequest">
+		<wsdl:part name="body" element="envelope:changeSubMSISDNBulkRequest"/>
+	</wsdl:message>
+	<wsdl:message name="changeSubMSISDNBulkResponse">
+		<wsdl:part name="body" element="envelope:changeSubMSISDNBulkResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="getGsmGprsStatusRequest">
+		<wsdl:part name="body" element="envelope:getGsmGprsStatusRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getGsmGprsStatusResponse">
+		<wsdl:part name="body" element="envelope:getGsmGprsStatusResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="unbarServicesRequest">
+		<wsdl:part name="body" element="envelope:unbarServicesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="unbarServicesResponse">
+		<wsdl:part name="body" element="envelope:unbarServicesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="removeSubscriberRequest">
+		<wsdl:part name="body" element="envelope:removeSubscriberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="removeSubscriberResponse">
+		<wsdl:part name="body" element="envelope:removeSubscriberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="faultMessage">
+		<wsdl:part name="body" element="err:errorDetailItem"/>
+	</wsdl:message>
+	<wsdl:message name="messageHeader">
+		<wsdl:part name="head" element="wshdr:messageHeader"/>
+	</wsdl:message>	
+	<wsdl:portType name="HLRManagementPortType">
+		<wsdl:operation name="simRegistration">
+			<wsdl:input message="tns:simRegistrationRequest"/>
+			<wsdl:output message="tns:simRegistrationResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="changeSubMSISDN">
+			<wsdl:input message="tns:changeSubMSISDNRequest"/>
+			<wsdl:output message="tns:changeSubMSISDNResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="simSwap">
+			<wsdl:input message="tns:simSwapRequest"/>
+			<wsdl:output message="tns:simSwapResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="activateGSMGPRS" parameterOrder="body">
+			<wsdl:input message="tns:activateGSMGPRSRequest"/>
+			<wsdl:output message="tns:activateGSMGPRSResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="purgeSubscriber">
+			<wsdl:input message="tns:purgeSubscriberRequest"/>
+			<wsdl:output message="tns:purgeSubscriberResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>		
+		<wsdl:operation name="updateOptionalServices">
+			<wsdl:input message="tns:updateOptionalServicesRequest"/>
+			<wsdl:output message="tns:updateOptionalServicesResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="addAllowedFtnRange" parameterOrder="body">
+			<wsdl:input message="tns:addAllowedFtnRangeRequest"/>
+			<wsdl:output message="tns:addAllowedFtnRangeResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="manageAllowedFtnRange" parameterOrder="body">
+			<wsdl:input message="tns:manageAllowedFtnRangeRequest"/>
+			<wsdl:output message="tns:manageAllowedFtnRangeResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="changeSubMSISDNBulk">
+			<wsdl:input message="tns:changeSubMSISDNBulkRequest"/>
+			<wsdl:output message="tns:changeSubMSISDNBulkResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="getGsmGprsStatus" parameterOrder="body">
+			<wsdl:input message="tns:getGsmGprsStatusRequest"/>
+			<wsdl:output message="tns:getGsmGprsStatusResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="unbarServices" parameterOrder="body">
+			<wsdl:input message="tns:unbarServicesRequest"/>
+			<wsdl:output message="tns:unbarServicesResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="removeSubscriber" parameterOrder="body">
+			<wsdl:input message="tns:removeSubscriberRequest"/>
+			<wsdl:output message="tns:removeSubscriberResponse"/>
+			<wsdl:fault name="fault" message="tns:faultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="HLRManagementBinding" type="tns:HLRManagementPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="simRegistration">
+			<soap:operation soapAction="simRegistration"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="changeSubMSISDN">
+			<soap:operation soapAction="changeSubMSISDN"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="simSwap">
+			<soap:operation soapAction="simSwap"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="activateGSMGPRS">
+			<soap:operation soapAction="activateGSMGPRS"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="purgeSubscriber">
+			<soap:operation soapAction="purgeSubscriber"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="updateOptionalServices">
+			<soap:operation soapAction="updateOptionalServices"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="addAllowedFtnRange">
+			<soap:operation soapAction="addAllowedFtnRange"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="manageAllowedFtnRange">
+			<soap:operation soapAction="manageAllowedFtnRange"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="changeSubMSISDNBulk">
+			<soap:operation soapAction="changeSubMSISDNBulk"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="getGsmGprsStatus">
+			<soap:operation soapAction="getGsmGprsStatus"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="unbarServices">
+			<soap:operation soapAction="unbarServices"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="removeSubscriber">
+			<soap:operation soapAction="removeSubscriber"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+				<soap:header message="tns:messageHeader" part="head" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>				
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="HLRManagement">
+		<wsdl:port name="ManagementPort" binding="tns:HLRManagementBinding">
+			<soap:address location="http://localhost:8080/axis/HLRManagement/v1"/>
+		</wsdl:port>
+	</wsdl:service>	
+</wsdl:definitions>
